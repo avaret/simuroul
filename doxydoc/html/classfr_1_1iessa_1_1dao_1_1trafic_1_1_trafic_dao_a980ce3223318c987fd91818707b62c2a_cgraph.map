@@ -1,0 +1,7 @@
+<map id="fr.iessa.dao.trafic.TraficDao.chargerVol" name="fr.iessa.dao.trafic.TraficDao.chargerVol">
+<area shape="rect" id="node2" href="$classfr_1_1iessa_1_1metier_1_1trafic_1_1_vol.html#ae8f12b2447540aefbc11967ba4cc1c2b" title="fr.iessa.metier.trafic.Vol.ajout" alt="" coords="229,5,422,32"/>
+<area shape="rect" id="node3" href="$enumfr_1_1iessa_1_1metier_1_1type_1_1_categorie.html#af94df63d82bd702a3c8d12a5b0e1d1d3" title="fr.iessa.metier.type.Categorie.from" alt="" coords="213,56,437,83"/>
+<area shape="rect" id="node4" href="$classfr_1_1iessa_1_1metier_1_1trafic_1_1_point_fabrique.html#a1315a4b4fad26e86640b57ede41f4ab3" title="fr.iessa.metier.trafic.Point\lFabrique.get" alt="" coords="239,107,411,149"/>
+<area shape="rect" id="node5" href="$classfr_1_1iessa_1_1metier_1_1_instant_1_1_instant_fabrique.html#af97c0fa6236225580551fc73a65b7400" title="fr.iessa.metier.Instant.\lInstantFabrique.get" alt="" coords="249,173,402,214"/>
+<area shape="rect" id="node6" href="$classfr_1_1iessa_1_1metier_1_1_instant.html#a3b6e7177a80af5e65d0f27e7a69f26a2" title="fr.iessa.metier.Instant.\lInstant" alt="" coords="485,173,639,214"/>
+</map>

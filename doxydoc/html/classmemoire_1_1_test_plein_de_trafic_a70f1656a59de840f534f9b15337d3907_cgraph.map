@@ -1,0 +1,7 @@
+<map id="memoire.TestPleinDeTrafic.charger" name="memoire.TestPleinDeTrafic.charger">
+<area shape="rect" id="node2" href="$classfr_1_1iessa_1_1dao_1_1trafic_1_1_trafic_dao.html#a20764afd2e1ff58637ec375f5dbd203b" title="fr.iessa.dao.trafic.Trafic\lDao.charger" alt="" coords="281,39,441,80"/>
+<area shape="rect" id="node3" href="$classfr_1_1iessa_1_1metier_1_1trafic_1_1_trafic.html#a20f5110d9dc480f5f0033f04b4176e11" title="fr.iessa.metier.trafic.Trafic.setVols" alt="" coords="489,46,712,73"/>
+<area shape="rect" id="node4" href="$classfr_1_1iessa_1_1metier_1_1trafic_1_1_trafic.html#adad92c70c2f2def87dde384cdbc2ff6d" title="fr.iessa.metier.trafic.Trafic.compute\lCollision" alt="" coords="760,5,989,47"/>
+<area shape="rect" id="node5" href="$classfr_1_1iessa_1_1metier_1_1trafic_1_1_trafic.html#a9900f1a7b71932207ae3ebff0d5bfbb6" title="fr.iessa.metier.trafic.Trafic.compute\lDelta" alt="" coords="760,71,989,112"/>
+<area shape="rect" id="node6" href="$classfr_1_1iessa_1_1metier_1_1_instant_1_1_instant_fabrique.html#ab2f21e29eab8dfdf6fe8c02b206233aa" title="fr.iessa.metier.Instant.\lInstantFabrique.getInstants" alt="" coords="1037,71,1219,112"/>
+</map>

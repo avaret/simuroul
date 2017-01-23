@@ -1,0 +1,130 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.11"/>
+<title>SimuRoul:  Fichier source de src/main/java/fr/iessa/vue/infra/PlateformeStd.java</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">SimuRoul
+   &#160;<span id="projectnumber">1</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.11 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="namespaces.html"><span>Paquetages</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('_plateforme_std_8java_source.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">PlateformeStd.java</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_plateforme_std_8java.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/**</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * </span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> */</span></div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="keyword">package </span>fr.iessa.vue.infra;</div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">import</span> java.awt.Color;</div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"></span></div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">/**</span></div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> * @author hodiqual</span></div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> *</span></div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"> */</span></div><div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="enumfr_1_1iessa_1_1vue_1_1infra_1_1_plateforme_std.html">   12</a></span>&#160;<span class="keyword">public</span> <span class="keyword">enum</span> <a class="code" href="enumfr_1_1iessa_1_1vue_1_1infra_1_1_plateforme_std.html">PlateformeStd</a> {</div><div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="enumfr_1_1iessa_1_1vue_1_1infra_1_1_plateforme_std.html#ae277c761c91a5d729aac5a1fb658a8d0">   13</a></span>&#160;    TAXIWAY(Color.GRAY, 30f)</div><div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="enumfr_1_1iessa_1_1vue_1_1infra_1_1_plateforme_std.html#ac5ccfd588f4c5d8c366d6976e6fcc621">   14</a></span>&#160;,   TAXIWAY_MARQUE_SOL(<span class="keyword">new</span> Color(244,196,48), 0.5f)</div><div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="enumfr_1_1iessa_1_1vue_1_1infra_1_1_plateforme_std.html#a8f8619f3ed182c6fd6ea3bc9811ef1d6">   15</a></span>&#160;,   TAXIWAY_MARQUE_SOL_BORDURE(Color.BLACK, 1f)</div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div><div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="enumfr_1_1iessa_1_1vue_1_1infra_1_1_plateforme_std.html#aaf85ad3584d05f25dffc03e34ae01045">   17</a></span>&#160;,   LIGNES(Color.LIGHT_GRAY, 60f)</div><div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="enumfr_1_1iessa_1_1vue_1_1infra_1_1_plateforme_std.html#a7651ed2a889416ee99679bd48c0cca8f">   18</a></span>&#160;,   LIGNES_MARQUE_SOL(<span class="keyword">new</span> Color(244,196,48), 0.5f)</div><div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="enumfr_1_1iessa_1_1vue_1_1infra_1_1_plateforme_std.html#a37278990e9aa61bebdf362c295a9bf87">   19</a></span>&#160;,   LIGNES_MARQUE_SOL_BORDURE(Color.BLACK, 1f)</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div><div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="enumfr_1_1iessa_1_1vue_1_1infra_1_1_plateforme_std.html#ae809ce8623d69c5861e5a38f016cb86b">   21</a></span>&#160;,   PUSHBACK(Color.LIGHT_GRAY, 60f)</div><div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="enumfr_1_1iessa_1_1vue_1_1infra_1_1_plateforme_std.html#a33d11d12d65ac2c6d87693a6b3fa3302">   22</a></span>&#160;,   PUSHBACK_MARQUE_SOL(<span class="keyword">new</span> Color(244,196,48), 0.5f)</div><div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="enumfr_1_1iessa_1_1vue_1_1infra_1_1_plateforme_std.html#a32fc066990d59a14927ba41df6efcb00">   23</a></span>&#160;,   PUSHBACK_MARQUE_SOL_BORDURE(Color.BLACK, 1f)</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div><div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="enumfr_1_1iessa_1_1vue_1_1infra_1_1_plateforme_std.html#a93f12752acc6ae27624134a04e7a05f7">   25</a></span>&#160;,   RUNWAY(Color.DARK_GRAY, 45.0f)</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div><div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="enumfr_1_1iessa_1_1vue_1_1infra_1_1_plateforme_std.html#a704e49870504a334069abe061ffc5524">   27</a></span>&#160;,   STAND(Color.GRAY, 8.0f)</div><div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="enumfr_1_1iessa_1_1vue_1_1infra_1_1_plateforme_std.html#aac2c1401f125f1fb01b3d1270d52b7e4">   28</a></span>&#160;,   <a class="code" href="enumfr_1_1iessa_1_1vue_1_1infra_1_1_plateforme_std.html#aac2c1401f125f1fb01b3d1270d52b7e4">DEICING</a>(Color.GRAY, 8.0f);</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div><div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="enumfr_1_1iessa_1_1vue_1_1infra_1_1_plateforme_std.html#a8f48c18ae3b5b177d7d6b2b0307b47bd">   31</a></span>&#160;    <span class="keyword">private</span> <a class="code" href="enumfr_1_1iessa_1_1vue_1_1infra_1_1_plateforme_std.html#a8f48c18ae3b5b177d7d6b2b0307b47bd">PlateformeStd</a>(Color couleur, <span class="keywordtype">float</span> largeur){</div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        _largeur = largeur;</div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        _couleur = couleur;</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    }</div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    </div><div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="enumfr_1_1iessa_1_1vue_1_1infra_1_1_plateforme_std.html#a22990f871e4f038b2bad1edf6d3f6aaf">   36</a></span>&#160;    <span class="keyword">private</span> <span class="keywordtype">float</span> <a class="code" href="enumfr_1_1iessa_1_1vue_1_1infra_1_1_plateforme_std.html#a22990f871e4f038b2bad1edf6d3f6aaf">_largeur</a>;</div><div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="enumfr_1_1iessa_1_1vue_1_1infra_1_1_plateforme_std.html#aeaf665a38ddbfcff0a079709f592e2ea">   37</a></span>&#160;    <span class="keyword">private</span> Color <a class="code" href="enumfr_1_1iessa_1_1vue_1_1infra_1_1_plateforme_std.html#aeaf665a38ddbfcff0a079709f592e2ea">_couleur</a>;</div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="comment"></span></div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment">    /** Permet de changer la couleur standard*/</span></div><div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="enumfr_1_1iessa_1_1vue_1_1infra_1_1_plateforme_std.html#a4453f4d4cd8779c84a38a6a80d936772">   40</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="enumfr_1_1iessa_1_1vue_1_1infra_1_1_plateforme_std.html#a4453f4d4cd8779c84a38a6a80d936772">setColor</a>( Color couleur )</div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    {</div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        _couleur = couleur;</div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    }</div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    </div><div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="enumfr_1_1iessa_1_1vue_1_1infra_1_1_plateforme_std.html#a201114667920aaad8dd221277cdffe79">   45</a></span>&#160;    <span class="keyword">public</span> Color <a class="code" href="enumfr_1_1iessa_1_1vue_1_1infra_1_1_plateforme_std.html#a201114667920aaad8dd221277cdffe79">couleur</a>()</div><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    {</div><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="keywordflow">return</span> _couleur;</div><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    }</div><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    </div><div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="enumfr_1_1iessa_1_1vue_1_1infra_1_1_plateforme_std.html#a345adce08d3aaa737c1f607b9c2b5d35">   50</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">float</span> <a class="code" href="enumfr_1_1iessa_1_1vue_1_1infra_1_1_plateforme_std.html#a345adce08d3aaa737c1f607b9c2b5d35">largeur</a>()</div><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    {</div><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="keywordflow">return</span> _largeur;</div><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    }</div><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    </div><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;}</div><div class="ttc" id="enumfr_1_1iessa_1_1vue_1_1infra_1_1_plateforme_std_html_a8f48c18ae3b5b177d7d6b2b0307b47bd"><div class="ttname"><a href="enumfr_1_1iessa_1_1vue_1_1infra_1_1_plateforme_std.html#a8f48c18ae3b5b177d7d6b2b0307b47bd">fr.iessa.vue.infra.PlateformeStd.PlateformeStd</a></div><div class="ttdeci">PlateformeStd(Color couleur, float largeur)</div><div class="ttdef"><b>Definition:</b> <a href="_plateforme_std_8java_source.html#l00031">PlateformeStd.java:31</a></div></div>
+<div class="ttc" id="enumfr_1_1iessa_1_1vue_1_1infra_1_1_plateforme_std_html"><div class="ttname"><a href="enumfr_1_1iessa_1_1vue_1_1infra_1_1_plateforme_std.html">fr.iessa.vue.infra.PlateformeStd</a></div><div class="ttdef"><b>Definition:</b> <a href="_plateforme_std_8java_source.html#l00012">PlateformeStd.java:12</a></div></div>
+<div class="ttc" id="enumfr_1_1iessa_1_1vue_1_1infra_1_1_plateforme_std_html_aac2c1401f125f1fb01b3d1270d52b7e4"><div class="ttname"><a href="enumfr_1_1iessa_1_1vue_1_1infra_1_1_plateforme_std.html#aac2c1401f125f1fb01b3d1270d52b7e4">fr.iessa.vue.infra.PlateformeStd.DEICING</a></div><div class="ttdeci">DEICING</div><div class="ttdef"><b>Definition:</b> <a href="_plateforme_std_8java_source.html#l00028">PlateformeStd.java:28</a></div></div>
+<div class="ttc" id="enumfr_1_1iessa_1_1vue_1_1infra_1_1_plateforme_std_html_a22990f871e4f038b2bad1edf6d3f6aaf"><div class="ttname"><a href="enumfr_1_1iessa_1_1vue_1_1infra_1_1_plateforme_std.html#a22990f871e4f038b2bad1edf6d3f6aaf">fr.iessa.vue.infra.PlateformeStd._largeur</a></div><div class="ttdeci">float _largeur</div><div class="ttdef"><b>Definition:</b> <a href="_plateforme_std_8java_source.html#l00036">PlateformeStd.java:36</a></div></div>
+<div class="ttc" id="enumfr_1_1iessa_1_1vue_1_1infra_1_1_plateforme_std_html_a345adce08d3aaa737c1f607b9c2b5d35"><div class="ttname"><a href="enumfr_1_1iessa_1_1vue_1_1infra_1_1_plateforme_std.html#a345adce08d3aaa737c1f607b9c2b5d35">fr.iessa.vue.infra.PlateformeStd.largeur</a></div><div class="ttdeci">float largeur()</div><div class="ttdef"><b>Definition:</b> <a href="_plateforme_std_8java_source.html#l00050">PlateformeStd.java:50</a></div></div>
+<div class="ttc" id="enumfr_1_1iessa_1_1vue_1_1infra_1_1_plateforme_std_html_a4453f4d4cd8779c84a38a6a80d936772"><div class="ttname"><a href="enumfr_1_1iessa_1_1vue_1_1infra_1_1_plateforme_std.html#a4453f4d4cd8779c84a38a6a80d936772">fr.iessa.vue.infra.PlateformeStd.setColor</a></div><div class="ttdeci">void setColor(Color couleur)</div><div class="ttdef"><b>Definition:</b> <a href="_plateforme_std_8java_source.html#l00040">PlateformeStd.java:40</a></div></div>
+<div class="ttc" id="enumfr_1_1iessa_1_1vue_1_1infra_1_1_plateforme_std_html_a201114667920aaad8dd221277cdffe79"><div class="ttname"><a href="enumfr_1_1iessa_1_1vue_1_1infra_1_1_plateforme_std.html#a201114667920aaad8dd221277cdffe79">fr.iessa.vue.infra.PlateformeStd.couleur</a></div><div class="ttdeci">Color couleur()</div><div class="ttdef"><b>Definition:</b> <a href="_plateforme_std_8java_source.html#l00045">PlateformeStd.java:45</a></div></div>
+<div class="ttc" id="enumfr_1_1iessa_1_1vue_1_1infra_1_1_plateforme_std_html_aeaf665a38ddbfcff0a079709f592e2ea"><div class="ttname"><a href="enumfr_1_1iessa_1_1vue_1_1infra_1_1_plateforme_std.html#aeaf665a38ddbfcff0a079709f592e2ea">fr.iessa.vue.infra.PlateformeStd._couleur</a></div><div class="ttdeci">Color _couleur</div><div class="ttdef"><b>Definition:</b> <a href="_plateforme_std_8java_source.html#l00037">PlateformeStd.java:37</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_5eb159725f84c66aafd839904a4acdd0.html">main</a></li><li class="navelem"><a class="el" href="dir_fd3f6763802dee1ad875f6c80eac0bda.html">java</a></li><li class="navelem"><a class="el" href="dir_91390426c0f30a4fef59e9ae252d2f44.html">fr</a></li><li class="navelem"><a class="el" href="dir_615e7837aff797dd97e5f0e93e5a6782.html">iessa</a></li><li class="navelem"><a class="el" href="dir_84c23b6ebbebb3d82083db6886a71e01.html">vue</a></li><li class="navelem"><a class="el" href="dir_95ed5ffdf39802e0efbc2e4d490f02f5.html">infra</a></li><li class="navelem"><a class="el" href="_plateforme_std_8java.html">PlateformeStd.java</a></li>
+    <li class="footer">Généré par
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
+  </ul>
+</div>
+</body>
+</html>

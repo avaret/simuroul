@@ -1,0 +1,7 @@
+<map id="fr.iessa.vue.PanelLecture.propertyChange" name="fr.iessa.vue.PanelLecture.propertyChange">
+<area shape="rect" id="node2" href="$classfr_1_1iessa_1_1controleur_1_1_controleur.html#a625176e94934bdd5e4afaf404c80836d" title="fr.iessa.controleur.Controleur.get\lInstantCourant" alt="" coords="275,71,487,112"/>
+<area shape="rect" id="node5" href="$classfr_1_1iessa_1_1vue_1_1_panel_lecture.html#ae8dd5c561aef71fc9b90256b28bbcac5" title="fr.iessa.vue.PanelLecture.update\lBoutonPlayPause" alt="" coords="275,136,488,177"/>
+<area shape="rect" id="node3" href="$classfr_1_1iessa_1_1metier_1_1_horloge.html#ac56b77e396c0a3a13bed31018dadf0a7" title="fr.iessa.metier.Horloge.get\lInstantCourant" alt="" coords="550,5,726,47"/>
+<area shape="rect" id="node4" href="$classfr_1_1iessa_1_1metier_1_1_instant.html#ad623e1ff9a089fba826eddd28291eb91" title="fr.iessa.metier.Instant.get\lSeconds" alt="" coords="553,71,723,112"/>
+<area shape="rect" id="node6" href="$classfr_1_1iessa_1_1controleur_1_1_controleur.html#ab10797f0cefbd48f28ec1b9f47a348ba" title="fr.iessa.controleur.Controleur.is\lTraficRunning" alt="" coords="536,136,740,177"/>
+</map>

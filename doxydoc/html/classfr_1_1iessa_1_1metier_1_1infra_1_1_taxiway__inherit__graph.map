@@ -1,0 +1,3 @@
+<map id="fr.iessa.metier.infra.Taxiway" name="fr.iessa.metier.infra.Taxiway">
+<area shape="rect" id="node2" href="$classfr_1_1iessa_1_1metier_1_1infra_1_1_ligne.html" title="{fr.iessa.metier.infra.Ligne\n|# _lignePointAPoint\l# _vitesseDeRoulage\l# _categorie\l# _direction\l|+ Ligne()\l+ get_lignePointAPoint()\l+ get_vitesseDeRoulage()\l+ get_categorie()\l+ get_direction()\l&#45; initialiseLigneBrisee()\l}" alt="" coords="11,5,186,200"/>
+</map>

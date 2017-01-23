@@ -1,0 +1,6 @@
+<map id="fr.iessa.vue.PanelFiltres.Combo.Combo" name="fr.iessa.vue.PanelFiltres.Combo.Combo">
+<area shape="rect" id="node2" href="$classfr_1_1iessa_1_1controleur_1_1_controleur.html#ab0d797ca93be40866093a2477799b062" title="fr.iessa.controleur.Controleur.ajoutVue" alt="" coords="220,5,465,32"/>
+<area shape="rect" id="node3" href="$classfr_1_1iessa_1_1metier_1_1trafic_1_1_vol.html#ad4e8697dd9b4370defe775a1f8e742c6" title="fr.iessa.metier.trafic.Vol.getId" alt="" coords="245,56,440,83"/>
+<area shape="rect" id="node4" href="$classfr_1_1iessa_1_1metier_1_1trafic_1_1_vol.html#a719ccaa0a54ce9c04ab9a3a5b43f6523" title="fr.iessa.metier.trafic.Vol.get\lPremierInstant" alt="" coords="251,107,434,149"/>
+<area shape="rect" id="node5" href="$classfr_1_1iessa_1_1metier_1_1trafic_1_1_vol.html#acb5847f7ee63416bd84ac32bbe39e924" title="fr.iessa.metier.trafic.Vol.get\lTypeVol" alt="" coords="251,173,434,214"/>
+</map>

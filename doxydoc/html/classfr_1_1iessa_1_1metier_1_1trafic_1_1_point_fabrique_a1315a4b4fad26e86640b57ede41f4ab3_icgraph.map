@@ -1,0 +1,6 @@
+<map id="fr.iessa.metier.trafic.PointFabrique.get" name="fr.iessa.metier.trafic.PointFabrique.get">
+<area shape="rect" id="node2" href="$classfr_1_1iessa_1_1dao_1_1trafic_1_1_trafic_dao.html#a980ce3223318c987fd91818707b62c2a" title="fr.iessa.dao.trafic.Trafic\lDao.chargerVol" alt="" coords="231,37,391,79"/>
+<area shape="rect" id="node5" href="$classfr_1_1iessa_1_1metier_1_1trafic_1_1_point_fabrique_test.html#a57c303d0e2e13c5887907bb429c51e5f" title="fr.iessa.metier.trafic.Point\lFabriqueTest.testGet" alt="" coords="225,103,397,144"/>
+<area shape="rect" id="node3" href="$classfr_1_1iessa_1_1dao_1_1trafic_1_1_trafic_dao_test.html#acb7b5fecbe3bbc42f7695ffc5ffe1ad6" title="fr.iessa.dao.trafic.Trafic\lDaoTest.testChargerVolArr" alt="" coords="449,5,629,47"/>
+<area shape="rect" id="node4" href="$classfr_1_1iessa_1_1dao_1_1trafic_1_1_trafic_dao_test.html#a6b76e65b783b038cea55af49eb92e176" title="fr.iessa.dao.trafic.Trafic\lDaoTest.testChargerVolDep" alt="" coords="445,71,632,112"/>
+</map>

@@ -1,0 +1,6 @@
+<map id="fr.iessa.vue.trafic.PanelTrafic.propertyChange" name="fr.iessa.vue.trafic.PanelTrafic.propertyChange">
+<area shape="rect" id="node2" href="$classfr_1_1iessa_1_1vue_1_1trafic_1_1_panel_trafic.html#aab7e7235c7e94b939f96f7e1eda208fb" title="fr.iessa.vue.trafic.Panel\lTrafic.setTrafic" alt="" coords="227,5,387,47"/>
+<area shape="rect" id="node3" href="$classfr_1_1iessa_1_1vue_1_1_charge_en_cours_layer_u_i.html#a2654eb225a52dd92569d7b51cf25a7cc" title="fr.iessa.vue.ChargeEnCours\lLayerUI.start" alt="" coords="213,71,400,112"/>
+<area shape="rect" id="node4" href="$classfr_1_1iessa_1_1vue_1_1_charge_en_cours_layer_u_i.html#a64a65ae245c98811defc4787608ebf7b" title="fr.iessa.vue.ChargeEnCours\lLayerUI.stop" alt="" coords="213,136,400,177"/>
+<area shape="rect" id="node5" href="$classfr_1_1iessa_1_1vue_1_1trafic_1_1_panel_trafic.html#af64531ca031598f0703c2c907238253a" title="fr.iessa.vue.trafic.Panel\lTrafic.update" alt="" coords="227,201,387,243"/>
+</map>

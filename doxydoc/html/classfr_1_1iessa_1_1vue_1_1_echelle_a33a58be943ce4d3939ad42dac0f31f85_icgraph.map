@@ -1,0 +1,11 @@
+<map id="fr.iessa.vue.Echelle.updateGlobalTransformation" name="fr.iessa.vue.Echelle.updateGlobalTransformation">
+<area shape="rect" id="node2" href="$classfr_1_1iessa_1_1vue_1_1_echelle.html#a94bedbadba71333d47637a587c3e8fa1" title="fr.iessa.vue.Echelle.set\lLimitesReelles" alt="" coords="233,68,392,109"/>
+<area shape="rect" id="node7" href="$classfr_1_1iessa_1_1vue_1_1_echelle.html#acae6ff4ecb77e97097dc9af56380c734" title="fr.iessa.vue.Echelle.set\lScroll" alt="" coords="233,133,392,175"/>
+<area shape="rect" id="node9" href="$classfr_1_1iessa_1_1vue_1_1_echelle.html#abff1c65090e1f2c44fa0f069de1a6a02" title="fr.iessa.vue.Echelle.set\lZoomLevel" alt="" coords="233,224,392,265"/>
+<area shape="rect" id="node3" href="$classfr_1_1iessa_1_1vue_1_1infra_1_1_panel_plateforme.html#ad5f4b7af0644fda6816f5f8dc3bbe061" title="fr.iessa.vue.infra.Panel\lPlateforme.setAeroport" alt="" coords="464,71,620,112"/>
+<area shape="rect" id="node6" href="$classfr_1_1iessa_1_1vue_1_1_echelle_test.html#a700bb71643b18ba125c9dc52ba43557c" title="fr.iessa.vue.EchelleTest.test\lGetAffineTransform" alt="" coords="447,5,637,47"/>
+<area shape="rect" id="node4" href="$classfr_1_1iessa_1_1vue_1_1infra_1_1_panel_plateforme.html#a208b5f10c5e4d75cbb203905492df18c" title="fr.iessa.vue.infra.Panel\lPlateforme.PanelPlateforme" alt="" coords="692,129,877,171"/>
+<area shape="rect" id="node5" href="$classfr_1_1iessa_1_1vue_1_1infra_1_1_panel_plateforme.html#afbf3efd34e04f745a87873f56b928fe6" title="fr.iessa.vue.infra.Panel\lPlateforme.propertyChange" alt="" coords="694,64,875,105"/>
+<area shape="rect" id="node8" href="$classfr_1_1iessa_1_1vue_1_1infra_1_1_panel_plateforme.html#a5eea54011b59a890e4c2d55885620e01" title="fr.iessa.vue.infra.Panel\lPlateforme.mouseReleased" alt="" coords="451,188,633,229"/>
+<area shape="rect" id="node10" href="$classfr_1_1iessa_1_1vue_1_1infra_1_1_panel_plateforme.html#a3f63d3f6b88a8ed9593e1e6e6fe05fea" title="fr.iessa.vue.infra.Panel\lPlateforme.mouseWheelMoved" alt="" coords="440,253,644,295"/>
+</map>

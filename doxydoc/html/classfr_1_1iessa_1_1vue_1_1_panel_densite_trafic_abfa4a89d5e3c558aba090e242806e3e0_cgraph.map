@@ -1,0 +1,5 @@
+<map id="fr.iessa.vue.PanelDensiteTrafic.placeCurseur" name="fr.iessa.vue.PanelDensiteTrafic.placeCurseur">
+<area shape="rect" id="node2" href="$classfr_1_1iessa_1_1metier_1_1_instant_1_1_instant_fabrique.html#afdd8db1678a023ad5f85a95b57835152" title="fr.iessa.metier.Instant.\lInstantFabrique.getMaximumInstant" alt="" coords="225,5,456,47"/>
+<area shape="rect" id="node3" href="$classfr_1_1iessa_1_1metier_1_1_instant_1_1_instant_fabrique.html#afa5344d7b38b5720f186afcdbabf2d32" title="fr.iessa.metier.Instant.\lInstantFabrique.getMinimumInstant" alt="" coords="227,71,454,112"/>
+<area shape="rect" id="node4" href="$classfr_1_1iessa_1_1metier_1_1_instant.html#ad623e1ff9a089fba826eddd28291eb91" title="fr.iessa.metier.Instant.get\lSeconds" alt="" coords="255,136,426,177"/>
+</map>

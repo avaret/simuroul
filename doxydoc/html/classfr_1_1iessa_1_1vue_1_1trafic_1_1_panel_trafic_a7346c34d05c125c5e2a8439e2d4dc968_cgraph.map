@@ -1,0 +1,5 @@
+<map id="fr.iessa.vue.trafic.PanelTrafic.PanelTrafic" name="fr.iessa.vue.trafic.PanelTrafic.PanelTrafic">
+<area shape="rect" id="node2" href="$classfr_1_1iessa_1_1controleur_1_1_controleur.html#ab0d797ca93be40866093a2477799b062" title="fr.iessa.controleur.Controleur.ajoutVue" alt="" coords="213,5,459,32"/>
+<area shape="rect" id="node3" href="$classfr_1_1iessa_1_1controleur_1_1_controleur.html#a7d0f9b21494bf01574b6793ada3437e7" title="fr.iessa.controleur.Controleur.get\lTrafic" alt="" coords="230,57,442,98"/>
+<area shape="rect" id="node4" href="$classfr_1_1iessa_1_1vue_1_1trafic_1_1_panel_trafic.html#aab7e7235c7e94b939f96f7e1eda208fb" title="fr.iessa.vue.trafic.Panel\lTrafic.setTrafic" alt="" coords="256,122,416,163"/>
+</map>

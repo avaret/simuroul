@@ -1,0 +1,4 @@
+<map id="fr.iessa.controleur.Controleur.sauvegarderCollision" name="fr.iessa.controleur.Controleur.sauvegarderCollision">
+<area shape="rect" id="node2" href="$classfr_1_1iessa_1_1metier_1_1trafic_1_1_trafic.html#ac6faa962a62b539e3b05c3d37db2c90f" title="fr.iessa.metier.trafic.Trafic.get\lCollisions" alt="" coords="319,5,516,47"/>
+<area shape="rect" id="node3" href="$classfr_1_1iessa_1_1dao_1_1trafic_1_1_collision_dao.html#ae77cb466a4fb89a53d20a80e7e661498" title="fr.iessa.dao.trafic.Collision\lDao.sauvegardeTrafic" alt="" coords="329,71,506,112"/>
+</map>

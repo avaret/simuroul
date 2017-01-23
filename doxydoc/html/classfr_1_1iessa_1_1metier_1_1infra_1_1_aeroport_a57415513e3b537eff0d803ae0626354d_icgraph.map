@@ -1,0 +1,6 @@
+<map id="fr.iessa.metier.infra.Aeroport.getMinY" name="fr.iessa.metier.infra.Aeroport.getMinY">
+<area shape="rect" id="node2" href="$classfr_1_1iessa_1_1vue_1_1infra_1_1_panel_plateforme.html#ad5f4b7af0644fda6816f5f8dc3bbe061" title="fr.iessa.vue.infra.Panel\lPlateforme.setAeroport" alt="" coords="307,37,463,79"/>
+<area shape="rect" id="node5" href="$classfr_1_1iessa_1_1metier_1_1infra_1_1_aeroport_test.html#a1b386474aa66b4e72d443b079e152fcf" title="fr.iessa.metier.infra.Aeroport\lTest.testInitialiseBounds" alt="" coords="292,103,479,144"/>
+<area shape="rect" id="node3" href="$classfr_1_1iessa_1_1vue_1_1infra_1_1_panel_plateforme.html#a208b5f10c5e4d75cbb203905492df18c" title="fr.iessa.vue.infra.Panel\lPlateforme.PanelPlateforme" alt="" coords="527,5,712,47"/>
+<area shape="rect" id="node4" href="$classfr_1_1iessa_1_1vue_1_1infra_1_1_panel_plateforme.html#afbf3efd34e04f745a87873f56b928fe6" title="fr.iessa.vue.infra.Panel\lPlateforme.propertyChange" alt="" coords="529,71,710,112"/>
+</map>

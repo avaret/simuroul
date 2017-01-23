@@ -1,0 +1,7 @@
+<map id="fr.iessa.controleur.Controleur.updateInstant" name="fr.iessa.controleur.Controleur.updateInstant">
+<area shape="rect" id="node2" href="$classfr_1_1iessa_1_1metier_1_1_horloge.html#ac56b77e396c0a3a13bed31018dadf0a7" title="fr.iessa.metier.Horloge.get\lInstantCourant" alt="" coords="777,10,953,51"/>
+<area shape="rect" id="node3" href="$classfr_1_1iessa_1_1metier_1_1_horloge.html#a0eddbf7ee2367a7d9234e4cacbb2725f" title="fr.iessa.metier.Horloge.set\lInstantCourant" alt="" coords="308,39,484,80"/>
+<area shape="rect" id="node5" href="$classfr_1_1iessa_1_1controleur_1_1_controleur.html#ae397a7a083d6e76253ac7e1b8d5dd808" title="fr.iessa.controleur.Controleur.stop\lTrafic" alt="" coords="287,104,505,146"/>
+<area shape="rect" id="node6" href="$classfr_1_1iessa_1_1metier_1_1_horloge.html#ad8201c1980d67652d28ebeeef9c3467c" title="fr.iessa.metier.Horloge.tick" alt="" coords="307,170,485,197"/>
+<area shape="rect" id="node4" href="$classfr_1_1iessa_1_1metier_1_1_horloge.html#aeb85fb20e54f9c0d0e25825a35b81323" title="fr.iessa.metier.Horloge.set\lIndexCourant" alt="" coords="553,39,729,80"/>
+</map>

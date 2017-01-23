@@ -1,0 +1,29 @@
+<map id="fr.iessa.vue.FramePrincipale.FramePrincipale" name="fr.iessa.vue.FramePrincipale.FramePrincipale">
+<area shape="rect" id="node2" href="$classfr_1_1iessa_1_1controleur_1_1_controleur.html#ab0d797ca93be40866093a2477799b062" title="fr.iessa.controleur.Controleur.ajoutVue" alt="" coords="255,265,501,291"/>
+<area shape="rect" id="node3" href="$classfr_1_1iessa_1_1controleur_1_1_controleur.html#a4692608c5aefbb047aab4e9703ea166d" title="fr.iessa.controleur.Controleur.charger\lCarte" alt="" coords="259,316,497,357"/>
+<area shape="rect" id="node16" href="$classfr_1_1iessa_1_1controleur_1_1_controleur.html#af11aaf5dd9cd15d0c350b2292d732ff4" title="fr.iessa.controleur.Controleur.charger\lTrafic" alt="" coords="259,381,497,423"/>
+<area shape="rect" id="node25" href="$classfr_1_1iessa_1_1controleur_1_1_controleur.html#a01a7acdd60f613a7b80b5041592ea98f" title="fr.iessa.controleur.Controleur.sauvegarder\lCollision" alt="" coords="245,476,511,517"/>
+<area shape="rect" id="node28" href="$classfr_1_1iessa_1_1controleur_1_1_controleur.html#a501470908b42a7bb4386953fbaf6740e" title="fr.iessa.controleur.Controleur.show\lCollision" alt="" coords="265,541,491,583"/>
+<area shape="rect" id="node4" href="$classfr_1_1iessa_1_1dao_1_1infra_1_1_plateforme_d_a_o.html#a044aab19dffb690703040cc7e5f6ecf2" title="fr.iessa.dao.infra.Plateforme\lDAO.charger" alt="" coords="568,163,755,204"/>
+<area shape="rect" id="node13" href="$classfr_1_1iessa_1_1controleur_1_1_libere_memoire.html#aa73b55ce423599ceaf53cb2ad26b33ea" title="fr.iessa.controleur.Libere\lMemoire.controleMemoire" alt="" coords="575,323,747,364"/>
+<area shape="rect" id="node15" href="$classfr_1_1iessa_1_1controleur_1_1_libere_memoire.html#a06c0735a5d53da41840dc183b3f61afa" title="fr.iessa.controleur.Libere\lMemoire.free" alt="" coords="579,257,744,299"/>
+<area shape="rect" id="node5" href="$classfr_1_1iessa_1_1metier_1_1infra_1_1_aeroport.html#a81404a4b58b011dde3c1be893030b199" title="fr.iessa.metier.infra.Aeroport.add" alt="" coords="825,267,1037,294"/>
+<area shape="rect" id="node7" href="$classfr_1_1iessa_1_1dao_1_1infra_1_1_plateforme_d_a_o.html#a0b8233a412a7d5dce2bef7e2ea2e0630" title="fr.iessa.dao.infra.Plateforme\lDAO.findLookup" alt="" coords="838,5,1025,47"/>
+<area shape="rect" id="node8" href="$enumfr_1_1iessa_1_1dao_1_1infra_1_1_plateforme_d_a_o_1_1_lookup.html#ad4af8bdc853ff52838f6ee06d3ce17be" title="fr.iessa.dao.infra.Plateforme\lDAO.Lookup.get" alt="" coords="838,71,1025,112"/>
+<area shape="rect" id="node9" href="$classfr_1_1iessa_1_1metier_1_1infra_1_1_aeroport.html#a2948a2db05834fc1b1b63579dc4570f0" title="fr.iessa.metier.infra.Aeroport.initialise\lBounds" alt="" coords="812,136,1051,177"/>
+<area shape="rect" id="node12" href="$classfr_1_1iessa_1_1metier_1_1infra_1_1_aeroport.html#ace0f77abf37271631a274baadcf1352f" title="fr.iessa.metier.infra.Aeroport.initialise\lRunway" alt="" coords="812,201,1051,243"/>
+<area shape="rect" id="node6" href="$classfr_1_1iessa_1_1metier_1_1infra_1_1_point.html#a32010720bac1bf5f9b32b6d490a7bd7f" title="fr.iessa.metier.infra.Point.get_nom" alt="" coords="1103,267,1325,294"/>
+<area shape="rect" id="node10" href="$classfr_1_1iessa_1_1metier_1_1infra_1_1_aeroport.html#aec3dd0f826970e95e88264fe78fe20c3" title="fr.iessa.metier.infra.Aeroport.get\l_points" alt="" coords="1109,169,1319,211"/>
+<area shape="rect" id="node11" href="$classfr_1_1iessa_1_1metier_1_1infra_1_1_aeroport.html#a0aa2746ae15fb521f69d7028deab7512" title="fr.iessa.metier.infra.Aeroport.trouver\lLimitesReels" alt="" coords="1099,104,1329,145"/>
+<area shape="rect" id="node14" href="$classfr_1_1iessa_1_1controleur_1_1_libere_memoire.html#ab6130b8fbe3adba9368b264d94695d94" title="fr.iessa.controleur.Libere\lMemoire.bytesToMegabytes" alt="" coords="838,319,1025,360"/>
+<area shape="rect" id="node17" href="$classfr_1_1iessa_1_1dao_1_1trafic_1_1_trafic_dao.html#a20764afd2e1ff58637ec375f5dbd203b" title="fr.iessa.dao.trafic.Trafic\lDao.charger" alt="" coords="581,440,741,481"/>
+<area shape="rect" id="node22" href="$classfr_1_1iessa_1_1metier_1_1_horloge.html#a2fa292c07363b600e803ad2ec018b624" title="fr.iessa.metier.Horloge.initialise" alt="" coords="559,389,764,415"/>
+<area shape="rect" id="node18" href="$classfr_1_1iessa_1_1metier_1_1trafic_1_1_trafic.html#a20f5110d9dc480f5f0033f04b4176e11" title="fr.iessa.metier.trafic.Trafic.setVols" alt="" coords="820,453,1043,479"/>
+<area shape="rect" id="node19" href="$classfr_1_1iessa_1_1metier_1_1trafic_1_1_trafic.html#adad92c70c2f2def87dde384cdbc2ff6d" title="fr.iessa.metier.trafic.Trafic.compute\lCollision" alt="" coords="1099,445,1329,487"/>
+<area shape="rect" id="node20" href="$classfr_1_1iessa_1_1metier_1_1trafic_1_1_trafic.html#a9900f1a7b71932207ae3ebff0d5bfbb6" title="fr.iessa.metier.trafic.Trafic.compute\lDelta" alt="" coords="1099,511,1329,552"/>
+<area shape="rect" id="node21" href="$classfr_1_1iessa_1_1metier_1_1_instant_1_1_instant_fabrique.html#ab2f21e29eab8dfdf6fe8c02b206233aa" title="fr.iessa.metier.Instant.\lInstantFabrique.getInstants" alt="" coords="1377,511,1559,552"/>
+<area shape="rect" id="node23" href="$classfr_1_1iessa_1_1metier_1_1_horloge.html#aeb85fb20e54f9c0d0e25825a35b81323" title="fr.iessa.metier.Horloge.set\lIndexCourant" alt="" coords="843,384,1019,425"/>
+<area shape="rect" id="node24" href="$classfr_1_1iessa_1_1metier_1_1_horloge.html#ac56b77e396c0a3a13bed31018dadf0a7" title="fr.iessa.metier.Horloge.get\lInstantCourant" alt="" coords="1126,380,1302,421"/>
+<area shape="rect" id="node26" href="$classfr_1_1iessa_1_1metier_1_1trafic_1_1_trafic.html#ac6faa962a62b539e3b05c3d37db2c90f" title="fr.iessa.metier.trafic.Trafic.get\lCollisions" alt="" coords="563,571,760,612"/>
+<area shape="rect" id="node27" href="$classfr_1_1iessa_1_1dao_1_1trafic_1_1_collision_dao.html#ae77cb466a4fb89a53d20a80e7e661498" title="fr.iessa.dao.trafic.Collision\lDao.sauvegardeTrafic" alt="" coords="573,505,750,547"/>
+</map>

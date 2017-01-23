@@ -1,0 +1,139 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.11"/>
+<title>SimuRoul:  Fichier source de src/main/java/fr/iessa/dao/infra/TaxiwayDAO.java</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">SimuRoul
+   &#160;<span id="projectnumber">1</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.11 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="namespaces.html"><span>Paquetages</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('_taxiway_d_a_o_8java_source.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">TaxiwayDAO.java</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_taxiway_d_a_o_8java.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/**</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * </span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> */</span></div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="keyword">package </span>fr.iessa.dao.infra;</div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">import</span> java.util.Scanner;</div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">import</span> <a class="code" href="namespacefr.html">fr</a>.<a class="code" href="namespacefr_1_1iessa.html">iessa</a>.<a class="code" href="namespacefr_1_1iessa_1_1dao.html">dao</a>.<a class="code" href="namespacefr_1_1iessa_1_1dao_1_1core.html">core</a>.<a class="code" href="interfacefr_1_1iessa_1_1dao_1_1core_1_1_d_a_o.html">DAO</a>;</div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">import</span> <a class="code" href="namespacefr.html">fr</a>.<a class="code" href="namespacefr_1_1iessa.html">iessa</a>.<a class="code" href="namespacefr_1_1iessa_1_1metier.html">metier</a>.<a class="code" href="namespacefr_1_1iessa_1_1metier_1_1infra.html">infra</a>.<a class="code" href="classfr_1_1iessa_1_1metier_1_1infra_1_1_ligne.html">Ligne</a>;</div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">import</span> <a class="code" href="namespacefr.html">fr</a>.<a class="code" href="namespacefr_1_1iessa.html">iessa</a>.<a class="code" href="namespacefr_1_1iessa_1_1metier.html">metier</a>.<a class="code" href="namespacefr_1_1iessa_1_1metier_1_1infra.html">infra</a>.<a class="code" href="classfr_1_1iessa_1_1metier_1_1infra_1_1_taxiway.html">Taxiway</a>;</div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"></span></div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">/**</span></div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"> * Creer un taxiway a partir d&#39;une description texte.</span></div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> * @author hodiqual</span></div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> */</span></div><div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="classfr_1_1iessa_1_1dao_1_1infra_1_1_taxiway_d_a_o.html">   16</a></span>&#160;<span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="classfr_1_1iessa_1_1dao_1_1infra_1_1_taxiway_d_a_o.html">TaxiwayDAO</a> <span class="keyword">implements</span> <a class="code" href="interfacefr_1_1iessa_1_1dao_1_1core_1_1_d_a_o.html">DAO</a>&lt;Taxiway&gt; {</div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <a class="code" href="classfr_1_1iessa_1_1dao_1_1infra_1_1_ligne_d_a_o.html">LigneDAO</a> _daoLigne;</div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    </div><div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="classfr_1_1iessa_1_1dao_1_1infra_1_1_taxiway_d_a_o.html#a80396eb4a90b080a90d863d4bad87f6f">   20</a></span>&#160;    <span class="keyword">public</span> <a class="code" href="classfr_1_1iessa_1_1dao_1_1infra_1_1_taxiway_d_a_o.html#a80396eb4a90b080a90d863d4bad87f6f">TaxiwayDAO</a>(<a class="code" href="interfacefr_1_1iessa_1_1dao_1_1core_1_1_d_a_o.html">DAO&lt;Ligne&gt;</a> dao) {</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        _daoLigne = (<a class="code" href="classfr_1_1iessa_1_1dao_1_1infra_1_1_ligne_d_a_o.html">LigneDAO</a>) dao;</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    }</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    </div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    @Override<span class="comment"></span></div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">    /**</span></div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">     * Charge en memoire une ligne de texte decrivant un taxiway </span></div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">     * @param ligneAtraiter: decrit le taxiway de la maniere suivante</span></div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">     * &quot;L K4 10 H D -858,1424;-898,1293&quot;</span></div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">     */</span></div><div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="classfr_1_1iessa_1_1dao_1_1infra_1_1_taxiway_d_a_o.html#a10c36d3e6dd536e7c62ff157670a3770">   31</a></span>&#160;    <span class="keyword">public</span> <a class="code" href="classfr_1_1iessa_1_1metier_1_1infra_1_1_taxiway.html">Taxiway</a> <a class="code" href="classfr_1_1iessa_1_1dao_1_1infra_1_1_taxiway_d_a_o.html#a10c36d3e6dd536e7c62ff157670a3770">charger</a>(String ligneAtraiter) {</div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        Scanner scan = <span class="keyword">new</span> Scanner(ligneAtraiter);</div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        scan.useDelimiter(<span class="stringliteral">&quot; |\n&quot;</span>);</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        scan.next(); <span class="comment">//skip &#39;L&#39;</span></div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <a class="code" href="classfr_1_1iessa_1_1metier_1_1infra_1_1_taxiway.html">Taxiway</a> result = <span class="keyword">new</span> <a class="code" href="classfr_1_1iessa_1_1metier_1_1infra_1_1_taxiway.html">Taxiway</a>( scan.next(), </div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                                        _daoLigne.<a class="code" href="classfr_1_1iessa_1_1dao_1_1infra_1_1_ligne_d_a_o.html#a4e452b6780485313bddd4628d1e7d858">chargerVitesse</a>(scan),</div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                                        _daoLigne.<a class="code" href="classfr_1_1iessa_1_1dao_1_1infra_1_1_ligne_d_a_o.html#a106bfac70c1ddca480597fe0f33b7cba">chargerCategorie</a>(scan), </div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                                        _daoLigne.<a class="code" href="classfr_1_1iessa_1_1dao_1_1infra_1_1_ligne_d_a_o.html#a4f07a656d1f5ada6e75a4d893a13a663">chargerDirection</a>(scan), </div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                                        _daoLigne.<a class="code" href="classfr_1_1iessa_1_1dao_1_1infra_1_1_ligne_d_a_o.html#a706190dc620ef1d369b91ba551328a36">chargerPoints</a>(scan) );</div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        scan.close();</div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="keywordflow">return</span> result;</div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    }</div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;}</div><div class="ttc" id="classfr_1_1iessa_1_1metier_1_1infra_1_1_taxiway_html"><div class="ttname"><a href="classfr_1_1iessa_1_1metier_1_1infra_1_1_taxiway.html">fr.iessa.metier.infra.Taxiway</a></div><div class="ttdef"><b>Definition:</b> <a href="_taxiway_8java_source.html#l00017">Taxiway.java:17</a></div></div>
+<div class="ttc" id="interfacefr_1_1iessa_1_1dao_1_1core_1_1_d_a_o_html"><div class="ttname"><a href="interfacefr_1_1iessa_1_1dao_1_1core_1_1_d_a_o.html">fr.iessa.dao.core.DAO</a></div><div class="ttdef"><b>Definition:</b> <a href="_d_a_o_8java_source.html#l00010">DAO.java:10</a></div></div>
+<div class="ttc" id="namespacefr_1_1iessa_html"><div class="ttname"><a href="namespacefr_1_1iessa.html">fr.iessa</a></div></div>
+<div class="ttc" id="classfr_1_1iessa_1_1dao_1_1infra_1_1_ligne_d_a_o_html_a4f07a656d1f5ada6e75a4d893a13a663"><div class="ttname"><a href="classfr_1_1iessa_1_1dao_1_1infra_1_1_ligne_d_a_o.html#a4f07a656d1f5ada6e75a4d893a13a663">fr.iessa.dao.infra.LigneDAO.chargerDirection</a></div><div class="ttdeci">Direction chargerDirection(Scanner scan)</div><div class="ttdef"><b>Definition:</b> <a href="_ligne_d_a_o_8java_source.html#l00054">LigneDAO.java:54</a></div></div>
+<div class="ttc" id="namespacefr_1_1iessa_1_1dao_1_1core_html"><div class="ttname"><a href="namespacefr_1_1iessa_1_1dao_1_1core.html">fr.iessa.dao.core</a></div><div class="ttdef"><b>Definition:</b> <a href="_d_a_o_8java_source.html#l00004">DAO.java:4</a></div></div>
+<div class="ttc" id="classfr_1_1iessa_1_1dao_1_1infra_1_1_taxiway_d_a_o_html_a10c36d3e6dd536e7c62ff157670a3770"><div class="ttname"><a href="classfr_1_1iessa_1_1dao_1_1infra_1_1_taxiway_d_a_o.html#a10c36d3e6dd536e7c62ff157670a3770">fr.iessa.dao.infra.TaxiwayDAO.charger</a></div><div class="ttdeci">Taxiway charger(String ligneAtraiter)</div><div class="ttdef"><b>Definition:</b> <a href="_taxiway_d_a_o_8java_source.html#l00031">TaxiwayDAO.java:31</a></div></div>
+<div class="ttc" id="classfr_1_1iessa_1_1dao_1_1infra_1_1_ligne_d_a_o_html_a706190dc620ef1d369b91ba551328a36"><div class="ttname"><a href="classfr_1_1iessa_1_1dao_1_1infra_1_1_ligne_d_a_o.html#a706190dc620ef1d369b91ba551328a36">fr.iessa.dao.infra.LigneDAO.chargerPoints</a></div><div class="ttdeci">Queue&lt; Point &gt; chargerPoints(Scanner scan)</div><div class="ttdef"><b>Definition:</b> <a href="_ligne_d_a_o_8java_source.html#l00059">LigneDAO.java:59</a></div></div>
+<div class="ttc" id="classfr_1_1iessa_1_1dao_1_1infra_1_1_ligne_d_a_o_html"><div class="ttname"><a href="classfr_1_1iessa_1_1dao_1_1infra_1_1_ligne_d_a_o.html">fr.iessa.dao.infra.LigneDAO</a></div><div class="ttdef"><b>Definition:</b> <a href="_ligne_d_a_o_8java_source.html#l00020">LigneDAO.java:20</a></div></div>
+<div class="ttc" id="classfr_1_1iessa_1_1dao_1_1infra_1_1_taxiway_d_a_o_html_a80396eb4a90b080a90d863d4bad87f6f"><div class="ttname"><a href="classfr_1_1iessa_1_1dao_1_1infra_1_1_taxiway_d_a_o.html#a80396eb4a90b080a90d863d4bad87f6f">fr.iessa.dao.infra.TaxiwayDAO.TaxiwayDAO</a></div><div class="ttdeci">TaxiwayDAO(DAO&lt; Ligne &gt; dao)</div><div class="ttdef"><b>Definition:</b> <a href="_taxiway_d_a_o_8java_source.html#l00020">TaxiwayDAO.java:20</a></div></div>
+<div class="ttc" id="classfr_1_1iessa_1_1metier_1_1infra_1_1_ligne_html"><div class="ttname"><a href="classfr_1_1iessa_1_1metier_1_1infra_1_1_ligne.html">fr.iessa.metier.infra.Ligne</a></div><div class="ttdef"><b>Definition:</b> <a href="_ligne_8java_source.html#l00017">Ligne.java:17</a></div></div>
+<div class="ttc" id="namespacefr_1_1iessa_1_1metier_1_1infra_html"><div class="ttname"><a href="namespacefr_1_1iessa_1_1metier_1_1infra.html">fr.iessa.metier.infra</a></div><div class="ttdef"><b>Definition:</b> <a href="_aeroport_8java_source.html#l00004">Aeroport.java:4</a></div></div>
+<div class="ttc" id="namespacefr_1_1iessa_1_1dao_html"><div class="ttname"><a href="namespacefr_1_1iessa_1_1dao.html">fr.iessa.dao</a></div></div>
+<div class="ttc" id="classfr_1_1iessa_1_1dao_1_1infra_1_1_taxiway_d_a_o_html"><div class="ttname"><a href="classfr_1_1iessa_1_1dao_1_1infra_1_1_taxiway_d_a_o.html">fr.iessa.dao.infra.TaxiwayDAO</a></div><div class="ttdef"><b>Definition:</b> <a href="_taxiway_d_a_o_8java_source.html#l00016">TaxiwayDAO.java:16</a></div></div>
+<div class="ttc" id="classfr_1_1iessa_1_1dao_1_1infra_1_1_ligne_d_a_o_html_a4e452b6780485313bddd4628d1e7d858"><div class="ttname"><a href="classfr_1_1iessa_1_1dao_1_1infra_1_1_ligne_d_a_o.html#a4e452b6780485313bddd4628d1e7d858">fr.iessa.dao.infra.LigneDAO.chargerVitesse</a></div><div class="ttdeci">int chargerVitesse(Scanner scan)</div><div class="ttdef"><b>Definition:</b> <a href="_ligne_d_a_o_8java_source.html#l00044">LigneDAO.java:44</a></div></div>
+<div class="ttc" id="classfr_1_1iessa_1_1dao_1_1infra_1_1_ligne_d_a_o_html_a106bfac70c1ddca480597fe0f33b7cba"><div class="ttname"><a href="classfr_1_1iessa_1_1dao_1_1infra_1_1_ligne_d_a_o.html#a106bfac70c1ddca480597fe0f33b7cba">fr.iessa.dao.infra.LigneDAO.chargerCategorie</a></div><div class="ttdeci">Categorie chargerCategorie(Scanner scan)</div><div class="ttdef"><b>Definition:</b> <a href="_ligne_d_a_o_8java_source.html#l00049">LigneDAO.java:49</a></div></div>
+<div class="ttc" id="namespacefr_html"><div class="ttname"><a href="namespacefr.html">fr</a></div></div>
+<div class="ttc" id="namespacefr_1_1iessa_1_1metier_html"><div class="ttname"><a href="namespacefr_1_1iessa_1_1metier.html">fr.iessa.metier</a></div><div class="ttdef"><b>Definition:</b> <a href="_horloge_8java_source.html#l00004">Horloge.java:4</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_5eb159725f84c66aafd839904a4acdd0.html">main</a></li><li class="navelem"><a class="el" href="dir_fd3f6763802dee1ad875f6c80eac0bda.html">java</a></li><li class="navelem"><a class="el" href="dir_91390426c0f30a4fef59e9ae252d2f44.html">fr</a></li><li class="navelem"><a class="el" href="dir_615e7837aff797dd97e5f0e93e5a6782.html">iessa</a></li><li class="navelem"><a class="el" href="dir_e20106c78faf209a1311f112b4aacbcc.html">dao</a></li><li class="navelem"><a class="el" href="dir_45e39b00e39ca4d08c3dcb4c11c11717.html">infra</a></li><li class="navelem"><a class="el" href="_taxiway_d_a_o_8java.html">TaxiwayDAO.java</a></li>
+    <li class="footer">Généré par
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
+  </ul>
+</div>
+</body>
+</html>
