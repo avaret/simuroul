@@ -1,7 +1,0 @@
-<map id="fr.iessa.metier.trafic.CollisionTest.testCollision" name="fr.iessa.metier.trafic.CollisionTest.testCollision">
-<area shape="rect" id="node2" href="$classfr_1_1iessa_1_1metier_1_1_instant_1_1_instant_fabrique.html#af97c0fa6236225580551fc73a65b7400" title="fr.iessa.metier.Instant.\lInstantFabrique.get" alt="" coords="276,5,429,47"/>
-<area shape="rect" id="node4" href="$classfr_1_1iessa_1_1metier_1_1trafic_1_1_collision.html#aa3c4ad4b383d8d9001fd48c0cfc50d56" title="fr.iessa.metier.trafic.Collision.get\lInstant" alt="" coords="245,71,460,112"/>
-<area shape="rect" id="node5" href="$classfr_1_1iessa_1_1metier_1_1trafic_1_1_collision.html#a33bebc63c3afd5c98245c9bd6eb7ecc6" title="fr.iessa.metier.trafic.Collision.get\lPointImpact" alt="" coords="245,136,460,177"/>
-<area shape="rect" id="node6" href="$classfr_1_1iessa_1_1metier_1_1trafic_1_1_collision.html#a3a06f635d083eafb037ae4fecb749f52" title="fr.iessa.metier.trafic.Collision.get\lVolsImpliques" alt="" coords="245,201,460,243"/>
-<area shape="rect" id="node3" href="$classfr_1_1iessa_1_1metier_1_1_instant.html#a3b6e7177a80af5e65d0f27e7a69f26a2" title="fr.iessa.metier.Instant.\lInstant" alt="" coords="508,5,661,47"/>
-</map>

@@ -1,6 +1,0 @@
-<map id="fr.iessa.vue.EchelleTest.testGetAffineTransform" name="fr.iessa.vue.EchelleTest.testGetAffineTransform">
-<area shape="rect" id="node2" href="$classfr_1_1iessa_1_1vue_1_1_echelle.html#a5895e0644350a01894c771eb154b47d7" title="fr.iessa.vue.Echelle.get\lAffineTransform" alt="" coords="243,5,401,47"/>
-<area shape="rect" id="node3" href="$classfr_1_1iessa_1_1vue_1_1_echelle.html#a94bedbadba71333d47637a587c3e8fa1" title="fr.iessa.vue.Echelle.set\lLimitesReelles" alt="" coords="243,71,401,112"/>
-<area shape="rect" id="node4" href="$classfr_1_1iessa_1_1vue_1_1_echelle.html#a0cdcccf2d994af8cbdbbdb772b85c5e0" title="fr.iessa.vue.Echelle.create\lZoomTransformation" alt="" coords="451,37,628,79"/>
-<area shape="rect" id="node5" href="$classfr_1_1iessa_1_1vue_1_1_echelle.html#a33a58be943ce4d3939ad42dac0f31f85" title="fr.iessa.vue.Echelle.update\lGlobalTransformation" alt="" coords="449,103,629,144"/>
-</map>

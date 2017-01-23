@@ -1,6 +1,0 @@
-<map id="fr.iessa.vue.PanelFiltres.FiltrePremierInstant.propertyChange" name="fr.iessa.vue.PanelFiltres.FiltrePremierInstant.propertyChange">
-<area shape="rect" id="node2" href="$classfr_1_1iessa_1_1metier_1_1trafic_1_1_filtre_vol.html#aabe56c83a8c969c1af2e21980209cbcd" title="fr.iessa.metier.trafic.Filtre\lVol.getFiltrePremierInstant" alt="" coords="310,5,487,47"/>
-<area shape="rect" id="node3" href="$classfr_1_1iessa_1_1metier_1_1_instant_1_1_instant_fabrique.html#afa5344d7b38b5720f186afcdbabf2d32" title="fr.iessa.metier.Instant.\lInstantFabrique.getMinimumInstant" alt="" coords="285,71,512,112"/>
-<area shape="rect" id="node4" href="$classfr_1_1iessa_1_1metier_1_1_instant.html#ad623e1ff9a089fba826eddd28291eb91" title="fr.iessa.metier.Instant.get\lSeconds" alt="" coords="313,136,484,177"/>
-<area shape="rect" id="node5" href="$classfr_1_1iessa_1_1metier_1_1_instant.html#ab8f78cbfe8a64bba05732419ebc7963e" title="fr.iessa.metier.Instant.to\lString" alt="" coords="317,201,481,243"/>
-</map>

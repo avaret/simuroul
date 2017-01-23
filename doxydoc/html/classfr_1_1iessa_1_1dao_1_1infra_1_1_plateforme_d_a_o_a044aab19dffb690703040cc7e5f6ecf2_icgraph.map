@@ -1,7 +1,0 @@
-<map id="fr.iessa.dao.infra.PlateformeDAO.charger" name="fr.iessa.dao.infra.PlateformeDAO.charger">
-<area shape="rect" id="node2" href="$classfr_1_1iessa_1_1controleur_1_1_controleur.html#a4692608c5aefbb047aab4e9703ea166d" title="fr.iessa.controleur.Controleur.charger\lCarte" alt="" coords="240,5,477,47"/>
-<area shape="rect" id="node4" href="$classmemoire_1_1_test_memoire_et_rapidite_par_d_a_o.html#ac8a81ca1429df2e1e3d55f7a23bcd325" title="memoire.TestMemoireEtRapidite\lParDAO.main" alt="" coords="252,71,465,112"/>
-<area shape="rect" id="node5" href="$classfr_1_1iessa_1_1metier_1_1infra_1_1_aeroport_test.html#a96b33cf3e3d175a6e678cea8be006361" title="fr.iessa.metier.infra.Aeroport\lTest.setUpBeforeClass" alt="" coords="265,136,452,177"/>
-<area shape="rect" id="node6" href="$classfr_1_1iessa_1_1dao_1_1infra_1_1_infrastructure_d_a_o_test.html#a17c76d1af9350724dccc4088ad67c767" title="fr.iessa.dao.infra.Infrastructure\lDAOTest.testCharger" alt="" coords="259,201,459,243"/>
-<area shape="rect" id="node3" href="$classfr_1_1iessa_1_1vue_1_1_frame_principale.html#a72520d887172837cb60943fdb9073c12" title="fr.iessa.vue.FramePrincipale.\lFramePrincipale" alt="" coords="525,5,717,47"/>
-</map>

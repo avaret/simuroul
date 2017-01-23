@@ -1,7 +1,0 @@
-<map id="fr.iessa.metier.infra.Ligne.get_lignePointAPoint" name="fr.iessa.metier.infra.Ligne.get_lignePointAPoint">
-<area shape="rect" id="node2" href="$classfr_1_1iessa_1_1dao_1_1infra_1_1_ligne_d_a_o_test.html#a156c0b5cda2b891881bcef029afd5cde" title="fr.iessa.dao.infra.Ligne\lDAOTest.testChargerLigne1" alt="" coords="254,5,441,47"/>
-<area shape="rect" id="node3" href="$classfr_1_1iessa_1_1dao_1_1infra_1_1_ligne_d_a_o_test.html#a92e47829bb20383c49dd9bb4fb936d3d" title="fr.iessa.dao.infra.Ligne\lDAOTest.testChargerLigne2" alt="" coords="254,71,441,112"/>
-<area shape="rect" id="node4" href="$classfr_1_1iessa_1_1dao_1_1infra_1_1_pushback_d_a_o_test.html#acbeb34b43a451119bd99a406188e44db" title="fr.iessa.dao.infra.Pushback\lDAOTest.testChargerPushback" alt="" coords="244,136,451,177"/>
-<area shape="rect" id="node5" href="$classfr_1_1iessa_1_1dao_1_1infra_1_1_taxiway_d_a_o_test.html#aee4493fd9bb2ea4c00a56f86275dc8ff" title="fr.iessa.dao.infra.Taxiway\lDAOTest.testChargerTaxiway1" alt="" coords="245,201,450,243"/>
-<area shape="rect" id="node6" href="$classfr_1_1iessa_1_1dao_1_1infra_1_1_taxiway_d_a_o_test.html#a65680ad6f4e0a868c13a33bddc9301e6" title="fr.iessa.dao.infra.Taxiway\lDAOTest.testChargerTaxiway2" alt="" coords="245,267,450,308"/>
-</map>

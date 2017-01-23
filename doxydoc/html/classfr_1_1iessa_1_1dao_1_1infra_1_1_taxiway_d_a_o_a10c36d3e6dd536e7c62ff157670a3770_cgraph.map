@@ -1,8 +1,0 @@
-<map id="fr.iessa.dao.infra.TaxiwayDAO.charger" name="fr.iessa.dao.infra.TaxiwayDAO.charger">
-<area shape="rect" id="node2" href="$classfr_1_1iessa_1_1dao_1_1infra_1_1_ligne_d_a_o.html#a106bfac70c1ddca480597fe0f33b7cba" title="fr.iessa.dao.infra.Ligne\lDAO.chargerCategorie" alt="" coords="225,5,380,47"/>
-<area shape="rect" id="node4" href="$classfr_1_1iessa_1_1dao_1_1infra_1_1_ligne_d_a_o.html#a4f07a656d1f5ada6e75a4d893a13a663" title="fr.iessa.dao.infra.Ligne\lDAO.chargerDirection" alt="" coords="225,71,380,112"/>
-<area shape="rect" id="node6" href="$classfr_1_1iessa_1_1dao_1_1infra_1_1_ligne_d_a_o.html#a706190dc620ef1d369b91ba551328a36" title="fr.iessa.dao.infra.Ligne\lDAO.chargerPoints" alt="" coords="225,136,380,177"/>
-<area shape="rect" id="node7" href="$classfr_1_1iessa_1_1dao_1_1infra_1_1_ligne_d_a_o.html#a4e452b6780485313bddd4628d1e7d858" title="fr.iessa.dao.infra.Ligne\lDAO.chargerVitesse" alt="" coords="225,201,380,243"/>
-<area shape="rect" id="node3" href="$enumfr_1_1iessa_1_1metier_1_1type_1_1_categorie.html#af94df63d82bd702a3c8d12a5b0e1d1d3" title="fr.iessa.metier.type.Categorie.from" alt="" coords="428,13,652,39"/>
-<area shape="rect" id="node5" href="$enumfr_1_1iessa_1_1metier_1_1type_1_1_direction.html#a75f48ba8fa13d862fb43ef0e66c9f08b" title="fr.iessa.metier.type.Direction.from" alt="" coords="430,78,650,105"/>
-</map>

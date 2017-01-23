@@ -1,9 +1,0 @@
-<map id="fr.iessa.metier.Horloge.tick" name="fr.iessa.metier.Horloge.tick">
-<area shape="rect" id="node2" href="$classfr_1_1iessa_1_1controleur_1_1_controleur.html#a53d4629b67003b20393c6aabc4b1e559" title="fr.iessa.controleur.Controleur.update\lInstant" alt="" coords="232,40,465,81"/>
-<area shape="rect" id="node3" href="$classfr_1_1iessa_1_1vue_1_1_panel_lecture.html#a05a1d39ecdad67fdd84ffb9ce9be98ca" title="fr.iessa.vue.PanelLecture.add\lListeners" alt="" coords="793,5,987,47"/>
-<area shape="rect" id="node5" href="$classfr_1_1iessa_1_1controleur_1_1_controleur.html#a3ed2e5e5942f1d4688719b547608cafb" title="fr.iessa.controleur.Controleur.set\lInstant" alt="" coords="513,71,725,112"/>
-<area shape="rect" id="node4" href="$classfr_1_1iessa_1_1vue_1_1_panel_lecture.html#a0881a60bb0b0fb10a42fd62b92c90dc7" title="fr.iessa.vue.PanelLecture.\lPanelLecture" alt="" coords="1055,5,1229,47"/>
-<area shape="rect" id="node6" href="$classfr_1_1iessa_1_1vue_1_1_frame_principale_1_1_key_dispatcher.html#a1a4495e24e94392c4ca9e4e65a8d6ddd" title="fr.iessa.vue.FramePrincipale.\lKeyDispatcher.dispatchKeyEvent" alt="" coords="781,71,999,112"/>
-<area shape="rect" id="node7" href="$classfr_1_1iessa_1_1vue_1_1_panel_affichage_vol.html#a7b2730ddeec26d6bc8327be36840c1d2" title="fr.iessa.vue.PanelAffichage\lVol.PanelAffichageVol" alt="" coords="799,136,981,177"/>
-<area shape="rect" id="node8" href="$classfr_1_1iessa_1_1controleur_1_1_controleur.html#acb279414770357d784a38c5fa517779d" title="fr.iessa.controleur.Controleur.update\lInstant" alt="" coords="773,201,1007,243"/>
-</map>

@@ -1,7 +1,0 @@
-<map id="fr.iessa.vue.trafic.ComponentVol.ComponentVol" name="fr.iessa.vue.trafic.ComponentVol.ComponentVol">
-<area shape="rect" id="node2" href="$interfacefr_1_1iessa_1_1vue_1_1trafic_1_1_click_component_vol_listener.html#a44022349a19b17afb060c5662944cfd9" title="fr.iessa.vue.trafic.Click\lComponentVolListener.component\lVolClicked" alt="" coords="248,5,471,61"/>
-<area shape="rect" id="node3" href="$enumfr_1_1iessa_1_1vue_1_1trafic_1_1_shape_avion_factory.html#a4c51f790e7dc27ae921d2bad3b6f9b01" title="fr.iessa.vue.trafic.Shape\lAvionFactory.get" alt="" coords="277,86,441,127"/>
-<area shape="rect" id="node4" href="$classfr_1_1iessa_1_1metier_1_1trafic_1_1_vol.html#a1acc6e3484e2a4d4e316ab780a860488" title="fr.iessa.metier.trafic.Vol.get\lCategorie" alt="" coords="268,151,451,193"/>
-<area shape="rect" id="node5" href="$classfr_1_1iessa_1_1metier_1_1trafic_1_1_vol.html#ad4e8697dd9b4370defe775a1f8e742c6" title="fr.iessa.metier.trafic.Vol.getId" alt="" coords="262,217,457,244"/>
-<area shape="rect" id="node6" href="$classfr_1_1iessa_1_1metier_1_1trafic_1_1_vol.html#a7cfa28e6e3fd281d77456f8798370d59" title="fr.iessa.metier.trafic.Vol.get\lInstantVersCoord" alt="" coords="268,269,451,310"/>
-</map>

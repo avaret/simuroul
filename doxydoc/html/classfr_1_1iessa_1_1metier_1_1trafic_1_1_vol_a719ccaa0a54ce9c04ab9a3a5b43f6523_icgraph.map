@@ -1,6 +1,0 @@
-<map id="fr.iessa.metier.trafic.Vol.getPremierInstant" name="fr.iessa.metier.trafic.Vol.getPremierInstant">
-<area shape="rect" id="node2" href="$classfr_1_1iessa_1_1vue_1_1_panel_filtres_1_1_combo.html#a4a102f28ab51a67166e7a8f28219463d" title="fr.iessa.vue.PanelFiltres.\lCombo.Combo" alt="" coords="245,5,412,47"/>
-<area shape="rect" id="node3" href="$classfr_1_1iessa_1_1vue_1_1_panel_affichage_vol.html#a7b2730ddeec26d6bc8327be36840c1d2" title="fr.iessa.vue.PanelAffichage\lVol.PanelAffichageVol" alt="" coords="237,71,420,112"/>
-<area shape="rect" id="node4" href="$classfr_1_1iessa_1_1vue_1_1_panel_filtres_1_1_combo.html#a37a416ce6210aa7aa65f291581450889" title="fr.iessa.vue.PanelFiltres.\lCombo.propertyChange" alt="" coords="245,136,412,177"/>
-<area shape="rect" id="node5" href="$classfr_1_1iessa_1_1metier_1_1trafic_1_1_filtre_vol_1_1_filtre_premier_instant.html#ac47aba2de718c953e2f83202ecaa04dd" title="fr.iessa.metier.trafic.Filtre\lVol.FiltrePremierInstant.test" alt="" coords="236,201,421,243"/>
-</map>

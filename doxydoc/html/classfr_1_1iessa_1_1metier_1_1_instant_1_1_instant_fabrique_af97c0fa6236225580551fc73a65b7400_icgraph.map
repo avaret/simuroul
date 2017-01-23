@@ -1,9 +1,0 @@
-<map id="fr.iessa.metier.Instant.InstantFabrique.get" name="fr.iessa.metier.Instant.InstantFabrique.get">
-<area shape="rect" id="node2" href="$classfr_1_1iessa_1_1dao_1_1trafic_1_1_trafic_dao.html#a980ce3223318c987fd91818707b62c2a" title="fr.iessa.dao.trafic.Trafic\lDao.chargerVol" alt="" coords="229,52,389,93"/>
-<area shape="rect" id="node3" href="$classfr_1_1iessa_1_1dao_1_1trafic_1_1_trafic_dao_test.html#acb7b5fecbe3bbc42f7695ffc5ffe1ad6" title="fr.iessa.dao.trafic.Trafic\lDaoTest.testChargerVolArr" alt="" coords="462,7,642,48"/>
-<area shape="rect" id="node4" href="$classfr_1_1iessa_1_1dao_1_1trafic_1_1_trafic_dao_test.html#a6b76e65b783b038cea55af49eb92e176" title="fr.iessa.dao.trafic.Trafic\lDaoTest.testChargerVolDep" alt="" coords="459,85,645,127"/>
-<area shape="rect" id="node5" href="$classfr_1_1iessa_1_1dao_1_1trafic_1_1_trafic_dao_test.html#a9954930a0797b788a6efc98512043fc6" title="fr.iessa.dao.trafic.Trafic\lDaoTest.testCharger" alt="" coords="229,169,389,211"/>
-<area shape="rect" id="node6" href="$classfr_1_1iessa_1_1metier_1_1trafic_1_1_collision_test.html#a065d8e78ef742c3027c680869136f114" title="fr.iessa.metier.trafic.Collision\lTest.testCollision" alt="" coords="213,235,405,276"/>
-<area shape="rect" id="node7" href="$classfr_1_1iessa_1_1metier_1_1trafic_1_1_instant_test.html#a8e04ab062163ae60b025d64c10aab3b5" title="fr.iessa.metier.trafic.Instant\lTest.testGet" alt="" coords="217,300,400,341"/>
-<area shape="rect" id="node8" href="$classfr_1_1iessa_1_1metier_1_1trafic_1_1_vol.html#a51922aa3c0589b181b95221f86eb1fbe" title="fr.iessa.metier.trafic.Vol.update\lCoordCourantes" alt="" coords="207,365,411,407"/>
-</map>

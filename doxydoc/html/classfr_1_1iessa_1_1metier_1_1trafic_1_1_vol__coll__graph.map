@@ -1,5 +1,0 @@
-<map id="fr.iessa.metier.trafic.Vol" name="fr.iessa.metier.trafic.Vol">
-<area shape="rect" id="node2" href="$classfr_1_1iessa_1_1metier_1_1_instant.html" title="{fr.iessa.metier.Instant\n|&#45; _secondes\l&#45; _affichage\l|+ getSeconds()\l+ toString()\l+ compareTo()\l&#45; Instant()\l}" alt="" coords="119,344,269,480"/>
-<area shape="rect" id="node8" href="$enumfr_1_1iessa_1_1metier_1_1type_1_1_categorie.html" title="{fr.iessa.metier.type.Categorie\n|+ HIGH\l+ MEDIUM\l+ LIGHT\l&#45; _abreviation\l|+ getAbreviation()\l+ [static initializer]()\l+ from()\l&#45; Categorie()\l}" alt="" coords="586,329,781,495"/>
-<area shape="rect" id="node11" href="$enumfr_1_1iessa_1_1metier_1_1type_1_1_type_vol.html" title="{fr.iessa.metier.type.TypeVol\n|+ ARR\l+ DEP\l|}" alt="" coords="805,366,991,458"/>
-</map>

@@ -1,5 +1,0 @@
-<map id="fr.iessa.metier.trafic.Vol.getInstantVersCoord" name="fr.iessa.metier.trafic.Vol.getInstantVersCoord">
-<area shape="rect" id="node2" href="$classfr_1_1iessa_1_1vue_1_1trafic_1_1_component_vol.html#a8dc147bc02d1e404072b4497b172c51d" title="fr.iessa.vue.trafic.Component\lVol.ComponentVol" alt="" coords="236,5,431,47"/>
-<area shape="rect" id="node3" href="$classfr_1_1iessa_1_1dao_1_1trafic_1_1_trafic_dao_test.html#acb7b5fecbe3bbc42f7695ffc5ffe1ad6" title="fr.iessa.dao.trafic.Trafic\lDaoTest.testChargerVolArr" alt="" coords="243,71,423,112"/>
-<area shape="rect" id="node4" href="$classfr_1_1iessa_1_1dao_1_1trafic_1_1_trafic_dao_test.html#a6b76e65b783b038cea55af49eb92e176" title="fr.iessa.dao.trafic.Trafic\lDaoTest.testChargerVolDep" alt="" coords="240,136,427,177"/>
-</map>

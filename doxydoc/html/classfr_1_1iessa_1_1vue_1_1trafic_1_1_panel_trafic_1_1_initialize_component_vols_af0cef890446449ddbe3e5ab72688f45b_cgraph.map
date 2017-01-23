@@ -1,5 +1,0 @@
-<map id="fr.iessa.vue.trafic.PanelTrafic.InitializeComponentVols.doInBackground" name="fr.iessa.vue.trafic.PanelTrafic.InitializeComponentVols.doInBackground">
-<area shape="rect" id="node2" href="$classfr_1_1iessa_1_1controleur_1_1_controleur.html#ab0d797ca93be40866093a2477799b062" title="fr.iessa.controleur.Controleur.ajoutVue" alt="" coords="272,5,517,32"/>
-<area shape="rect" id="node3" href="$classfr_1_1iessa_1_1metier_1_1trafic_1_1_trafic.html#ac6faa962a62b539e3b05c3d37db2c90f" title="fr.iessa.metier.trafic.Trafic.get\lCollisions" alt="" coords="296,57,493,98"/>
-<area shape="rect" id="node4" href="$classfr_1_1iessa_1_1metier_1_1trafic_1_1_trafic.html#a55b5286087d8fb45634d0f7d569beef3" title="fr.iessa.metier.trafic.Trafic.getVols" alt="" coords="283,123,506,149"/>
-</map>

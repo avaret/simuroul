@@ -1,5 +1,0 @@
-<map id="fr.iessa.metier.trafic.Trafic.setVols" name="fr.iessa.metier.trafic.Trafic.setVols">
-<area shape="rect" id="node2" href="$classfr_1_1iessa_1_1metier_1_1trafic_1_1_trafic.html#adad92c70c2f2def87dde384cdbc2ff6d" title="fr.iessa.metier.trafic.Trafic.compute\lCollision" alt="" coords="276,5,505,47"/>
-<area shape="rect" id="node3" href="$classfr_1_1iessa_1_1metier_1_1trafic_1_1_trafic.html#a9900f1a7b71932207ae3ebff0d5bfbb6" title="fr.iessa.metier.trafic.Trafic.compute\lDelta" alt="" coords="276,71,505,112"/>
-<area shape="rect" id="node4" href="$classfr_1_1iessa_1_1metier_1_1_instant_1_1_instant_fabrique.html#ab2f21e29eab8dfdf6fe8c02b206233aa" title="fr.iessa.metier.Instant.\lInstantFabrique.getInstants" alt="" coords="553,71,735,112"/>
-</map>

@@ -1,5 +1,0 @@
-<map id="fr.iessa.dao.infra.PushbackDAO" name="fr.iessa.dao.infra.PushbackDAO">
-<area shape="rect" id="node2" href="$interfacefr_1_1iessa_1_1dao_1_1core_1_1_d_a_o.html" title="{fr::iessa::dao::core\l::DAO\&lt; Pushback \&gt;\n||+ charger()\l}" alt="" coords="5,169,147,261"/>
-<area shape="rect" id="node3" href="$classfr_1_1iessa_1_1dao_1_1infra_1_1_ligne_d_a_o.html" title="{fr.iessa.dao.infra.LigneDAO\n||+ charger()\l+ chargerVitesse()\l+ chargerCategorie()\l+ chargerDirection()\l+ chargerPoints()\l}" alt="" coords="171,147,354,283"/>
-<area shape="rect" id="node4" href="$interfacefr_1_1iessa_1_1dao_1_1core_1_1_d_a_o.html" title="{fr::iessa::dao::core\l::DAO\&lt; Ligne \&gt;\n||+ charger()\l}" alt="" coords="197,5,328,97"/>
-</map>

@@ -1,6 +1,0 @@
-<map id="fr.iessa.dao.infra.TaxiwayDAOTest" name="fr.iessa.dao.infra.TaxiwayDAOTest">
-<area shape="rect" id="node2" href="$classfr_1_1iessa_1_1dao_1_1infra_1_1_taxiway_d_a_o.html" title="{fr.iessa.dao.infra.TaxiwayDAO\n||+ TaxiwayDAO()\l+ charger()\l}" alt="" coords="27,345,228,437"/>
-<area shape="rect" id="node3" href="$interfacefr_1_1iessa_1_1dao_1_1core_1_1_d_a_o.html" title="{fr::iessa::dao::core\l::DAO\&lt; Taxiway \&gt;\n||+ charger()\l}" alt="" coords="5,169,137,261"/>
-<area shape="rect" id="node4" href="$classfr_1_1iessa_1_1dao_1_1infra_1_1_ligne_d_a_o.html" title="{fr.iessa.dao.infra.LigneDAO\n||+ charger()\l+ chargerVitesse()\l+ chargerCategorie()\l+ chargerDirection()\l+ chargerPoints()\l}" alt="" coords="161,147,344,283"/>
-<area shape="rect" id="node5" href="$interfacefr_1_1iessa_1_1dao_1_1core_1_1_d_a_o.html" title="{fr::iessa::dao::core\l::DAO\&lt; Ligne \&gt;\n||+ charger()\l}" alt="" coords="187,5,318,97"/>
-</map>
