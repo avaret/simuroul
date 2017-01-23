@@ -1,0 +1,17 @@
+<map id="fr.iessa.vue.Echelle.getAffineTransform" name="fr.iessa.vue.Echelle.getAffineTransform">
+<area shape="rect" id="node2" href="$db/da8/classihm_1_1_test_dessin_carte.html#a96260ee54611cb07e3dbaef45e3bedb3" title="ihm.TestDessinCarte.paint\lComponent" alt="" coords="228,5,407,47"/>
+<area shape="rect" id="node3" href="$d4/d7b/classfr_1_1iessa_1_1vue_1_1infra_1_1_panel_plateforme.html#a47207bc3670f53b651c3f2b1adee0afd" title="fr.iessa.vue.infra.Panel\lPlateforme.reDessineCarteDans\lBuffer" alt="" coords="212,71,423,127"/>
+<area shape="rect" id="node5" href="$dd/deb/classfr_1_1iessa_1_1vue_1_1trafic_1_1_component_vol.html#afcec0918a61b51198f1c2c06de5cebfa" title="fr.iessa.vue.trafic.Component\lVol.setHighlightColor" alt="" coords="220,152,415,193"/>
+<area shape="rect" id="node7" href="$d1/d39/classfr_1_1iessa_1_1vue_1_1_echelle.html#acae6ff4ecb77e97097dc9af56380c734" title="fr.iessa.vue.Echelle.set\lScroll" alt="" coords="238,217,397,259"/>
+<area shape="rect" id="node12" href="$d1/d39/classfr_1_1iessa_1_1vue_1_1_echelle.html#abff1c65090e1f2c44fa0f069de1a6a02" title="fr.iessa.vue.Echelle.set\lZoomLevel" alt="" coords="238,283,397,324"/>
+<area shape="rect" id="node14" href="$d9/d0d/classfr_1_1iessa_1_1vue_1_1_echelle_test.html#a700bb71643b18ba125c9dc52ba43557c" title="fr.iessa.vue.EchelleTest.test\lGetAffineTransform" alt="" coords="223,348,412,389"/>
+<area shape="rect" id="node15" href="$d4/de3/classfr_1_1iessa_1_1vue_1_1trafic_1_1_component_collision.html#a2f27a65f44610fa47a67f6f5ab009cef" title="fr.iessa.vue.trafic.Component\lCollision.update" alt="" coords="220,413,415,455"/>
+<area shape="rect" id="node16" href="$dd/deb/classfr_1_1iessa_1_1vue_1_1trafic_1_1_component_vol.html#acc00c6d8419157e27d25303f55762db6" title="fr.iessa.vue.trafic.Component\lVol.update" alt="" coords="220,479,415,520"/>
+<area shape="rect" id="node4" href="$d5/d27/classfr_1_1iessa_1_1vue_1_1infra_1_1_panel_plateforme_1_1_dessine_carte_worker.html#a88e7033959179f7942aa245994fcbe41" title="fr.iessa.vue.infra.Panel\lPlateforme.DessineCarteWorker.do\lInBackground" alt="" coords="471,46,700,102"/>
+<area shape="rect" id="node6" href="$de/dfb/classfr_1_1iessa_1_1vue_1_1_panel_affichage_vol.html#a7b2730ddeec26d6bc8327be36840c1d2" title="fr.iessa.vue.PanelAffichage\lVol.PanelAffichageVol" alt="" coords="494,127,677,168"/>
+<area shape="rect" id="node8" href="$d4/d7b/classfr_1_1iessa_1_1vue_1_1infra_1_1_panel_plateforme.html#a208b5f10c5e4d75cbb203905492df18c" title="fr.iessa.vue.infra.Panel\lPlateforme.PanelPlateforme" alt="" coords="748,185,933,227"/>
+<area shape="rect" id="node9" href="$d4/d7b/classfr_1_1iessa_1_1vue_1_1infra_1_1_panel_plateforme.html#ad5f4b7af0644fda6816f5f8dc3bbe061" title="fr.iessa.vue.infra.Panel\lPlateforme.setAeroport" alt="" coords="507,244,663,285"/>
+<area shape="rect" id="node11" href="$d4/d7b/classfr_1_1iessa_1_1vue_1_1infra_1_1_panel_plateforme.html#a5eea54011b59a890e4c2d55885620e01" title="fr.iessa.vue.infra.Panel\lPlateforme.mouseReleased" alt="" coords="494,309,677,351"/>
+<area shape="rect" id="node10" href="$d4/d7b/classfr_1_1iessa_1_1vue_1_1infra_1_1_panel_plateforme.html#afbf3efd34e04f745a87873f56b928fe6" title="fr.iessa.vue.infra.Panel\lPlateforme.propertyChange" alt="" coords="750,251,931,292"/>
+<area shape="rect" id="node13" href="$d4/d7b/classfr_1_1iessa_1_1vue_1_1infra_1_1_panel_plateforme.html#a3f63d3f6b88a8ed9593e1e6e6fe05fea" title="fr.iessa.vue.infra.Panel\lPlateforme.mouseWheelMoved" alt="" coords="483,375,687,416"/>
+</map>

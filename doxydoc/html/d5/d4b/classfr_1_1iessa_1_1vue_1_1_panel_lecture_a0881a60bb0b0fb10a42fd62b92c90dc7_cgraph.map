@@ -1,0 +1,20 @@
+<map id="fr.iessa.vue.PanelLecture.PanelLecture" name="fr.iessa.vue.PanelLecture.PanelLecture">
+<area shape="rect" id="node2" href="$d5/d4b/classfr_1_1iessa_1_1vue_1_1_panel_lecture.html#a05a1d39ecdad67fdd84ffb9ce9be98ca" title="fr.iessa.vue.PanelLecture.add\lListeners" alt="" coords="253,282,448,323"/>
+<area shape="rect" id="node18" href="$d1/d87/classfr_1_1iessa_1_1controleur_1_1_controleur.html#ab0d797ca93be40866093a2477799b062" title="fr.iessa.controleur.Controleur.ajoutVue" alt="" coords="228,479,473,505"/>
+<area shape="rect" id="node19" href="$d5/d4b/classfr_1_1iessa_1_1vue_1_1_panel_lecture.html#ae8dd5c561aef71fc9b90256b28bbcac5" title="fr.iessa.vue.PanelLecture.update\lBoutonPlayPause" alt="" coords="244,413,457,454"/>
+<area shape="rect" id="node3" href="$d1/d87/classfr_1_1iessa_1_1controleur_1_1_controleur.html#a3ed2e5e5942f1d4688719b547608cafb" title="fr.iessa.controleur.Controleur.set\lInstant" alt="" coords="521,13,733,54"/>
+<area shape="rect" id="node5" href="$d1/d87/classfr_1_1iessa_1_1controleur_1_1_controleur.html#a53d4629b67003b20393c6aabc4b1e559" title="fr.iessa.controleur.Controleur.update\lInstant" alt="" coords="781,165,1015,206"/>
+<area shape="rect" id="node9" href="$d1/d87/classfr_1_1iessa_1_1controleur_1_1_controleur.html#ae397a7a083d6e76253ac7e1b8d5dd808" title="fr.iessa.controleur.Controleur.stop\lTrafic" alt="" coords="1063,253,1281,294"/>
+<area shape="rect" id="node11" href="$d1/d87/classfr_1_1iessa_1_1controleur_1_1_controleur.html#ab10797f0cefbd48f28ec1b9f47a348ba" title="fr.iessa.controleur.Controleur.is\lTraficRunning" alt="" coords="525,507,729,549"/>
+<area shape="rect" id="node12" href="$d1/d87/classfr_1_1iessa_1_1controleur_1_1_controleur.html#aa9ab14ccca5a921c59859d1a60be952e" title="fr.iessa.controleur.Controleur.run\lTrafic" alt="" coords="521,78,733,119"/>
+<area shape="rect" id="node13" href="$d1/d87/classfr_1_1iessa_1_1controleur_1_1_controleur.html#ad807e481e15d78f9157a07836cd4019c" title="fr.iessa.controleur.Controleur.get\lInstantPrecedant" alt="" coords="521,377,733,418"/>
+<area shape="rect" id="node15" href="$d1/d87/classfr_1_1iessa_1_1controleur_1_1_controleur.html#a625176e94934bdd5e4afaf404c80836d" title="fr.iessa.controleur.Controleur.get\lInstantCourant" alt="" coords="521,442,733,483"/>
+<area shape="rect" id="node16" href="$d1/d87/classfr_1_1iessa_1_1controleur_1_1_controleur.html#a75a3183244504390ee8e5fef891d4103" title="fr.iessa.controleur.Controleur.get\lInstantSuivant" alt="" coords="521,311,733,353"/>
+<area shape="rect" id="node17" href="$d1/d87/classfr_1_1iessa_1_1controleur_1_1_controleur.html#a6d8285057e507d80bc1f14797a149673" title="fr.iessa.controleur.Controleur.set\lDureeInterval" alt="" coords="521,143,733,185"/>
+<area shape="rect" id="node4" href="$dd/d1e/classfr_1_1iessa_1_1metier_1_1_instant_1_1_instant_fabrique.html#ac2f190a899d64985a8e113459dbf2b8e" title="fr.iessa.metier.Instant.\lInstantFabrique.getInstantLe\lPlusProche" alt="" coords="804,5,992,61"/>
+<area shape="rect" id="node6" href="$df/db1/classfr_1_1iessa_1_1metier_1_1_horloge.html#ac56b77e396c0a3a13bed31018dadf0a7" title="fr.iessa.metier.Horloge.get\lInstantCourant" alt="" coords="1553,311,1729,353"/>
+<area shape="rect" id="node7" href="$df/db1/classfr_1_1iessa_1_1metier_1_1_horloge.html#a0eddbf7ee2367a7d9234e4cacbb2725f" title="fr.iessa.metier.Horloge.set\lInstantCourant" alt="" coords="1084,135,1260,177"/>
+<area shape="rect" id="node10" href="$df/db1/classfr_1_1iessa_1_1metier_1_1_horloge.html#ad8201c1980d67652d28ebeeef9c3467c" title="fr.iessa.metier.Horloge.tick" alt="" coords="1083,201,1261,228"/>
+<area shape="rect" id="node8" href="$df/db1/classfr_1_1iessa_1_1metier_1_1_horloge.html#aeb85fb20e54f9c0d0e25825a35b81323" title="fr.iessa.metier.Horloge.set\lIndexCourant" alt="" coords="1329,194,1505,235"/>
+<area shape="rect" id="node14" href="$db/dcb/classfr_1_1iessa_1_1metier_1_1_instant.html#ad623e1ff9a089fba826eddd28291eb91" title="fr.iessa.metier.Instant.get\lSeconds" alt="" coords="813,370,983,411"/>
+</map>

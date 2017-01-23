@@ -1,0 +1,10 @@
+<map id="fr.iessa.metier.infra.Point.get_type" name="fr.iessa.metier.infra.Point.get_type">
+<area shape="rect" id="node2" href="$dd/dd1/classfr_1_1iessa_1_1vue_1_1infra_1_1_points_drawer.html#a36b2da57d882a215a9e4847ad242bfde" title="fr.iessa.vue.infra.Points\lDrawer.dessine" alt="" coords="276,43,436,84"/>
+<area shape="rect" id="node7" href="$de/d2f/classfr_1_1iessa_1_1dao_1_1infra_1_1_point_d_a_o_test.html#ad70c05caff386ea40bbde86cd6077131" title="fr.iessa.dao.infra.Point\lDAOTest.testCharger1" alt="" coords="278,108,434,149"/>
+<area shape="rect" id="node8" href="$de/d2f/classfr_1_1iessa_1_1dao_1_1infra_1_1_point_d_a_o_test.html#a465bfd14abe9f09c4d8de9207bcdc286" title="fr.iessa.dao.infra.Point\lDAOTest.testCharger2" alt="" coords="278,173,434,215"/>
+<area shape="rect" id="node9" href="$de/d2f/classfr_1_1iessa_1_1dao_1_1infra_1_1_point_d_a_o_test.html#aec0c6d927e64bd255dd7311286355522" title="fr.iessa.dao.infra.Point\lDAOTest.testCharger3" alt="" coords="278,239,434,280"/>
+<area shape="rect" id="node3" href="$de/d1b/classfr_1_1iessa_1_1vue_1_1infra_1_1_plateforme_drawer.html#a8ff2fdf92c86f96b52a0dfe73455fdfc" title="fr.iessa.vue.infra.Plateforme\lDrawer.dessineAeroport" alt="" coords="484,43,671,84"/>
+<area shape="rect" id="node4" href="$db/da8/classihm_1_1_test_dessin_carte.html#a96260ee54611cb07e3dbaef45e3bedb3" title="ihm.TestDessinCarte.paint\lComponent" alt="" coords="735,5,913,47"/>
+<area shape="rect" id="node5" href="$d4/d7b/classfr_1_1iessa_1_1vue_1_1infra_1_1_panel_plateforme.html#a47207bc3670f53b651c3f2b1adee0afd" title="fr.iessa.vue.infra.Panel\lPlateforme.reDessineCarteDans\lBuffer" alt="" coords="719,71,929,127"/>
+<area shape="rect" id="node6" href="$d5/d27/classfr_1_1iessa_1_1vue_1_1infra_1_1_panel_plateforme_1_1_dessine_carte_worker.html#a88e7033959179f7942aa245994fcbe41" title="fr.iessa.vue.infra.Panel\lPlateforme.DessineCarteWorker.do\lInBackground" alt="" coords="977,71,1207,127"/>
+</map>

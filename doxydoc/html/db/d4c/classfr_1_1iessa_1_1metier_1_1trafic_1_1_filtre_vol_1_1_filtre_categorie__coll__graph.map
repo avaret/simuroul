@@ -1,0 +1,4 @@
+<map id="fr.iessa.metier.trafic.FiltreVol.FiltreCategorie" name="fr.iessa.metier.trafic.FiltreVol.FiltreCategorie">
+<area shape="rect" id="node2" href="$d6/ddc/classfr_1_1iessa_1_1metier_1_1trafic_1_1_filtre_vol_1_1_i_filtre_decorator.html" title="{fr.iessa.metier.trafic.Filtre\lVol.IFiltreDecorator\n||+ IFiltreDecorator()\l}" alt="" coords="177,351,348,443"/>
+<area shape="rect" id="node6" href="$dc/d86/enumfr_1_1iessa_1_1metier_1_1type_1_1_categorie.html" title="{fr.iessa.metier.type.Categorie\n|+ HIGH\l+ MEDIUM\l+ LIGHT\l&#45; _abreviation\l|+ getAbreviation()\l+ [static initializer]()\l+ from()\l&#45; Categorie()\l}" alt="" coords="379,315,573,480"/>
+</map>

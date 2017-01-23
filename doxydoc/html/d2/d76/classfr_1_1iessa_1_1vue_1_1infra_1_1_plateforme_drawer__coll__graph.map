@@ -1,0 +1,5 @@
+<map id="fr.iessa.vue.infra.PlateformeDrawer" name="fr.iessa.vue.infra.PlateformeDrawer">
+<area shape="rect" id="node2" href="$d1/d53/classfr_1_1iessa_1_1vue_1_1infra_1_1_lignes_drawer.html" title="{fr.iessa.vue.infra.Lignes\lDrawer\n||+ dessine()\l+ dessineMarquageAuSol()\l}" alt="" coords="5,5,184,112"/>
+<area shape="rect" id="node3" href="$d7/d6b/classfr_1_1iessa_1_1vue_1_1infra_1_1_runway_drawer.html" title="{fr.iessa.vue.infra.Runway\lDrawer\n||+ dessine()\l}" alt="" coords="208,13,379,105"/>
+<area shape="rect" id="node4" href="$dd/dd1/classfr_1_1iessa_1_1vue_1_1infra_1_1_points_drawer.html" title="{fr.iessa.vue.infra.Points\lDrawer\n||+ dessine()\l}" alt="" coords="403,13,563,105"/>
+</map>

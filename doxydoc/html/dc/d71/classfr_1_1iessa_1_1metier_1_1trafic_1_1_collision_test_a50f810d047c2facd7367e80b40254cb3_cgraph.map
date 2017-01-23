@@ -1,0 +1,9 @@
+<map id="fr.iessa.metier.trafic.CollisionTest.testCollisionImpliquant3Avions" name="fr.iessa.metier.trafic.CollisionTest.testCollisionImpliquant3Avions">
+<area shape="rect" id="node2" href="$df/d2e/classfr_1_1iessa_1_1dao_1_1trafic_1_1_trafic_dao.html#a20764afd2e1ff58637ec375f5dbd203b" title="fr.iessa.dao.trafic.Trafic\lDao.charger" alt="" coords="303,39,463,80"/>
+<area shape="rect" id="node7" href="$dd/d46/classfr_1_1iessa_1_1metier_1_1trafic_1_1_trafic.html#ac6faa962a62b539e3b05c3d37db2c90f" title="fr.iessa.metier.trafic.Trafic.get\lCollisions" alt="" coords="284,104,481,145"/>
+<area shape="rect" id="node8" href="$df/d7f/classfr_1_1iessa_1_1metier_1_1trafic_1_1_vol.html#ad4e8697dd9b4370defe775a1f8e742c6" title="fr.iessa.metier.trafic.Vol.getId" alt="" coords="285,170,480,197"/>
+<area shape="rect" id="node3" href="$dd/d46/classfr_1_1iessa_1_1metier_1_1trafic_1_1_trafic.html#a20f5110d9dc480f5f0033f04b4176e11" title="fr.iessa.metier.trafic.Trafic.setVols" alt="" coords="529,46,752,73"/>
+<area shape="rect" id="node4" href="$dd/d46/classfr_1_1iessa_1_1metier_1_1trafic_1_1_trafic.html#a9900f1a7b71932207ae3ebff0d5bfbb6" title="fr.iessa.metier.trafic.Trafic.compute\lDelta" alt="" coords="800,5,1029,47"/>
+<area shape="rect" id="node6" href="$dd/d46/classfr_1_1iessa_1_1metier_1_1trafic_1_1_trafic.html#adad92c70c2f2def87dde384cdbc2ff6d" title="fr.iessa.metier.trafic.Trafic.compute\lCollision" alt="" coords="800,71,1029,112"/>
+<area shape="rect" id="node5" href="$dd/d1e/classfr_1_1iessa_1_1metier_1_1_instant_1_1_instant_fabrique.html#ab2f21e29eab8dfdf6fe8c02b206233aa" title="fr.iessa.metier.Instant.\lInstantFabrique.getInstants" alt="" coords="1077,5,1259,47"/>
+</map>

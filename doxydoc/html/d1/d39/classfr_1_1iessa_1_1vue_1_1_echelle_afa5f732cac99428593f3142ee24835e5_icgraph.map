@@ -1,0 +1,12 @@
+<map id="fr.iessa.vue.Echelle.getDestLargeur" name="fr.iessa.vue.Echelle.getDestLargeur">
+<area shape="rect" id="node2" href="$db/da8/classihm_1_1_test_dessin_carte.html#a514435ad6dfcb9b6a4197ed3f8f59ff2" title="ihm.TestDessinCarte.main" alt="" coords="214,13,393,39"/>
+<area shape="rect" id="node3" href="$d1/d39/classfr_1_1iessa_1_1vue_1_1_echelle.html#aab27c2df5a77b59aba2a403b20eaedc9" title="fr.iessa.vue.Echelle.modifie\lScroll" alt="" coords="212,64,395,105"/>
+<area shape="rect" id="node11" href="$db/da8/classihm_1_1_test_dessin_carte.html#a96260ee54611cb07e3dbaef45e3bedb3" title="ihm.TestDessinCarte.paint\lComponent" alt="" coords="214,129,393,171"/>
+<area shape="rect" id="node4" href="$d1/d39/classfr_1_1iessa_1_1vue_1_1_echelle.html#abff1c65090e1f2c44fa0f069de1a6a02" title="fr.iessa.vue.Echelle.set\lZoomLevel" alt="" coords="443,19,601,60"/>
+<area shape="rect" id="node6" href="$d1/d39/classfr_1_1iessa_1_1vue_1_1_echelle.html#acae6ff4ecb77e97097dc9af56380c734" title="fr.iessa.vue.Echelle.set\lScroll" alt="" coords="443,109,601,151"/>
+<area shape="rect" id="node5" href="$d4/d7b/classfr_1_1iessa_1_1vue_1_1infra_1_1_panel_plateforme.html#a3f63d3f6b88a8ed9593e1e6e6fe05fea" title="fr.iessa.vue.infra.Panel\lPlateforme.mouseWheelMoved" alt="" coords="649,5,853,47"/>
+<area shape="rect" id="node7" href="$d4/d7b/classfr_1_1iessa_1_1vue_1_1infra_1_1_panel_plateforme.html#a208b5f10c5e4d75cbb203905492df18c" title="fr.iessa.vue.infra.Panel\lPlateforme.PanelPlateforme" alt="" coords="901,64,1087,105"/>
+<area shape="rect" id="node8" href="$d4/d7b/classfr_1_1iessa_1_1vue_1_1infra_1_1_panel_plateforme.html#ad5f4b7af0644fda6816f5f8dc3bbe061" title="fr.iessa.vue.infra.Panel\lPlateforme.setAeroport" alt="" coords="673,123,829,164"/>
+<area shape="rect" id="node10" href="$d4/d7b/classfr_1_1iessa_1_1vue_1_1infra_1_1_panel_plateforme.html#a5eea54011b59a890e4c2d55885620e01" title="fr.iessa.vue.infra.Panel\lPlateforme.mouseReleased" alt="" coords="660,188,843,229"/>
+<area shape="rect" id="node9" href="$d4/d7b/classfr_1_1iessa_1_1vue_1_1infra_1_1_panel_plateforme.html#afbf3efd34e04f745a87873f56b928fe6" title="fr.iessa.vue.infra.Panel\lPlateforme.propertyChange" alt="" coords="903,129,1085,171"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="fr.iessa.vue.infra.PlateformeDrawer.dessineAeroport" name="fr.iessa.vue.infra.PlateformeDrawer.dessineAeroport">
+<area shape="rect" id="node2" href="$db/da8/classihm_1_1_test_dessin_carte.html#a96260ee54611cb07e3dbaef45e3bedb3" title="ihm.TestDessinCarte.paint\lComponent" alt="" coords="256,5,435,47"/>
+<area shape="rect" id="node3" href="$d4/d7b/classfr_1_1iessa_1_1vue_1_1infra_1_1_panel_plateforme.html#a47207bc3670f53b651c3f2b1adee0afd" title="fr.iessa.vue.infra.Panel\lPlateforme.reDessineCarteDans\lBuffer" alt="" coords="240,71,451,127"/>
+<area shape="rect" id="node4" href="$d5/d27/classfr_1_1iessa_1_1vue_1_1infra_1_1_panel_plateforme_1_1_dessine_carte_worker.html#a88e7033959179f7942aa245994fcbe41" title="fr.iessa.vue.infra.Panel\lPlateforme.DessineCarteWorker.do\lInBackground" alt="" coords="499,71,728,127"/>
+</map>

@@ -1,0 +1,9 @@
+<map id="fr.iessa.vue.Echelle.setZoomLevel" name="fr.iessa.vue.Echelle.setZoomLevel">
+<area shape="rect" id="node2" href="$d1/d39/classfr_1_1iessa_1_1vue_1_1_echelle.html#ad5824093a34f30833f19f7b109cbff55" title="fr.iessa.vue.Echelle.create\lScrollTransformation" alt="" coords="215,5,392,47"/>
+<area shape="rect" id="node3" href="$d1/d39/classfr_1_1iessa_1_1vue_1_1_echelle.html#a0cdcccf2d994af8cbdbbdb772b85c5e0" title="fr.iessa.vue.Echelle.create\lZoomTransformation" alt="" coords="215,71,392,112"/>
+<area shape="rect" id="node4" href="$d1/d39/classfr_1_1iessa_1_1vue_1_1_echelle.html#a5895e0644350a01894c771eb154b47d7" title="fr.iessa.vue.Echelle.get\lAffineTransform" alt="" coords="224,136,383,177"/>
+<area shape="rect" id="node5" href="$d1/d39/classfr_1_1iessa_1_1vue_1_1_echelle.html#aab27c2df5a77b59aba2a403b20eaedc9" title="fr.iessa.vue.Echelle.modifie\lScroll" alt="" coords="212,201,395,243"/>
+<area shape="rect" id="node8" href="$d1/d39/classfr_1_1iessa_1_1vue_1_1_echelle.html#a33a58be943ce4d3939ad42dac0f31f85" title="fr.iessa.vue.Echelle.update\lGlobalTransformation" alt="" coords="213,267,393,308"/>
+<area shape="rect" id="node6" href="$d1/d39/classfr_1_1iessa_1_1vue_1_1_echelle.html#ab49763f4a420fe554e263bacfabd77dc" title="fr.iessa.vue.Echelle.get\lDestHauteur" alt="" coords="443,169,601,211"/>
+<area shape="rect" id="node7" href="$d1/d39/classfr_1_1iessa_1_1vue_1_1_echelle.html#afa5f732cac99428593f3142ee24835e5" title="fr.iessa.vue.Echelle.get\lDestLargeur" alt="" coords="443,235,601,276"/>
+</map>

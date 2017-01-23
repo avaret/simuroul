@@ -1,0 +1,5 @@
+<map id="fr.iessa.metier.infra.Taxiway" name="fr.iessa.metier.infra.Taxiway">
+<area shape="rect" id="node2" href="$da/d28/classfr_1_1iessa_1_1metier_1_1infra_1_1_ligne.html" title="{fr.iessa.metier.infra.Ligne\n|# _vitesseDeRoulage\l|+ Ligne()\l+ get_lignePointAPoint()\l+ get_vitesseDeRoulage()\l+ get_categorie()\l+ get_direction()\l&#45; initialiseLigneBrisee()\l}" alt="" coords="252,557,427,708"/>
+<area shape="rect" id="node3" href="$d5/d26/enumfr_1_1iessa_1_1metier_1_1type_1_1_direction.html" title="{fr.iessa.metier.type.Direction\n|+ SINGLE\l+ DOUBLE\l&#45; _nom\l&#45; _abreviation\l|+ toString()\l+ getAbreviation()\l+ [static initializer]()\l+ from()\l&#45; Direction()\l}" alt="" coords="19,315,209,495"/>
+<area shape="rect" id="node7" href="$dc/d86/enumfr_1_1iessa_1_1metier_1_1type_1_1_categorie.html" title="{fr.iessa.metier.type.Categorie\n|+ HIGH\l+ MEDIUM\l+ LIGHT\l&#45; _abreviation\l|+ getAbreviation()\l+ [static initializer]()\l+ from()\l&#45; Categorie()\l}" alt="" coords="242,322,437,487"/>
+</map>

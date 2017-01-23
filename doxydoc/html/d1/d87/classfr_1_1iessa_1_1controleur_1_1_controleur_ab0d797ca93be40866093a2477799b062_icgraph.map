@@ -1,0 +1,16 @@
+<map id="fr.iessa.controleur.Controleur.ajoutVue" name="fr.iessa.controleur.Controleur.ajoutVue">
+<area shape="rect" id="node2" href="$d4/dd1/classfr_1_1iessa_1_1vue_1_1_panel_filtres_1_1_combo.html#a4a102f28ab51a67166e7a8f28219463d" title="fr.iessa.vue.PanelFiltres.\lCombo.Combo" alt="" coords="325,5,491,47"/>
+<area shape="rect" id="node3" href="$df/def/classfr_1_1iessa_1_1vue_1_1trafic_1_1_panel_trafic_1_1_initialize_component_vols.html#af0cef890446449ddbe3e5ab72688f45b" title="fr.iessa.vue.trafic.Panel\lTrafic.InitializeComponentVols.do\lInBackground" alt="" coords="299,71,517,127"/>
+<area shape="rect" id="node4" href="$d5/dca/classfr_1_1iessa_1_1vue_1_1_panel_filtres_1_1_filtre_categorie.html#a1bc2d2231e1a652efd99f99ce9bb0292" title="fr.iessa.vue.PanelFiltres.\lFiltreCategorie.FiltreCategorie" alt="" coords="310,152,506,193"/>
+<area shape="rect" id="node5" href="$d0/dca/classfr_1_1iessa_1_1vue_1_1_panel_filtres_1_1_filtre_collision.html#a206653a398c1848b2939d727e2b68b1f" title="fr.iessa.vue.PanelFiltres.\lFiltreCollision.FiltreCollision" alt="" coords="316,217,500,259"/>
+<area shape="rect" id="node6" href="$dd/d93/classfr_1_1iessa_1_1vue_1_1_panel_filtres_1_1_filtre_premier_instant.html#a24423ae4e8f482546c2ac8d0d2440534" title="fr.iessa.vue.PanelFiltres.\lFiltrePremierInstant.FiltrePremier\lInstant" alt="" coords="301,283,515,339"/>
+<area shape="rect" id="node7" href="$db/d50/classfr_1_1iessa_1_1vue_1_1_panel_filtres_1_1_filtre_type_vol.html#aff353a754bd1a09f51049741db14816e" title="fr.iessa.vue.PanelFiltres.\lFiltreTypeVol.FiltreTypeVol" alt="" coords="318,364,498,405"/>
+<area shape="rect" id="node8" href="$da/db2/classfr_1_1iessa_1_1vue_1_1_frame_principale.html#a72520d887172837cb60943fdb9073c12" title="fr.iessa.vue.FramePrincipale.\lFramePrincipale" alt="" coords="312,429,504,471"/>
+<area shape="rect" id="node9" href="$d2/dd1/classfr_1_1iessa_1_1vue_1_1_label_echelle.html#a95f33191b21ed054463e9a62e0af2efe" title="fr.iessa.vue.LabelEchelle.\lLabelEchelle" alt="" coords="322,495,494,536"/>
+<area shape="rect" id="node10" href="$d4/d15/classfr_1_1iessa_1_1vue_1_1_label_horloge.html#a7aa67b3169d01e4a1ac95d6680a18d59" title="fr.iessa.vue.LabelHorloge.\lLabelHorloge" alt="" coords="321,560,495,601"/>
+<area shape="rect" id="node11" href="$dc/d17/classfr_1_1iessa_1_1vue_1_1_label_metre.html#af8687da3756f28522df61ce3d15f651d" title="fr.iessa.vue.LabelMetre.\lLabelMetre" alt="" coords="327,625,489,667"/>
+<area shape="rect" id="node12" href="$d5/d03/classfr_1_1iessa_1_1vue_1_1_panel_filtres.html#af7dfc7a9f345cb0c8fb3e1a3626094e3" title="fr.iessa.vue.PanelFiltres.\lPanelFiltres" alt="" coords="325,691,491,732"/>
+<area shape="rect" id="node13" href="$d5/d4b/classfr_1_1iessa_1_1vue_1_1_panel_lecture.html#a0881a60bb0b0fb10a42fd62b92c90dc7" title="fr.iessa.vue.PanelLecture.\lPanelLecture" alt="" coords="321,756,495,797"/>
+<area shape="rect" id="node14" href="$d4/d7b/classfr_1_1iessa_1_1vue_1_1infra_1_1_panel_plateforme.html#a208b5f10c5e4d75cbb203905492df18c" title="fr.iessa.vue.infra.Panel\lPlateforme.PanelPlateforme" alt="" coords="315,821,501,863"/>
+<area shape="rect" id="node15" href="$d2/dcd/classfr_1_1iessa_1_1vue_1_1trafic_1_1_panel_trafic.html#a7346c34d05c125c5e2a8439e2d4dc968" title="fr.iessa.vue.trafic.Panel\lTrafic.PanelTrafic" alt="" coords="328,887,488,928"/>
+</map>

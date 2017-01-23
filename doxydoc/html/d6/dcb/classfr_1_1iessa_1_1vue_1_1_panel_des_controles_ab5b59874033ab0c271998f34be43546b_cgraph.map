@@ -1,0 +1,5 @@
+<map id="fr.iessa.vue.PanelDesControles.PanelDesControles" name="fr.iessa.vue.PanelDesControles.PanelDesControles">
+<area shape="rect" id="node2" href="$d2/dcd/classfr_1_1iessa_1_1vue_1_1trafic_1_1_panel_trafic.html#a40c15062c0b7217bff0bf6cfe031b8e4" title="fr.iessa.vue.trafic.Panel\lTrafic.addObserver" alt="" coords="309,5,469,47"/>
+<area shape="rect" id="node3" href="$d2/dcd/classfr_1_1iessa_1_1vue_1_1trafic_1_1_panel_trafic.html#a354878a7637aca9c117de1dbe4389af9" title="fr.iessa.vue.trafic.Panel\lTrafic.getVolsADessiner" alt="" coords="307,71,471,112"/>
+<area shape="rect" id="node4" href="$d3/d98/classfr_1_1iessa_1_1vue_1_1_panel_visualisation_et_lecture.html#af9fbff2e44c513be3f7afb104cc159db" title="fr.iessa.vue.PanelVisualisation\lEtLecture.set_actionBoutonTabDeBord" alt="" coords="264,136,513,177"/>
+</map>

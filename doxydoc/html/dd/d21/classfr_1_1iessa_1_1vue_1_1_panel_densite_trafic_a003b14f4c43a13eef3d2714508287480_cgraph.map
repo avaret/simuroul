@@ -1,0 +1,8 @@
+<map id="fr.iessa.vue.PanelDensiteTrafic.propertyChange" name="fr.iessa.vue.PanelDensiteTrafic.propertyChange">
+<area shape="rect" id="node2" href="$dd/d1e/classfr_1_1iessa_1_1metier_1_1_instant_1_1_instant_fabrique.html#afa5344d7b38b5720f186afcdbabf2d32" title="fr.iessa.metier.Instant.\lInstantFabrique.getMinimumInstant" alt="" coords="487,5,714,47"/>
+<area shape="rect" id="node3" href="$db/dcb/classfr_1_1iessa_1_1metier_1_1_instant.html#ad623e1ff9a089fba826eddd28291eb91" title="fr.iessa.metier.Instant.get\lSeconds" alt="" coords="515,195,686,236"/>
+<area shape="rect" id="node4" href="$d1/d87/classfr_1_1iessa_1_1controleur_1_1_controleur.html#a7d0f9b21494bf01574b6793ada3437e7" title="fr.iessa.controleur.Controleur.get\lTrafic" alt="" coords="225,129,437,171"/>
+<area shape="rect" id="node5" href="$dd/d46/classfr_1_1iessa_1_1metier_1_1trafic_1_1_trafic.html#a5354aac62af34d2baa1596bb56ccfaaa" title="fr.iessa.metier.trafic.Trafic.get\lVolsParInstant" alt="" coords="233,195,430,236"/>
+<area shape="rect" id="node6" href="$dd/d21/classfr_1_1iessa_1_1vue_1_1_panel_densite_trafic.html#abfa4a89d5e3c558aba090e242806e3e0" title="fr.iessa.vue.PanelDensite\lTrafic.placeCurseur" alt="" coords="245,64,417,105"/>
+<area shape="rect" id="node7" href="$dd/d1e/classfr_1_1iessa_1_1metier_1_1_instant_1_1_instant_fabrique.html#afdd8db1678a023ad5f85a95b57835152" title="fr.iessa.metier.Instant.\lInstantFabrique.getMaximumInstant" alt="" coords="485,71,716,112"/>
+</map>

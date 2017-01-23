@@ -1,0 +1,123 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.11"/>
+<title>SimuRoul:  Fichier source de src/main/java/fr/iessa/controleur/ModeleEvent.java</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">SimuRoul
+   &#160;<span id="projectnumber">1</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.11 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "../../search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="../../index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="../../namespaces.html"><span>Paquetages</span></a></li>
+      <li><a href="../../annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="../../files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="../../search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="../../files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('de/d5b/_modele_event_8java_source.html','../../');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">ModeleEvent.java</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="../../de/d5b/_modele_event_8java.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/**</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * </span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> */</span></div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="keyword">package </span>fr.iessa.controleur;</div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"></span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">/**</span></div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> * Enumere les changements de modele que le Controleur peut publier aux observers.</span></div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> * @author hodiqual</span></div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> *</span></div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> */</span></div><div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="../../df/d5d/enumfr_1_1iessa_1_1controleur_1_1_modele_event.html">   11</a></span>&#160;<span class="keyword">public</span> <span class="keyword">enum</span> <a class="code" href="../../df/d5d/enumfr_1_1iessa_1_1controleur_1_1_modele_event.html">ModeleEvent</a> {<span class="comment"></span></div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">    /** Chargement du fichier de la plateforme reussi */</span></div><div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="../../df/d5d/enumfr_1_1iessa_1_1controleur_1_1_modele_event.html#a995c80192b9ef91d51e3e2611089bef1">   13</a></span>&#160;    CHARGEMENT_CARTE_FICHIER_DONE<span class="comment"></span></div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">    /** Chargement du fichier de la plateforme echoue */</span></div><div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="../../df/d5d/enumfr_1_1iessa_1_1controleur_1_1_modele_event.html#abe95215f599c721271281f763d97d132">   15</a></span>&#160;,   CHARGEMENT_CARTE_FICHIER_ERREUR<span class="comment"></span></div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">    /** Chargement du fichier de la plateforme en cours */</span></div><div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="../../df/d5d/enumfr_1_1iessa_1_1controleur_1_1_modele_event.html#aa08aa0a850607055befd53bf642982d4">   17</a></span>&#160;,   CHARGEMENT_CARTE_FICHIER_EN_COURS</div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"></span></div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">    /** Chargement du fichier du trafic reussi */</span></div><div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="../../df/d5d/enumfr_1_1iessa_1_1controleur_1_1_modele_event.html#a36b40d07c28e211ba81738122aef6c4d">   21</a></span>&#160;,   CHARGEMENT_TRAFIC_FICHIER_DONE<span class="comment"></span></div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">    /** Chargement du fichier du trafic echoue */</span></div><div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="../../df/d5d/enumfr_1_1iessa_1_1controleur_1_1_modele_event.html#a1c265e2146f9251b05cad9eb2d3aa155">   23</a></span>&#160;,   CHARGEMENT_TRAFIC_FICHIER_ERREUR<span class="comment"></span></div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">    /** Chargement du fichier du trafic en cours */</span></div><div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="../../df/d5d/enumfr_1_1iessa_1_1controleur_1_1_modele_event.html#a28a0451418814b59c6520e895f86a19a">   25</a></span>&#160;,   CHARGEMENT_TRAFIC_FICHIER_EN_COURS</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment"></span></div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">    /** L&#39;instant courant a change ainsi que tous les attributs relatifs a l&#39;instant courant */</span></div><div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="../../df/d5d/enumfr_1_1iessa_1_1controleur_1_1_modele_event.html#a0ae3e4e1eb04d561ba689ce24384e816">   28</a></span>&#160;,   UPDATE_INSTANT<span class="comment"></span></div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">    /** L&#39;etat de la simulation a change */</span></div><div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="../../df/d5d/enumfr_1_1iessa_1_1controleur_1_1_modele_event.html#aa234c5f71e0ffe61afb1f1c05b728d24">   30</a></span>&#160;,   UPDATE_IS_TRAFIC_RUNNING<span class="comment"></span></div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">    /** La duree entre deux pas de temps a ete modifiee */</span></div><div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="../../df/d5d/enumfr_1_1iessa_1_1controleur_1_1_modele_event.html#a8c3edefbbeb62a7063b32c16cc638129">   32</a></span>&#160;,   UPDATE_DUREE_INTERVALLE</div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment"></span></div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">    /** Le filtre de recherche a ete modifie et la liste est prete */</span></div><div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="../../df/d5d/enumfr_1_1iessa_1_1controleur_1_1_modele_event.html#acb0a8fc3dc89e4ca739acdb11d123bb7">   35</a></span>&#160;,   UPDATE_FILTRE_VOL</div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment"></span></div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment">    /** Erreur de sauvegarde du rapport de collision */</span></div><div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="../../df/d5d/enumfr_1_1iessa_1_1controleur_1_1_modele_event.html#a0c809c08abd63a1a1f6fcc273081b960">   38</a></span>&#160;,   SAUVEGARDE_COLLISION_ERREUR<span class="comment"></span></div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment">    /** Sauvegarde du rapport de collision reussie */</span></div><div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="../../df/d5d/enumfr_1_1iessa_1_1controleur_1_1_modele_event.html#a23db37badfaab7567b6029b6e97812c8">   40</a></span>&#160;,   SAUVEGARDE_COLLISION_DONE</div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment"></span></div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment">    /** Les collisions sont visibles */</span></div><div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="../../df/d5d/enumfr_1_1iessa_1_1controleur_1_1_modele_event.html#ad0b9565d476f452ee2a5e606aad6fe09">   43</a></span>&#160;,   SHOW_COLLISION<span class="comment"></span></div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment">    /** Les collisions sont non-visibles */</span></div><div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="../../df/d5d/enumfr_1_1iessa_1_1controleur_1_1_modele_event.html#a905fb354015bd8573b8352c7cfb2131e">   45</a></span>&#160;,   HIDE_COLLISION</div><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;;</div><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;}</div><div class="ttc" id="enumfr_1_1iessa_1_1controleur_1_1_modele_event_html"><div class="ttname"><a href="../../df/d5d/enumfr_1_1iessa_1_1controleur_1_1_modele_event.html">fr.iessa.controleur.ModeleEvent</a></div><div class="ttdef"><b>Definition:</b> <a href="../../de/d5b/_modele_event_8java_source.html#l00011">ModeleEvent.java:11</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="../../dir_5eb159725f84c66aafd839904a4acdd0.html">main</a></li><li class="navelem"><a class="el" href="../../dir_fd3f6763802dee1ad875f6c80eac0bda.html">java</a></li><li class="navelem"><a class="el" href="../../dir_91390426c0f30a4fef59e9ae252d2f44.html">fr</a></li><li class="navelem"><a class="el" href="../../dir_615e7837aff797dd97e5f0e93e5a6782.html">iessa</a></li><li class="navelem"><a class="el" href="../../dir_92d34d9cb32f10ccfcdf9e344ebae0d8.html">controleur</a></li><li class="navelem"><a class="el" href="../../de/d5b/_modele_event_8java.html">ModeleEvent.java</a></li>
+    <li class="footer">Généré par
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
+  </ul>
+</div>
+</body>
+</html>

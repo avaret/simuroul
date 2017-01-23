@@ -1,0 +1,4 @@
+<map id="fr.iessa.vue.ChargeEnCoursLayerUI.start" name="fr.iessa.vue.ChargeEnCoursLayerUI.start">
+<area shape="rect" id="node2" href="$d2/dcd/classfr_1_1iessa_1_1vue_1_1trafic_1_1_panel_trafic.html#a484167619e7cd976f7720a50ca8a5a61" title="fr.iessa.vue.trafic.Panel\lTrafic.propertyChange" alt="" coords="251,5,411,47"/>
+<area shape="rect" id="node3" href="$d4/d7b/classfr_1_1iessa_1_1vue_1_1infra_1_1_panel_plateforme.html#afbf3efd34e04f745a87873f56b928fe6" title="fr.iessa.vue.infra.Panel\lPlateforme.propertyChange" alt="" coords="240,71,421,112"/>
+</map>

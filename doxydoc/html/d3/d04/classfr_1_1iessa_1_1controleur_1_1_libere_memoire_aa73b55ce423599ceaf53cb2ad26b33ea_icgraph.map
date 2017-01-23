@@ -1,0 +1,8 @@
+<map id="fr.iessa.controleur.LibereMemoire.controleMemoire" name="fr.iessa.controleur.LibereMemoire.controleMemoire">
+<area shape="rect" id="node2" href="$d1/d87/classfr_1_1iessa_1_1controleur_1_1_controleur.html#a4692608c5aefbb047aab4e9703ea166d" title="fr.iessa.controleur.Controleur.charger\lCarte" alt="" coords="225,5,463,47"/>
+<area shape="rect" id="node4" href="$d1/d87/classfr_1_1iessa_1_1controleur_1_1_controleur.html#af11aaf5dd9cd15d0c350b2292d732ff4" title="fr.iessa.controleur.Controleur.charger\lTrafic" alt="" coords="225,71,463,112"/>
+<area shape="rect" id="node5" href="$d3/d38/classfr_1_1iessa_1_1vue_1_1_frame_principale_1_1_key_dispatcher.html#a1a4495e24e94392c4ca9e4e65a8d6ddd" title="fr.iessa.vue.FramePrincipale.\lKeyDispatcher.dispatchKeyEvent" alt="" coords="235,136,453,177"/>
+<area shape="rect" id="node6" href="$df/d8c/classihm_1_1_avion_shape_creator.html#a33db46f214ddb64479e466d61f01f780" title="ihm.AvionShapeCreator.main" alt="" coords="248,202,440,229"/>
+<area shape="rect" id="node7" href="$db/da8/classihm_1_1_test_dessin_carte.html#a96260ee54611cb07e3dbaef45e3bedb3" title="ihm.TestDessinCarte.paint\lComponent" alt="" coords="255,253,433,295"/>
+<area shape="rect" id="node3" href="$da/db2/classfr_1_1iessa_1_1vue_1_1_frame_principale.html#a72520d887172837cb60943fdb9073c12" title="fr.iessa.vue.FramePrincipale.\lFramePrincipale" alt="" coords="511,39,703,80"/>
+</map>
