@@ -1,5 +1,6 @@
 package fr.iessa.metier.infra;
 
+
 import static org.junit.Assert.*;
 
 import org.junit.BeforeClass;
