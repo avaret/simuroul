@@ -27,7 +27,7 @@ public class PanelPrincipalMultiCouches extends JPanel {
 	/** Permet de gerer plusieurs plans sur un meme panel*/
 	private JLayeredPane _gestionPlans;
 	
-	public PanelPrincipalMultiCouches(Controleur controleur, boolean avecControle)  
+	public PanelPrincipalMultiCouches(Controleur controleur, boolean avecControle, Echelle echelle)  
 	{
 		setLayout(new GridLayout(1, 1));	
 		//Pour une animation fluide il vaut mieux etre en double buffer.
@@ -41,7 +41,6 @@ public class PanelPrincipalMultiCouches extends JPanel {
                                     "Veuillez charger un fichier de plateforme ..."));*/
 		
 		//Gestion de la plateforme
-		Echelle echelle = new Echelle();
 		PanelPlateforme plateformePanel = new PanelPlateforme(controleur, echelle);
 		final ChargeEnCoursLayerUI layerUI = new ChargeEnCoursLayerUI();
 		plateformePanel.setChargeEnCoursLayerUI(layerUI);
@@ -51,7 +50,7 @@ public class PanelPrincipalMultiCouches extends JPanel {
 		_gestionPlans.add(plateformLayered, JLayeredPane.FRAME_CONTENT_LAYER);
 		
 		//Gestion du trafic
-		PanelTrafic traficPanel = new  PanelTrafic(controleur, echelle);
+		PanelTrafic traficPanel = new PanelTrafic(controleur, echelle);
 		final ChargeEnCoursLayerUI layerUI2 = new ChargeEnCoursLayerUI();
 		traficPanel.setChargeEnCoursLayerUI(layerUI2);
 		JLayer<JPanel> traficLayered = new JLayer<JPanel>(traficPanel, layerUI2);
@@ -79,6 +78,4 @@ public class PanelPrincipalMultiCouches extends JPanel {
 		//Rajout du composant de gestion des plans a ce JPanel
 		add(_gestionPlans);	
 	}
-	
-	
 }

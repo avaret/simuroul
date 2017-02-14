@@ -38,6 +38,11 @@ public class FramePrincipale extends JFrame implements PropertyChangeListener {
     private JMenuItem _menuQuitter;
     private JMenu _menuOption;
     
+    private Controleur _controleur;
+    public static Echelle _echelle;
+    
+    public static FramePilote FPilote;
+    
     //Charge la plateforme et le traffic à partir des arguments    
     private void chargerPlateformeTrafficAvecArguments(String fichierPlateforme, String fichierTraffic) {
     			
@@ -46,10 +51,6 @@ public class FramePrincipale extends JFrame implements PropertyChangeListener {
     			_controleur.chargerTrafic(fichierTraffic);
                 
     	}
-		
-	
-    
-    private Controleur _controleur;
     
 	/** Constructeur */
 	public FramePrincipale(String[] args) {
@@ -87,7 +88,7 @@ public class FramePrincipale extends JFrame implements PropertyChangeListener {
     	menuAjoutVue.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				new FrameSecondaire(_controleur);
+				new FrameSecondaire(_controleur, _echelle);
 			}
 		});
     	
@@ -112,8 +113,9 @@ public class FramePrincipale extends JFrame implements PropertyChangeListener {
     	_barreMenu.add(_menuOption);
     	
     	// Création et configuration du controleur MVC
-    	_controleur = new Controleur(); 
-	    this.getContentPane().add(new PanelPrincipalMultiCouches(_controleur,true));
+    	_controleur = new Controleur();
+    	_echelle = new Echelle();
+	    this.getContentPane().add(new PanelPrincipalMultiCouches(_controleur,true, _echelle));
 	    final ModeleEvent[] evts = {ModeleEvent.CHARGEMENT_CARTE_FICHIER_DONE, 
 	    							ModeleEvent.CHARGEMENT_TRAFIC_FICHIER_DONE,
 	    							ModeleEvent.CHARGEMENT_CARTE_FICHIER_ERREUR,
@@ -123,6 +125,9 @@ public class FramePrincipale extends JFrame implements PropertyChangeListener {
 	    
 		_controleur.ajoutVue(this, evts) ;
 	    
+		
+		FPilote = new FramePilote(_controleur);
+		
 	    //Create and set up the content pane.
 	    this.validate();
 	    this.setJMenuBar(_barreMenu);

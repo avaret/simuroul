@@ -26,6 +26,7 @@ import javax.swing.JPanel;
 import fr.iessa.metier.Instant;
 import fr.iessa.metier.trafic.Vol;
 import fr.iessa.vue.Echelle;
+import fr.iessa.vue.FramePrincipale;
 
 /**
  * Vue d'un vol
@@ -98,7 +99,11 @@ public class ComponentVol extends JComponent {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				if(_clickListener!=null)
+				{
 					_clickListener.componentVolClicked(ComponentVol.this);
+					FramePrincipale.FPilote.VuePilote(getWidth()/2 + getX(), getHeight()/2 + getY());
+				}
+				
 			}
 		});
 	}
@@ -199,7 +204,7 @@ public class ComponentVol extends JComponent {
 			}		
 	
 			setX(_coordCourante.x-_largeur/2);
-			setY(_coordCourante.y-_hauteur/2);	
+			setY(_coordCourante.y-_hauteur/2);
 		}
 		
 		revalidate();

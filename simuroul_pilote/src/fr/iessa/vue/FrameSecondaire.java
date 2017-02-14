@@ -12,11 +12,11 @@ import fr.iessa.controleur.Controleur;
  *
  */
 public class FrameSecondaire extends JFrame {
-	public FrameSecondaire(Controleur controleur) {
+	public FrameSecondaire(Controleur controleur, Echelle echelle) {
 		super("Ground Trafic Control");
     	this.setPreferredSize((new Dimension(800, 600)));
     	
-	    this.getContentPane().add(new PanelPrincipalMultiCouches(controleur,false));
+	    this.getContentPane().add(new PanelPrincipalMultiCouches(controleur,false, echelle));
 	    
 	    //Create and set up the content pane.
 	    this.validate();
