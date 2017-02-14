@@ -30,7 +30,7 @@ public class PanelLecture extends JPanel implements PropertyChangeListener  {
 	/** Lac ouleur de l arriere-plan */
 	private static final Color BG_COLOR = new Color(0x3B5998);
 	/** Les boutons du player */
-	private JButton play, forward, back;
+	private JButton play, forward, back, tempsReel;
 	/** La barre de lecture */
 	private JSlider timeline, speed;
 	/** Le boolean lecture en cours pour synchronisation barre de lecture */
@@ -110,6 +110,7 @@ public class PanelLecture extends JPanel implements PropertyChangeListener  {
 	    back.setIcon(BACK);
 	    forward= new JButton();
 	    forward.setIcon(FORWARD);
+	    tempsReel= new JButton();
 
 
 	    // GridBagLayout pour les elements du player
@@ -132,9 +133,12 @@ public class PanelLecture extends JPanel implements PropertyChangeListener  {
 	    c.gridx = 3;
         add(forward,c);
 	    c.gridx = 4;
+	    add(tempsReel,c);
+	    c.gridx = 5;
 	    c.ipadx = 500;
 		c.gridwidth = 500;
         add(timeline,c);
+        
 
 
         
@@ -225,7 +229,15 @@ private  void updateBoutonPlayPause()
         }
     });
     
-    
+    tempsReel.addActionListener(new ActionListener() {
+    	
+    	public void actionPerformed(ActionEvent arg0) {
+    		
+    		_controleur.setDureeInterval(5000);
+
+          }
+    	
+    	});
     
     
     back.addMouseListener(new MouseAdapter() {

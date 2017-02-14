@@ -36,18 +36,31 @@ public class FramePrincipale extends JFrame implements PropertyChangeListener {
     private JMenuItem _menuChargerPlateForme;
     private JMenuItem _menuChargerTrafic;
     private JMenuItem _menuQuitter;
-    
     private JMenu _menuOption;
+    
+    //Charge la plateforme et le traffic à partir des arguments    
+    private void chargerPlateformeTrafficAvecArguments(String fichierPlateforme, String fichierTraffic) {
+    			
+    			_controleur.chargerCarte(fichierPlateforme);
+                
+    			_controleur.chargerTrafic(fichierTraffic);
+                
+    	}
+		
+	
     
     private Controleur _controleur;
     
 	/** Constructeur */
-	public FramePrincipale() {
+	public FramePrincipale(String[] args) {
 		// Construction de la fenêtre principale
-    	super("Ground Trafic Control");
+		
+		
+		super("Ground Trafic Control");
     	this.setPreferredSize((new Dimension(800, 600)));
     	this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-	    
+    	
+    	
 	    // Construction de la barre de menu
 	    _barreMenu = new JMenuBar();
 	    _menu = new JMenu("Fichier");
@@ -115,9 +128,20 @@ public class FramePrincipale extends JFrame implements PropertyChangeListener {
 	    this.setJMenuBar(_barreMenu);
 	    this.pack();
 	    this.setVisible(true);
-    	
+	    
+	    // Test de la prescence d'arguments et charge les fichiers
+	    if (args.length==2)
+		{
+			String fichierPlateforme=args[0];
+			
+			String fichierTraffic=args[1];
+			
+		chargerPlateformeTrafficAvecArguments(fichierPlateforme, fichierTraffic);
+		}
 	}
 	
+	
+
 	/** Listeners */
     class ActionChargerPlateForme implements ActionListener {
     	public void actionPerformed(ActionEvent arg0) {

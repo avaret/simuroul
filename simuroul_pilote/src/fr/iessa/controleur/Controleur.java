@@ -5,6 +5,9 @@ package fr.iessa.controleur;
 
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.NoSuchElementException;
 import java.util.concurrent.ExecutionException;
 import java.util.function.Function;
 
@@ -92,6 +95,9 @@ public class Controleur {
 	 * ModeleEvent.CHARGEMENT_CARTE_FICHIER_EN_COURS, CHARGEMENT_CARTE_FICHIER_DONE.
 	 * @param ficname le chemin complet du fichier a charge.
 	 */
+	
+		
+	
 	public void chargerCarte(String ficname) {
 		//Controle de ficname
 		if(ficname == null || ficname.equals("") )
@@ -356,8 +362,8 @@ public class Controleur {
 	 * La resolution du temps de la simulation-rejeu, 
 	 * correspond au nombre de secondes qui s'ecoule entre chaque instant.
 	 */
-	private int _dureeIntervalle = 60; //  40 milliseconds 25 update par seconde
-	
+	private int _dureeIntervalle = 5000; //  40 milliseconds 25 update par seconde
+											
 	/**
 	 * @param milliseconds sera le nouvelle resolution du temps, 
 	 * le nombre de millisecondes entre l'affichage de 2 instants.
