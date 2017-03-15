@@ -60,6 +60,8 @@ public class Echelle extends Observable{
 	//http://stackoverflow.com/questions/13155382/jscrollpane-zoom-relative-to-mouse-position
 	public void setZoomLevel(int zoomLevel, Point position ,int limiteLargeur, int limiteHauteur) {
 		
+		System.out.println("setZoomLevel: "+position+" limL: "+limiteLargeur + " / limH: " + limiteHauteur);
+		
 		double oldScaleX = _zoomTransformation.getScaleX();
 		double oldScaleY = _zoomTransformation.getScaleY();
 		
@@ -80,6 +82,13 @@ public class Echelle extends Observable{
 		updateGlobalTransformation();
 		setChanged();
 		notifyObservers(getAffineTransform());
+		
+		/*System.out.println("Valeurs: " + oldScaleX + ", " + oldScaleY + " / Zoom = " + zoomLevel);
+		System.out.println(" / Scale: " + scaleX + ", " + scaleY + " / Limites: " + limiteHauteur + ", " + limiteLargeur);
+		System.out.println(" / DxDyScroll: " + _dxdyscroll.x + ", " + _dxdyscroll.y + " / Position: " + position);
+		System.out.println(" ");
+		System.out.println(_zoomTransformation);
+		System.out.println(_globalTransformation);*/
 	}
 	
 	private void modifieScroll(Point2D.Double ecartRelatif, int limiteLargeur, int limiteHauteur) {

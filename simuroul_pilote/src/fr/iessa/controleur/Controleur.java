@@ -141,7 +141,7 @@ public class Controleur {
 					ModeleEvent evt = ModeleEvent.CHARGEMENT_CARTE_FICHIER_ERREUR;	
 					_swingObservable.firePropertyChange(evt.toString(), null, e.getCause().getMessage());
 				}
-			}         
+			}
 		};
 		
 		//On lance le SwingWorker

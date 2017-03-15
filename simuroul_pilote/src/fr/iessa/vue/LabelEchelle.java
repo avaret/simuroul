@@ -81,6 +81,7 @@ public class LabelEchelle extends JComponent implements PropertyChangeListener, 
 	 */
 	@Override
 	public void update(Observable o, Object arg) {
+			//System.out.println("Observer " + this.getClass().getName());
 			AffineTransform transformationCourante = (AffineTransform) arg;
 			double factor = transformationCourante.getScaleX();
 			double  longueur = 96/factor; 

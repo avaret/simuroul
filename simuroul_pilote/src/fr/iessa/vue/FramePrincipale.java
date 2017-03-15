@@ -38,7 +38,7 @@ public class FramePrincipale extends JFrame implements PropertyChangeListener {
     private JMenuItem _menuQuitter;
     private JMenu _menuOption;
     
-    private Controleur _controleur;
+    public static Controleur _controleur;
     public static Echelle _echelle;
     
     public static FramePilote FPilote;

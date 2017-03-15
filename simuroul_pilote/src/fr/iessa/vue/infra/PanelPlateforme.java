@@ -232,6 +232,7 @@ public class PanelPlateforme extends JPanel implements PropertyChangeListener, M
 						RenderingHints.VALUE_RENDER_QUALITY);
 			}
 			g2.setClip(0,0, getWidth(), getHeight());
+			//System.out.println("AffineTransform = " + _echelle.getAffineTransform());
 			_drawer.dessineAeroport(_aeroport, g2, _echelle.getAffineTransform());
 			g2.dispose();
 		}
@@ -298,7 +299,7 @@ public class PanelPlateforme extends JPanel implements PropertyChangeListener, M
 		
 	}
 
-	/** TODO Rajouter image de la gestion du zoom pour la javadoc*/
+	/** TODO Rajouter image de la gestion du zoom pour la javadoc */
 	@Override
 	public void mouseWheelMoved(MouseWheelEvent e) {
 
@@ -328,9 +329,11 @@ public class PanelPlateforme extends JPanel implements PropertyChangeListener, M
 	 * @param arg la nouvelle transformation a appliquer
 	 */
 	@Override
-	public void update(Observable o, Object arg) {
+	public void update(Observable o, Object arg)
+	{
+		//System.out.println("Observer " + this.getClass().getName());
 		resetImageCarte();
-        repaint();				
+        repaint();		
 	}
 
 }

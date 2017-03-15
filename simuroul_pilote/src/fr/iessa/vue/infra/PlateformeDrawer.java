@@ -41,6 +41,7 @@ public class PlateformeDrawer {
 
 		lignesDrawer.dessineMarquageAuSol(aeroport, g2);
 		pointsDrawer.dessine(aeroport, g2);
+
 		
 		// 4. Restaure la transformation initiale.
 		g2.setTransform(transformToRestore);
