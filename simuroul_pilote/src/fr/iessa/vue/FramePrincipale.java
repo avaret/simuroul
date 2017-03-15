@@ -107,7 +107,12 @@ public class FramePrincipale extends JFrame implements PropertyChangeListener {
     	//hodiqual
     	JMenuItem menuSauvCollision = new JMenuItem("Sauvegarde collisions");
     	menuSauvCollision.addActionListener(new ActionSauverCollisions());
+    	
+    	JMenuItem menuAviomSimu = new JMenuItem("Simulation pilote");
+    	menuAviomSimu.addActionListener(new ActionSimulationPilote());
+    	
     	_menuOption.add(menuAjoutVue);
+    	_menuOption.add(menuAviomSimu);
     	_menuOption.add(menuCollision);
     	_menuOption.add(menuSauvCollision);
     	_barreMenu.add(_menuOption);
@@ -194,6 +199,13 @@ public class FramePrincipale extends JFrame implements PropertyChangeListener {
     class ActionQuitter implements ActionListener {
     	public void actionPerformed(ActionEvent arg0) {
     		System.exit(0);
+    	}
+    }
+    
+    /* Va permettre de pouvoir choisir le scénario de la simulation */
+    class ActionSimulationPilote implements ActionListener {
+    	public void actionPerformed(ActionEvent arg0){
+    		
     	}
     }
     
