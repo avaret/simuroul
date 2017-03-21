@@ -36,7 +36,7 @@ public class TraficDao {
 	 * @param ficname contient la description de l'ensemble des vols du trafic sur 24h.
 	 * @return instance de la classe Trafic contenant les vols decrits dans le fichier.
 	 */
-	public Trafic charger(String ficname) {
+	public Trafic charger(String ficname, VolAvionPilote avionPilote) {
 		
 		Trafic _trafic = new Trafic();
 		
@@ -48,7 +48,7 @@ public class TraficDao {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		vols.add(new VolAvionPilote());
+		vols.add(avionPilote);
 		_trafic.setVols(vols);
 		return _trafic;
 	}

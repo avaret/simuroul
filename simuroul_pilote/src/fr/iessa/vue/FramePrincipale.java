@@ -42,6 +42,7 @@ public class FramePrincipale extends JFrame implements PropertyChangeListener {
     public static Echelle _echelle;
     
     public static FramePilote FPilote;
+    public static FrameCommandeAvionPilote FrameCommande;
     
     //Charge la plateforme et le traffic à partir des arguments    
     private void chargerPlateformeTrafficAvecArguments(String fichierPlateforme, String fichierTraffic) {
@@ -55,6 +56,7 @@ public class FramePrincipale extends JFrame implements PropertyChangeListener {
 	/** Constructeur */
 	public FramePrincipale(String[] args) {
 		// Construction de la fenêtre principale
+		
 		
 		
 		super("Ground Trafic Control");
@@ -132,6 +134,9 @@ public class FramePrincipale extends JFrame implements PropertyChangeListener {
 	    
 		
 		FPilote = new FramePilote(_controleur);
+		
+		//Fait apparaitre les boutons de commande de l'avion
+		FrameCommande = new FrameCommandeAvionPilote();
 		
 	    //Create and set up the content pane.
 	    this.validate();

@@ -28,8 +28,9 @@ public class VolAvionPilote extends Vol {
 	
 	private Point _PointDepart;
 	private int _Vitesse;
-	private Instant _premierInstant;
-	
+	private int nombreAppel;
+	private Instant _premierInstant;	
+	private double angle;
 	
 	public VolAvionPilote(Instant instant, Point depart)
 	{
@@ -40,22 +41,69 @@ public class VolAvionPilote extends Vol {
 	public VolAvionPilote()
 	{
 		_premierInstant = Instant.InstantFabrique.getMinimumInstant();
-		_Vitesse=10;
-		_PointDepart = new Point(1000,500);
-	
+		_Vitesse=5;
+		_PointDepart = new Point(0,0);
+		nombreAppel=0;
+		_coordCourante=_PointDepart;
+		angle=0;
 	}
 	
+	//update des coordonnées à l'aide de l'angle, incrémenter par la suite par les touches du claviers
 	@Override
 	public void updateCoordCourantes(Instant instant) {
+		nombreAppel++;
+		int a=nombreAppel;
+		
+		
 		if( instant == null )
 			_coordCourante = null;
 		else
 		{
-			_coordCourante = new Point(1200,400);
-			_coordSuivante = new Point(150,500);
+			
+			_coordCourante = new Point(_coordCourante.x + (int)(_Vitesse*Math.cos(angle*Math.PI/180)), _coordCourante.y + (int)(_Vitesse *Math.sin(angle*Math.PI/180)));
+			_coordSuivante = new Point(_coordCourante.x + (int)(_Vitesse*Math.cos(angle*Math.PI/180)), _coordCourante.y + (int)(_Vitesse *Math.sin(angle*Math.PI/180)));
+			
+			
+			
+			
+
+			
+			
+			
+			
+			
+			
+			
+			// Translation de l'avion en carré
+			/*if (nombreAppel<10){
+				_coordCourante = new Point(_coordCourante.x, _coordCourante.y + _Vitesse * a);
+			}
+			
+			if( nombreAppel<20 && nombreAppel>=10){
+				a+=-10;
+				_coordCourante = new Point(_coordCourante.x + _Vitesse * a, _coordCourante.y);
+			}
+			
+			if( nombreAppel<30 && nombreAppel>=20){
+				a+=-20;
+				_coordCourante = new Point(_coordCourante.x, _coordCourante.y - _Vitesse * a);
+			}
+			
+			if( nombreAppel<40 && nombreAppel>=30){
+				a+=-30;
+				_coordCourante = new Point(_coordCourante.x - _Vitesse * a, _coordCourante.y);
+			}
+			
+			if(nombreAppel==40){
+				nombreAppel=0;
+			}*/
 		}
 	}
 	
+	public void setAngle(double angle) {
+		this.angle = angle;
+	}
+
 	public Instant getPremierInstant() {
 		return _premierInstant;
 	}
@@ -73,7 +121,9 @@ public class VolAvionPilote extends Vol {
 		return false;
 	}
 
-
+	public double getAngle(){
+		return angle;
+	}
 
 	@Override
 	public boolean estSurLaPlateforme(Instant instant) {
