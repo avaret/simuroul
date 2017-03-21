@@ -39,6 +39,8 @@ public enum ShapeAvionFactory {
 ,	HIGH_VIOLET(Ressources.AVION_HIGH_VIOLET)
 ,   MEDIUM_VIOLET(Ressources.AVION_MEDIUM_VIOLET)
 ,   LIGHT_VIOLET(Ressources.AVION_LIGHT_VIOLET)
+
+,	PILOTE(Ressources.AVION_PILOTE)
 ;
 	
 	private BufferedImage[] _avionsParAngle;
@@ -76,7 +78,7 @@ public enum ShapeAvionFactory {
 					RenderingHints.VALUE_RENDER_QUALITY);
 			
 			g2.setTransform(AffineTransform.getRotateInstance(-Math.toRadians(i), largeur/2, hauteur/2));
-			g2.drawImage(imageOriginal, 0,0,null);
+			g2.drawImage(imageOriginal, 0, 0, null);
 			images[i/_stepAngulaire]=rotated;
 		}		
 		
@@ -88,7 +90,7 @@ public enum ShapeAvionFactory {
 	 * @param angleEnDegre
 	 * @return l'image correspondante du vol selon l'angle.
 	 */
-	public BufferedImage get( double angleEnDegre)  {
+	public BufferedImage get(double angleEnDegre)  {
 		int index = (int) Math.round((angleEnDegre/_stepAngulaire));
 		return _avionsParAngle[Math.min(index,71)];
 	}

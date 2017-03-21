@@ -39,7 +39,7 @@ public class FramePrincipale extends JFrame implements PropertyChangeListener {
     private JMenu _menuOption;
     
     public static Controleur _controleur;
-    public static Echelle _echelle;
+    private Echelle _echelle;
     
     public static FramePilote FPilote;
     
@@ -124,7 +124,6 @@ public class FramePrincipale extends JFrame implements PropertyChangeListener {
 	    							ModeleEvent.SAUVEGARDE_COLLISION_ERREUR};
 	    
 		_controleur.ajoutVue(this, evts) ;
-	    
 		
 		FPilote = new FramePilote(_controleur);
 		

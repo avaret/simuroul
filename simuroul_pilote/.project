@@ -14,4 +14,11 @@
 	<natures>
 		<nature>org.eclipse.jdt.core.javanature</nature>
 	</natures>
+	<linkedResources>
+		<link>
+			<name>src/fr/iessa/vue/avion_pilote.png</name>
+			<type>1</type>
+			<location>/home/eleve/IESSA/bernarti/git/simuroul/simuroul_pilote/src/fr/iessa/vue/avion_pilote.png</location>
+		</link>
+	</linkedResources>
 </projectDescription>

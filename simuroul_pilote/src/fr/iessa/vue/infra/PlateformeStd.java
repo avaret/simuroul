@@ -18,6 +18,8 @@ public enum PlateformeStd {
 ,   LIGNES_MARQUE_SOL(new Color(244,196,48), 0.5f)
 ,   LIGNES_MARQUE_SOL_BORDURE(Color.BLACK, 1f)
 
+//,	ECLAIRAGE(Color.YELLOW, 1.5f)
+
 ,	PUSHBACK(Color.LIGHT_GRAY, 60f)
 ,   PUSHBACK_MARQUE_SOL(new Color(244,196,48), 0.5f)
 ,   PUSHBACK_MARQUE_SOL_BORDURE(Color.BLACK, 1f)

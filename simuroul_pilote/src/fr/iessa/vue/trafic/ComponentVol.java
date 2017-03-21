@@ -26,6 +26,7 @@ import javax.swing.JPanel;
 import fr.iessa.metier.Instant;
 import fr.iessa.metier.trafic.Vol;
 import fr.iessa.vue.Echelle;
+import fr.iessa.vue.FramePilote;
 import fr.iessa.vue.FramePrincipale;
 
 /**
@@ -51,8 +52,10 @@ public class ComponentVol extends JComponent {
 	private Shape _cheminParcouruShape;
 	private ClickComponentVolListener _clickListener;
 
-	private boolean VuePiloteActive;
+	// Variable Booléenne qui s'occupe de l'actualisation de la FramePilote
+	private boolean VuePiloteActive = false;
 
+	
 	public ComponentVol(Vol v, Echelle echelle) { 
 
 		setOpaque(true);
@@ -104,15 +107,9 @@ public class ComponentVol extends JComponent {
 				{
 					_clickListener.componentVolClicked(ComponentVol.this);
 
-					FramePrincipale.FPilote.ActualiserVuePilote(_vol, getHeight(), getWidth());
+					// Activation de la FramePilote lorsque l'on clique sur un avion
+					FramePrincipale.FPilote.ActualiserVuePilote(ComponentVol.this, getHeight(), getWidth(), angle(_coordCouranteDouble, _coordSuivanteDouble));
 					VuePiloteActive = true;
-
-					System.out.println("GetX(): " + getX() + " / GetY(): " + getY());
-					System.out.println("Coordcourantes: X: " + _vol.getCoordCourante().x + " / Y: " +  _vol.getCoordCourante().y + "\n");
-					System.out.println("Mouse getX: " + e.getY()+ " / Mouse getY: " + e.getY() + "\n");
-
-					System.out.println("Height: " + getHeight() + " / Width: " + getWidth());
-					System.out.println("ImageH: " + _imageCourante.getHeight() + " / ImagW: " + _imageCourante.getWidth() + "\n");
 				}
 
 			}
@@ -156,7 +153,11 @@ public class ComponentVol extends JComponent {
 	public Vol getVol() {
 		return _vol;
 	}
-
+	
+	public void setImageFactory(ShapeAvionFactory SAF)
+	{
+		_imageFactory = SAF;
+	}
 	public void paintComponent(Graphics g){
 		super.paintComponent(g);  
 
@@ -220,11 +221,8 @@ public class ComponentVol extends JComponent {
 		}
 
 		// Mise à jour de la FramePilote pour suivi d'un Avion particulier
-		if(VuePiloteActive == true)
-		{
-			System.out.println("getX: " + getX() + " / getY: " + getY());
-			FramePrincipale.FPilote.ActualiserVuePilote(_vol, getHeight(), getWidth());
-		}
+		if((VuePiloteActive == true)&&(_vol.getCoordSuivante() != null))
+			FramePrincipale.FPilote.ActualiserVuePilote(this, getHeight(), getWidth(), angle(_coordCouranteDouble, _coordSuivanteDouble));
 
 		revalidate();
 		repaint();
