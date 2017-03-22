@@ -15,6 +15,7 @@ import javax.swing.OverlayLayout;
 import fr.iessa.controleur.Controleur;
 import fr.iessa.metier.trafic.Vol;
 import fr.iessa.vue.infra.PanelPlateforme;
+import fr.iessa.vue.infra.PlateformePopupMenu;
 import fr.iessa.vue.trafic.ComponentVol;
 import fr.iessa.vue.trafic.PanelTrafic;
 
@@ -29,6 +30,8 @@ public class PanelPrincipalMultiCouches extends JPanel {
 	
 	public PanelPrincipalMultiCouches(Controleur controleur, boolean avecControle, Echelle echelle)  
 	{
+		
+		
 		setLayout(new GridLayout(1, 1));	
 		//Pour une animation fluide il vaut mieux etre en double buffer.
 		setDoubleBuffered(true);
@@ -57,6 +60,8 @@ public class PanelPrincipalMultiCouches extends JPanel {
 		traficLayered.setAlignmentX(0.0f);
 		traficLayered.setAlignmentY(0.0f);
 		_gestionPlans.add(traficLayered,JLayeredPane.DEFAULT_LAYER);
+		
+		PlateformePopupMenu popupmenu = new PlateformePopupMenu(traficPanel); //FIXME
 		
 		if(avecControle) {
 			//Gestion des controles Lecteur et Tableau de Bord
