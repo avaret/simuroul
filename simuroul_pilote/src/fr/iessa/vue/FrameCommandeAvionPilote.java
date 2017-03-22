@@ -21,7 +21,7 @@ public class FrameCommandeAvionPilote extends JFrame{
 
     this.setTitle("Box Layout");
 
-    this.setSize(200, 120);
+    this.setSize(200, 100);
     this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     this.setLocationRelativeTo(null);
 
@@ -67,7 +67,7 @@ public class FrameCommandeAvionPilote extends JFrame{
 	 gauche.addActionListener(new ActionListener(){
 		  public void actionPerformed(ActionEvent arg0){
 			  double angle = Controleur.avionPilote.getAngle();
-			  angle += 20;
+			  angle += 15;
 			  Controleur.avionPilote.setAngle(angle);
 		  }
 	 });
@@ -75,19 +75,36 @@ public class FrameCommandeAvionPilote extends JFrame{
 	 droite.addActionListener(new ActionListener(){
 		  public void actionPerformed(ActionEvent arg0){
 			  double angle = Controleur.avionPilote.getAngle();
-			  angle -= 20;
+			  angle -= 15;
 			  Controleur.avionPilote.setAngle(angle);
 		  }
 	 });
 	  
 	 haut.addActionListener(new ActionListener(){
 		  public void actionPerformed(ActionEvent arg0){
-			  double angle = Controleur.avionPilote.getAngle();
-			  angle -= 20;
-			  Controleur.avionPilote.setAngle(angle);
+			  int vitesse = Controleur.avionPilote.getVitesse();
+			  vitesse += 5;
+			  if (vitesse > 20){
+				  vitesse=20;
+			  }
+			  Controleur.avionPilote.setVitesse(vitesse);
+			  
+			  
 		  }
 	 });
 	  
+	 bas.addActionListener(new ActionListener(){
+		  public void actionPerformed(ActionEvent arg0){
+			  int vitesse = Controleur.avionPilote.getVitesse();
+			  vitesse -= 5;
+			  if (vitesse < 0){
+				  vitesse=0;
+			  }
+			  Controleur.avionPilote.setVitesse(vitesse);
+			  
+			  
+		  }
+	 });
   }
 }
 

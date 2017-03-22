@@ -26,6 +26,8 @@ import fr.iessa.metier.type.TypeVol;
 public class VolAvionPilote extends Vol {
 	
 	
+	
+
 	private Point _PointDepart;
 	private int _Vitesse;
 	private int nombreAppel;
@@ -61,7 +63,7 @@ public class VolAvionPilote extends Vol {
 		{
 			
 			_coordCourante = new Point(_coordCourante.x + (int)(_Vitesse*Math.cos(angle*Math.PI/180)), _coordCourante.y + (int)(_Vitesse *Math.sin(angle*Math.PI/180)));
-			_coordSuivante = new Point(_coordCourante.x + (int)(_Vitesse*Math.cos(angle*Math.PI/180)), _coordCourante.y + (int)(_Vitesse *Math.sin(angle*Math.PI/180)));
+			_coordSuivante = new Point(_coordCourante.x + (int)(100*Math.cos(angle*Math.PI/180)), _coordCourante.y + (int)(100*Math.sin(angle*Math.PI/180)));
 			
 			
 			
@@ -115,6 +117,9 @@ public class VolAvionPilote extends Vol {
 	
 	public int getVitesse() {
 		return _Vitesse;
+	}
+	public void setVitesse(int _Vitesse) {
+		this._Vitesse = _Vitesse;
 	}
 	public  boolean aDesCollisions()
 	{
