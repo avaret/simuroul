@@ -6,6 +6,7 @@ import java.awt.Graphics;
 import java.awt.Point;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.geom.AffineTransform;
 import java.awt.geom.Point2D;
 import java.awt.image.BufferedImage;
 import java.beans.PropertyChangeEvent;
@@ -72,18 +73,18 @@ public class FramePilote extends JFrame
 
 	public void ActualiserVuePilote(ComponentVol CompVol, int H, int W, double angle)
 	{	
-		// Récupération des Coordonnées Courantes de l'avion (coin supérieur gauche)
+		// Récupération des Coordonnées Courantes de l'Avion (coin supérieur gauche)
 		_echellePilote.getAffineTransform().transform(CompVol.getVol().getCoordCourante(), positionPiloteCourante);
 		double XCourant = positionPiloteCourante.x;
 		double YCourant = positionPiloteCourante.y;
 		
-		// Récupération des Coordonnées Suivantes de l'avion (coin supérieur gauche)
+		// Récupération des Coordonnées Suivantes de l'Avion (coin supérieur gauche)
 		_echellePilote.getAffineTransform().transform(CompVol.getVol().getCoordSuivante(), positionPiloteSuivante);
 		double XSuivant = positionPiloteSuivante.x;
 		double YSuivant = positionPiloteSuivante.y;
 
 		
-		// Calcul des Coordonnées Courantes et Suivantes du Centre de l'avion selectionné
+		// Calcul des Coordonnées Courantes et Suivantes du Centre de l'Avion Selectionné
 		CalculCoordCentre(XCourant, YCourant, H, W);
 		CalculCoordCentre(XSuivant, YSuivant, H, W);
 
@@ -100,11 +101,17 @@ public class FramePilote extends JFrame
 		Point2D.Double ecartCourantSuivant = new Point2D.Double(XCourant-XSuivant, YCourant-YSuivant);
 		Point p = new Point((int)XCourant, (int)YCourant);
 		
-		CompVol.setImageFactory(ShapeAvionFactory.PILOTE);
 		
 		// Zoom et Actualisation de la FramePilote
 		_echellePilote.setZoomLevel(_zoomPilote, p, getWidth(), getHeight());
 		_echellePilote.setScroll(ecartCourantSuivant, getWidth(), getHeight());
+		
+		//CompVol.setImageFactory(ShapeAvionFactory.PILOTE);
+		
+		// Rotation du contenu de la Frame pour garder le nez de l'Avion toujours vers le haut
+		//_echellePilote.setAffineTransform(AffineTransform.getRotateInstance(-Math.toRadians(angle), XCourant, YCourant));
+		//_echellePilote.getAffineTransform().quadrantRotate((int)angle, XCourant, YCourant);
+		//_echellePilote.getAffineTransform().rotate(angle, XCourant, YCourant);
 		
 		jpanelPilote.repaint();
 		jpanelPilote.revalidate();

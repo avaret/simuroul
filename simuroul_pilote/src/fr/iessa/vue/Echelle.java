@@ -143,6 +143,11 @@ public class Echelle extends Observable{
 		return _globalTransformation;
 	}
 
+	public void setAffineTransform(AffineTransform AffTrans)
+	{
+		_globalTransformation = AffTrans;
+	}
+	
 	public int getDestLargeur() {
 		return _zoomLevel * _minDestLargeur;
 	}
