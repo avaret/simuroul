@@ -3,17 +3,9 @@
  */
 package fr.iessa.vue.infra;
 
-import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.geom.AffineTransform;
-import java.awt.geom.GeneralPath;
-import java.util.List;
-import java.util.Map;
-
 import fr.iessa.metier.infra.Aeroport;
-import fr.iessa.metier.infra.Ligne;
-import fr.iessa.metier.infra.Point;
-import fr.iessa.vue.Echelle;
 
 /**
  * @author hodiqual

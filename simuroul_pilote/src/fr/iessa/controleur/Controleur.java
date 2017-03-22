@@ -24,6 +24,7 @@ import fr.iessa.metier.Instant.InstantFabrique;
 import fr.iessa.metier.infra.Aeroport;
 import fr.iessa.metier.trafic.FiltreVol;
 import fr.iessa.metier.trafic.Trafic;
+import fr.iessa.metier.trafic.VolAvionPilote;
 import fr.iessa.metier.type.Categorie;
 import fr.iessa.metier.type.TypeVol;
 import fr.iessa.vue.Echelle;
@@ -39,8 +40,10 @@ import fr.iessa.vue.Echelle;
  * @author sb00by
  *
  */
+
 public class Controleur {
-	
+
+	public static VolAvionPilote avionPilote;
 
 	/** Contient la plateforme lorsqu'elle est chargee dans l'application. */
 	private Aeroport _aeroport;
@@ -174,7 +177,11 @@ public class Controleur {
 				
 				//1. Chargement fichier trafic  et pre_calcul les vols par instant
 				TraficDao traficDao = new TraficDao();
-				Trafic trafic = traficDao.charger(ficname);
+				avionPilote = new VolAvionPilote();
+				Trafic trafic = traficDao.charger(ficname, avionPilote);
+				//TODO 
+				
+				//trafic.getVols().add(avionPilote);
 				_trafic = trafic;
 				
 				//2. Creer Horloge

@@ -25,6 +25,7 @@ import javax.swing.JPanel;
 
 import fr.iessa.metier.Instant;
 import fr.iessa.metier.trafic.Vol;
+import fr.iessa.metier.trafic.VolAvionPredefini;
 import fr.iessa.vue.Echelle;
 import fr.iessa.vue.FramePilote;
 import fr.iessa.vue.FramePrincipale;

@@ -19,6 +19,8 @@ import fr.iessa.metier.Instant.InstantFabrique;
 import fr.iessa.metier.trafic.PointFabrique;
 import fr.iessa.metier.trafic.Trafic;
 import fr.iessa.metier.trafic.Vol;
+import fr.iessa.metier.trafic.VolAvionPilote;
+import fr.iessa.metier.trafic.VolAvionPredefini;
 import fr.iessa.metier.type.Categorie;
 import fr.iessa.metier.type.TypeVol;
 
@@ -34,7 +36,7 @@ public class TraficDao {
 	 * @param ficname contient la description de l'ensemble des vols du trafic sur 24h.
 	 * @return instance de la classe Trafic contenant les vols decrits dans le fichier.
 	 */
-	public Trafic charger(String ficname) {
+	public Trafic charger(String ficname, VolAvionPilote avionPilote) {
 		
 		Trafic _trafic = new Trafic();
 		
@@ -46,6 +48,7 @@ public class TraficDao {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+		vols.add(avionPilote);
 		_trafic.setVols(vols);
 		return _trafic;
 	}
@@ -56,7 +59,7 @@ public class TraficDao {
 	 * "DEP BCS1748 M M17 27L 1440 _ -955,-1104 -946,-1116 -938,-1128 -930,-1141".
 	 * @return instance de la classe Vol decrit par la String ligneFormatVol.
 	 */
-	public Vol chargerVol(String ligneFormatVol)
+	public VolAvionPredefini chargerVol(String ligneFormatVol)
 	{
 		Scanner scan = new Scanner(ligneFormatVol);
 		scan.useDelimiter(" |\n");
@@ -69,7 +72,7 @@ public class TraficDao {
 		
 		int secondes = scan.nextInt();
 		
-		Vol vol = new Vol(typeVol, id, categorie, InstantFabrique.get(secondes));
+		VolAvionPredefini vol = new VolAvionPredefini(typeVol, id, categorie, InstantFabrique.get(secondes));
 		
 		scan.next(); // skip
 		while(scan.hasNext()) //boucle sur les coordonnees.

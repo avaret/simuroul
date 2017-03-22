@@ -18,66 +18,12 @@ import fr.iessa.metier.type.TypeVol;
  * Decrit un vol
  * @author hodiqual
  */
-public class Vol {
+public abstract class Vol  {
 	
-	private TypeVol _typeVol;
-	private String _id;
-	private Categorie _categorie;
-	private Map<Instant, Point> _instantVersCoord = new HashMap<Instant, Point>(10);
-	private Instant _premierInstant;
-	private boolean aDesCollisions = false;
+	protected Point _coordCourante;
+	protected Point _coordSuivante;
 	
-	private Point _coordCourante;
-	private Point _coordSuivante;
 	
-	public Vol(TypeVol typeVol, String id, Categorie categorie, Instant instant)
-	{
-		_typeVol = typeVol;
-		_id = id;
-		_categorie = categorie;
-		_premierInstant = instant;
-	}
-	
-	public void ajout(Instant temps, Point coord) {
-		_instantVersCoord.put(temps, coord);
-	}
-
-	public Map<Instant, Point> getInstantVersCoord() {
-		return _instantVersCoord;
-	}
-	
-	public Point getCoord(Instant i ){
-		return _instantVersCoord.get(i);
-	}
-
-	/**
-	 * @return the _typeVol
-	 */
-	public TypeVol getTypeVol() {
-		return _typeVol;
-	}
-
-	/**
-	 * @return the _id
-	 */
-	public String getId() {
-		return _id;
-	}
-
-	/**
-	 * @return the _categorie
-	 */
-	public Categorie getCategorie() {
-		return _categorie;
-	}
-
-	/**
-	 * @return the _premierInstant
-	 */
-	public Instant getPremierInstant() {
-		return _premierInstant;
-	}
-
 	/**
 	 * @return the _coordCourante
 	 */
@@ -92,37 +38,19 @@ public class Vol {
 		return _coordSuivante;
 	}
 	
-	public boolean estSurLaPlateforme(Instant instant) {
-		return _instantVersCoord.containsKey(instant);
-	}
+	public abstract void updateCoordCourantes(Instant instant);
 
-	public void updateCoordCourantes(Instant instant) {
-		if( instant == null )
-			_coordCourante = null;
-		else
-		{
-			_coordCourante = _instantVersCoord.get(instant);
-			Instant instantSuivant = InstantFabrique.get(instant.getSeconds()+InstantFabrique._pasEntreInstant);
-			_coordSuivante = _instantVersCoord.get(instantSuivant);
-		}
-	}
+	public abstract boolean aDesCollisions();
+
+	public abstract boolean estSurLaPlateforme(Instant instant);
 	
-	public String toString()  {
-		return getId();
-	}
-
-	/**
-	 * @return the aDesCollisions
-	 */
-	public boolean aDesCollisions() {
-		return aDesCollisions;
-	}
-
-	/**
-	 * @param aDesCollisions the aDesCollisions to set
-	 */
-	public void setADesCollisions(boolean aDesCollisions) {
-		this.aDesCollisions = aDesCollisions;
-	}
+	public abstract Point getCoord(Instant i );
 	
+	public abstract TypeVol getTypeVol() ;
+	public abstract String getId() ;
+	public abstract Instant getPremierInstant() ;
+	
+	public abstract Categorie getCategorie();
+	public abstract void setADesCollisions(boolean aDesCollisions);
+	public abstract Map<Instant, Point> getInstantVersCoord();
 }
