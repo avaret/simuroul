@@ -109,7 +109,7 @@ public class ComponentVol extends JComponent {
 					_clickListener.componentVolClicked(ComponentVol.this);
 
 					// Activation de la FramePilote lorsque l'on clique sur un avion
-					FramePrincipale.FPilote.ActualiserVuePilote(ComponentVol.this, getHeight(), getWidth(), angle(_coordCouranteDouble, _coordSuivanteDouble));
+					FramePrincipale.FPilote.ActualiserVuePilote(ComponentVol.this, getHeight(), getWidth(), -angle(_coordCouranteDouble, _coordSuivanteDouble));
 					VuePiloteActive = true;
 				}
 
@@ -159,6 +159,8 @@ public class ComponentVol extends JComponent {
 	{
 		_imageFactory = SAF;
 	}
+	
+	
 	public void paintComponent(Graphics g){
 		super.paintComponent(g);  
 

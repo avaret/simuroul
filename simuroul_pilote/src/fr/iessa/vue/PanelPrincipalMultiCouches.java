@@ -61,7 +61,8 @@ public class PanelPrincipalMultiCouches extends JPanel {
 		traficLayered.setAlignmentY(0.0f);
 		_gestionPlans.add(traficLayered,JLayeredPane.DEFAULT_LAYER);
 		
-		PlateformePopupMenu popupmenu = new PlateformePopupMenu(traficPanel); //FIXME
+		// TODO /!\ ATTENTION: MISE EN ECHEC DU ZOOM PAR MOLETTE ET DU DRAG DE SOURIS /!\
+		//PlateformePopupMenu popupmenu = new PlateformePopupMenu(traficPanel); //FIXME
 		
 		if(avecControle) {
 			//Gestion des controles Lecteur et Tableau de Bord
