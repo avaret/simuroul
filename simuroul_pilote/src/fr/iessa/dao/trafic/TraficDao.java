@@ -3,6 +3,7 @@
  */
 package fr.iessa.dao.trafic;
 
+import java.awt.Point;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
@@ -75,13 +76,34 @@ public class TraficDao {
 		VolAvionPredefini vol = new VolAvionPredefini(typeVol, id, categorie, InstantFabrique.get(secondes));
 		
 		scan.next(); // skip
-		while(scan.hasNext()) //boucle sur les coordonnees.
-		{		
-			vol.ajout( InstantFabrique.get(secondes)
-					 , PointFabrique.get( scan.next() ) );
-			secondes += 5;
-		}
 		
+		Point maCoordCourante=PointFabrique.get( scan.next());
+		
+		
+		while(scan.hasNext()) //boucle sur les coordonnees + interpolation sur 4 points pour atteindre 1 point par seconde
+		{		
+			
+			Point maCoordSuivante = PointFabrique.get( scan.next());
+			
+			vol.ajout( InstantFabrique.get(secondes)
+					 , maCoordCourante ) ;
+			
+			int i;
+			for(i=1;i<5;i++){
+				
+				secondes+=1;
+				Point pointInterpol = new Point(
+						(int)(maCoordCourante.x + (maCoordSuivante.x - maCoordCourante.x)*i/5) , 
+						(int)(maCoordCourante.y + (maCoordSuivante.y - maCoordCourante.y)*i/5));
+				vol.ajout(InstantFabrique.get(secondes), pointInterpol);
+				
+				
+			}
+			maCoordCourante=maCoordSuivante;
+			
+		}
+		vol.ajout( InstantFabrique.get(secondes)
+				 , maCoordCourante ) ;
 		return 	vol;
 	}
 }

@@ -369,7 +369,7 @@ public class Controleur {
 	 * La resolution du temps de la simulation-rejeu, 
 	 * correspond au nombre de secondes qui s'ecoule entre chaque instant.
 	 */
-	private int _dureeIntervalle = 5000; //  40 milliseconds 25 update par seconde
+	private int _dureeIntervalle = 1000; //  40 milliseconds 25 update par seconde
 											
 	/**
 	 * @param milliseconds sera le nouvelle resolution du temps, 

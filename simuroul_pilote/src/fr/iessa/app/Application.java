@@ -30,7 +30,7 @@ public class Application {
 		    }
 		} catch (Exception e) {
 		    //TODO Log4j -- Nimbus pas possible
-			System.out.println("AEROPORT");
+			System.out.println("AEROPORT");  
 		}
 		
 	

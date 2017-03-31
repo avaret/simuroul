@@ -40,7 +40,7 @@ public enum ShapeAvionFactory {
 ,   MEDIUM_VIOLET(Ressources.AVION_MEDIUM_VIOLET)
 ,   LIGHT_VIOLET(Ressources.AVION_LIGHT_VIOLET)
 
-,	PILOTE(Ressources.AVION_PILOTE)
+//,	PILOTE(Ressources.AVION_PILOTE)
 ;
 	
 	private BufferedImage[] _avionsParAngle;
