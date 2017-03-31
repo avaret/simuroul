@@ -46,6 +46,7 @@ import fr.iessa.controleur.ModeleEvent;
 import fr.iessa.metier.infra.Aeroport;
 import fr.iessa.vue.ChargeEnCoursLayerUI;
 import fr.iessa.vue.Echelle;
+import fr.iessa.vue.PopupMenu;
 
 /**
  * Gere graphiquement le chargement de la plateforme,
@@ -62,7 +63,10 @@ public class PanelPlateforme extends JPanel implements PropertyChangeListener, M
 	
 	private Echelle _echelle;
 	
+	private Controleur controleur;
+	
 	private PlateformeDrawer _drawer = new PlateformeDrawer();
+	
 	
 	/** Permet d'avoir la translation a faire apres un drag de la souris */
 	Point2D.Double _whereMousePressed = new Point2D.Double();
@@ -88,6 +92,8 @@ public class PanelPlateforme extends JPanel implements PropertyChangeListener, M
 								    , ModeleEvent.CHARGEMENT_CARTE_FICHIER_DONE
 								    , ModeleEvent.CHARGEMENT_CARTE_FICHIER_ERREUR};
 		controleur.ajoutVue(this,  evts) ;
+		
+		this.controleur = controleur;
 		
 		_echelle = echelle;
 		echelle.addObserver(this);
@@ -164,6 +170,8 @@ public class PanelPlateforme extends JPanel implements PropertyChangeListener, M
 	 * @param _imageCarteEstPrete est true si _imageCarteBuffered est prete a etre affichee
 	 */
 	private boolean _imageCarteEstPrete = false;
+
+	private PopupMenu currentPopupMenu;
 	
 	/** Force le redessin de _imageCarteBuffered */
 	private void resetImageCarte() {
@@ -281,6 +289,20 @@ public class PanelPlateforme extends JPanel implements PropertyChangeListener, M
 			
 				_echelle.setScroll(ecartRelatif, getWidth(), getHeight());
 			}
+		}
+		
+		
+		//Seulement s'il s'agit d'un clic droit
+		if(e.getButton() == MouseEvent.BUTTON3)
+			currentPopupMenu = new PopupMenu(this, _echelle, this.controleur, e.getX(), e.getY());
+		
+		if(e.isPopupTrigger()){       
+			currentPopupMenu.menu_souris.getAccessibleContext();
+
+
+
+			//La méthode qui va afficher le menu
+			currentPopupMenu.menu_souris.show(null, e.getX(), e.getY());
 		}
 	}
 

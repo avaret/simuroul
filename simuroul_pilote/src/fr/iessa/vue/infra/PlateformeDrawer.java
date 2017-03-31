@@ -18,6 +18,8 @@ public class PlateformeDrawer {
 	private static PointsDrawer pointsDrawer = new PointsDrawer();
 	
 	private static RunwayDrawer runwaysDrawer = new RunwayDrawer();
+	
+	private static StopBarDrawer stopbardrawer = new StopBarDrawer();
 
 	public void dessineAeroport(Aeroport aeroport, Graphics2D g2, AffineTransform echelle)
 	{	
@@ -30,10 +32,11 @@ public class PlateformeDrawer {
 		// 3. Faire les dessins
 		lignesDrawer.dessine(aeroport, g2);
 		runwaysDrawer.dessine(aeroport, g2);
-
+		
 		lignesDrawer.dessineMarquageAuSol(aeroport, g2);
 		pointsDrawer.dessine(aeroport, g2);
-
+		
+		stopbardrawer.dessine(aeroport,g2);
 		
 		// 4. Restaure la transformation initiale.
 		g2.setTransform(transformToRestore);

@@ -10,6 +10,7 @@ import java.util.Scanner;
 
 import fr.iessa.dao.core.DAO;
 import fr.iessa.metier.infra.Aeroport;
+import fr.iessa.metier.infra.StopBar;
 
 /**
  * Charge l'infrastructure d'une plateforme aerienne a partir d'un fichier
@@ -30,6 +31,7 @@ public class PlateformeDAO {
 		  PUSHBACK	(new PushbackDAO(LIGNE._dao))
 		, @SuppressWarnings("unchecked")
 		  TAXIWAY	(new TaxiwayDAO(LIGNE._dao))
+		//, STOPBAR	(new StopBar(LIGNE._dao))
 		, RUNWAY	(new RunwayDAO())
 		;
 		
@@ -86,6 +88,10 @@ public class PlateformeDAO {
 				case TAXIWAY:
 					result.add( ((TaxiwayDAO)typeLigne.get()).charger(ligne));
 					break;
+				//TODO chargement des stopbars
+			/*	case STOPBAR:
+					result.add( ((StopBarDAO)typeLigne.get()).charger(ligne));
+					break;*/
 				case PUSHBACK:
 					result.add( ((PushbackDAO)typeLigne.get()).charger(ligne));
 					break;
@@ -137,7 +143,11 @@ public class PlateformeDAO {
 			//si RUNWAY, la ligne commence par R
 			return Lookup.RUNWAY;
 		}
-			
+	/*	else if(ligne.startsWith("S"))
+		{
+			//si StopBar, la ligne commence par S
+			return Lookup.STOPBAR;
+		}	*/
 		throw new NoSuchElementException("format du type de la ligne incorrect");
 	}
 }
