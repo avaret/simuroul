@@ -1,6 +1,7 @@
 package fr.iessa.metier.trafic;
-
-
+/**
+@author bouletcy
+*/
 import java.awt.Point;
 import java.util.HashMap;
 import java.util.Hashtable;

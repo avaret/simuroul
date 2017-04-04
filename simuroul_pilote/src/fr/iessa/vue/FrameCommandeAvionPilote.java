@@ -1,5 +1,7 @@
 package fr.iessa.vue;
-
+/**@author bouletcy
+ * Frame de commande basique de l'avion piloté
+ */
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
