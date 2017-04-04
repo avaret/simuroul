@@ -30,10 +30,6 @@ import fr.iessa.vue.trafic.ShapeAvionFactory;
  * @author bernarti
  * */
 
-// POUR L'INSTANT:
-// - Zoom sur une zone contenant l'Avion (Pas centrée sur l'Avion en question)
-// - ATTENTION, LE ZOOM PAR MOLETTE ET LE DRAG DE SOURIS DE FONCTIONNENT PLUS SUR LES FRAMES (PanelPlateforme)
-
 
 public class FramePilote extends JFrame
 {
@@ -41,10 +37,9 @@ public class FramePilote extends JFrame
 
 	private PanelPrincipalMultiCouches jpanelPilote;
 
-	private Controleur _controleurPilote;
-	private Echelle _echellePilote;
-
 	private int _zoomPilote = 30;
+	private Controleur _controleurPilote;
+	private Echelle _echellePilote = new Echelle();
 
 	private Point2D.Double positionPilotePrecedente = null;
 	private Point2D.Double positionPiloteCourante = new Point2D.Double(0, 0);
@@ -59,8 +54,8 @@ public class FramePilote extends JFrame
 		this.setPreferredSize((new Dimension(800, 600)));
 		this.setLocation(400, 300);
 		this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-
-		_echellePilote = new Echelle();
+		
+		// Initialisation du Controleur déclaré
 		_controleurPilote = controleur;
 
 		// Création du Contenu de la FramePilote
@@ -73,7 +68,7 @@ public class FramePilote extends JFrame
 		this.setVisible(false);
 	}
 
-
+	// Méthode d'Actualisation et de Suivi de l'Avion Piloté
 	public void ActualiserVuePilote(ComponentVol CompVol, int H, int W, double angle)
 	{	
 
@@ -99,7 +94,7 @@ public class FramePilote extends JFrame
 
 
 		// Rotation du contenu de la FramePilote pour garder le nez de l'Avion toujours dans la meme direction
-		//_echellePilote.getAffineTransform().quadrantRotate((int)angle, positionPiloteCourante.x, positionPiloteCourante.y);
+		_echellePilote.getAffineTransform().quadrantRotate((int)angle, positionPiloteCourante.x, positionPiloteCourante.y);
 
 
 		// Stockage de positionPiloteCourante dans positionPilotePrecedente pour l'intstant t+1

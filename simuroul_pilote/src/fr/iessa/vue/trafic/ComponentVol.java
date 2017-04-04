@@ -108,7 +108,7 @@ public class ComponentVol extends JComponent {
 				{
 					_clickListener.componentVolClicked(ComponentVol.this);
 
-					// Activation de la FramePilote lorsque l'on clique sur un avion
+					// Activation de la FramePilote lorsque l'on clique sur un avion (bernarti)
 					FramePrincipale.FPilote.ActualiserVuePilote(ComponentVol.this, getHeight(), getWidth(), -angle(_coordCouranteDouble, _coordSuivanteDouble));
 					VuePiloteActive = true;
 				}
@@ -223,7 +223,7 @@ public class ComponentVol extends JComponent {
 
 		}
 
-		// Mise à jour de la FramePilote pour suivi d'un Avion particulier
+		// Mise à jour de la FramePilote pour suivi d'un Avion particulier (bernarti)
 		if((VuePiloteActive == true)&&(_vol.getCoordSuivante() != null))
 			FramePrincipale.FPilote.ActualiserVuePilote(this, getHeight(), getWidth(), angle(_coordCouranteDouble, _coordSuivanteDouble));
 

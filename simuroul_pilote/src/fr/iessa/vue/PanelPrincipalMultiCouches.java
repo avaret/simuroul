@@ -15,7 +15,6 @@ import javax.swing.OverlayLayout;
 import fr.iessa.controleur.Controleur;
 import fr.iessa.metier.trafic.Vol;
 import fr.iessa.vue.infra.PanelPlateforme;
-import fr.iessa.vue.infra.PlateformePopupMenu;
 import fr.iessa.vue.trafic.ComponentVol;
 import fr.iessa.vue.trafic.PanelTrafic;
 
@@ -61,7 +60,6 @@ public class PanelPrincipalMultiCouches extends JPanel {
 		traficLayered.setAlignmentY(0.0f);
 		_gestionPlans.add(traficLayered,JLayeredPane.DEFAULT_LAYER);
 		
-		// TODO /!\ ATTENTION: MISE EN ECHEC DU ZOOM PAR MOLETTE ET DU DRAG DE SOURIS /!\
 		//PlateformePopupMenu popupmenu = new PlateformePopupMenu(traficPanel); //FIXME
 		
 		if(avecControle) {

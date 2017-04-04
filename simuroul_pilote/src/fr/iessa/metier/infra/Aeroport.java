@@ -38,6 +38,12 @@ public class Aeroport {
 	private List<Taxiway> _taxiway = new ArrayList<Taxiway>(100);
 	
 	
+	// TODO 
+	/**
+	 * Les stopbars de la plateforme aeroportuaire.
+	 */
+	private List<StopBar> _stopbar = new ArrayList<StopBar>(100);
+	
 	/**
 	 * Les pushback de la plateforme aeroportuaire.
 	 */
@@ -84,6 +90,13 @@ public class Aeroport {
 	}
 	
 	/**
+	 * Ajoute d'un StopBar
+	 * @param S
+	 */
+	public void add(StopBar sb){
+		_stopbar.add(sb);
+	}
+	/**
 	 * Ajoute un pushback
 	 * @param p
 	 */
@@ -102,7 +115,8 @@ public class Aeroport {
 	@Override
 	public String toString() {
 		return "Aeroport [_nom=" + _nom + ", _points=" + _points.size() + ", _lignes="
-				+ _lignes.size() + ", _taxiway=" + _taxiway.size() + ", _pushbacks="
+				+ _lignes.size() + ",_stopBar=" + _stopbar.size() 
+				 + ", _taxiway=" + _taxiway.size() + ", _pushbacks="
 				+ _pushbacks.size() + ", _runways=" + _runways.size() + "]";
 	}
 	
@@ -134,6 +148,13 @@ public class Aeroport {
 		return _taxiway;
 	}
 
+	/**
+	 * @return the _stopBar
+	 */
+	public List<StopBar> get_StopBar() {
+		return _stopbar;
+	}
+	
 	/**
 	 * @return the _pushbacks
 	 */
