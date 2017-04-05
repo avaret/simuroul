@@ -60,7 +60,6 @@ public class PanelPrincipalMultiCouches extends JPanel {
 		traficLayered.setAlignmentY(0.0f);
 		_gestionPlans.add(traficLayered,JLayeredPane.DEFAULT_LAYER);
 		
-		//PlateformePopupMenu popupmenu = new PlateformePopupMenu(traficPanel); //FIXME
 		
 		if(avecControle) {
 			//Gestion des controles Lecteur et Tableau de Bord

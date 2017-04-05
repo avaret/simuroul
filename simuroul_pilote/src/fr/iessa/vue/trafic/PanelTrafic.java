@@ -84,7 +84,7 @@ public class PanelTrafic extends JPanel implements PropertyChangeListener, Obser
 		protected Void doInBackground() throws Exception {
 			
 			_volsADessiner.clear();
-			_volsADessiner.putAll(_trafic.getVols().stream().collect(Collectors.toMap(Function.identity(), v -> new ComponentVol(v,_echelle))));
+			_volsADessiner.putAll(_trafic.getVols().stream().collect(Collectors.toMap(Function.identity(), v -> new ComponentVol(v, _echelle))));
 
 			_collisionsADessiner.clear();
 			_collisionsADessiner.putAll(_trafic.getCollisions().stream().collect(Collectors.toMap(Function.identity(), v -> new ComponentCollision(v,_controleur,_echelle,_volsADessiner))));

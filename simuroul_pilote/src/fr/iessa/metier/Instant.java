@@ -32,7 +32,7 @@ public class Instant implements Comparable<Instant>{
 	 * Constructeur.
 	 * @param secondes Nombre de secondes ecoulees depuis 00:00:00.
 	 */
-	private Instant(int secondes)
+	public Instant(int secondes)
 	{
 		_secondes = secondes;
 		
@@ -77,7 +77,7 @@ public class Instant implements Comparable<Instant>{
 		/**
 		 * Le pas entre chaque instant
 		 */
-		public final static int _pasEntreInstant = 5;
+		public final static int _pasEntreInstant = 1;
 		
 		/**
 		 * Initialisation de tous les instants en 24h.

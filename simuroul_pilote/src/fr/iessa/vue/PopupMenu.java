@@ -4,6 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.geom.Point2D;
 
 import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
@@ -22,8 +23,7 @@ public class PopupMenu extends JPopupMenu implements ActionListener{
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private int x_clic_souris;
-	private int y_clic_souris;
+	private Point2D.Double CoordSouris = new Point2D.Double(0, 0);
 	private Echelle echelle1;
 	
 	private JPanel panel;
@@ -40,13 +40,20 @@ public class PopupMenu extends JPopupMenu implements ActionListener{
 	//private ChargeEnCoursLayerUI layerUI;
 
 	//constructeurs
-	public PopupMenu (PanelPlateforme plateforme, Echelle ech, Controleur controleur, int x, int y){
+	public PopupMenu(PanelPlateforme plateforme, Echelle ech, Controleur controleur, int x_clic_souris, int y_clic_souris) {
 
 		echelle1= ech;
-		x_clic_souris = x;
-		y_clic_souris = y;
+		CoordSouris.x = x_clic_souris;
+		CoordSouris.y = y_clic_souris;
+		
+		
 		this.controleur = controleur;
 		this.plateforme = plateforme;
+		
+		barre_Arret = new JMenuItem("AJOUTER un Avion Piloté");
+		menu_souris.add(barre_Arret);
+		barre_Arret.setActionCommand("AJOUTER un Avion Piloté");
+		barre_Arret.addActionListener(this);
 		
 		barre_Arret = new JMenuItem("AJOUTER de la barre d'arret permanente");
 		menu_souris.add(barre_Arret);
@@ -68,19 +75,18 @@ public class PopupMenu extends JPopupMenu implements ActionListener{
 		barre_Arret.setActionCommand("SUPPRIMER de la barre d'arret");
 		barre_Arret.addActionListener(this);
 
-
 		//On crée et on passe l'écouteur pour afficher le menu contextuel
 		//Création d'une implémentation de MouseAdapter
 		//avec redéfinition de la méthode adéquate
-		/*pan.addMouseListener(new MouseAdapter(){
+		/*plateforme.addMouseListener(new MouseAdapter(){
 
 			public void mouseReleased(MouseEvent event){
 
 
 				//Seulement s'il s'agit d'un clic droit
 				//if(event.getButton() == MouseEvent.BUTTON3)
-				x_clic_souris = event.getX();
-				y_clic_souris = event.getY();
+				CoordSouris.x = event.getX();
+				CoordSouris.y = event.getY();
 				
 				
 
@@ -90,7 +96,7 @@ public class PopupMenu extends JPopupMenu implements ActionListener{
 
 
 					//La méthode qui va afficher le menu
-					menu_souris.show(pan, event.getX(), event.getY());
+					menu_souris.show(plateforme, event.getX(), event.getY());
 
 				}
 			}
@@ -101,15 +107,20 @@ public class PopupMenu extends JPopupMenu implements ActionListener{
 	@Override
 	public void actionPerformed(ActionEvent e) {
 
+		this.menu_souris.setVisible(true);
 		
 		//Boîte du message d'information
 		JOptionPane jop = new JOptionPane();
 		
 		switch (e.getActionCommand().trim()) {
+		case("AJOUTER un Avion Piloté"):
+			FramePilote VuePilote = new FramePilote(this.controleur);
+			VuePilote.ActualiserVuePilote(CoordSouris, 48, 48);
+			break;
+		
 		case ("AJOUTER de la barre d'arret permanente"):
-			StopBar sb = new StopBar(x_clic_souris, y_clic_souris);
+			StopBar sb = new StopBar((int)CoordSouris.x, (int)CoordSouris.y);
 			controleur.getAeroport().add(sb );
-			System.out.println(" SB créée ! x=" + x_clic_souris);
 			plateforme.update(null, null);
 			break;
 		
@@ -129,7 +140,8 @@ public class PopupMenu extends JPopupMenu implements ActionListener{
 			break;
 		}
 		// TODO Auto-generated method stub
-
+		
+		this.menu_souris.setVisible(false);
 	}
 }	
 	

@@ -17,6 +17,9 @@ import fr.iessa.metier.type.TypeVol;
 /**
  * Decrit un vol
  * @author hodiqual
+ * 
+ * @author bouletcy
+ * Modification de la classe pour devenir classe mère de volAvionPilote et volAvionPredefini
  */
 public abstract class Vol  {
 	

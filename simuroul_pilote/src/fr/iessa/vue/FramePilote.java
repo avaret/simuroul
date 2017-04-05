@@ -69,12 +69,12 @@ public class FramePilote extends JFrame
 	}
 
 	// Méthode d'Actualisation et de Suivi de l'Avion Piloté
-	public void ActualiserVuePilote(ComponentVol CompVol, int H, int W, double angle)
+	public void ActualiserVuePilote(Point2D.Double Coord, int H, int W)
 	{	
 
 		// Récupération des Coordonnées Courantes de l'Avion
-		_echellePilote.getAffineTransform().deltaTransform(CompVol.getVol().getCoordCourante(), positionPiloteCourante);
-		_echellePilote.getAffineTransform().transform(CompVol.getVol().getCoordCourante(), positionPiloteCouranteAbs);
+		_echellePilote.getAffineTransform().deltaTransform(Coord, positionPiloteCourante);
+		_echellePilote.getAffineTransform().transform(Coord, positionPiloteCouranteAbs);
 
 
 		// Initialisation de positionPilotePrecedente
@@ -94,7 +94,7 @@ public class FramePilote extends JFrame
 
 
 		// Rotation du contenu de la FramePilote pour garder le nez de l'Avion toujours dans la meme direction
-		_echellePilote.getAffineTransform().quadrantRotate((int)angle, positionPiloteCourante.x, positionPiloteCourante.y);
+		//_echellePilote.getAffineTransform().quadrantRotate((int)angle, positionPiloteCourante.x, positionPiloteCourante.y);
 
 
 		// Stockage de positionPiloteCourante dans positionPilotePrecedente pour l'intstant t+1
@@ -109,6 +109,5 @@ public class FramePilote extends JFrame
 
 		this.revalidate();
 		this.pack();
-		this.setVisible(true);
 	}
 }

@@ -1,6 +1,7 @@
 package fr.iessa.metier.trafic;
-
-
+/**
+@author bouletcy
+*/
 import java.awt.Point;
 import java.util.HashMap;
 import java.util.Hashtable;
@@ -17,6 +18,8 @@ import java.io.File;
 import java.io.IOException; 
 import javax.imageio.ImageIO;
 import javax.swing.JButton;
+
+import fr.iessa.controleur.Controleur;
 import fr.iessa.metier.Instant;
 import fr.iessa.metier.Instant.InstantFabrique;
 import fr.iessa.metier.type.Categorie;
@@ -64,6 +67,17 @@ public class VolAvionPilote extends Vol {
 			
 			_coordCourante = new Point(_coordCourante.x + (int)(_Vitesse*Math.cos(angle*Math.PI/180)), _coordCourante.y + (int)(_Vitesse *Math.sin(angle*Math.PI/180)));
 			_coordSuivante = new Point(_coordCourante.x + (int)(100*Math.cos(angle*Math.PI/180)), _coordCourante.y + (int)(100*Math.sin(angle*Math.PI/180)));
+			
+			
+			
+			
+
+			
+			
+			
+			
+			
+			
 			
 			// Translation de l'avion en carré
 			/*if (nombreAppel<10){
@@ -161,5 +175,36 @@ public class VolAvionPilote extends Vol {
 		r.put(_premierInstant, _PointDepart);
 		r.put(Instant.InstantFabrique.getMaximumInstant(), _PointDepart);
 		return r;
+	}
+	
+	
+	public void RotationGauche(){
+		double angle = Controleur.avionPilote.getAngle();
+		angle += 1;
+		Controleur.avionPilote.setAngle(angle);
+	}
+	
+	public void RotationDroite(){
+		double angle = Controleur.avionPilote.getAngle();
+		angle -= 1;
+		Controleur.avionPilote.setAngle(angle);
+	}
+	
+	public void Accelerer(){
+		int vitesse = Controleur.avionPilote.getVitesse();
+		vitesse += 2;
+		if (vitesse > 25){
+			vitesse=24;
+		}
+		Controleur.avionPilote.setVitesse(vitesse);
+	}
+	
+	public void Ralentir(){
+		int vitesse = Controleur.avionPilote.getVitesse();
+		vitesse -= 2;
+		if (vitesse < 0){
+			vitesse=0;
+		}
+		Controleur.avionPilote.setVitesse(vitesse);
 	}
 }

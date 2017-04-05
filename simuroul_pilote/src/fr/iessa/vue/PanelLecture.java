@@ -233,7 +233,7 @@ private  void updateBoutonPlayPause()
     	
     	public void actionPerformed(ActionEvent arg0) {
     		
-    		_controleur.setDureeInterval(5000);
+    		_controleur.setDureeInterval(1000);
 
           }
     	

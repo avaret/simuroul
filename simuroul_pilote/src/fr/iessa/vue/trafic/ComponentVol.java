@@ -37,6 +37,8 @@ import fr.iessa.vue.FramePrincipale;
  */
 public class ComponentVol extends JComponent {
 
+	private static final long serialVersionUID = 1L;
+
 	private int _largeur = 32;
 	private int _hauteur = 32;
 
@@ -53,11 +55,8 @@ public class ComponentVol extends JComponent {
 	private Shape _cheminParcouruShape;
 	private ClickComponentVolListener _clickListener;
 
-	// Variable Booléenne qui s'occupe de l'actualisation de la FramePilote
-	private boolean VuePiloteActive = false;
-
 	
-	public ComponentVol(Vol v, Echelle echelle) { 
+	public ComponentVol(Vol v, Echelle echelle) {
 
 		setOpaque(true);
 
@@ -107,12 +106,7 @@ public class ComponentVol extends JComponent {
 				if(_clickListener!=null)
 				{
 					_clickListener.componentVolClicked(ComponentVol.this);
-
-					// Activation de la FramePilote lorsque l'on clique sur un avion (bernarti)
-					FramePrincipale.FPilote.ActualiserVuePilote(ComponentVol.this, getHeight(), getWidth(), -angle(_coordCouranteDouble, _coordSuivanteDouble));
-					VuePiloteActive = true;
 				}
-
 			}
 		});
 	}
@@ -154,13 +148,7 @@ public class ComponentVol extends JComponent {
 	public Vol getVol() {
 		return _vol;
 	}
-	
-	public void setImageFactory(ShapeAvionFactory SAF)
-	{
-		_imageFactory = SAF;
-	}
-	
-	
+
 	public void paintComponent(Graphics g){
 		super.paintComponent(g);  
 
@@ -222,11 +210,7 @@ public class ComponentVol extends JComponent {
 			setY(_coordCourante.y-_hauteur/2);
 
 		}
-
-		// Mise à jour de la FramePilote pour suivi d'un Avion particulier (bernarti)
-		if((VuePiloteActive == true)&&(_vol.getCoordSuivante() != null))
-			FramePrincipale.FPilote.ActualiserVuePilote(this, getHeight(), getWidth(), angle(_coordCouranteDouble, _coordSuivanteDouble));
-
+		
 		revalidate();
 		repaint();
 	}
