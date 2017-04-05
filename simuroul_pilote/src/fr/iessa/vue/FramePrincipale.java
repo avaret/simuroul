@@ -27,6 +27,9 @@ import fr.iessa.metier.Instant.InstantFabrique;
 /** Classe FramePrincipale
  * @author THOMAS Raimana
  * @version 1.0 
+ * 
+ * @author bouletcy  *KeyDispatcherAvionPilote*
+ *
  */
 
 public class FramePrincipale extends JFrame implements PropertyChangeListener {
