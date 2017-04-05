@@ -24,6 +24,7 @@ import javax.swing.event.ChangeListener;
  * Panel lecture affichant une barre de lecture et des boutons permettant le rejeu du trafic.
  * @author duvernal
  *
+ *@author bouletcy ajout d'un bouton "tempsReel" afin de se placer en mode simulation
  */
 public class PanelLecture extends JPanel implements PropertyChangeListener  {
 	

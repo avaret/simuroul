@@ -63,7 +63,7 @@ public class TraficDao {
 	 * "DEP BCS1748 M M17 27L 1440 _ -955,-1104 -946,-1116 -938,-1128 -930,-1141".
 	 * @return instance de la classe Vol decrit par la String ligneFormatVol.
 	 * 
-	 * @Cyril modification de la méthode pour interpoler les points des vols predefinis
+	 * @author bouletcy modification de la méthode pour interpoler les points des vols predefinis
 	 */
 	public VolAvionPredefini chargerVol(String ligneFormatVol)
 	{

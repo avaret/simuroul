@@ -1,7 +1,7 @@
 package fr.iessa.metier.trafic;
 /**
 @author bouletcy
-*/
+ */
 import java.awt.Point;
 import java.util.HashMap;
 import java.util.Hashtable;
@@ -27,22 +27,22 @@ import fr.iessa.metier.type.TypeVol;
 
 
 public class VolAvionPilote extends Vol {
-	
-	
-	
 
+
+
+	private boolean Recording;
 	private Point _PointDepart;
 	private int _Vitesse;
 	private int nombreAppel;
 	private Instant _premierInstant;	
 	private double angle;
-	
+	private Map<Instant, Point> _recordCoord = new HashMap<Instant, Point>(10);
 	public VolAvionPilote(Instant instant, Point depart)
 	{
 		_premierInstant = instant;
 		_PointDepart = depart;
 	}
-	
+
 	public VolAvionPilote()
 	{
 		_premierInstant = Instant.InstantFabrique.getMinimumInstant();
@@ -52,58 +52,32 @@ public class VolAvionPilote extends Vol {
 		_coordCourante=_PointDepart;
 		angle=0;
 	}
-	
+
 	//update des coordonnées à l'aide de l'angle, incrémenter par la suite par les touches du claviers
 	@Override
 	public void updateCoordCourantes(Instant instant) {
-		nombreAppel++;
-		int a=nombreAppel;
-		
-		
-		if( instant == null )
-			_coordCourante = null;
-		else
-		{
-			
-			_coordCourante = new Point(_coordCourante.x + (int)(_Vitesse*Math.cos(angle*Math.PI/180)), _coordCourante.y + (int)(_Vitesse *Math.sin(angle*Math.PI/180)));
-			_coordSuivante = new Point(_coordCourante.x + (int)(100*Math.cos(angle*Math.PI/180)), _coordCourante.y + (int)(100*Math.sin(angle*Math.PI/180)));
-			
-			
-			
-			
 
-			
-			
-			
-			
-			
-			
-			
-			// Translation de l'avion en carré
-			/*if (nombreAppel<10){
-				_coordCourante = new Point(_coordCourante.x, _coordCourante.y + _Vitesse * a);
+		
+
+
+			if( instant == null )
+				_coordCourante = null;
+			else
+			{
+
+				_coordCourante = new Point(_coordCourante.x + (int)(_Vitesse*Math.cos(angle*Math.PI/180)), _coordCourante.y + (int)(_Vitesse *Math.sin(angle*Math.PI/180)));
+				_coordSuivante = new Point(_coordCourante.x + (int)(100*Math.cos(angle*Math.PI/180)), _coordCourante.y + (int)(100*Math.sin(angle*Math.PI/180)));
+				if (Recording)
+				{
+					_recordCoord.put(instant, _coordCourante);
+				}
 			}
-			
-			if( nombreAppel<20 && nombreAppel>=10){
-				a+=-10;
-				_coordCourante = new Point(_coordCourante.x + _Vitesse * a, _coordCourante.y);
-			}
-			
-			if( nombreAppel<30 && nombreAppel>=20){
-				a+=-20;
-				_coordCourante = new Point(_coordCourante.x, _coordCourante.y - _Vitesse * a);
-			}
-			
-			if( nombreAppel<40 && nombreAppel>=30){
-				a+=-30;
-				_coordCourante = new Point(_coordCourante.x - _Vitesse * a, _coordCourante.y);
-			}
-			
-			if(nombreAppel==40){
-				nombreAppel=0;
-			}*/
-		}
+		
+		
 	}
+	
+	
+	
 	
 	public void setAngle(double angle) {
 		this.angle = angle;
@@ -117,7 +91,7 @@ public class VolAvionPilote extends Vol {
 	public Point getPointDepart() {
 		return _PointDepart;
 	}
-	
+
 	public int getVitesse() {
 		return _Vitesse;
 	}
@@ -165,7 +139,7 @@ public class VolAvionPilote extends Vol {
 	@Override
 	public void setADesCollisions(boolean aDesCollisions) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
@@ -176,20 +150,20 @@ public class VolAvionPilote extends Vol {
 		r.put(Instant.InstantFabrique.getMaximumInstant(), _PointDepart);
 		return r;
 	}
-	
-	
+
+
 	public void RotationGauche(){
 		double angle = Controleur.avionPilote.getAngle();
 		angle += 1;
 		Controleur.avionPilote.setAngle(angle);
 	}
-	
+
 	public void RotationDroite(){
 		double angle = Controleur.avionPilote.getAngle();
 		angle -= 1;
 		Controleur.avionPilote.setAngle(angle);
 	}
-	
+
 	public void Accelerer(){
 		int vitesse = Controleur.avionPilote.getVitesse();
 		vitesse += 2;
@@ -198,7 +172,7 @@ public class VolAvionPilote extends Vol {
 		}
 		Controleur.avionPilote.setVitesse(vitesse);
 	}
-	
+
 	public void Ralentir(){
 		int vitesse = Controleur.avionPilote.getVitesse();
 		vitesse -= 2;
