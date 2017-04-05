@@ -312,25 +312,3 @@ public class FramePrincipale extends JFrame implements PropertyChangeListener {
 	}
 
 }
-
-/*  private JMenu _menu;
-private JMenuItem _menuChargerPlateForme;
-private JMenuItem _menuChargerTrafic;
-private JMenuItem _menuQuitter;
-private JMenu _menuOption;
-
-private Controleur _controleur;
-private Echelle _echelle;
-
-public static FrameCommandeAvionPilote FrameCommande;
-
-//Charge la plateforme et le traffic à partir des arguments    
-private void chargerPlateformeTrafficAvecArguments(String fichierPlateforme, String fichierTraffic) {
-			
-			_controleur.chargerCarte(fichierPlateforme);
-            
-			_controleur.chargerTrafic(fichierTraffic);
-            
-	}
-
-*/
