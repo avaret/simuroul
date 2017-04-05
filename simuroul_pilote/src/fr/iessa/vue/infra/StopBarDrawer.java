@@ -9,14 +9,12 @@ import fr.iessa.metier.infra.Aeroport;
 import fr.iessa.metier.infra.StopBar;
 import fr.iessa.vue.CirclePanel;
 
+/** Class StopBarDrawer qui permet de dessiner la barre d'arret.
+ * @author GINEYS Christophe 
+ * @version 1.0 
+ */
 
 public class StopBarDrawer {
-
-	public StopBarDrawer() {
-		// TODO Auto-generated constructor stub
-	}
-	
-	
 
 	public void dessineStopBar(StopBar sb, Graphics g)
 	{
@@ -24,20 +22,7 @@ public class StopBarDrawer {
 		char[] lettre_BA = new char[1]; // variable pour afficher la lettre C ou P
 
 		// barre d'arret permanente ou controlable
-
-		if (sb.isPermanent()==true)
-		{
-			// affiche le "P"
-			sb.setAllumer(true);
-			lettre_BA[0] = 'P';
-		}
-		else
-		{
-			// affiche le "C"
-			sb.setAllumer(false); // BA non allumé afin de voir la difference avec la barre permanente
-			lettre_BA[0] = 'C';
-		}
-
+		
 		int yi = sb.getY0()+50;
 
 		// allumer ou pas la barre d'arret
@@ -56,21 +41,23 @@ public class StopBarDrawer {
 			{
 				g.setColor(Color.RED);
 				CirclePanel.fillCircle(g, xi, yi, sb.getRayon());
+				g.setColor(Color.BLACK);
+				CirclePanel.drawCircle(g, xi, yi, sb.getRayon()-2);
 			}
-
 
 			//decalage_pixels_x_par_cercle+=10;
 			no++;
 
 		}
+	
 
 	}
 
 	public void dessine(Aeroport aeroport, Graphics2D g2) {
-		System.out.println(" dessine les StopBar ");
+		//System.out.println(" dessine les StopBar ");
 		for(StopBar sb : aeroport.get_StopBar())
 		{
-			System.out.println(" Affichage du StopBar x=" + sb.getX0() + " y=" + sb.getY0() );
+			//System.out.println("Affichage du StopBar x=" + sb.getX0() + " y=" + sb.getY0() );
 			//affiche une stopbar
 			dessineStopBar(sb, g2);
 		}

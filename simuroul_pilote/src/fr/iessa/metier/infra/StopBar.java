@@ -3,6 +3,8 @@ package fr.iessa.metier.infra;
 import java.awt.event.ActionEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.geom.Point2D;
+import java.awt.geom.Point2D.Double;
 
 import javax.swing.JMenuItem;
 import javax.swing.JPanel;
@@ -14,7 +16,7 @@ import javax.swing.JPopupMenu;
  * @version 1.0 
  */
 
-public class StopBar extends JPanel{
+public class StopBar{
 
 	/** Attributs */
 	private boolean allumer=true; // choix à faire d'allumer ou etendre la BA
@@ -24,17 +26,16 @@ public class StopBar extends JPanel{
 	private int x0;  
 	private int y0;
 
-	private JPopupMenu sous_menu_souris;
 	private JMenuItem etat_barre_Arret ; 
 
-	public Point position_BA;
+	
 
 	/** constructeur */
 	public StopBar (int x, int y){
 		setX0(x);
 		setY0(y);
-
-		addMouseListener(new MouseAdapter() {
+	//	System.out.println("Ref StopBar: x=" + x + " / y= " + y);
+	/*	addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				JPopupMenu sous_menu_souris = new JPopupMenu();
@@ -43,12 +44,9 @@ public class StopBar extends JPanel{
 				etat_barre_Arret = new JMenuItem("allumer /eteindre");
 				sous_menu_souris.add(etat_barre_Arret);
 			}
-		});
+		});*/
 	}
 
-	public void actionPerformed(ActionEvent e) {
-		setAllumer(!isAllumer());
-	}
 
 	public boolean isAllumer() {
 		return allumer;
@@ -92,5 +90,17 @@ public class StopBar extends JPanel{
 
 	public void setY0(int y0) {
 		this.y0 = y0;
+	}
+
+
+	public double distance(Point2D.Double p_abs) {
+		
+		 double x1=0;
+		 double y1=0;
+		 
+		 double distance;
+		return  distance = Math.sqrt((x1-p_abs.getX())+(y1-p_abs.getY()));
+		
+		 
 	}
 }
