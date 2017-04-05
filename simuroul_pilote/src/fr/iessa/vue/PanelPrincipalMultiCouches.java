@@ -10,13 +10,11 @@ import java.util.Map;
 import javax.swing.JLayer;
 import javax.swing.JLayeredPane;
 import javax.swing.JPanel;
-import javax.swing.JPopupMenu;
 import javax.swing.OverlayLayout;
 
 import fr.iessa.controleur.Controleur;
 import fr.iessa.metier.trafic.Vol;
 import fr.iessa.vue.infra.PanelPlateforme;
-
 import fr.iessa.vue.trafic.ComponentVol;
 import fr.iessa.vue.trafic.PanelTrafic;
 
@@ -61,7 +59,7 @@ public class PanelPrincipalMultiCouches extends JPanel {
 		traficLayered.setAlignmentX(0.0f);
 		traficLayered.setAlignmentY(0.0f);
 		_gestionPlans.add(traficLayered,JLayeredPane.DEFAULT_LAYER);
-
+		
 		
 		if(avecControle) {
 			//Gestion des controles Lecteur et Tableau de Bord

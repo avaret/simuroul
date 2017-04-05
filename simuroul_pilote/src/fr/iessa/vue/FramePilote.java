@@ -8,6 +8,7 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.geom.AffineTransform;
 import java.awt.geom.Point2D;
+import java.awt.geom.Point2D.Double;
 import java.awt.image.BufferedImage;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
@@ -29,25 +30,22 @@ import fr.iessa.vue.trafic.ShapeAvionFactory;
  * @author bernarti
  * */
 
-// POUR L'INSTANT:
-// - Zoom sur une zone contenant l'Avion (Pas centrée sur l'Avion en question)
-
 
 public class FramePilote extends JFrame
 {
 	private static final long serialVersionUID = 1L;
 
 	private PanelPrincipalMultiCouches jpanelPilote;
-	
-	private Controleur _controleurPilote;
-	private Echelle _echellePilote;
-	
-	private int _zoomPilote = 30;
-	
-	private Point2D.Double positionPiloteCourante = new Point2D.Double(0, 0);
-	private Point2D.Double positionPiloteSuivante = new Point2D.Double(0, 0);
 
-	
+	private int _zoomPilote = 30;
+	private Controleur _controleurPilote;
+	private Echelle _echellePilote = new Echelle();
+
+	private Point2D.Double positionPilotePrecedente = null;
+	private Point2D.Double positionPiloteCourante = new Point2D.Double(0, 0);
+	private Point2D.Double positionPiloteCouranteAbs = new Point2D.Double(0, 0);
+
+
 	public FramePilote(Controleur controleur)
 	{
 		super("Vue Pilote");
@@ -56,8 +54,8 @@ public class FramePilote extends JFrame
 		this.setPreferredSize((new Dimension(800, 600)));
 		this.setLocation(400, 300);
 		this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-
-		_echellePilote = new Echelle();
+		
+		// Initialisation du Controleur déclaré
 		_controleurPilote = controleur;
 
 		// Création du Contenu de la FramePilote
@@ -70,70 +68,46 @@ public class FramePilote extends JFrame
 		this.setVisible(false);
 	}
 
-
-	public void ActualiserVuePilote(ComponentVol CompVol, int H, int W, double angle)
+	// Méthode d'Actualisation et de Suivi de l'Avion Piloté
+	public void ActualiserVuePilote(Point2D.Double Coord, int H, int W)
 	{	
-		// Récupération des Coordonnées Courantes de l'Avion (coin supérieur gauche)
-		_echellePilote.getAffineTransform().transform(CompVol.getVol().getCoordCourante(), positionPiloteCourante);
-		double XCourant = positionPiloteCourante.x;
-		double YCourant = positionPiloteCourante.y;
-		
-		// Récupération des Coordonnées Suivantes de l'Avion (coin supérieur gauche)
-		_echellePilote.getAffineTransform().transform(CompVol.getVol().getCoordSuivante(), positionPiloteSuivante);
-		double XSuivant = positionPiloteSuivante.x;
-		double YSuivant = positionPiloteSuivante.y;
 
-		
-		// Calcul des Coordonnées Courantes et Suivantes du Centre de l'Avion Selectionné
-		CalculCoordCentre(XCourant, YCourant, H, W);
-		CalculCoordCentre(XSuivant, YSuivant, H, W);
+		// Récupération des Coordonnées Courantes de l'Avion
+		_echellePilote.getAffineTransform().deltaTransform(Coord, positionPiloteCourante);
+		_echellePilote.getAffineTransform().transform(Coord, positionPiloteCouranteAbs);
 
-		
-		// Affichage des Coordonnées pour controle
-		System.out.println("Position Centre Avion Courante: X: " + XCourant + " / Y: " + YCourant);
-		System.out.println("Position Centre Avion Suivante: X: " + XSuivant + " / Y: " + YSuivant);	
-		System.out.println("Angle: " + angle);
-		
-		positionPiloteCourante.x = XCourant;
-		positionPiloteCourante.y = YCourant;
 
-		
-		Point2D.Double ecartCourantSuivant = new Point2D.Double(XCourant-XSuivant, YCourant-YSuivant);
-		Point p = new Point((int)XCourant, (int)YCourant);
-		
-		
+		// Initialisation de positionPilotePrecedente
+		if(positionPilotePrecedente == null)
+			positionPilotePrecedente = (Double) positionPiloteCourante.clone();
+
+
+		// Calcul des Ecarts en X et en Y
+		double XEcart = positionPilotePrecedente.x - positionPiloteCourante.x;
+		double YEcart = positionPilotePrecedente.y - positionPiloteCourante.y;
+		Point2D.Double EcartRelatif = new Point2D.Double(XEcart, YEcart);
+
+
 		// Zoom et Actualisation de la FramePilote
-		_echellePilote.setZoomLevel(_zoomPilote, p, getWidth(), getHeight());
-		_echellePilote.setScroll(ecartCourantSuivant, getWidth(), getHeight());
-		
+		_echellePilote.setZoomLevel(_zoomPilote, new Point((int)positionPiloteCouranteAbs.x, (int)positionPiloteCouranteAbs.y), getWidth(), getHeight());
+		_echellePilote.setScroll(EcartRelatif, getWidth(), getHeight());
+
+
+		// Rotation du contenu de la FramePilote pour garder le nez de l'Avion toujours dans la meme direction
+		//_echellePilote.getAffineTransform().quadrantRotate((int)angle, positionPiloteCourante.x, positionPiloteCourante.y);
+
+
+		// Stockage de positionPiloteCourante dans positionPilotePrecedente pour l'intstant t+1
+		positionPilotePrecedente = (Double) positionPiloteCourante.clone();
+
+
+		// Changement de représentation de l'Avion Selectionné (/!\ CHANGE SUR LA FRAMEPRINCIPALE /!\) 
 		//CompVol.setImageFactory(ShapeAvionFactory.PILOTE);
-		
-		// Rotation du contenu de la Frame pour garder le nez de l'Avion toujours vers le haut
-		//_echellePilote.setAffineTransform(AffineTransform.getRotateInstance(-Math.toRadians(angle), XCourant, YCourant));
-		//_echellePilote.getAffineTransform().quadrantRotate((int)angle, XCourant, YCourant);
-		//_echellePilote.getAffineTransform().rotate(angle, XCourant, YCourant);
-		
+
 		jpanelPilote.repaint();
 		jpanelPilote.revalidate();
 
-		this.validate();
+		this.revalidate();
 		this.pack();
-		this.setVisible(true);
-	}
-
-	public void CalculCoordCentre(double x, double y, int H, int W)
-	{
-		// Calcul pour des Coordonnées > ou < 0
-		// Calcul de x
-		if(x >= 0)
-			x += H/2;
-		else
-			x -= H/2;
-
-		// Calcul de y
-		if(y >= 0)
-			y += W/2;
-		else
-			y -= W/2;
 	}
 }
