@@ -92,8 +92,7 @@ public class StopBar{
 		this.y0 = y0;
 	}
 
-
 	public double distance(Point2D.Double p_abs) {
-		return Math.sqrt((this.x0-p_abs.getX())+(this.y0-p_abs.getY()));//FIXME Elever au carré
+		return Math.sqrt((this.x0-p_abs.getX()*(this.x0-p_abs.getX()))+((this.y0-p_abs.getY()*(this.y0-p_abs.getY()))));
 	}
 }
