@@ -28,14 +28,14 @@ public class StopBar{
 
 	private JMenuItem etat_barre_Arret ; 
 
-	
+
 
 	/** constructeur */
 	public StopBar (int x, int y){
 		setX0(x);
 		setY0(y);
-	//	System.out.println("Ref StopBar: x=" + x + " / y= " + y);
-	/*	addMouseListener(new MouseAdapter() {
+		//	System.out.println("Ref StopBar: x=" + x + " / y= " + y);
+		/*	addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				JPopupMenu sous_menu_souris = new JPopupMenu();
@@ -94,13 +94,6 @@ public class StopBar{
 
 
 	public double distance(Point2D.Double p_abs) {
-		
-		 double x1=0;
-		 double y1=0;
-		 
-		 double distance;
-		return  distance = Math.sqrt((x1-p_abs.getX())+(y1-p_abs.getY()));
-		
-		 
+		return Math.sqrt((this.x0-p_abs.getX())+(this.y0-p_abs.getY()));//FIXME Elever au carré
 	}
 }
