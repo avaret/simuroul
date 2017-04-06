@@ -20,7 +20,7 @@ public class StopBar{
 
 	/** Attributs */
 	private boolean allumer=true; // choix à faire d'allumer ou etendre la BA
-	private boolean permanent =true;
+	private boolean permanent =true; // choix à faire pour BA permanente ou commandable
 	private final int nb =3; //Nombre de cercles à definir selon le zoom
 	private int rayon = 10;
 	private int x0;  
@@ -47,7 +47,7 @@ public class StopBar{
 		});*/
 	}
 
-
+	/** méthode */
 	public boolean isAllumer() {
 		return allumer;
 	}

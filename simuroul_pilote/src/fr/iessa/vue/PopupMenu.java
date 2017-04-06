@@ -26,9 +26,8 @@ import java.awt.geom.NoninvertibleTransformException;
 
 public class PopupMenu extends JPopupMenu implements ActionListener{
 
-	/**
-	 * 
-	 */
+
+	/** Attributs */
 	private static final long serialVersionUID = 1L;
 	private Echelle echelle1;
 	Point2D.Double coordSouris = new Point2D.Double(0, 0);
@@ -62,20 +61,20 @@ public class PopupMenu extends JPopupMenu implements ActionListener{
 		menu_souris.add(barre_Arret);
 		barre_Arret.setActionCommand("AJOUTER un Avion Piloté");
 		barre_Arret.addActionListener(this);
-		
+
 		barre_Arret = new JMenuItem("AJOUTER de la barre d'arret permanente");
 		menu_souris.add(barre_Arret);
 		barre_Arret.setActionCommand("AJOUTER de la barre d'arret permanente");
 		barre_Arret.addActionListener(this);
 
-		barre_Arret = new JMenuItem("AJOUTER de la barre d'arret commandable eteinte");
+		barre_Arret = new JMenuItem("ETEINDRE une barre d'arret commandable allumee");
 		menu_souris.add(barre_Arret);
-		barre_Arret.setActionCommand("AJOUTER de la barre d'arret commandable eteinte");
+		barre_Arret.setActionCommand("ETEINDRE une barre d'arret commandable allumee");
 		barre_Arret.addActionListener(this);
 
-		barre_Arret = new JMenuItem("ajouter de la barre d'arret commandable allumee");
+		barre_Arret = new JMenuItem("AJOUTER de la barre d'arret commandable allumee");
 		menu_souris.add(barre_Arret);
-		barre_Arret.setActionCommand("ajouter de la barre d'arret commandable allumee");
+		barre_Arret.setActionCommand("AJOUTER de la barre d'arret commandable allumee");
 		barre_Arret.addActionListener(this);
 
 		barre_Arret = new JMenuItem("SUPPRIMER de la barre d'arret");
@@ -87,12 +86,13 @@ public class PopupMenu extends JPopupMenu implements ActionListener{
 	}
 
 	@Override
+	/** méthode */
 	public void actionPerformed(ActionEvent e) {
 
 		this.menu_souris.setVisible(true);
 
 		//Boîte du message d'information
-		JOptionPane jop = new JOptionPane();
+		//JOptionPane jop = new JOptionPane();
 
 		try {
 			echelle1.getAffineTransform().inverseTransform(coordSouris, p_abs);
@@ -102,11 +102,12 @@ public class PopupMenu extends JPopupMenu implements ActionListener{
 		}
 
 		switch (e.getActionCommand().trim()) {
+
 		case("AJOUTER un Avion Piloté"):
 			FramePilote VuePilote = new FramePilote(this.controleur);
-			VuePilote.ActualiserVuePilote(coordSouris, 48, 48);
-			break;
-		
+		VuePilote.ActualiserVuePilote(coordSouris, 48, 48);
+		break;
+
 		case ("AJOUTER de la barre d'arret permanente"):
 		{
 			StopBar sb = new StopBar((int)p_abs.x, (int)p_abs.y);
@@ -116,19 +117,35 @@ public class PopupMenu extends JPopupMenu implements ActionListener{
 			plateforme.update(null, null);
 			break;
 		}
-		case ("AJOUTER de la barre d'arret commandable eteinte"):
+		case ("ETEINDRE une barre d'arret commandable allumee"):
 		{
 			//jop.showMessageDialog(null, "ajout BA CE", "Information", JOptionPane.INFORMATION_MESSAGE);
+			double dist_plus_courte = 9999999;
+			StopBar sb_min = null;
 
+			for (StopBar sb1 :controleur.getAeroport().get_StopBar()) {
+
+				double distance_list = sb1.distance(p_abs);
+				if (distance_list < dist_plus_courte)
+				{
+					dist_plus_courte = distance_list;
+					sb_min =sb1;
+				}
+
+			} 
+
+			//supprimer la stopbar 
+			controleur.getAeroport().get_StopBar().remove(sb_min);
 
 			StopBar sb = new StopBar((int)p_abs.x, (int)p_abs.y);
 			controleur.getAeroport().add(sb);
 			sb.setAllumer(false);
 			sb.setPermanent(false);
+
 			plateforme.update(null, null);
 			break;
 		}
-		case ("ajouter de la barre d'arret commandable allumee"):
+		case ("AJOUTER de la barre d'arret commandable allumee"):
 		{
 			//jop.showMessageDialog(null, "ajout BA CA", "Information", JOptionPane.INFORMATION_MESSAGE);
 			StopBar sb = new StopBar((int)p_abs.x, (int)p_abs.y);
@@ -141,7 +158,7 @@ public class PopupMenu extends JPopupMenu implements ActionListener{
 		case ("SUPPRIMER de la barre d'arret"):	
 		{
 			//jop.showMessageDialog(null, "supprimer BA", "Information", JOptionPane.INFORMATION_MESSAGE);
-			
+
 			//chercher la stopbar la plus proche
 			double dist_plus_courte = 9999999;
 			StopBar sb_min = null;
@@ -154,9 +171,9 @@ public class PopupMenu extends JPopupMenu implements ActionListener{
 					dist_plus_courte = distance_list;
 					sb_min =sb1;
 				}
-				
+
 			} 
-			
+
 			//supprimer la stopbar 
 			controleur.getAeroport().get_StopBar().remove(sb_min);
 			plateforme.update(null, null);
@@ -167,7 +184,7 @@ public class PopupMenu extends JPopupMenu implements ActionListener{
 		}
 		//sert à supprimer la fenetre du popup
 		this.menu_souris.setVisible(false);
-		
+
 		this.menu_souris.setVisible(false);
 	}
 }	
