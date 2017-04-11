@@ -30,7 +30,9 @@ public class VolAvionPilote extends Vol {
 
 
 
-	private boolean Recording;
+	private boolean recording;
+	private boolean replay;
+	private Instant _debutReplay;
 	private Point _PointDepart;
 	private int _Vitesse;
 	private int nombreAppel;
@@ -56,8 +58,8 @@ public class VolAvionPilote extends Vol {
 	//update des coordonnées à l'aide de l'angle, incrémenter par la suite par les touches du claviers
 	@Override
 	public void updateCoordCourantes(Instant instant) {
+		if(replay && _recordCoord.containsKey(instant)){
 
-		
 
 
 			if( instant == null )
@@ -65,20 +67,30 @@ public class VolAvionPilote extends Vol {
 			else
 			{
 
+				_coordCourante = _recordCoord.get(instant);
+				Instant instantSuivant = InstantFabrique.get(instant.getSeconds()+InstantFabrique._pasEntreInstant);
+				_coordSuivante = _recordCoord.get(instantSuivant);			}
+
+		}
+
+
+		else {
+			if( instant == null )
+				_coordCourante = null;
+			else
+			{
+
 				_coordCourante = new Point(_coordCourante.x + (int)(_Vitesse*Math.cos(angle*Math.PI/180)), _coordCourante.y + (int)(_Vitesse *Math.sin(angle*Math.PI/180)));
 				_coordSuivante = new Point(_coordCourante.x + (int)(100*Math.cos(angle*Math.PI/180)), _coordCourante.y + (int)(100*Math.sin(angle*Math.PI/180)));
-				if (Recording)
-				{
-					_recordCoord.put(instant, _coordCourante);
-				}
+				_recordCoord.put(instant, _coordCourante);
+				System.out.println(replay);
 			}
-		
-		
+		}
 	}
-	
-	
-	
-	
+
+
+
+
 	public void setAngle(double angle) {
 		this.angle = angle;
 	}
@@ -180,5 +192,29 @@ public class VolAvionPilote extends Vol {
 			vitesse=0;
 		}
 		Controleur.avionPilote.setVitesse(vitesse);
+	}
+
+	public boolean isRecording() {
+		return recording;
+	}
+
+	public void setRecording(boolean recording) {
+		recording = recording;
+	}
+
+	public boolean isReplay() {
+		return replay;
+	}
+
+	public void setReplay(boolean Replay) {
+		replay = Replay;
+	}
+
+	public Instant get_debutReplay() {
+		return _debutReplay;
+	}
+
+	public void set_debutReplay(Instant _debutReplay) {
+		this._debutReplay = _debutReplay;
 	}
 }
