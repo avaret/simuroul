@@ -171,7 +171,7 @@ public class PanelPlateforme extends JPanel implements PropertyChangeListener, M
 	 */
 	private boolean _imageCarteEstPrete = false;
 
-	private PopupMenu currentPopupMenu;
+	private PopupMenu currentPopupMenu = null;
 	
 	/** Force le redessin de _imageCarteBuffered */
 	private void resetImageCarte() {
@@ -291,15 +291,15 @@ public class PanelPlateforme extends JPanel implements PropertyChangeListener, M
 			}
 		}
 		
+		// Désactivation de l'éventuel ancien menu
+		if(currentPopupMenu != null)
+			currentPopupMenu.menu_souris.setVisible(false);
 		
-		//Seulement s'il s'agit d'un clic droit
+		//Seulement s'il s'agit d'un clic droit, on affiche un nouveau menu
 		if(e.getButton() == MouseEvent.BUTTON3)
+		{
 			currentPopupMenu = new PopupMenu(this, _echelle, this.controleur, e.getX(), e.getY());
-		
-		if(e.isPopupTrigger()){       
 			currentPopupMenu.menu_souris.getAccessibleContext();
-
-
 
 			//La méthode qui va afficher le menu
 			currentPopupMenu.menu_souris.show(null, e.getX(), e.getY());
