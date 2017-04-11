@@ -123,12 +123,20 @@ public class FramePrincipale extends JFrame implements PropertyChangeListener {
 		JMenuItem menuCutReplay = new JMenuItem("Arreter le replay");
 		menuCutReplay.addActionListener(new ActionCutReplay());
 		
+		JMenuItem menuSauvStopBar = new JMenuItem("Sauvegarde Barre Arret");
+		menuSauvStopBar.addActionListener(new ActionSauverBarreArret());
+		
+		JMenuItem menuChargerStopBar = new JMenuItem("Charger Barre Arret");
+		menuChargerStopBar.addActionListener(new ActionChargerBarreArret());
+		
 		_menuOption.add(menuAjoutVue);
 		_menuOption.add(menuAviomSimu);
 		_menuOption.add(menuCollision);
 		_menuOption.add(menuSauvCollision);
 		_menuOption.add(menuStartReplay);
 		_menuOption.add(menuCutReplay);
+		_menuOption.add(menuSauvStopBar);
+		_menuOption.add(menuChargerStopBar);
 		_barreMenu.add(_menuOption);
 
 		// Création et configuration du controleur MVC
@@ -192,6 +200,20 @@ public class FramePrincipale extends JFrame implements PropertyChangeListener {
 		}
 	}
 
+	//charger barre arret 
+	class ActionChargerBarreArret implements ActionListener {
+		public void actionPerformed(ActionEvent arg0) {
+
+			File fichierBarreArret = null;
+			JFileChooser dialogue = new JFileChooser(new File("."));
+
+			if (dialogue.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) {
+				fichierBarreArret = dialogue.getSelectedFile();
+				_controleur.getAeroport().chargerBarreArret(fichierBarreArret.getPath());
+			}
+		}
+	}
+
 	class ActionChargerTrafic implements ActionListener {
 		public void actionPerformed(ActionEvent arg0) {
 
@@ -206,6 +228,22 @@ public class FramePrincipale extends JFrame implements PropertyChangeListener {
 		}
 	}
 
+	//sauver barre arret 
+	class ActionSauverBarreArret implements ActionListener {
+		public void actionPerformed(ActionEvent arg0) {
+
+			File fichierBarreArret = null;
+			String nomFichierBarreArret = "";
+			JFileChooser dialogue = new JFileChooser(new File("."));
+
+			if (dialogue.showSaveDialog(null) == JFileChooser.APPROVE_OPTION) {
+				fichierBarreArret = dialogue.getSelectedFile();
+				nomFichierBarreArret = fichierBarreArret.getName();
+				_controleur.getAeroport().sauverBarreArret(dialogue.getCurrentDirectory()+"/"+nomFichierBarreArret + ".txt");
+			}	
+		}
+	}
+	
 	//hodiqual
 	class ActionSauverCollisions implements ActionListener {
 		public void actionPerformed(ActionEvent arg0) {
