@@ -30,6 +30,7 @@ public class PopupMenu extends JPopupMenu implements ActionListener{
 	/** Attributs */
 	private static final long serialVersionUID = 1L;
 	private Echelle echelle1;
+	private int zoom1;
 	Point2D.Double coordSouris = new Point2D.Double(0, 0);
 	Point2D.Double p = new Point2D.Double(0, 0);
 	Point2D.Double p_abs = new Point2D.Double(0, 0);
@@ -45,12 +46,11 @@ public class PopupMenu extends JPopupMenu implements ActionListener{
 
 	private Controleur controleur;
 
-	//private ChargeEnCoursLayerUI layerUI;
-
 	//constructeurs
 	public PopupMenu (PanelPlateforme plateforme, Echelle ech, Controleur controleur, int x_clic_souris, int y_clic_souris){
 
 		echelle1= ech;
+		zoom1 = plateforme.getZoomLevel();
 		coordSouris.x = x_clic_souris;
 		coordSouris.y = y_clic_souris;
 
@@ -67,23 +67,44 @@ public class PopupMenu extends JPopupMenu implements ActionListener{
 		barre_Arret.setActionCommand("AJOUTER de la barre d'arret permanente");
 		barre_Arret.addActionListener(this);
 
-		barre_Arret = new JMenuItem("ETEINDRE une barre d'arret commandable allumee");
-		menu_souris.add(barre_Arret);
-		barre_Arret.setActionCommand("ETEINDRE une barre d'arret commandable allumee");
-		barre_Arret.addActionListener(this);
-
 		barre_Arret = new JMenuItem("AJOUTER de la barre d'arret commandable allumee");
 		menu_souris.add(barre_Arret);
 		barre_Arret.setActionCommand("AJOUTER de la barre d'arret commandable allumee");
+		barre_Arret.addActionListener(this);
+
+		barre_Arret = new JMenuItem("ETEINDRE une barre d'arret commandable ");
+		menu_souris.add(barre_Arret);
+		barre_Arret.setActionCommand("ETEINDRE une barre d'arret commandable ");
 		barre_Arret.addActionListener(this);
 
 		barre_Arret = new JMenuItem("SUPPRIMER de la barre d'arret");
 		menu_souris.add(barre_Arret);
 		barre_Arret.setActionCommand("SUPPRIMER de la barre d'arret");
 		barre_Arret.addActionListener(this);
-
-
 	}
+
+	//	getNearestStopBar	
+	public  StopBar getNearestStopBar(){
+
+		double dist_plus_courte = 9999999;
+		StopBar sb_min = null;
+
+		for (StopBar sb1 :controleur.getAeroport().get_StopBar()) {
+
+			double distance_list = sb1.distance(p_abs);
+
+			if (distance_list < dist_plus_courte)
+			{
+				dist_plus_courte = distance_list;
+				sb_min =sb1;
+			}
+
+		} 
+
+		return sb_min;
+	}
+
+
 
 	@Override
 	/** méthode */
@@ -91,13 +112,10 @@ public class PopupMenu extends JPopupMenu implements ActionListener{
 
 		this.menu_souris.setVisible(true);
 
-		//Boîte du message d'information
-		//JOptionPane jop = new JOptionPane();
-
 		try {
 			echelle1.getAffineTransform().inverseTransform(coordSouris, p_abs);
 		} catch (NoninvertibleTransformException e1) {
-			// TODO Auto-generated catch block
+
 			e1.printStackTrace();
 		}
 
@@ -113,41 +131,13 @@ public class PopupMenu extends JPopupMenu implements ActionListener{
 			StopBar sb = new StopBar((int)p_abs.x, (int)p_abs.y);
 
 			controleur.getAeroport().add(sb);
-			//System.out.println("SB créée ! x=" + x_clic_souris + "/ y=" + y_clic_souris);
-			plateforme.update(null, null);
-			break;
-		}
-		case ("ETEINDRE une barre d'arret commandable allumee"):
-		{
-			//jop.showMessageDialog(null, "ajout BA CE", "Information", JOptionPane.INFORMATION_MESSAGE);
-			double dist_plus_courte = 9999999;
-			StopBar sb_min = null;
-
-			for (StopBar sb1 :controleur.getAeroport().get_StopBar()) {
-
-				double distance_list = sb1.distance(p_abs);
-				if (distance_list < dist_plus_courte)
-				{
-					dist_plus_courte = distance_list;
-					sb_min =sb1;
-				}
-
-			} 
-
-			//supprimer la stopbar 
-			controleur.getAeroport().get_StopBar().remove(sb_min);
-
-			StopBar sb = new StopBar((int)p_abs.x, (int)p_abs.y);
-			controleur.getAeroport().add(sb);
-			sb.setAllumer(false);
-			sb.setPermanent(false);
 
 			plateforme.update(null, null);
 			break;
 		}
+
 		case ("AJOUTER de la barre d'arret commandable allumee"):
 		{
-			//jop.showMessageDialog(null, "ajout BA CA", "Information", JOptionPane.INFORMATION_MESSAGE);
 			StopBar sb = new StopBar((int)p_abs.x, (int)p_abs.y);
 			controleur.getAeroport().add(sb);
 			sb.setAllumer(true);
@@ -155,27 +145,18 @@ public class PopupMenu extends JPopupMenu implements ActionListener{
 			plateforme.update(null, null);
 			break;
 		}
+
+		case ("ETEINDRE une barre d'arret commandable "):
+		{
+			this.getNearestStopBar().setAllumer(false);
+			plateforme.update(null, null);
+			break;
+		}
+
 		case ("SUPPRIMER de la barre d'arret"):	
 		{
-			//jop.showMessageDialog(null, "supprimer BA", "Information", JOptionPane.INFORMATION_MESSAGE);
-
-			//chercher la stopbar la plus proche
-			double dist_plus_courte = 9999999;
-			StopBar sb_min = null;
-
-			for (StopBar sb1 :controleur.getAeroport().get_StopBar()) {
-
-				double distance_list = sb1.distance(p_abs);
-				if (distance_list < dist_plus_courte)
-				{
-					dist_plus_courte = distance_list;
-					sb_min =sb1;
-				}
-
-			} 
-
 			//supprimer la stopbar 
-			controleur.getAeroport().get_StopBar().remove(sb_min);
+			controleur.getAeroport().get_StopBar().remove(getNearestStopBar());
 			plateforme.update(null, null);
 			break;
 		}
