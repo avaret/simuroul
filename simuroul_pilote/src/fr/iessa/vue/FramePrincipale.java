@@ -23,12 +23,13 @@ import fr.iessa.controleur.Controleur;
 import fr.iessa.controleur.LibereMemoire;
 import fr.iessa.controleur.ModeleEvent;
 import fr.iessa.metier.Instant.InstantFabrique;
+import fr.iessa.metier.trafic.VolAvionPilote;
 
 /** Classe FramePrincipale
  * @author THOMAS Raimana
  * @version 1.0 
  * 
- * @author bouletcy  *KeyDispatcherAvionPilote*
+ * @author bouletcy  *KeyDispatcherAvionPilote et option de replay/record*
  *
  */
 
@@ -115,11 +116,19 @@ public class FramePrincipale extends JFrame implements PropertyChangeListener {
 
 		JMenuItem menuAviomSimu = new JMenuItem("Simulation pilote");
 		menuAviomSimu.addActionListener(new ActionSimulationPilote());
-
+		
+		JMenuItem menuStartReplay = new JMenuItem("Lancer le replay");
+		menuStartReplay.addActionListener(new ActionStartReplay());
+		
+		JMenuItem menuCutReplay = new JMenuItem("Arreter le replay");
+		menuCutReplay.addActionListener(new ActionCutReplay());
+		
 		_menuOption.add(menuAjoutVue);
 		_menuOption.add(menuAviomSimu);
 		_menuOption.add(menuCollision);
 		_menuOption.add(menuSauvCollision);
+		_menuOption.add(menuStartReplay);
+		_menuOption.add(menuCutReplay);
 		_barreMenu.add(_menuOption);
 
 		// Création et configuration du controleur MVC
@@ -160,6 +169,16 @@ public class FramePrincipale extends JFrame implements PropertyChangeListener {
 
 
 	/** Listeners */
+	class ActionStartReplay implements ActionListener {
+		public void actionPerformed(ActionEvent arg0) {
+			_controleur.avionPilote.setReplay(true);
+		}
+	}
+	class ActionCutReplay implements ActionListener {
+		public void actionPerformed(ActionEvent arg0) {
+			_controleur.avionPilote.setReplay(false);
+		}
+	}
 	class ActionChargerPlateForme implements ActionListener {
 		public void actionPerformed(ActionEvent arg0) {
 
