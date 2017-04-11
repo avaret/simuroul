@@ -144,7 +144,7 @@ public class FramePrincipale extends JFrame implements PropertyChangeListener {
 
 		_controleur.ajoutVue(this, evts) ;
 
-		FPilote = new FramePilote(_controleur);
+		//FPilote = new FramePilote(_controleur);
 
 		//Fait apparaitre les boutons de commande de l'avion
 		FrameCommande = new FrameCommandeAvionPilote();
