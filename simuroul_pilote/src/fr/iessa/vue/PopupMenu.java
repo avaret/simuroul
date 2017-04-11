@@ -14,6 +14,7 @@ import javax.swing.JPopupMenu;
 import fr.iessa.controleur.Controleur;
 import fr.iessa.metier.infra.Point;
 import fr.iessa.metier.infra.StopBar;
+import fr.iessa.metier.trafic.VolAvionPilote;
 import fr.iessa.vue.infra.PanelPlateforme;
 import fr.iessa.vue.infra.StopBarDrawer;
 
@@ -21,7 +22,10 @@ import java.awt.geom.NoninvertibleTransformException;
 
 /** Class PopupMenu qui permet de creer un popup menu pour mettre en place des barres d'arret et de les modifier
  * @author GINEYS Christophe 
- * @version 1.0 
+ * @version 1.0
+ * 
+ * Ajout d'une option pour créer une VuePilote avec un avion piloté
+ * @author Timothée Bernard (ISESA 16)
  */
 
 public class PopupMenu extends JPopupMenu implements ActionListener{
@@ -37,7 +41,9 @@ public class PopupMenu extends JPopupMenu implements ActionListener{
 
 	private JPanel panel;
 
-	PanelPlateforme plateforme;
+	private PanelPlateforme plateforme;
+
+	private VolAvionPilote avionPilote;
 
 	//La déclaration pour le menu contextuel
 	public JPopupMenu menu_souris = new JPopupMenu();
@@ -98,12 +104,9 @@ public class PopupMenu extends JPopupMenu implements ActionListener{
 				dist_plus_courte = distance_list;
 				sb_min =sb1;
 			}
-
-		} 
-
+		}
 		return sb_min;
 	}
-
 
 
 	@Override
@@ -121,10 +124,18 @@ public class PopupMenu extends JPopupMenu implements ActionListener{
 
 		switch (e.getActionCommand().trim()) {
 
+		// Option du Menu pour ajouter un Avion Piloté avec sa Vue Pilote
+		// (Timothée Bernard (ISESA 16))
 		case("AJOUTER un Avion Piloté"):
-			FramePilote VuePilote = new FramePilote(this.controleur);
-		VuePilote.ActualiserVuePilote(coordSouris, 48, 48);
-		break;
+		{
+			// Création de l'Avion Piloté
+			avionPilote = new VolAvionPilote(null, getMousePosition());
+
+			// Création de la VuePilote associée à l'Avion Piloté
+			FramePilote VuePilote = new FramePilote(controleur, avionPilote);
+			VuePilote.ActualiserVuePilote(coordSouris);
+			break;
+		}
 
 		case ("AJOUTER de la barre d'arret permanente"):
 		{
@@ -163,9 +174,8 @@ public class PopupMenu extends JPopupMenu implements ActionListener{
 		default:
 			break;
 		}
-		//sert à supprimer la fenetre du popup
-		this.menu_souris.setVisible(false);
 
+		//sert à supprimer la fenetre du popup
 		this.menu_souris.setVisible(false);
 	}
 }	
