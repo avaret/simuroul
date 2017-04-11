@@ -31,6 +31,7 @@ public class StopBarDrawer {
 		g.drawChars(lettre_BA, 0, 1, sb.getX0()+decalage_pixels_x_par_cercle*sb.getNb()+sb.getRayon(), yi);
 
 		int no=0; // variable pour indiquer le n° de cercle
+		
 		while(no<sb.getNb())
 		{
 			g.setColor(Color.BLACK);
@@ -40,26 +41,27 @@ public class StopBarDrawer {
 			CirclePanel.drawCircle(g, xi, yi, sb.getRayon());
 			if (sb.isAllumer() == true)
 			{
-				g.setColor(Color.RED);
-				CirclePanel.fillCircle(g, xi, yi, sb.getRayon());
-				g.setColor(Color.BLACK);
-				CirclePanel.drawCircle(g, xi, yi, sb.getRayon()-2);
+
+				if (sb.isPermanent() == true)
+				{
+					g.setColor(Color.RED);
+					CirclePanel.fillCircle(g, xi, yi, sb.getRayon());
+					g.setColor(Color.BLACK);
+					CirclePanel.drawCircle(g, xi, yi, sb.getRayon()-2);
+				}
+				else {
+					g.setColor(Color.RED);
+					CirclePanel.fillCircle(g, xi, yi, sb.getRayon());
+				}
 			}
-
-			//decalage_pixels_x_par_cercle+=10;
 			no++;
-
 		}
-
-
 	}
 
 	public void dessine(Aeroport aeroport, Graphics2D g2) {
-		//System.out.println(" dessine les StopBar ");
+
 		for(StopBar sb : aeroport.get_StopBar())
 		{
-			//System.out.println("Affichage du StopBar x=" + sb.getX0() + " y=" + sb.getY0() );
-			//affiche une stopbar
 			dessineStopBar(sb, g2);
 		}
 	}

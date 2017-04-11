@@ -19,10 +19,12 @@ import javax.swing.JPopupMenu;
 public class StopBar{
 
 	/** Attributs */
+	private int nbCercle =3;
+	private int rayonCercle =10;
 	private boolean allumer=true; // choix à faire d'allumer ou etendre la BA
 	private boolean permanent =true; // choix à faire pour BA permanente ou commandable
-	private final int nb =3; //Nombre de cercles à definir selon le zoom
-	private int rayon = 10;
+	private final int nb =nbCercle; //Nombre de cercles à definir selon le zoom
+	private int rayon =rayonCercle;
 	private int x0;  
 	private int y0;
 
@@ -34,18 +36,7 @@ public class StopBar{
 	public StopBar (int x, int y){
 		setX0(x);
 		setY0(y);
-		//	System.out.println("Ref StopBar: x=" + x + " / y= " + y);
-		/*	addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				JPopupMenu sous_menu_souris = new JPopupMenu();
-				//selection la barre d'arret
-
-				etat_barre_Arret = new JMenuItem("allumer /eteindre");
-				sous_menu_souris.add(etat_barre_Arret);
-			}
-		});*/
-	}
+		}
 
 	/** méthode */
 	public boolean isAllumer() {
@@ -93,6 +84,8 @@ public class StopBar{
 	}
 
 	public double distance(Point2D.Double p_abs) {
-		return Math.sqrt((this.x0-p_abs.getX()*(this.x0-p_abs.getX()))+((this.y0-p_abs.getY()*(this.y0-p_abs.getY()))));
+		double deltax = this.x0-p_abs.getX();
+		double deltay = this.y0-p_abs.getY();
+		return Math.sqrt(deltax*deltax+deltay*deltay);
 	}
 }
