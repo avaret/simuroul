@@ -26,9 +26,14 @@ import fr.iessa.vue.trafic.ComponentVol;
 import fr.iessa.vue.trafic.ShapeAvionFactory;
 
 
-/**
- * Classe FramePilote
+/** Classe FramePilote:
+ * Cette classe permet de créer une Frame qui suit un avion particulier
+ * (l'Avion Piloté) tout en reproduisant le contenu de la FramePrincipale
  * @author Timothée Bernard (ISESA16)
+ * @version 1.0
+ * 
+ * Modifiée par: N/A
+ * Modification: N/A
  * */
 
 
@@ -40,18 +45,20 @@ public class FramePilote extends JFrame
 	private PanelPrincipalMultiCouches jpanelPilote;
 
 	private int _zoomPilote = 30;
-	private Controleur _controleurPilote;
-	private Echelle _echellePilote = new Echelle();
+	private Echelle _echPilote = new Echelle();
+
+	private Controleur _ctrlPilote;
 	private VolAvionPilote _avionPilote;
 
-	private Point2D.Double positionPilotePrecedente = null;
-	private Point2D.Double positionPiloteCourante = new Point2D.Double(0, 0);
-	private Point2D.Double positionPiloteCouranteAbs = new Point2D.Double(0, 0);
+	private Point2D.Double precedentPilote = null;
+	private Point2D.Double courantPilote = new Point2D.Double(0, 0);
+	private Point2D.Double courantPiloteAbs = new Point2D.Double(0, 0);
 
 
 	// Constructeur de la Classe
 	public FramePilote(Controleur controleur, VolAvionPilote avion)
 	{
+		// Appel du Constructeur de la Classe-Mère JFrame
 		super("Vue Pilote");
 
 
@@ -62,12 +69,11 @@ public class FramePilote extends JFrame
 
 
 		// Initialisation du Controleur déclaré
-		_controleurPilote = controleur;
+		_ctrlPilote = controleur;
 		_avionPilote = avion;
-		
 
 		// Création du Contenu de la FramePilote
-		jpanelPilote = new PanelPrincipalMultiCouches(_controleurPilote, false, _echellePilote);	
+		jpanelPilote = new PanelPrincipalMultiCouches(_ctrlPilote, false, _echPilote);	
 		this.setContentPane(jpanelPilote);
 
 
@@ -82,37 +88,42 @@ public class FramePilote extends JFrame
 	public void ActualiserVuePilote(Point2D.Double coordXY)
 	{	
 		// Récupération des Coordonnées Courantes de l'Avion Piloté
-		_echellePilote.getAffineTransform().deltaTransform(coordXY, positionPiloteCourante);
-		_echellePilote.getAffineTransform().transform(coordXY, positionPiloteCouranteAbs);
-		Point pointAbs =  new Point((int)positionPiloteCouranteAbs.x, (int)positionPiloteCouranteAbs.y);
+		_echPilote.getAffineTransform().deltaTransform(coordXY, courantPilote);
+		_echPilote.getAffineTransform().transform(coordXY, courantPiloteAbs);
+		Point pointAbs =  new Point((int)courantPiloteAbs.x, (int)courantPiloteAbs.y);
 
 
-		// Initialisation de positionPilotePrecedente
-		if(positionPilotePrecedente == null)
-			positionPilotePrecedente = (Double)positionPiloteCourante.clone();
+		// Initialisation de precedentPilote
+		if(precedentPilote == null)
+			precedentPilote = (Double)courantPilote.clone();
 
 
 		// Calcul des Ecarts en X et en Y
-		double xEcart = positionPilotePrecedente.x - positionPiloteCourante.x;
-		double yEcart = positionPilotePrecedente.y - positionPiloteCourante.y;
+		double xEcart = precedentPilote.x - courantPilote.x;
+		double yEcart = precedentPilote.y - courantPilote.y;
 		Point2D.Double ecartRelatif = new Point2D.Double(xEcart, yEcart);
 
 
 		// Zoom et Actualisation de la FramePilote
-		_echellePilote.setZoomLevel(_zoomPilote, pointAbs, getWidth(), getHeight());
-		_echellePilote.setScroll(ecartRelatif, getWidth(), getHeight());
+		_echPilote.setZoomLevel(_zoomPilote, pointAbs, getWidth(), getHeight());
+		_echPilote.setScroll(ecartRelatif, getWidth(), getHeight());
 
 
-		// TODO Rotation du contenu de la FramePilote et fixation de l'orientation de l'Avion Piloté
- 		_avionPilote.setAngle(90);
-		//_echellePilote.getAffineTransform().quadrantRotate((int)angle, positionPiloteCourante.x, positionPiloteCourante.y);
+		// Fixation de l'orientation de l'Avion Piloté puis Rotation du contenu de la FramePilote
+		// FIXME ATTENTION: IL EST POSSIBLE QUE L'ORIENTATION 
+		// DE L'AVION SE FASSE AUSSI SUR LA FRAMEPRINCIPALE !!
+		double angle = (Math.PI/2.0 - _avionPilote.getAngle());
+		_avionPilote.setAngle(Math.PI/2.0);
+		_echPilote.setRotationAngle(angle);
 
 
-		// Stockage de positionPiloteCourante dans positionPilotePrecedente pour l'intstant t+1
-		positionPilotePrecedente = (Double)positionPiloteCourante.clone();
+		// Stockage de courantPilote dans precedentPilote pour l'instant suivant (T+1)
+		precedentPilote = (Double)courantPilote.clone();
 
 
-		// TODO Changement de représentation de l'Avion Selectionné (/!\ CHANGE SUR LA FRAMEPRINCIPALE /!\) 
+		// TODO Changement de représentation de l'Avion Selectionné
+		// FIXME ATTENTION: CHANGE L'IMAGE DE L'AVION SUR LA 
+		// FRAMEPRINCIPALE MAIS PAS SUR LA FRAMEPILOTE !!
 		//CompVol.setImageFactory(ShapeAvionFactory.PILOTE);
 
 

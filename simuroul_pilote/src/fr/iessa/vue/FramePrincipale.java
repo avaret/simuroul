@@ -135,12 +135,6 @@ public class FramePrincipale extends JFrame implements PropertyChangeListener {
 		JMenuItem menuChargerStopBar = new JMenuItem("Charger Barre Arret");
 		menuChargerStopBar.addActionListener(new ActionChargerBarreArret());
 		
-		JMenuItem menuSauvStopBar = new JMenuItem("Sauvegarde Barre Arret");
-		menuSauvStopBar.addActionListener(new ActionSauverBarreArret());
-		
-		JMenuItem menuChargerStopBar = new JMenuItem("Charger Barre Arret");
-		menuChargerStopBar.addActionListener(new ActionChargerBarreArret());
-		
 		_menuOption.add(menuAjoutVue);
 		_menuOption.add(menuAviomSimu);
 		_menuOption.add(menuCollision);

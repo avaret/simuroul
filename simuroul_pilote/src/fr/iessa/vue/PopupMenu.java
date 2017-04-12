@@ -24,8 +24,8 @@ import java.awt.geom.NoninvertibleTransformException;
  * @author GINEYS Christophe 
  * @version 1.0
  * 
- * Ajout d'une option pour créer une VuePilote avec un avion piloté
- * @author Timothée Bernard (ISESA 16)
+ * Modifiée par: @author Timothée Bernard (ISESA 16)
+ * Modification: Ajout d'une option pour créer une VuePilote avec un avion piloté
  */
 
 public class PopupMenu extends JPopupMenu implements ActionListener{
@@ -51,7 +51,7 @@ public class PopupMenu extends JPopupMenu implements ActionListener{
 	private JMenuItem barre_Arret ; 
 
 	private Controleur controleur;
-
+		
 	//constructeurs
 	public PopupMenu (PanelPlateforme plateforme, Echelle ech, Controleur controleur, int x_clic_souris, int y_clic_souris){
 
@@ -129,7 +129,7 @@ public class PopupMenu extends JPopupMenu implements ActionListener{
 		case("AJOUTER un Avion Piloté"):
 		{
 			// Création de l'Avion Piloté
-			avionPilote = new VolAvionPilote(null, getMousePosition());
+			avionPilote = new VolAvionPilote();
 
 			// Création de la VuePilote associée à l'Avion Piloté
 			FramePilote VuePilote = new FramePilote(controleur, avionPilote);

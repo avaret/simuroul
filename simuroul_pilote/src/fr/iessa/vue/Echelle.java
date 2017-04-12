@@ -9,43 +9,47 @@ import java.awt.geom.Point2D;
 import java.util.Observable;
 
 
-/**
+/** Classe Echelle
  * Contient le modele de l'echelle a appliquer.
  * @author hodiqual
  *
+ * Modifiée par: @author Timothée Bernard (ISESA 16)
+ * Modification: Ajout de la méthode "rotate" au sein des autres méthodes créées afin de pouvoir
+ * orienter le contenu de la Frame ainsi qu'un attribut (avec Getter et Setter) "_rotationAngle"
  */
 public class Echelle extends Observable{
-	
+
 	/***/
 	private static final int _minDestLargeur = 800;	
 	private static int _minDestHauteur;
-	
+
 	/***/
 	private static int _minReelX, _maxReelX, _minReelY, _maxReelY;
 	/** Permet de faire des marges autour de l'aeroport, exprimee en metre*/
 	private static final int _margeReel = 100;
-	
+
 	private AffineTransform _zoomTransformation = new AffineTransform();
 	private AffineTransform _mouseScroll = new AffineTransform(); 
 	private AffineTransform _globalTransformation = new AffineTransform();
-	
+
 	private int _zoomLevel = 1;
-	
+	private double _rotationAngle = 0;
+
 	private Point2D.Double _dxdyscroll = new Point2D.Double();
-	
+
 	public void setLimitesReelles(int minX, int maxX, int minY, int maxY){
 		_minReelX = minX;
 		_maxReelX = maxX;
 		_minReelY = minY;
 		_maxReelY = maxY;
-		
+
 		// Pour garder les proportions (_maxReelX-_minReelX) / (_maxReelY-_minReelY) == _minDestLargeur / _minDestHauteur
 		_minDestHauteur = _minDestLargeur * (_maxReelY-_minReelY) / (_maxReelX-_minReelX) ;
 
 		createZoomTransformation();
 		updateGlobalTransformation();
 	}
-	
+
 	/** 
 	 * Calcul la transformation affine pour transposer des coordonnees du monde reel
 	 * aux coordonnees systeme ecran.
@@ -56,34 +60,38 @@ public class Echelle extends Observable{
 	public Echelle() {
 		createZoomTransformation();
 	}
-	
+
 	//http://stackoverflow.com/questions/13155382/jscrollpane-zoom-relative-to-mouse-position
 	public void setZoomLevel(int zoomLevel, Point position ,int limiteLargeur, int limiteHauteur) {
-		
+
 		double oldScaleX = _zoomTransformation.getScaleX();
 		double oldScaleY = _zoomTransformation.getScaleY();
-		
+
 		_zoomLevel = zoomLevel;
-		
+
 		createZoomTransformation();
-		
+
 		double scaleX = _zoomTransformation.getScaleX() / oldScaleX;
 		double scaleY = _zoomTransformation.getScaleY() / oldScaleY;
-		
-        _dxdyscroll.x = position.getX()*(scaleX-1) + scaleX*_dxdyscroll.x;
-        _dxdyscroll.y = position.getY()*(scaleY-1) + scaleY*_dxdyscroll.y;
-        
-        modifieScroll(new Point2D.Double(), limiteLargeur, limiteHauteur);
-		
+
+		_dxdyscroll.x = position.getX()*(scaleX-1) + scaleX*_dxdyscroll.x;
+		_dxdyscroll.y = position.getY()*(scaleY-1) + scaleY*_dxdyscroll.y;
+
+		modifieScroll(new Point2D.Double(), limiteLargeur, limiteHauteur);
+
 		createScrollTransformation();
-		
 		updateGlobalTransformation();
+
+		// Ajout de la méthode "rotate" pour orienter le contenu de la Frame
+		// Timothée Bernard (ISESA 16)
+		_globalTransformation.rotate(_rotationAngle);
+
 		setChanged();
 		notifyObservers(getAffineTransform());
 	}
-	
+
 	private void modifieScroll(Point2D.Double ecartRelatif, int limiteLargeur, int limiteHauteur) {
-		
+
 		if(limiteLargeur>=getDestLargeur())
 			_dxdyscroll.x = -(limiteLargeur-getDestLargeur())/2;
 		else
@@ -92,7 +100,7 @@ public class Echelle extends Observable{
 			_dxdyscroll.x = java.lang.Double.max(_dxdyscroll.x, 0D);
 			_dxdyscroll.x = java.lang.Double.min(_dxdyscroll.x, getDestLargeur()-limiteLargeur);
 		}		
-		
+
 		if(limiteHauteur>=getDestHauteur())
 			_dxdyscroll.y = -(limiteHauteur-getDestHauteur())/2;
 		else
@@ -101,19 +109,24 @@ public class Echelle extends Observable{
 			_dxdyscroll.y = java.lang.Double.max(_dxdyscroll.y, 0D);
 			_dxdyscroll.y = java.lang.Double.min(_dxdyscroll.y, getDestHauteur()-limiteHauteur);
 		}	
-		
+
 	}
-	
+
 	public void setScroll(Point2D.Double ecartRelatif, int limiteLargeur, int limiteHauteur) {
-		
+
 		modifieScroll(ecartRelatif, limiteLargeur, limiteHauteur);
 
 		createScrollTransformation();
 		updateGlobalTransformation();
+
+		// Ajout de la méthode "rotate" pour orienter le contenu de la Frame
+		// Timothée Bernard (ISESA 16)
+		_globalTransformation.rotate(_rotationAngle);
+
 		setChanged();
 		notifyObservers(getAffineTransform());
 	}
-	
+
 	private void createScrollTransformation() {
 		_mouseScroll = new AffineTransform();
 		_mouseScroll.translate(-(int)(_dxdyscroll.getX()), -(int)(_dxdyscroll.getY()));
@@ -129,16 +142,16 @@ public class Echelle extends Observable{
 		double minReelXmarge = _minReelX - _margeReel;
 		double maxReelYmarge = _maxReelY + _margeReel;
 		double minReelYmarge = _minReelY - _margeReel;
-		
+
 		double xScale = _minDestLargeur*_zoomLevel / (maxReelXmarge-minReelXmarge);
-        double yScale = _minDestHauteur*_zoomLevel / (maxReelYmarge-minReelYmarge);
-        
-        _zoomTransformation = new AffineTransform();
-        
-        _zoomTransformation.translate(-xScale*(minReelXmarge), yScale*(maxReelYmarge));
-        _zoomTransformation.scale(xScale, -yScale);
+		double yScale = _minDestHauteur*_zoomLevel / (maxReelYmarge-minReelYmarge);
+
+		_zoomTransformation = new AffineTransform();
+
+		_zoomTransformation.translate(-xScale*(minReelXmarge), yScale*(maxReelYmarge));
+		_zoomTransformation.scale(xScale, -yScale);
 	}
-	
+
 	public AffineTransform getAffineTransform() {
 		return _globalTransformation;
 	}
@@ -147,7 +160,7 @@ public class Echelle extends Observable{
 	{
 		_globalTransformation = AffTrans;
 	}
-	
+
 	public int getDestLargeur() {
 		return _zoomLevel * _minDestLargeur;
 	}
@@ -155,5 +168,16 @@ public class Echelle extends Observable{
 	public int getDestHauteur() {
 		return _zoomLevel * _minDestHauteur;
 	}
-	
+
+	// Getter/Setter de "_rotationAngle"
+	// Timothée Bernard (ISESA 16)
+	public double getRotationAngle()
+	{
+		return _rotationAngle;
+	}
+
+	public void setRotationAngle(double angle)
+	{
+		_rotationAngle = angle;
+	}
 }
