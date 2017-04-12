@@ -4,6 +4,12 @@
 package fr.iessa.metier.infra;
 
 import java.awt.geom.GeneralPath;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.Deque;
 import java.util.Hashtable;
@@ -272,6 +278,40 @@ public class Aeroport {
 		return _maxY;
 	}
 	
-	
+		
+	public void sauverBarreArret(String nomfichier) {
+		ObjectOutputStream os;
+		try {
+			os = new ObjectOutputStream(new FileOutputStream(nomfichier));
+			os.writeObject(_stopbar);
+			os.close();
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}	
+	}
+
+	public void chargerBarreArret(String nomfichier) {
+		// TODO Auto-generated method stub
+		ObjectInputStream oe;
+		try {
+			oe = new ObjectInputStream(new FileInputStream(nomfichier));
+			_stopbar=(List<StopBar>)oe.readObject();
+			oe.close();
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}	
+	}
+
 
 }

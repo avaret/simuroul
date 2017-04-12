@@ -5,6 +5,7 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.geom.Point2D;
 import java.awt.geom.Point2D.Double;
+import java.io.Serializable;
 
 import javax.swing.JMenuItem;
 import javax.swing.JPanel;
@@ -16,7 +17,7 @@ import javax.swing.JPopupMenu;
  * @version 1.0 
  */
 
-public class StopBar{
+public class StopBar implements Serializable {
 
 	/** Attributs */
 	private int nbCercle =3;

@@ -117,11 +117,23 @@ public class FramePrincipale extends JFrame implements PropertyChangeListener {
 		JMenuItem menuAviomSimu = new JMenuItem("Simulation pilote");
 		menuAviomSimu.addActionListener(new ActionSimulationPilote());
 		
+		JMenuItem menuSauvegarderReplay = new JMenuItem("Sauvegarder le replay");
+		menuSauvegarderReplay.addActionListener(new ActionSauvegarderReplay());
+		
+		JMenuItem menuChargerReplay = new JMenuItem("Charger un replay");
+		menuChargerReplay.addActionListener(new ActionChargerReplay());
+		
 		JMenuItem menuStartReplay = new JMenuItem("Lancer le replay");
 		menuStartReplay.addActionListener(new ActionStartReplay());
 		
 		JMenuItem menuCutReplay = new JMenuItem("Arreter le replay");
 		menuCutReplay.addActionListener(new ActionCutReplay());
+		
+		JMenuItem menuSauvStopBar = new JMenuItem("Sauvegarde Barre Arret");
+		menuSauvStopBar.addActionListener(new ActionSauverBarreArret());
+		
+		JMenuItem menuChargerStopBar = new JMenuItem("Charger Barre Arret");
+		menuChargerStopBar.addActionListener(new ActionChargerBarreArret());
 		
 		_menuOption.add(menuAjoutVue);
 		_menuOption.add(menuAviomSimu);
@@ -129,6 +141,8 @@ public class FramePrincipale extends JFrame implements PropertyChangeListener {
 		_menuOption.add(menuSauvCollision);
 		_menuOption.add(menuStartReplay);
 		_menuOption.add(menuCutReplay);
+		_menuOption.add(menuSauvStopBar);
+		_menuOption.add(menuChargerStopBar);
 		_barreMenu.add(_menuOption);
 
 		// Création et configuration du controleur MVC
@@ -169,6 +183,34 @@ public class FramePrincipale extends JFrame implements PropertyChangeListener {
 
 
 	/** Listeners */
+	
+	class ActionSauvegarderReplay implements ActionListener{
+		public void actionPerformed(ActionEvent arg0) {
+
+			File fichierCollision = null;
+			String nomFichierCollision = "";
+			JFileChooser dialogue = new JFileChooser(new File("."));
+
+			if (dialogue.showSaveDialog(null) == JFileChooser.APPROVE_OPTION) {
+				fichierCollision = dialogue.getSelectedFile();
+				nomFichierCollision = fichierCollision.getName();
+				_controleur.avionPilote.sauverReplay(dialogue.getCurrentDirectory()+"/"+nomFichierCollision + ".bin");
+			}	
+		}
+	}
+	class ActionChargerReplay implements ActionListener{
+		public void actionPerformed(ActionEvent arg0) {
+
+			File fichierTrafic = null;
+			JFileChooser dialogue = new JFileChooser(new File("."));
+
+			if (dialogue.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) {
+				fichierTrafic = dialogue.getSelectedFile();
+				_controleur.avionPilote.chargerReplay(fichierTrafic.getPath());
+			}
+
+		}
+	}
 	class ActionStartReplay implements ActionListener {
 		public void actionPerformed(ActionEvent arg0) {
 			_controleur.avionPilote.setReplay(true);
@@ -192,6 +234,20 @@ public class FramePrincipale extends JFrame implements PropertyChangeListener {
 		}
 	}
 
+	//charger barre arret 
+	class ActionChargerBarreArret implements ActionListener {
+		public void actionPerformed(ActionEvent arg0) {
+
+			File fichierBarreArret = null;
+			JFileChooser dialogue = new JFileChooser(new File("."));
+
+			if (dialogue.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) {
+				fichierBarreArret = dialogue.getSelectedFile();
+				_controleur.getAeroport().chargerBarreArret(fichierBarreArret.getPath());
+			}
+		}
+	}
+
 	class ActionChargerTrafic implements ActionListener {
 		public void actionPerformed(ActionEvent arg0) {
 
@@ -206,6 +262,22 @@ public class FramePrincipale extends JFrame implements PropertyChangeListener {
 		}
 	}
 
+	//sauver barre arret 
+	class ActionSauverBarreArret implements ActionListener {
+		public void actionPerformed(ActionEvent arg0) {
+
+			File fichierBarreArret = null;
+			String nomFichierBarreArret = "";
+			JFileChooser dialogue = new JFileChooser(new File("."));
+
+			if (dialogue.showSaveDialog(null) == JFileChooser.APPROVE_OPTION) {
+				fichierBarreArret = dialogue.getSelectedFile();
+				nomFichierBarreArret = fichierBarreArret.getName();
+				_controleur.getAeroport().sauverBarreArret(dialogue.getCurrentDirectory()+"/"+nomFichierBarreArret + ".txt");
+			}	
+		}
+	}
+	
 	//hodiqual
 	class ActionSauverCollisions implements ActionListener {
 		public void actionPerformed(ActionEvent arg0) {
