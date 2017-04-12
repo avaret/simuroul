@@ -32,7 +32,9 @@ import fr.iessa.metier.Instant;
 import fr.iessa.metier.Instant.InstantFabrique;
 import fr.iessa.metier.type.Categorie;
 import fr.iessa.metier.type.TypeVol;
+import fr.iessa.vue.FramePrincipale;
 import fr.iessa.controleur.Controleur;
+import fr.iessa.metier.trafic.Trafic;
 
 public class VolAvionPilote extends Vol  {
 
@@ -46,6 +48,7 @@ public class VolAvionPilote extends Vol  {
 	private Instant _premierInstant;	
 	private double angle;
 	private Map<Instant, Point> _recordCoord = new HashMap<Instant, Point>(10);
+	
 	public VolAvionPilote(Instant instant, Point depart)
 	{
 		_premierInstant = instant;
@@ -120,7 +123,7 @@ public class VolAvionPilote extends Vol  {
 				tempHashMap2.put(b, tempHashMap.get(a));
 			}
 			System.out.println("nombre de point chargé =" + tempHashMap.size());
-			Controleur.avionPilote.set_recordCoord(tempHashMap2);
+			FramePrincipale._controleur.getTrafic().get_premierVolAvionPilote().set_recordCoord(tempHashMap2);
 			oe.close();
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
@@ -209,33 +212,33 @@ public class VolAvionPilote extends Vol  {
 
 
 	public void RotationGauche(){
-		double angle = Controleur.avionPilote.getAngle();
+		double angle = FramePrincipale._controleur.getTrafic().get_premierVolAvionPilote().getAngle();
 		angle += 1;
-		Controleur.avionPilote.setAngle(angle);
+		FramePrincipale._controleur.getTrafic().get_premierVolAvionPilote().setAngle(angle);
 	}
 
 	public void RotationDroite(){
-		double angle = Controleur.avionPilote.getAngle();
+		double angle = FramePrincipale._controleur.getTrafic().get_premierVolAvionPilote().getAngle();
 		angle -= 1;
-		Controleur.avionPilote.setAngle(angle);
+		FramePrincipale._controleur.getTrafic().get_premierVolAvionPilote().setAngle(angle);
 	}
 
 	public void Accelerer(){
-		int vitesse = Controleur.avionPilote.getVitesse();
+		int vitesse = FramePrincipale._controleur.getTrafic().get_premierVolAvionPilote().getVitesse();
 		vitesse += 2;
 		if (vitesse > 25){
 			vitesse=24;
 		}
-		Controleur.avionPilote.setVitesse(vitesse);
+		FramePrincipale._controleur.getTrafic().get_premierVolAvionPilote().setVitesse(vitesse);
 	}
 
 	public void Ralentir(){
-		int vitesse = Controleur.avionPilote.getVitesse();
+		int vitesse = FramePrincipale._controleur.getTrafic().get_premierVolAvionPilote().getVitesse();
 		vitesse -= 2;
 		if (vitesse < 0){
 			vitesse=0;
 		}
-		Controleur.avionPilote.setVitesse(vitesse);
+		FramePrincipale._controleur.getTrafic().get_premierVolAvionPilote().setVitesse(vitesse);
 	}
 
 	public boolean isRecording() {

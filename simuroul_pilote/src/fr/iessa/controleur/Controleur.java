@@ -43,7 +43,6 @@ import fr.iessa.vue.Echelle;
 
 public class Controleur {
 
-	public static VolAvionPilote avionPilote;
 
 	/** Contient la plateforme lorsqu'elle est chargee dans l'application. */
 	private Aeroport _aeroport;
@@ -177,11 +176,8 @@ public class Controleur {
 				
 				//1. Chargement fichier trafic  et pre_calcul les vols par instant
 				TraficDao traficDao = new TraficDao();
-				avionPilote = new VolAvionPilote();
-				Trafic trafic = traficDao.charger(ficname, avionPilote);
-				//TODO 
+				Trafic trafic = traficDao.charger(ficname);
 				
-				//trafic.getVols().add(avionPilote);
 				_trafic = trafic;
 				
 				//2. Creer Horloge

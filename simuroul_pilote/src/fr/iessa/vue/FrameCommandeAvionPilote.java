@@ -67,26 +67,26 @@ public class FrameCommandeAvionPilote extends JFrame{
 
 		gauche.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent arg0){
-				Controleur.avionPilote.RotationGauche();
+				FramePrincipale._controleur.getTrafic().get_premierVolAvionPilote().RotationGauche();
 			}
 		});
 
 		
 		droite.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent arg0){
-				Controleur.avionPilote.RotationDroite();
+				FramePrincipale._controleur.getTrafic().get_premierVolAvionPilote().RotationDroite();
 			}
 		});
 		
 		haut.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent arg0){
-				Controleur.avionPilote.Accelerer();
+				FramePrincipale._controleur.getTrafic().get_premierVolAvionPilote().Accelerer();
 			}
 		});
 		
 		bas.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent arg0){
-				Controleur.avionPilote.Ralentir();
+				FramePrincipale._controleur.getTrafic().get_premierVolAvionPilote().Ralentir();
 			}
 		});
 	}

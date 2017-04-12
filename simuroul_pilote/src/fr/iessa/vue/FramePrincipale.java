@@ -19,6 +19,7 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 
+import fr.iessa.metier.trafic.Trafic;
 import fr.iessa.controleur.Controleur;
 import fr.iessa.controleur.LibereMemoire;
 import fr.iessa.controleur.ModeleEvent;
@@ -194,7 +195,7 @@ public class FramePrincipale extends JFrame implements PropertyChangeListener {
 			if (dialogue.showSaveDialog(null) == JFileChooser.APPROVE_OPTION) {
 				fichierCollision = dialogue.getSelectedFile();
 				nomFichierCollision = fichierCollision.getName();
-				_controleur.avionPilote.sauverReplay(dialogue.getCurrentDirectory()+"/"+nomFichierCollision + ".bin");
+				_controleur.getTrafic().get_premierVolAvionPilote().sauverReplay(dialogue.getCurrentDirectory()+"/"+nomFichierCollision + ".bin");
 			}	
 		}
 	}
@@ -206,19 +207,19 @@ public class FramePrincipale extends JFrame implements PropertyChangeListener {
 
 			if (dialogue.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) {
 				fichierTrafic = dialogue.getSelectedFile();
-				_controleur.avionPilote.chargerReplay(fichierTrafic.getPath());
+				_controleur.getTrafic().get_premierVolAvionPilote().chargerReplay(fichierTrafic.getPath());
 			}
 
 		}
 	}
 	class ActionStartReplay implements ActionListener {
 		public void actionPerformed(ActionEvent arg0) {
-			_controleur.avionPilote.setReplay(true);
+			_controleur.getTrafic().get_premierVolAvionPilote().setReplay(true);
 		}
 	}
 	class ActionCutReplay implements ActionListener {
 		public void actionPerformed(ActionEvent arg0) {
-			_controleur.avionPilote.setReplay(false);
+			_controleur.getTrafic().get_premierVolAvionPilote().setReplay(false);
 		}
 	}
 	class ActionChargerPlateForme implements ActionListener {
@@ -385,16 +386,16 @@ public class FramePrincipale extends JFrame implements PropertyChangeListener {
 		public boolean dispatchKeyEvent(KeyEvent e) {
 			if (e.getID() == KeyEvent.KEY_PRESSED ) {
 				if(e.getKeyCode() == KeyEvent.VK_Q) {
-					Controleur.avionPilote.RotationGauche();
+					_controleur.getTrafic().get_premierVolAvionPilote().RotationGauche();
 					return true;
 				}else if (e.getKeyCode() == KeyEvent.VK_D) {
-					Controleur.avionPilote.RotationDroite();
+					_controleur.getTrafic().get_premierVolAvionPilote().RotationDroite();
 					return true;
 				}else if (e.getKeyCode() == KeyEvent.VK_Z) {
-					Controleur.avionPilote.Accelerer();
+					_controleur.getTrafic().get_premierVolAvionPilote().Accelerer();
 					return true;
 				}else if (e.getKeyCode() == KeyEvent.VK_S) { 
-					Controleur.avionPilote.Ralentir();
+					_controleur.getTrafic().get_premierVolAvionPilote().Ralentir();
 					return true;
 				}
 
