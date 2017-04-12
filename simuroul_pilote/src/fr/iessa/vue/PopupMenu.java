@@ -53,7 +53,7 @@ public class PopupMenu extends JPopupMenu implements ActionListener{
 	private JMenuItem barre_Arret ; 
 
 	private Controleur controleur;
-		
+
 	//constructeurs
 	public PopupMenu (PanelPlateforme plateforme, Echelle ech, Controleur controleur, int x_clic_souris, int y_clic_souris){
 
@@ -90,7 +90,11 @@ public class PopupMenu extends JPopupMenu implements ActionListener{
 		barre_Arret.setActionCommand("SUPPRIMER de la barre d'arret");
 		barre_Arret.addActionListener(this);
 		
-		//todo ajout d'un vol pilote
+		barre_Arret = new JMenuItem("DONNER l'angle en degré de la barre d'arret");
+		menu_souris.add(barre_Arret);
+		barre_Arret.setActionCommand("DONNER l'angle en degré de la barre d'arret");
+		barre_Arret.addActionListener(this);
+
 	}
 
 	//	getNearestStopBar	
@@ -141,12 +145,17 @@ public class PopupMenu extends JPopupMenu implements ActionListener{
 			break;
 		}
 
+		case ("DONNER l'angle en degré de la barre d'arret"):
+		{
+			this.getNearestStopBar().getAngle0();
+			plateforme.update(null, null);
+			break;
+		}
+		
 		case ("AJOUTER de la barre d'arret permanente"):
 		{
 			StopBar sb = new StopBar((int)p_abs.x, (int)p_abs.y, theta);
-
 			controleur.getAeroport().add(sb);
-
 			plateforme.update(null, null);
 			break;
 		}
@@ -175,9 +184,7 @@ public class PopupMenu extends JPopupMenu implements ActionListener{
 			plateforme.update(null, null);
 			break;
 		}
-		
-		//todo ajout d'un vol pilote
-		
+
 		default:
 			break;
 		}

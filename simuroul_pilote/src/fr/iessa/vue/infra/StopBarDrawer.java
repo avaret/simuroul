@@ -3,6 +3,7 @@ package fr.iessa.vue.infra;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.awt.geom.AffineTransform;
 import java.util.List;
 
 import fr.iessa.metier.infra.Aeroport;
@@ -25,8 +26,8 @@ public class StopBarDrawer {
 	{
 		int i;
 		int y;
-	
-
+		int theta;
+		
 		for (i=-5;i<5;i++)
 		{
 			int x=sb.getX0()+i*phy;
@@ -40,6 +41,9 @@ public class StopBarDrawer {
 			}
 			
 			//TODO donner l'angle 
+			theta = sb.getAngle0();
+			
+			
 			dessinUnFeu(g, x, y, sb.isAllumer(),sb.isPermanent());
 		}
 	}
