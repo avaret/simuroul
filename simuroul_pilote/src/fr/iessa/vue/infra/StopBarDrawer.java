@@ -16,45 +16,55 @@ import fr.iessa.vue.CirclePanel;
 
 public class StopBarDrawer {
 
+	private final static int nb =10; //Nombre de cercles fix
+	private final static int rayon =3; // diam des cercles
+	private final static int phy= (int) (2*(((float)rayon)*1.2));
+
 	/** méthode */
 	public void dessineStopBar(StopBar sb, Graphics g)
 	{
-		int decalage_pixels_x_par_cercle=(int) (2*(((float)sb.getRayon())*1.2)); // decalage des ronds
-		char[] lettre_BA = new char[1]; // variable pour afficher la lettre C ou P
+		int i;
+		int y;
+	
 
-		// barre d'arret permanente ou controlable
-
-		int yi = sb.getY0()+50;
-
-		// allumer ou pas la barre d'arret
-
-		g.drawChars(lettre_BA, 0, 1, sb.getX0()+decalage_pixels_x_par_cercle*sb.getNb()+sb.getRayon(), yi);
-
-		int no=0; // variable pour indiquer le n° de cercle
-		
-		while(no<sb.getNb())
+		for (i=-5;i<5;i++)
 		{
-			g.setColor(Color.BLACK);
-			int xi = sb.getX0()+decalage_pixels_x_par_cercle*no;
-
-
-			CirclePanel.drawCircle(g, xi, yi, sb.getRayon());
-			if (sb.isAllumer() == true)
+			int x=sb.getX0()+i*phy;
+			if (i>=-3 && i<3)
 			{
-
-				if (sb.isPermanent() == true)
-				{
-					g.setColor(Color.RED);
-					CirclePanel.fillCircle(g, xi, yi, sb.getRayon());
-					g.setColor(Color.BLACK);
-					CirclePanel.drawCircle(g, xi, yi, sb.getRayon()-2);
-				}
-				else {
-					g.setColor(Color.RED);
-					CirclePanel.fillCircle(g, xi, yi, sb.getRayon());
-				}
+				y= sb.getY0()+phy;
 			}
-			no++;
+			else
+			{
+				y= sb.getY0();
+			}
+			
+			//TODO donner l'angle 
+			dessinUnFeu(g, x, y, sb.isAllumer(),sb.isPermanent());
+		}
+	}
+
+
+	private void dessinUnFeu(Graphics g, int xi, int yi, boolean allumer, boolean permanent) {
+		g.setColor(Color.BLACK);
+		CirclePanel.drawCircle(g, xi, yi, rayon);
+		g.setColor(Color.GREEN);
+		CirclePanel.fillCircle(g, xi, yi, rayon);
+		
+		if (allumer)
+		{
+			if (permanent)
+			{
+				g.setColor(Color.RED);
+				CirclePanel.fillCircle(g, xi, yi, rayon);
+				g.setColor(Color.BLACK);
+				CirclePanel.drawCircle(g, xi, yi, rayon-2);
+			}
+			else 
+			{
+				g.setColor(Color.RED);
+				CirclePanel.fillCircle(g, xi, yi, rayon);
+			}
 		}
 	}
 

@@ -24,8 +24,8 @@ import java.awt.geom.NoninvertibleTransformException;
  * @author GINEYS Christophe 
  * @version 1.0
  * 
- * Ajout d'une option pour créer une VuePilote avec un avion piloté
- * @author Timothée Bernard (ISESA 16)
+ * Modifiée par: @author Timothée Bernard (ISESA 16)
+ * Modification: Ajout d'une option pour créer une VuePilote avec un avion piloté
  */
 
 public class PopupMenu extends JPopupMenu implements ActionListener{
@@ -38,6 +38,8 @@ public class PopupMenu extends JPopupMenu implements ActionListener{
 	Point2D.Double coordSouris = new Point2D.Double(0, 0);
 	Point2D.Double p = new Point2D.Double(0, 0);
 	Point2D.Double p_abs = new Point2D.Double(0, 0);
+
+	private int theta;
 
 	private JPanel panel;
 
@@ -78,15 +80,17 @@ public class PopupMenu extends JPopupMenu implements ActionListener{
 		barre_Arret.setActionCommand("AJOUTER de la barre d'arret commandable allumee");
 		barre_Arret.addActionListener(this);
 
-		barre_Arret = new JMenuItem("ETEINDRE une barre d'arret commandable ");
+		barre_Arret = new JMenuItem("ETEINDRE une barre d'arret commandable");
 		menu_souris.add(barre_Arret);
-		barre_Arret.setActionCommand("ETEINDRE une barre d'arret commandable ");
+		barre_Arret.setActionCommand("ETEINDRE une barre d'arret commandable");
 		barre_Arret.addActionListener(this);
 
 		barre_Arret = new JMenuItem("SUPPRIMER de la barre d'arret");
 		menu_souris.add(barre_Arret);
 		barre_Arret.setActionCommand("SUPPRIMER de la barre d'arret");
 		barre_Arret.addActionListener(this);
+		
+		//todo ajout d'un vol pilote
 	}
 
 	//	getNearestStopBar	
@@ -129,7 +133,7 @@ public class PopupMenu extends JPopupMenu implements ActionListener{
 		case("AJOUTER un Avion Piloté"):
 		{
 			// Création de l'Avion Piloté
-			avionPilote = new VolAvionPilote(null, getMousePosition());
+			avionPilote = new VolAvionPilote();
 
 			// Création de la VuePilote associée à l'Avion Piloté
 			FramePilote VuePilote = new FramePilote(controleur, avionPilote);
@@ -139,7 +143,7 @@ public class PopupMenu extends JPopupMenu implements ActionListener{
 
 		case ("AJOUTER de la barre d'arret permanente"):
 		{
-			StopBar sb = new StopBar((int)p_abs.x, (int)p_abs.y);
+			StopBar sb = new StopBar((int)p_abs.x, (int)p_abs.y, theta);
 
 			controleur.getAeroport().add(sb);
 
@@ -149,7 +153,7 @@ public class PopupMenu extends JPopupMenu implements ActionListener{
 
 		case ("AJOUTER de la barre d'arret commandable allumee"):
 		{
-			StopBar sb = new StopBar((int)p_abs.x, (int)p_abs.y);
+			StopBar sb = new StopBar((int)p_abs.x, (int)p_abs.y, theta);
 			controleur.getAeroport().add(sb);
 			sb.setAllumer(true);
 			sb.setPermanent(false);
@@ -157,7 +161,7 @@ public class PopupMenu extends JPopupMenu implements ActionListener{
 			break;
 		}
 
-		case ("ETEINDRE une barre d'arret commandable "):
+		case ("ETEINDRE une barre d'arret commandable"):
 		{
 			this.getNearestStopBar().setAllumer(false);
 			plateforme.update(null, null);
@@ -171,6 +175,9 @@ public class PopupMenu extends JPopupMenu implements ActionListener{
 			plateforme.update(null, null);
 			break;
 		}
+		
+		//todo ajout d'un vol pilote
+		
 		default:
 			break;
 		}

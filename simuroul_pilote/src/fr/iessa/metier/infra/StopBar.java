@@ -20,24 +20,20 @@ import javax.swing.JPopupMenu;
 public class StopBar implements Serializable {
 
 	/** Attributs */
-	private int nbCercle =3;
-	private int rayonCercle =10;
+
 	private boolean allumer=true; // choix à faire d'allumer ou etendre la BA
 	private boolean permanent =true; // choix à faire pour BA permanente ou commandable
-	private final int nb =nbCercle; //Nombre de cercles à definir selon le zoom
-	private int rayon =rayonCercle;
-	private int x0;  
-	private int y0;
+
+	private int x0;  // coordonnée du point d'insertion de la BA
+	private int y0;  // coordonnée du point d'insertion de la BA
 
 	private JMenuItem etat_barre_Arret ; 
 
-
-
 	/** constructeur */
-	public StopBar (int x, int y){
+	public StopBar (int x, int y, int theta){
 		setX0(x);
 		setY0(y);
-		}
+	}
 
 	/** méthode */
 	public boolean isAllumer() {
@@ -54,18 +50,6 @@ public class StopBar implements Serializable {
 
 	public void setPermanent(boolean permanent) {
 		this.permanent = permanent;
-	}
-
-	public int getRayon() {
-		return rayon;
-	}
-
-	public void setRayon(int rayon) {
-		this.rayon = rayon;
-	}
-
-	public int getNb() {
-		return nb;
 	}
 
 	public int getX0() {
