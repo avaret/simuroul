@@ -117,11 +117,23 @@ public class FramePrincipale extends JFrame implements PropertyChangeListener {
 		JMenuItem menuAviomSimu = new JMenuItem("Simulation pilote");
 		menuAviomSimu.addActionListener(new ActionSimulationPilote());
 		
+		JMenuItem menuSauvegarderReplay = new JMenuItem("Sauvegarder le replay");
+		menuSauvegarderReplay.addActionListener(new ActionSauvegarderReplay());
+		
+		JMenuItem menuChargerReplay = new JMenuItem("Charger un replay");
+		menuChargerReplay.addActionListener(new ActionChargerReplay());
+		
 		JMenuItem menuStartReplay = new JMenuItem("Lancer le replay");
 		menuStartReplay.addActionListener(new ActionStartReplay());
 		
 		JMenuItem menuCutReplay = new JMenuItem("Arreter le replay");
 		menuCutReplay.addActionListener(new ActionCutReplay());
+		
+		JMenuItem menuSauvStopBar = new JMenuItem("Sauvegarde Barre Arret");
+		menuSauvStopBar.addActionListener(new ActionSauverBarreArret());
+		
+		JMenuItem menuChargerStopBar = new JMenuItem("Charger Barre Arret");
+		menuChargerStopBar.addActionListener(new ActionChargerBarreArret());
 		
 		JMenuItem menuSauvStopBar = new JMenuItem("Sauvegarde Barre Arret");
 		menuSauvStopBar.addActionListener(new ActionSauverBarreArret());
@@ -177,6 +189,34 @@ public class FramePrincipale extends JFrame implements PropertyChangeListener {
 
 
 	/** Listeners */
+	
+	class ActionSauvegarderReplay implements ActionListener{
+		public void actionPerformed(ActionEvent arg0) {
+
+			File fichierCollision = null;
+			String nomFichierCollision = "";
+			JFileChooser dialogue = new JFileChooser(new File("."));
+
+			if (dialogue.showSaveDialog(null) == JFileChooser.APPROVE_OPTION) {
+				fichierCollision = dialogue.getSelectedFile();
+				nomFichierCollision = fichierCollision.getName();
+				_controleur.avionPilote.sauverReplay(dialogue.getCurrentDirectory()+"/"+nomFichierCollision + ".bin");
+			}	
+		}
+	}
+	class ActionChargerReplay implements ActionListener{
+		public void actionPerformed(ActionEvent arg0) {
+
+			File fichierTrafic = null;
+			JFileChooser dialogue = new JFileChooser(new File("."));
+
+			if (dialogue.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) {
+				fichierTrafic = dialogue.getSelectedFile();
+				_controleur.avionPilote.chargerReplay(fichierTrafic.getPath());
+			}
+
+		}
+	}
 	class ActionStartReplay implements ActionListener {
 		public void actionPerformed(ActionEvent arg0) {
 			_controleur.avionPilote.setReplay(true);
