@@ -53,7 +53,7 @@ public class PopupMenu extends JPopupMenu implements ActionListener{
 	private JMenuItem barre_Arret ; 
 
 	private Controleur controleur;
-
+		
 	//constructeurs
 	public PopupMenu (PanelPlateforme plateforme, Echelle ech, Controleur controleur, int x_clic_souris, int y_clic_souris){
 

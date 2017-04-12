@@ -1,5 +1,6 @@
 package fr.iessa.metier;
 
+import java.io.Serializable;
 import java.text.DecimalFormat;
 import java.util.Map.Entry;
 import java.util.Set;
@@ -11,7 +12,7 @@ import java.util.TreeSet;
  * @author hodiqual
  *
  */
-public class Instant implements Comparable<Instant>{
+public class Instant implements Comparable<Instant>, Serializable{
 	
 	/**
 	 * Nombre de secondes ecoulees depuis 00:00:00.

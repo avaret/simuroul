@@ -28,6 +28,11 @@ import fr.iessa.metier.Instant.InstantFabrique;
 public class Trafic implements Observer {
 	
 	/**
+	 * L'ensemble des vols pilotés
+	 */
+	private ArrayList<VolAvionPilote> _volsAvionPilote = null;
+	
+	/**
 	 * L'ensemble des vols
 	 */
 	private Set<Vol> _vols = null;
@@ -146,6 +151,25 @@ public class Trafic implements Observer {
 	 */
 	public List<Collision> getCollisions() {
 		return _collisions;
+	}
+	
+	/**
+	 * @return L'emsemble des vols pilotés
+	 */
+	public ArrayList<VolAvionPilote> get_volsAvionPilote() {
+		return _volsAvionPilote;
+	}
+	
+	/**
+	 * @return Le premier vol piloté
+	 */
+	public VolAvionPilote get_premierVolAvionPilote(){
+		return _volsAvionPilote.get(0);
+	}
+	
+	public void ajoutVolAvionPilote(Instant instant, Point depart){
+		VolAvionPilote avionPilote = new VolAvionPilote(instant,depart);
+		_volsAvionPilote.add(avionPilote);
 	}
 	
 }
