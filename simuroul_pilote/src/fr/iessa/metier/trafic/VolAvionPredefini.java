@@ -17,7 +17,7 @@ public class VolAvionPredefini extends Vol {
 	private Map<Instant, Point> _instantVersCoord = new HashMap<Instant, Point>(10);
 	private Instant _premierInstant;
 	private boolean aDesCollisions = false;
-	
+
 	public VolAvionPredefini(TypeVol typeVol, String id, Categorie categorie, Instant instant)
 	{
 		_typeVol = typeVol;
@@ -25,7 +25,7 @@ public class VolAvionPredefini extends Vol {
 		_categorie = categorie;
 		_premierInstant = instant;
 	}
-	
+
 	public void ajout(Instant temps, Point coord) {
 		_instantVersCoord.put(temps, coord);
 	}
@@ -33,23 +33,25 @@ public class VolAvionPredefini extends Vol {
 	public Map<Instant, Point> getInstantVersCoord() {
 		return _instantVersCoord;
 	}
-	
+
 	public Point getCoord(Instant i ){
 		return _instantVersCoord.get(i);
 	}
 
 	public void updateCoordCourantes(Instant instant) {
-		if( instant == null )
-			_coordCourante = null;
-		else
-		{
-			_coordCourante = _instantVersCoord.get(instant);
+		if(instant != null) {
+			if(_instantVersCoord.get(instant) != null)
+				_coordCourante = _instantVersCoord.get(instant);
+
 			Instant instantSuivant = InstantFabrique.get(instant.getSeconds()+InstantFabrique._pasEntreInstant);
-			_coordSuivante = _instantVersCoord.get(instantSuivant);
+
+			if(_instantVersCoord.get(instantSuivant) != null)
+				_coordSuivante = _instantVersCoord.get(instantSuivant);
 		}
+
 	}
-	
-	
+
+
 	/**
 	 * @return the _typeVol
 	 */
@@ -78,13 +80,13 @@ public class VolAvionPredefini extends Vol {
 		return _premierInstant;
 	}
 
-	
+
 	public boolean estSurLaPlateforme(Instant instant) {
 		return _instantVersCoord.containsKey(instant);
 	}
 
-	
-	
+
+
 	public String toString()  {
 		return getId();
 	}
@@ -102,5 +104,5 @@ public class VolAvionPredefini extends Vol {
 	public void setADesCollisions(boolean aDesCollisions) {
 		this.aDesCollisions = aDesCollisions;
 	}
-	
+
 }

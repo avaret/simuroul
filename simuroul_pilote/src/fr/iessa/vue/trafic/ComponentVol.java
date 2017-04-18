@@ -55,9 +55,8 @@ public class ComponentVol extends JComponent {
 	private Shape _cheminParcouruShape;
 	private ClickComponentVolListener _clickListener;
 
-	
-	public ComponentVol(Vol v, Echelle echelle) {
 
+	public ComponentVol(Vol v, Echelle echelle) {
 		setOpaque(true);
 
 		_echelle = echelle;
@@ -185,7 +184,7 @@ public class ComponentVol extends JComponent {
 		return Math.toDegrees(Math.atan2(-dy, dx)+2*Math.PI)%360;
 	}
 
-	public void update(JPanel panel){
+	public void update(JPanel panel){	
 		if(_vol.getCoordCourante() == null)
 			panel.remove(this);
 		if(_vol.getCoordCourante() != null)
@@ -210,7 +209,7 @@ public class ComponentVol extends JComponent {
 			setY(_coordCourante.y-_hauteur/2);
 
 		}
-		
+
 		revalidate();
 		repaint();
 	}

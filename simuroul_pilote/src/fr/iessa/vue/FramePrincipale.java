@@ -43,11 +43,10 @@ public class FramePrincipale extends JFrame implements PropertyChangeListener {
 	private JMenuItem _menuQuitter;
 	private JMenu _menuOption;
 
-	public static Controleur _controleur;
+	public static Controleur _controleur; // FIXME: Si on enleve le Static, la classe VolAvionPilote affiche des erreurs (direction de l'avion + chargement du Replay) 
 	private Echelle _echelle;
 
-	public static FramePilote FPilote;
-	public static FrameCommandeAvionPilote FrameCommande;
+	public static FrameCommandeAvionPilote FrameCommande; // FIXME: On n'a plus besoin de la FrameCommande -> Tout se fait sur clavier !
 
 	//Charge la plateforme et le traffic à partir des arguments    
 	private void chargerPlateformeTrafficAvecArguments(String fichierPlateforme, String fichierTraffic) {
@@ -158,8 +157,6 @@ public class FramePrincipale extends JFrame implements PropertyChangeListener {
 				ModeleEvent.SAUVEGARDE_COLLISION_ERREUR};
 
 		_controleur.ajoutVue(this, evts) ;
-
-		//FPilote = new FramePilote(_controleur);
 
 		//Fait apparaitre les boutons de commande de l'avion
 		FrameCommande = new FrameCommandeAvionPilote();

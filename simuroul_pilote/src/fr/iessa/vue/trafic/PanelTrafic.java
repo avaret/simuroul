@@ -61,20 +61,24 @@ public class PanelTrafic extends JPanel implements PropertyChangeListener, Obser
 		
 		_controleur.ajoutVue(this,  evts) ;
         
-        setTrafic(_controleur.getTrafic());
+        updateTrafic();
 		
 		_echelle = echelle;
     }
     
     private void setTrafic(Trafic trafic) {
     	_trafic = trafic;
-    	
     	if(_trafic != null)
     	{
     		new InitializeComponentVols().execute();
     	}	
     }
 
+    public void updateTrafic()
+    {
+        setTrafic(_controleur.getTrafic());
+    }
+    
     public Dimension getPreferredSize() {
         return new Dimension(250,200);
     }
@@ -185,5 +189,6 @@ public class PanelTrafic extends JPanel implements PropertyChangeListener, Obser
 	public void addObserver(Observer o) {
 		_obs.addObserver(o);
 	}
-
+	
+	
 }

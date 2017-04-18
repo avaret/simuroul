@@ -30,7 +30,7 @@ public class Trafic implements Observer {
 	/**
 	 * L'ensemble des vols pilotés
 	 */
-	private ArrayList<VolAvionPilote> _volsAvionPilote = null;
+	private ArrayList<VolAvionPilote> _volsAvionPilote = new ArrayList<VolAvionPilote>(1);
 	
 	/**
 	 * L'ensemble des vols
@@ -113,7 +113,7 @@ public class Trafic implements Observer {
 		volsAInstant.stream().forEach( v -> v.updateCoordCourantes(instant) );
 		
 		_vols.parallelStream().filter( v -> volsAInstant.contains(v) == false )
-							  .forEach( v -> v.updateCoordCourantes(null) );
+							  .forEach( v -> v.updateCoordCourantes(instant) ); // FIXME: Modification de "null" vers "instant"
 	}
 
 	/**
@@ -154,7 +154,7 @@ public class Trafic implements Observer {
 	}
 	
 	/**
-	 * @return L'emsemble des vols pilotés
+	 * @return L'ensemble des vols pilotés
 	 */
 	public ArrayList<VolAvionPilote> get_volsAvionPilote() {
 		return _volsAvionPilote;
@@ -167,9 +167,11 @@ public class Trafic implements Observer {
 		return _volsAvionPilote.get(0);
 	}
 	
-	public void ajoutVolAvionPilote(Instant instant, Point depart){
-		VolAvionPilote avionPilote = new VolAvionPilote(instant,depart);
+	// FIXME: Ajouter commentaire
+	public void ajoutVolAvionPilote(VolAvionPilote avionPilote){
+		_vols.add(avionPilote);
 		_volsAvionPilote.add(avionPilote);
+		//_volsParInstant.add(avionPilote);
 	}
 	
 }

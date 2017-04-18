@@ -9,13 +9,15 @@ import java.awt.geom.Point2D;
 import java.util.Observable;
 
 
-/** Classe Echelle
- * Contient le modele de l'echelle a appliquer.
+/** Classe Echelle:
+ * Cette Classe contient le modele de l'echelle a appliquer.
+ * <p>
+ * <strong>Modification:</strong> Ajout de la méthode "rotate" au sein des autres méthodes créées
+ * afin d'orienter le contenu de la Frame ainsi qu'un attribut (avec Getter et Setter) "_rotationAngle"
+ * <p>
+ * 
  * @author hodiqual
- *
- * Modifiée par: @author Timothée Bernard (ISESA 16)
- * Modification: Ajout de la méthode "rotate" au sein des autres méthodes créées afin de pouvoir
- * orienter le contenu de la Frame ainsi qu'un attribut (avec Getter et Setter) "_rotationAngle"
+ * @author Timothée Bernard (ISESA 16)
  */
 public class Echelle extends Observable{
 

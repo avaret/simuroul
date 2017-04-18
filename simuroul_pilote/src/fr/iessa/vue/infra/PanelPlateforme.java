@@ -46,6 +46,7 @@ import fr.iessa.controleur.ModeleEvent;
 import fr.iessa.metier.infra.Aeroport;
 import fr.iessa.vue.ChargeEnCoursLayerUI;
 import fr.iessa.vue.Echelle;
+import fr.iessa.vue.PanelPrincipalMultiCouches;
 import fr.iessa.vue.PopupMenu;
 
 /**
@@ -65,6 +66,8 @@ public class PanelPlateforme extends JPanel implements PropertyChangeListener, M
 	
 	private Controleur controleur;
 	
+	private PanelPrincipalMultiCouches parent;
+	
 	private PlateformeDrawer _drawer = new PlateformeDrawer();
 	
 	
@@ -77,7 +80,7 @@ public class PanelPlateforme extends JPanel implements PropertyChangeListener, M
 
 	private int _zoomLevel = 1;
 	
-	public PanelPlateforme(Controleur controleur, Echelle echelle) {
+	public PanelPlateforme(PanelPrincipalMultiCouches parent, Controleur controleur, Echelle echelle) {
         setLayout(new GridLayout(1,1));
         setBackground(Color.white);
 
@@ -97,6 +100,8 @@ public class PanelPlateforme extends JPanel implements PropertyChangeListener, M
 		
 		_echelle = echelle;
 		echelle.addObserver(this);
+		
+		this.parent = parent;
 		
 		setAeroport(controleur.getAeroport());
 		
@@ -298,7 +303,7 @@ public class PanelPlateforme extends JPanel implements PropertyChangeListener, M
 		//Seulement s'il s'agit d'un clic droit, on affiche un nouveau menu
 		if(e.getButton() == MouseEvent.BUTTON3)
 		{
-			currentPopupMenu = new PopupMenu(this, _echelle, this.controleur, e.getX(), e.getY());
+			currentPopupMenu = new PopupMenu(this.parent, this, _echelle, this.controleur, e.getX(), e.getY());
 			currentPopupMenu.menu_souris.getAccessibleContext();
 
 			//La méthode qui va afficher le menu
@@ -353,9 +358,8 @@ public class PanelPlateforme extends JPanel implements PropertyChangeListener, M
 	@Override
 	public void update(Observable o, Object arg)
 	{
-		//System.out.println("Observer " + this.getClass().getName());
 		resetImageCarte();
-        repaint();		
+        repaint();	
 	}
 	
 	public int getZoomLevel()

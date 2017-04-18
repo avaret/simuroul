@@ -13,6 +13,7 @@ import javax.swing.JPanel;
 import javax.swing.JPopupMenu;
 
 import fr.iessa.controleur.Controleur;
+import fr.iessa.metier.Instant;
 import fr.iessa.metier.infra.Point;
 import fr.iessa.metier.infra.StopBar;
 import fr.iessa.metier.trafic.VolAvionPilote;
@@ -45,6 +46,7 @@ public class PopupMenu extends JPopupMenu implements ActionListener{
 	private JPanel panel;
 
 	private PanelPlateforme plateforme;
+	private PanelPrincipalMultiCouches multicouche;
 
 	private VolAvionPilote avionPilote;
 
@@ -56,7 +58,7 @@ public class PopupMenu extends JPopupMenu implements ActionListener{
 	private Controleur controleur;
 
 	//constructeurs
-	public PopupMenu (PanelPlateforme plateforme, Echelle ech, Controleur controleur, int x_clic_souris, int y_clic_souris){
+	public PopupMenu (PanelPrincipalMultiCouches multicouche, PanelPlateforme plateforme, Echelle ech, Controleur controleur, int x_clic_souris, int y_clic_souris){
 
 		echelle1= ech;
 		zoom1 = plateforme.getZoomLevel();
@@ -65,6 +67,7 @@ public class PopupMenu extends JPopupMenu implements ActionListener{
 
 		this.controleur = controleur;
 		this.plateforme = plateforme;
+		this.multicouche = multicouche;
 
 		barre_Arret = new JMenuItem("Ajouter un Avion Piloté");
 		menu_souris.add(barre_Arret);
@@ -80,7 +83,7 @@ public class PopupMenu extends JPopupMenu implements ActionListener{
 		menu_souris.add(barre_Arret);
 		barre_Arret.setActionCommand("Inverser l'allumage de la BA commandable");
 		barre_Arret.addActionListener(this);
-		
+
 		barre_Arret = new JMenuItem("Ajouter une barre d'arret commandable allumee");
 		menu_souris.add(barre_Arret);
 		barre_Arret.setActionCommand("AJOUTER de la barre d'arret commandable allumee");
@@ -138,24 +141,30 @@ public class PopupMenu extends JPopupMenu implements ActionListener{
 		case("AJOUTER un Avion Piloté"):
 		{
 			// Création de l'Avion Piloté
-			avionPilote = new VolAvionPilote();
+			java.awt.Point pointAvionPilote = new java.awt.Point((int)p_abs.x, (int)p_abs.y); // Conversion forcée du Double ne Int -> PERTE DE PRECISION
+			Instant instant_courant = new Instant(controleur.getInstantCourant());
+			VolAvionPilote avionPilote = new VolAvionPilote(instant_courant, pointAvionPilote);
+			controleur.getTrafic().ajoutVolAvionPilote(avionPilote);
+			multicouche.traficPanel.updateTrafic();
 
 			// Création de la VuePilote associée à l'Avion Piloté
 			FramePilote VuePilote = new FramePilote(controleur, avionPilote);
-			VuePilote.ActualiserVuePilote(coordSouris);
+			VuePilote.ActualiserVuePilote(avionPilote.getCoordCourante());
+
+			plateforme.update(null, null);
 			break;
 		}
 
 		case ("DONNER l'angle en degré de la barre d'arret"):
 		{
 			int angle;
-			
+
 			String value= JOptionPane.showInputDialog(this,"Entrer un angle entre 0 et 360 degrés", "Angle de la barre d'arret", JOptionPane.QUESTION_MESSAGE);
 			angle = Integer.parseInt(value) ;
 			if ((angle >=0) && (angle <=360))
 			{
-			this.getNearestStopBar().setAngle(angle);
-			plateforme.update(null, null);
+				this.getNearestStopBar().setAngle(angle);
+				plateforme.update(null, null);
 			}						
 			break;
 		}
@@ -197,7 +206,7 @@ public class PopupMenu extends JPopupMenu implements ActionListener{
 			}
 			break;
 		}
-		
+
 		default:
 			break;
 		}

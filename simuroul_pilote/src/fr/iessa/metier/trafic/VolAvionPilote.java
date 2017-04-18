@@ -23,6 +23,7 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
+import java.net.CookieHandler;
 
 import javax.imageio.ImageIO;
 import javax.swing.JButton;
@@ -53,19 +54,24 @@ public class VolAvionPilote extends Vol  {
 	{
 		_premierInstant = instant;
 		_PointDepart = depart;
+		initialiserVolAvionPilote();
 	}
 
 	public VolAvionPilote()
 	{
 		_premierInstant = Instant.InstantFabrique.getMinimumInstant();
-		_Vitesse=5;
 		_PointDepart = new Point(0,0);
-		nombreAppel=0;
-		_coordCourante=_PointDepart;
-		angle=0;
+		initialiserVolAvionPilote();
 	}
 
-	//update des coordonnées à l'aide de l'angle, incrémenter par la suite par les touches du claviers
+	public void initialiserVolAvionPilote() {
+		_Vitesse=5;
+		nombreAppel=0;
+		_coordCourante=_PointDepart;
+		angle=0;	
+	}
+
+	//update des coordonnées à l'aide de l'angle, incrémenté par la suite par les touches du claviers
 	@Override
 	public void updateCoordCourantes(Instant instant) {
 		if(replay)
@@ -245,8 +251,8 @@ public class VolAvionPilote extends Vol  {
 		return recording;
 	}
 
-	public void setRecording(boolean recording) {
-		recording = recording;
+	public void setRecording(boolean Recording) {
+		recording = Recording;
 	}
 
 	public boolean isReplay() {

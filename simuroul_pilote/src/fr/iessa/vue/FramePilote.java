@@ -1,39 +1,23 @@
 package fr.iessa.vue;
 
 import java.awt.Dimension;
-import java.awt.Frame;
-import java.awt.Graphics;
 import java.awt.Point;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import java.awt.geom.AffineTransform;
 import java.awt.geom.Point2D;
 import java.awt.geom.Point2D.Double;
-import java.awt.image.BufferedImage;
-import java.beans.PropertyChangeEvent;
-import java.beans.PropertyChangeListener;
-import java.util.Observable;
-import java.util.Observer;
 
 import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.undo.AbstractUndoableEdit;
 
 import fr.iessa.controleur.Controleur;
-import fr.iessa.metier.trafic.Vol;
 import fr.iessa.metier.trafic.VolAvionPilote;
-import fr.iessa.vue.trafic.ComponentVol;
-import fr.iessa.vue.trafic.ShapeAvionFactory;
 
-
-/** Classe FramePilote:
- * Cette classe permet de créer une Frame qui suit un avion particulier
+/** 
+ * La classe FramePilote permet de créer une Frame qui suit un avion particulier
  * (l'Avion Piloté) tout en reproduisant le contenu de la FramePrincipale
- * @author Timothée Bernard (ISESA16)
- * @version 1.0
+ * <p>
+ * <strong>Modification:</strong> N/A
+ * <p>
  * 
- * Modifiée par: N/A
- * Modification: N/A
+ * @author Timothée Bernard (ISESA16)
  * */
 
 
@@ -84,9 +68,16 @@ public class FramePilote extends JFrame
 	}
 
 
-	// Méthode d'Actualisation et de Suivi de l'Avion Piloté
-	public void ActualiserVuePilote(Point2D.Double coordXY)
+	/**
+	 * Actualisation du contenu de la FramePilote
+	 * afin de suivre l'Avion Piloté
+	 * 
+	 * @param coordXY
+	 */
+	public void ActualiserVuePilote(Point coordXY)
 	{	
+		
+		
 		// Récupération des Coordonnées Courantes de l'Avion Piloté
 		_echPilote.getAffineTransform().deltaTransform(coordXY, courantPilote);
 		_echPilote.getAffineTransform().transform(coordXY, courantPiloteAbs);
