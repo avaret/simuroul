@@ -26,15 +26,15 @@ public class StopBar implements Serializable {
 
 	private int x0;  // coordonnée du point d'insertion de la BA
 	private int y0;  // coordonnée du point d'insertion de la BA
-	private int theta0;  // angle de la BA
+	private int angle;  // angle de la BA
 	
-	private JMenuItem etat_barre_Arret ; 
+	
 
 	/** constructeur */
 	public StopBar (int x, int y, int theta){
 		setX0(x);
 		setY0(y);
-		getAngle0();
+		setAngle(theta);
 		
 	}
 
@@ -71,10 +71,14 @@ public class StopBar implements Serializable {
 		this.y0 = y0;
 	}
 	
-	public int getAngle0() {
-		return theta0;
+	public int getAngle() {
+		return angle;
 	}
 
+	public void setAngle(int angle) {
+		this.angle = angle;
+	}
+	
 	public double distance(Point2D.Double p_abs) {
 		double deltax = this.x0-p_abs.getX();
 		double deltay = this.y0-p_abs.getY();

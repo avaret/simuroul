@@ -41,10 +41,19 @@ public class StopBarDrawer {
 			}
 			
 			//TODO donner l'angle 
-			theta = sb.getAngle0();
+			theta = sb.getAngle();
+			double x2=(double)x+((double)x-(double)sb.getX0())*Math.cos(((double)theta)*Math.PI/180.0);
+			double y2=(double)y+((double)y-(double)sb.getY0())*Math.sin(((double)theta)*Math.PI/180.0);
+			System.out.println("x2 "+ x2);
+			System.out.println("y2 "+ y2);
+			System.out.println("sb.getX0() "+ sb.getX0());
+			System.out.println("sb.getY0() "+ sb.getY0());
+			System.out.println("x "+ x);
+			System.out.println("y "+ y);
+			System.out.println("theta = " + theta + " i = " + i);
 			
 			
-			dessinUnFeu(g, x, y, sb.isAllumer(),sb.isPermanent());
+			dessinUnFeu(g, (int)x2, (int)y2, sb.isAllumer(),sb.isPermanent());
 		}
 	}
 

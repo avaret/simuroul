@@ -6,6 +6,7 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.geom.Point2D;
 
+import javax.management.StringValueExp;
 import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -65,32 +66,32 @@ public class PopupMenu extends JPopupMenu implements ActionListener{
 		this.controleur = controleur;
 		this.plateforme = plateforme;
 
-		barre_Arret = new JMenuItem("AJOUTER un Avion Piloté");
+		barre_Arret = new JMenuItem("Ajouter un Avion Piloté");
 		menu_souris.add(barre_Arret);
 		barre_Arret.setActionCommand("AJOUTER un Avion Piloté");
 		barre_Arret.addActionListener(this);
 
-		barre_Arret = new JMenuItem("AJOUTER de la barre d'arret permanente");
+		barre_Arret = new JMenuItem("Ajouter une barre d'arret permanente");
 		menu_souris.add(barre_Arret);
 		barre_Arret.setActionCommand("AJOUTER de la barre d'arret permanente");
 		barre_Arret.addActionListener(this);
 
-		barre_Arret = new JMenuItem("AJOUTER de la barre d'arret commandable allumee");
+		barre_Arret = new JMenuItem("Inverser l'allumage de la BA commandable");
+		menu_souris.add(barre_Arret);
+		barre_Arret.setActionCommand("Inverser l'allumage de la BA commandable");
+		barre_Arret.addActionListener(this);
+		
+		barre_Arret = new JMenuItem("Ajouter une barre d'arret commandable allumee");
 		menu_souris.add(barre_Arret);
 		barre_Arret.setActionCommand("AJOUTER de la barre d'arret commandable allumee");
 		barre_Arret.addActionListener(this);
 
-		barre_Arret = new JMenuItem("ETEINDRE une barre d'arret commandable");
-		menu_souris.add(barre_Arret);
-		barre_Arret.setActionCommand("ETEINDRE une barre d'arret commandable");
-		barre_Arret.addActionListener(this);
-
-		barre_Arret = new JMenuItem("SUPPRIMER de la barre d'arret");
+		barre_Arret = new JMenuItem("Supprimer une barre d'arret");
 		menu_souris.add(barre_Arret);
 		barre_Arret.setActionCommand("SUPPRIMER de la barre d'arret");
 		barre_Arret.addActionListener(this);
-		
-		barre_Arret = new JMenuItem("DONNER l'angle en degré de la barre d'arret");
+
+		barre_Arret = new JMenuItem("Donner l'angle en degré de la barre d'arret");
 		menu_souris.add(barre_Arret);
 		barre_Arret.setActionCommand("DONNER l'angle en degré de la barre d'arret");
 		barre_Arret.addActionListener(this);
@@ -147,11 +148,18 @@ public class PopupMenu extends JPopupMenu implements ActionListener{
 
 		case ("DONNER l'angle en degré de la barre d'arret"):
 		{
-			this.getNearestStopBar().getAngle0();
+			int angle;
+			
+			String value= JOptionPane.showInputDialog(this,"Entrer un angle entre 0 et 360 degrés", "Angle de la barre d'arret", JOptionPane.QUESTION_MESSAGE);
+			angle = Integer.parseInt(value) ;
+			if ((angle >=0) && (angle <=360))
+			{
+			this.getNearestStopBar().setAngle(angle);
 			plateforme.update(null, null);
+			}						
 			break;
 		}
-		
+
 		case ("AJOUTER de la barre d'arret permanente"):
 		{
 			StopBar sb = new StopBar((int)p_abs.x, (int)p_abs.y, theta);
@@ -172,19 +180,24 @@ public class PopupMenu extends JPopupMenu implements ActionListener{
 
 		case ("ETEINDRE une barre d'arret commandable"):
 		{
-			this.getNearestStopBar().setAllumer(false);
-			plateforme.update(null, null);
+			if (!this.getNearestStopBar().isPermanent())
+			{
+				this.getNearestStopBar().setAllumer(false);
+				plateforme.update(null, null);
+			}
 			break;
 		}
 
-		case ("SUPPRIMER de la barre d'arret"):	
+		case ("Inverser l'allumage de la BA commandable"):
 		{
-			//supprimer la stopbar 
-			controleur.getAeroport().get_StopBar().remove(getNearestStopBar());
-			plateforme.update(null, null);
+			if (!this.getNearestStopBar().isPermanent())
+			{
+				this.getNearestStopBar().setAllumer(!this.getNearestStopBar().isAllumer());
+				plateforme.update(null, null);
+			}
 			break;
 		}
-
+		
 		default:
 			break;
 		}
