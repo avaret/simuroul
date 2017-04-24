@@ -318,7 +318,6 @@ public class FramePrincipale extends JFrame implements PropertyChangeListener {
 			//hodiqual
 			KeyboardFocusManager manager = KeyboardFocusManager.getCurrentKeyboardFocusManager();
 			manager.addKeyEventDispatcher(new KeyDispatcher());
-			manager.addKeyEventDispatcher(new KeyDispatcherAvionPilote());
 			break;
 
 		case CHARGEMENT_CARTE_FICHIER_ERREUR:
@@ -374,33 +373,6 @@ public class FramePrincipale extends JFrame implements PropertyChangeListener {
 				return false;
 		}
 	}
-/**
- * @author bouletcy
- * commande de l'avion piloté au clavier
- */
-	private class KeyDispatcherAvionPilote implements KeyEventDispatcher {
-		@Override
-		public boolean dispatchKeyEvent(KeyEvent e) {
-			if (e.getID() == KeyEvent.KEY_PRESSED ) {
-				if(e.getKeyCode() == KeyEvent.VK_Q) {
-					_controleur.getTrafic().get_premierVolAvionPilote().RotationGauche();
-					return true;
-				}else if (e.getKeyCode() == KeyEvent.VK_D) {
-					_controleur.getTrafic().get_premierVolAvionPilote().RotationDroite();
-					return true;
-				}else if (e.getKeyCode() == KeyEvent.VK_Z) {
-					_controleur.getTrafic().get_premierVolAvionPilote().Accelerer();
-					return true;
-				}else if (e.getKeyCode() == KeyEvent.VK_S) { 
-					_controleur.getTrafic().get_premierVolAvionPilote().Ralentir();
-					return true;
-				}
 
-				return false;
-			}
-			else
-				return false;
-		}
-	}
 
 }

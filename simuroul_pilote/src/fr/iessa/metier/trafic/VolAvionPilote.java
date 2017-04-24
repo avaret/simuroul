@@ -33,6 +33,7 @@ import fr.iessa.metier.Instant;
 import fr.iessa.metier.Instant.InstantFabrique;
 import fr.iessa.metier.type.Categorie;
 import fr.iessa.metier.type.TypeVol;
+import fr.iessa.vue.FramePilote;
 import fr.iessa.vue.FramePrincipale;
 import fr.iessa.controleur.Controleur;
 import fr.iessa.metier.trafic.Trafic;
@@ -45,10 +46,11 @@ public class VolAvionPilote extends Vol  {
 	private boolean replay;
 	private Point _PointDepart;
 	private int _Vitesse;
-	private int nombreAppel;
 	private Instant _premierInstant;	
 	private double angle;
 	private Map<Instant, Point> _recordCoord = new HashMap<Instant, Point>(10);
+	private static int nombreVolAvionPilote=0;
+	private int IDVolAvionPilote;
 	
 	public VolAvionPilote(Instant instant, Point depart)
 	{
@@ -66,9 +68,10 @@ public class VolAvionPilote extends Vol  {
 
 	public void initialiserVolAvionPilote() {
 		_Vitesse=5;
-		nombreAppel=0;
 		_coordCourante=_PointDepart;
-		angle=0;	
+		angle=0;
+		IDVolAvionPilote=nombreVolAvionPilote;
+		nombreVolAvionPilote++;		
 	}
 
 	//update des coordonnées à l'aide de l'angle, incrémenté par la suite par les touches du claviers
@@ -107,16 +110,13 @@ public class VolAvionPilote extends Vol  {
 			os.writeObject(_recordCoord);
 			os.close();
 		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}	
 	}
 
 	public void chargerReplay(String nomfichier) {
-		// TODO Auto-generated method stub
 		ObjectInputStream oe;
 		try {
 			oe = new ObjectInputStream(new FileInputStream(nomfichier));
@@ -132,13 +132,10 @@ public class VolAvionPilote extends Vol  {
 			FramePrincipale._controleur.getTrafic().get_premierVolAvionPilote().set_recordCoord(tempHashMap2);
 			oe.close();
 		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}	
 	}
@@ -179,37 +176,31 @@ public class VolAvionPilote extends Vol  {
 
 	@Override
 	public Point getCoord(Instant i) {
-		// TODO Auto-generated method stub
 		return _PointDepart;
 	}
 
 	@Override
 	public TypeVol getTypeVol() {
-		// TODO Auto-generated method stub
 		return TypeVol.DEP;
 	}
 
 	@Override
 	public String getId() {
-		// TODO Auto-generated method stub
-		return "ABR6GZ5";
+		return "VolAvionPilote_"+IDVolAvionPilote;
 	}
 
 	@Override
 	public Categorie getCategorie() {
-		// TODO Auto-generated method stub
 		return Categorie.MEDIUM;
 	}
 
 	@Override
 	public void setADesCollisions(boolean aDesCollisions) {
-		// TODO Auto-generated method stub
-
+		//Nothing to do
 	}
 
 	@Override
 	public Map<Instant, Point> getInstantVersCoord() {
-		// TODO Auto-generated method stub
 		Map<Instant, Point> r = new HashMap<Instant, Point>(2);
 		r.put(_premierInstant, _PointDepart);
 		r.put(Instant.InstantFabrique.getMaximumInstant(), _PointDepart);
@@ -218,33 +209,33 @@ public class VolAvionPilote extends Vol  {
 
 
 	public void RotationGauche(){
-		double angle = FramePrincipale._controleur.getTrafic().get_premierVolAvionPilote().getAngle();
+		double angle = getAngle();
 		angle += 1;
-		FramePrincipale._controleur.getTrafic().get_premierVolAvionPilote().setAngle(angle);
+		this.setAngle(angle);
 	}
 
 	public void RotationDroite(){
-		double angle = FramePrincipale._controleur.getTrafic().get_premierVolAvionPilote().getAngle();
+		double angle = getAngle();
 		angle -= 1;
-		FramePrincipale._controleur.getTrafic().get_premierVolAvionPilote().setAngle(angle);
+		this.setAngle(angle);
 	}
 
 	public void Accelerer(){
-		int vitesse = FramePrincipale._controleur.getTrafic().get_premierVolAvionPilote().getVitesse();
+		int vitesse = getVitesse();
 		vitesse += 2;
 		if (vitesse > 25){
 			vitesse=24;
 		}
-		FramePrincipale._controleur.getTrafic().get_premierVolAvionPilote().setVitesse(vitesse);
+		this.setVitesse(vitesse);
 	}
 
 	public void Ralentir(){
-		int vitesse = FramePrincipale._controleur.getTrafic().get_premierVolAvionPilote().getVitesse();
+		int vitesse = getVitesse();
 		vitesse -= 2;
 		if (vitesse < 0){
 			vitesse=0;
 		}
-		FramePrincipale._controleur.getTrafic().get_premierVolAvionPilote().setVitesse(vitesse);
+		this.setVitesse(vitesse);
 	}
 
 	public boolean isRecording() {
@@ -285,5 +276,21 @@ public class VolAvionPilote extends Vol  {
 
 	public void set_recordCoord(Map<Instant, Point> _recordCoord) {
 		this._recordCoord = _recordCoord;
+	}
+
+	public static int getNombreVolAvionPilote() {
+		return nombreVolAvionPilote;
+	}
+
+	public static void setNombreVolAvionPilote(int nombreVolAvionPilote) {
+		VolAvionPilote.nombreVolAvionPilote = nombreVolAvionPilote;
+	}
+
+	public int getIDVolAvionPilote() {
+		return IDVolAvionPilote;
+	}
+
+	public void setIDVolAvionPilote(int iDVolAvionPilote) {
+		IDVolAvionPilote = iDVolAvionPilote;
 	}
 }
