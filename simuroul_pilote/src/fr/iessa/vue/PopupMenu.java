@@ -2,11 +2,8 @@ package fr.iessa.vue;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
 import java.awt.geom.Point2D;
 
-import javax.management.StringValueExp;
 import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -14,11 +11,9 @@ import javax.swing.JPopupMenu;
 
 import fr.iessa.controleur.Controleur;
 import fr.iessa.metier.Instant;
-import fr.iessa.metier.infra.Point;
 import fr.iessa.metier.infra.StopBar;
 import fr.iessa.metier.trafic.VolAvionPilote;
 import fr.iessa.vue.infra.PanelPlateforme;
-import fr.iessa.vue.infra.StopBarDrawer;
 
 import java.awt.geom.NoninvertibleTransformException;
 
@@ -36,7 +31,6 @@ public class PopupMenu extends JPopupMenu implements ActionListener{
 	/** Attributs */
 	private static final long serialVersionUID = 1L;
 	private Echelle echelle1;
-	private int zoom1;
 	Point2D.Double coordSouris = new Point2D.Double(0, 0);
 	Point2D.Double p = new Point2D.Double(0, 0);
 	Point2D.Double p_abs = new Point2D.Double(0, 0);
@@ -48,7 +42,6 @@ public class PopupMenu extends JPopupMenu implements ActionListener{
 	private PanelPlateforme plateforme;
 	private PanelPrincipalMultiCouches multicouche;
 
-	private VolAvionPilote avionPilote;
 
 	//La déclaration pour le menu contextuel
 	public JPopupMenu menu_souris = new JPopupMenu();
@@ -61,7 +54,6 @@ public class PopupMenu extends JPopupMenu implements ActionListener{
 	public PopupMenu (PanelPrincipalMultiCouches multicouche, PanelPlateforme plateforme, Echelle ech, Controleur controleur, int x_clic_souris, int y_clic_souris){
 
 		echelle1= ech;
-		zoom1 = plateforme.getZoomLevel();
 		coordSouris.x = x_clic_souris;
 		coordSouris.y = y_clic_souris;
 
