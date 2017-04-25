@@ -166,6 +166,7 @@ public class Trafic implements Observer {
 	public VolAvionPilote get_premierVolAvionPilote(){
 		return _volsAvionPilote.get(0);
 	}
+
 	
 	// FIXME: Ajouter commentaire
 	public void ajoutVolAvionPilote(VolAvionPilote avionPilote){

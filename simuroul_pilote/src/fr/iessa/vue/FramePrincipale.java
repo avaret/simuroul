@@ -53,7 +53,7 @@ public class FramePrincipale extends JFrame implements PropertyChangeListener {
 
 	public static Controleur _controleur; // FIXME: Si on enleve le Static, la classe VolAvionPilote affiche des erreurs (direction de l'avion + chargement du Replay) 
 	private Echelle _echelle;
-
+	
 	public static FrameCommandeAvionPilote FrameCommande; // FIXME: On n'a plus besoin de la FrameCommande -> Tout se fait sur clavier !
 
 	//Charge la plateforme et le traffic à partir des arguments    
