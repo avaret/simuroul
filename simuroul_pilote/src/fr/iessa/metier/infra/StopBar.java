@@ -24,8 +24,8 @@ public class StopBar implements Serializable {
 	private boolean allumer=true; // choix à faire d'allumer ou etendre la BA
 	private boolean permanent =true; // choix à faire pour BA permanente ou commandable
 
-	private int x0;  // coordonnée du point d'insertion de la BA
-	private int y0;  // coordonnée du point d'insertion de la BA
+	private int x0;  // coordonnée du point d'insertion de la BA en x
+	private int y0;  // coordonnée du point d'insertion de la BA en y
 	private int angle;  // angle de la BA
 	
 	

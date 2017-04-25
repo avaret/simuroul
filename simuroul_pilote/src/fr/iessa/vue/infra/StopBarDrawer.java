@@ -17,83 +17,85 @@ import fr.iessa.vue.CirclePanel;
 
 public class StopBarDrawer {
 
-	private final static int nb =10; //Nombre de cercles fix
-	private final static int rayon =3; // diam des cercles
-	private final static int phy= (int) (2*(((float)rayon)*1.2));
+	private final static int nb_feux =10; //Nombre de cercles fix
+	private final static int rayon_par_feu =3; // diam des cercles
+	private final static double espacement_entre_feux=(double)(2*(((float)rayon_par_feu)*1.2));
 
 	/** méthode */
 	public void dessineStopBar(StopBar sb, Graphics g)
 	{
 		int i;
-		int y;
-		int theta;
+		double y;
+		double theta;
 
 		for (i=-5;i<5;i++)
 		{
-			int x=sb.getX0()+i*phy;
-			if (i>=-3 && i<3)
+			double x=i*espacement_entre_feux;
+			if (i<-3 || i>=3)
 			{
-				y= sb.getY0()+phy;
+				y= espacement_entre_feux;
 			}
 			else
 			{
-				y= sb.getY0();
+				y= 0;
 			}
 
 			theta = sb.getAngle();
 			double x0=sb.getX0();
 			double y0=sb.getY0();
-			double x1b=x-x0;
-			double y1b=y-y0;
-			double theta_rad= ((double)theta)*Math.PI/180.0;
-			double r=Math.sqrt(x1b*x1b+y1b*y1b);
+
+			double theta_rad= ((theta)*Math.PI/180.0);
+			double r=Math.sqrt((x*x)+(y*y));
 			double phi;
-			if(x1b==0)
+
+
+			/////////////////////////////////////////////
+			System.out.println(" x="+x+" y="+y);
+			if(y==0)
 			{
-				if(y1b>=0)
+				if(x>=0)
 					phi=0;
 				else
 					phi=Math.PI;
 			}
 			else
 			{
-				phi=Math.atan(y1b/x1b);
+				double a=y/x;
+				phi=Math.atan(a);
 			}
-			double x2=r*Math.cos(theta_rad+phi)+x0-x1b;
-			double y2=r*Math.sin(theta_rad+phi)+y0-y1b;
+			/////////////////////////////////////////////
 			
-			double test1=Math.cos(theta_rad+phi);
-			double test2=Math.cos(theta_rad+phi)*r;
-			double test3=r*Math.cos(theta_rad+phi)+x0-x1b;
-			System.out.println("Math.sin(theta_rad+phi)     " + test1 +"   r*Math.sin(theta_rad+phi)    " + test2 +" r*Math.sin(theta_rad+phi)+y0-y1b      "+ test3);
-			System.out.println(" P0(" + x0 + "," + y0 + ")" + " P1(" + x1b + "," + y1b + ")" + " P2(" + x2 + "," + y2 + ")" );
-			System.out.println("r" +r +"phi"+phi+"theta_rad"+theta_rad);
-			
-			
-			dessinUnFeu(g, (int)x2, (int)y2, sb.isAllumer(),sb.isPermanent());
+
+			System.out.println(" r="+r+" theta="+theta_rad + " phi="+phi + " a = "+ (theta_rad+phi));
+			System.out.println(" r cos a = "+r*Math.cos(theta_rad+phi)+ "  r sin a="+r*Math.sin(theta_rad+phi));
+
+			double x2=r*Math.cos(theta_rad+phi)+x0;
+			double y2=r*Math.sin(theta_rad+phi)+y0;
+
+			dessinUnFeu(g, x2, y2, sb.isAllumer(),sb.isPermanent());
 		}
 	}
 
 
-	private void dessinUnFeu(Graphics g, int xi, int yi, boolean allumer, boolean permanent) {
+	private void dessinUnFeu(Graphics g, double xi, double yi, boolean allumer, boolean permanent) {
 		g.setColor(Color.BLACK);
-		CirclePanel.drawCircle(g, xi, yi, rayon);
+		CirclePanel.drawCircle(g, (int)xi, (int)yi, rayon_par_feu);
 		g.setColor(Color.GREEN);
-		CirclePanel.fillCircle(g, xi, yi, rayon);
+		CirclePanel.fillCircle(g, (int)xi, (int)yi, rayon_par_feu);
 
 		if (allumer)
 		{
 			if (permanent)
 			{
 				g.setColor(Color.RED);
-				CirclePanel.fillCircle(g, xi, yi, rayon);
+				CirclePanel.fillCircle(g, (int)xi, (int)yi, rayon_par_feu);
 				g.setColor(Color.BLACK);
-				CirclePanel.drawCircle(g, xi, yi, rayon-2);
+				CirclePanel.drawCircle(g, (int)xi, (int)yi, rayon_par_feu-2);
 			}
 			else 
 			{
 				g.setColor(Color.RED);
-				CirclePanel.fillCircle(g, xi, yi, rayon);
+				CirclePanel.fillCircle(g, (int)xi, (int)yi, rayon_par_feu);
 			}
 		}
 	}
