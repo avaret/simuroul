@@ -1,33 +1,24 @@
 package fr.iessa.vue.trafic;
 
-import java.awt.BasicStroke;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Point;
-import java.awt.Rectangle;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.geom.Point2D;
-import java.awt.geom.Rectangle2D;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.util.Map;
 
 import javax.imageio.ImageIO;
-import javax.swing.Icon;
-import javax.swing.ImageIcon;
 import javax.swing.JComponent;
-import javax.swing.JPanel;
-
 import fr.iessa.controleur.Controleur;
 import fr.iessa.metier.trafic.Collision;
 import fr.iessa.metier.trafic.Vol;
 import fr.iessa.vue.Echelle;
 import fr.iessa.vue.Ressources;
-
-import javax.imageio.ImageIO;
 
 /**
  * Vue d'une collision.

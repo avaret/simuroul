@@ -8,13 +8,9 @@ import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
-import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
 
 import javax.swing.JCheckBoxMenuItem;
-import javax.swing.JComboBox;
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JMenu;
@@ -22,13 +18,10 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 
-import fr.iessa.metier.trafic.Trafic;
 import fr.iessa.controleur.Controleur;
 import fr.iessa.controleur.LibereMemoire;
 import fr.iessa.controleur.ModeleEvent;
-import fr.iessa.metier.Scenario;
 import fr.iessa.metier.Instant.InstantFabrique;
-import fr.iessa.metier.trafic.VolAvionPilote;
 
 /** Classe FramePrincipale
  * @author THOMAS Raimana
@@ -151,6 +144,8 @@ public class FramePrincipale extends JFrame implements PropertyChangeListener {
 		_menuOption.add(menuAviomSimu);
 		_menuOption.add(menuCollision);
 		_menuOption.add(menuSauvCollision);
+		_menuOption.add(menuSauvegarderReplay);
+		_menuOption.add(menuChargerReplay);
 		_menuOption.add(menuStartReplay);
 		_menuOption.add(menuCutReplay);
 		_menuOption.add(menuSauvStopBar);

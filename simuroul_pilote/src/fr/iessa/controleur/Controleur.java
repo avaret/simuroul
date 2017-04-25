@@ -5,15 +5,7 @@ package fr.iessa.controleur;
 
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
-import java.util.HashMap;
-import java.util.NoSuchElementException;
 import java.util.concurrent.ExecutionException;
-import java.util.function.Function;
 
 import javax.swing.SwingWorker;
 import javax.swing.event.SwingPropertyChangeSupport;
@@ -29,10 +21,8 @@ import fr.iessa.metier.Instant.InstantFabrique;
 import fr.iessa.metier.infra.Aeroport;
 import fr.iessa.metier.trafic.FiltreVol;
 import fr.iessa.metier.trafic.Trafic;
-import fr.iessa.metier.trafic.VolAvionPilote;
 import fr.iessa.metier.type.Categorie;
 import fr.iessa.metier.type.TypeVol;
-import fr.iessa.vue.Echelle;
 
 /**
  * Implemente le controleur du pattern MVC.
