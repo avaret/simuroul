@@ -1,4 +1,3 @@
-
 package fr.iessa.vue;
 
 import java.awt.Dimension;
@@ -9,9 +8,13 @@ import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
 
 import javax.swing.JCheckBoxMenuItem;
+import javax.swing.JComboBox;
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JMenu;
@@ -23,6 +26,7 @@ import fr.iessa.metier.trafic.Trafic;
 import fr.iessa.controleur.Controleur;
 import fr.iessa.controleur.LibereMemoire;
 import fr.iessa.controleur.ModeleEvent;
+import fr.iessa.metier.Scenario;
 import fr.iessa.metier.Instant.InstantFabrique;
 import fr.iessa.metier.trafic.VolAvionPilote;
 
@@ -35,17 +39,21 @@ import fr.iessa.metier.trafic.VolAvionPilote;
  */
 
 public class FramePrincipale extends JFrame implements PropertyChangeListener {
-	/** La barre de menu */
+	/** La barref de menu */
 	private JMenuBar _barreMenu;
 	private JMenu _menu;
 	private JMenuItem _menuChargerPlateForme;
 	private JMenuItem _menuChargerTrafic;
 	private JMenuItem _menuQuitter;
 	private JMenu _menuOption;
+	
+	
+	private JMenuItem menuChargerScenario;
+	
 
 	public static Controleur _controleur; // FIXME: Si on enleve le Static, la classe VolAvionPilote affiche des erreurs (direction de l'avion + chargement du Replay) 
 	private Echelle _echelle;
-
+	
 	public static FrameCommandeAvionPilote FrameCommande; // FIXME: On n'a plus besoin de la FrameCommande -> Tout se fait sur clavier !
 
 	//Charge la plateforme et le traffic à partir des arguments    
@@ -75,20 +83,20 @@ public class FramePrincipale extends JFrame implements PropertyChangeListener {
 		_menuChargerTrafic = new JMenuItem("Charger trafic");
 		_menuChargerTrafic.setEnabled(false);;
 		_menuQuitter = new JMenuItem("Quitter");
-
+		
 		_menuChargerPlateForme.addActionListener(new ActionChargerPlateForme());
 		_menuChargerTrafic.addActionListener(new ActionChargerTrafic());
 		_menuQuitter.addActionListener(new ActionQuitter());
-
+		
+		
 		_menu.add(_menuChargerPlateForme);
 		_menu.add(_menuChargerTrafic);
 		_menu.add(_menuQuitter);
-
 		_barreMenu.add(_menu);
 
 		_menuOption = new JMenu("Options");
 		_menuOption.setEnabled(false);
-
+		
 		//hodiqual
 		JMenuItem menuAjoutVue = new JMenuItem("Ajout vue");
 		menuAjoutVue.addActionListener(new ActionListener() {
@@ -135,6 +143,10 @@ public class FramePrincipale extends JFrame implements PropertyChangeListener {
 		JMenuItem menuChargerStopBar = new JMenuItem("Charger Barre Arret");
 		menuChargerStopBar.addActionListener(new ActionChargerBarreArret());
 		
+		JMenuItem menuChargerScenario = new JMenuItem("Charger Scenario");
+		menuChargerScenario.addActionListener(new ActionChargerScenario());
+		
+		
 		_menuOption.add(menuAjoutVue);
 		_menuOption.add(menuAviomSimu);
 		_menuOption.add(menuCollision);
@@ -143,8 +155,9 @@ public class FramePrincipale extends JFrame implements PropertyChangeListener {
 		_menuOption.add(menuCutReplay);
 		_menuOption.add(menuSauvStopBar);
 		_menuOption.add(menuChargerStopBar);
+		_menuOption.add(menuChargerScenario);
 		_barreMenu.add(_menuOption);
-
+		
 		// Création et configuration du controleur MVC
 		_controleur = new Controleur();
 		_echelle = new Echelle();
@@ -246,6 +259,20 @@ public class FramePrincipale extends JFrame implements PropertyChangeListener {
 		}
 	}
 
+	class ActionChargerScenario implements ActionListener {
+		public void actionPerformed(ActionEvent arg0) {
+
+			File numeroScenario = null;
+			JFileChooser dialogue = new JFileChooser(new File("."));
+
+			if (dialogue.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) {
+				numeroScenario = dialogue.getSelectedFile();
+				_controleur.chargerScenario(numeroScenario.getPath());
+			}
+		}
+	}
+	
+
 	class ActionChargerTrafic implements ActionListener {
 		public void actionPerformed(ActionEvent arg0) {
 
@@ -318,6 +345,7 @@ public class FramePrincipale extends JFrame implements PropertyChangeListener {
 			//hodiqual
 			KeyboardFocusManager manager = KeyboardFocusManager.getCurrentKeyboardFocusManager();
 			manager.addKeyEventDispatcher(new KeyDispatcher());
+			manager.addKeyEventDispatcher(new KeyDispatcherAvionPilote());
 			break;
 
 		case CHARGEMENT_CARTE_FICHIER_ERREUR:
@@ -373,6 +401,33 @@ public class FramePrincipale extends JFrame implements PropertyChangeListener {
 				return false;
 		}
 	}
+/**
+ * @author bouletcy
+ * commande de l'avion piloté au clavier
+ */
+	private class KeyDispatcherAvionPilote implements KeyEventDispatcher {
+		@Override
+		public boolean dispatchKeyEvent(KeyEvent e) {
+			if (e.getID() == KeyEvent.KEY_PRESSED ) {
+				if(e.getKeyCode() == KeyEvent.VK_Q) {
+					_controleur.getTrafic().get_premierVolAvionPilote().RotationGauche();
+					return true;
+				}else if (e.getKeyCode() == KeyEvent.VK_D) {
+					_controleur.getTrafic().get_premierVolAvionPilote().RotationDroite();
+					return true;
+				}else if (e.getKeyCode() == KeyEvent.VK_Z) {
+					_controleur.getTrafic().get_premierVolAvionPilote().Accelerer();
+					return true;
+				}else if (e.getKeyCode() == KeyEvent.VK_S) { 
+					_controleur.getTrafic().get_premierVolAvionPilote().Ralentir();
+					return true;
+				}
 
+				return false;
+			}
+			else
+				return false;
+		}
+	}
 
 }

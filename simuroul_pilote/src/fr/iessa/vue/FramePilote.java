@@ -1,11 +1,7 @@
 package fr.iessa.vue;
 
 import java.awt.Dimension;
-import java.awt.KeyEventDispatcher;
-import java.awt.KeyboardFocusManager;
 import java.awt.Point;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
 import java.awt.geom.Point2D;
 import java.awt.geom.Point2D.Double;
 
@@ -25,7 +21,7 @@ import fr.iessa.metier.trafic.VolAvionPilote;
  * */
 
 
-public class FramePilote extends JFrame implements KeyListener
+public class FramePilote extends JFrame
 {
 	// Déclaration des Attributs de la Classe
 	private static final long serialVersionUID = 1L;
@@ -63,7 +59,8 @@ public class FramePilote extends JFrame implements KeyListener
 		// Création du Contenu de la FramePilote
 		jpanelPilote = new PanelPrincipalMultiCouches(_ctrlPilote, false, _echPilote);	
 		this.setContentPane(jpanelPilote);
-		this.addKeyListener(this);
+
+
 		// Create and set up the content pane.
 		this.validate();
 		this.pack();
@@ -127,47 +124,5 @@ public class FramePilote extends JFrame implements KeyListener
 
 		this.revalidate();
 		this.pack();
-	}
-	
-
-
-	@Override
-	public void keyTyped(KeyEvent e) {
-		//Nothing to do.
-	}
-
-
-	/**
-	 * @author bouletcy
-	 * commande de l'avion piloté au clavier
-	 */
-	@Override
-	public void keyPressed(KeyEvent e) {
-		if(e.getKeyCode() == KeyEvent.VK_Q) {
-			_avionPilote.RotationGauche();
-			System.out.println(_avionPilote);
-		}else if (e.getKeyCode() == KeyEvent.VK_D) {
-			_avionPilote.RotationDroite();
-		}else if (e.getKeyCode() == KeyEvent.VK_Z) {
-			_avionPilote.Accelerer();
-		}else if (e.getKeyCode() == KeyEvent.VK_S) { 
-			_avionPilote.Ralentir();
-		}
-	}
-
-
-	@Override
-	public void keyReleased(KeyEvent e) {
-		//Nothing to do.
-	}
-
-
-	public VolAvionPilote get_avionPilote() {
-		return _avionPilote;
-	}
-
-
-	public void set_avionPilote(VolAvionPilote _avionPilote) {
-		this._avionPilote = _avionPilote;
 	}
 }

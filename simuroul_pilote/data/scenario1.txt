@@ -1,0 +1,18 @@
+14652
+1434
+-850
+0: Prets au roulage, AFR530
+7: AFR530, Laissez passer le Dornair 47 venant de TE3 puis roulez point d'arret T12 piste 26R via TE3, taxiway R sur la gauche et RT15. Rappelez point d'arret.
+11: Laissons passer le Dornair 47 venant de TE3 puis roulons point d'arret T12 piste 26R via TE3, taxiway R sur la gauche et RT15, AFR530.
+13: * commence à rouler *
+31: * arrive vers TE3 puis s'arrete pour laisser passer*
+37: * Le dornair passe*
+63: * notre avion continue sur R puis roule jusqu'au PA T12"
+214: * notre avion est arrivé au PA T12*
+217: Point d'arret T12 piste 26R, AFR53à.
+221: AFR530, maintenez point d'arret T12 piste 26R et contactez la tour 118.65, au revoir
+225: Contactons la tour 118.65, au revoir, AFR530.
+231: Roissy tour, AFR530, bonjour, au point d'arret T12 piste 26R, prets au départ.
+235: AFR530, depuis T12, alignez vous piste 26R, autorisé décollage piste 26R, vent 060 degrés, 12 kts.
+239: Depuis T12, alignons nous piste 26R, autorisé décollage piste 26R.
+245: *AFR530 décolle*

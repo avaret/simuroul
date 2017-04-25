@@ -79,9 +79,20 @@ public class PanelPrincipalMultiCouches extends JPanel {
 			panelHorloge.setAlignmentX(0.0f);
 			panelHorloge.setAlignmentY(0.0f);
 			_gestionPlans.add(panelHorloge,JLayeredPane.PALETTE_LAYER);
+			
 		}
+			
+			//affichage des dialogues
+			JPanel panelScenario = new JPanel();
+			panelScenario.setOpaque(false);
+			panelScenario.setLayout(new FlowLayout(FlowLayout.LEFT));
+			panelScenario.add(new LabelScenario(controleur));
+			panelScenario.setAlignmentX(0.0f);
+			panelScenario.setAlignmentY(0.0f);
+			_gestionPlans.add(panelScenario,JLayeredPane.PALETTE_LAYER);
 		
-		//Rajout du composant de gestion des plans a ce JPanel
+        	//Rajout du composant de gestion des plans a ce JPanel
 		add(_gestionPlans);	
 	}
 }
+
