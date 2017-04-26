@@ -18,10 +18,10 @@ import fr.iessa.metier.trafic.VolAvionPilote;
  * La classe FramePilote permet de créer une Frame qui suit un avion particulier
  * (l'Avion Piloté) tout en reproduisant le contenu de la FramePrincipale
  * <p>
- * <strong>Modification:</strong> N/A
+ * <strong>Modification:</strong> Implémentation des commandes de l'avion piloté au clavier (zqsd)
  * <p>
  * 
- * @author Timothée Bernard (ISESA16)
+ * @author Timothée Bernard (ISESA16) / bouletcy
  */
 public class FramePilote extends JFrame implements PropertyChangeListener, KeyListener
 {
@@ -68,17 +68,17 @@ public class FramePilote extends JFrame implements PropertyChangeListener, KeyLi
 		this.setLocation(400, 300);
 		this.setDefaultCloseOperation(FermerVuePilote());
 
-		
+
 		// Création du Contenu de la FramePilote
 		jpanelPilote = new PanelPrincipalMultiCouches(_ctrlPilote, false, _echPilote);	
 		this.setContentPane(jpanelPilote);
 
 		final ModeleEvent[] evts = { ModeleEvent.UPDATE_INSTANT };
 		_ctrlPilote.ajoutVue(this,  evts) ;
-		
+
 		//Ajout du listener commande clavier.
 		this.addKeyListener(this);
-		
+
 		// Create and set up the content pane.
 		this.validate();
 		this.pack();
@@ -144,6 +144,7 @@ public class FramePilote extends JFrame implements PropertyChangeListener, KeyLi
 		this.pack();
 	}
 
+	
 	/**
 	 * Méthode de fermeture de fenetre afin de
 	 * supprimer en plus l'avion piloté associé
@@ -153,9 +154,11 @@ public class FramePilote extends JFrame implements PropertyChangeListener, KeyLi
 	 */
 	public int FermerVuePilote()
 	{	
+		//_avionPilote.updateCoordCourantes(null, false);
 		return JFrame.DISPOSE_ON_CLOSE;
 	}
 
+	
 	/**
 	 * Méthode qui permet appel ActualiserVuePilote()
 	 */
@@ -193,6 +196,6 @@ public class FramePilote extends JFrame implements PropertyChangeListener, KeyLi
 	@Override
 	public void keyReleased(KeyEvent e) {
 		// Nothing to do
-		
+
 	}
 }
