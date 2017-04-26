@@ -192,6 +192,8 @@ public class ComponentVol extends JComponent {
 			if(!panel.isAncestorOf(this))
 				panel.add(this);
 
+			if(_echelle == null)
+				return; // FIXME Tim: Trouver pourquoi on est dans ce cas avec VolAvionPredefini
 			_echelle.getAffineTransform().transform(_vol.getCoordCourante(), _coordCouranteDouble);
 			_coordCourante.setLocation(_coordCouranteDouble);
 

@@ -38,7 +38,7 @@ public class VolAvionPredefini extends Vol {
 		return _instantVersCoord.get(i);
 	}
 
-	public void updateCoordCourantes(Instant instant) {
+	public void updateCoordCourantes(Instant instant, boolean visible) {
 		if(instant != null) {
 			if(_instantVersCoord.get(instant) != null)
 				_coordCourante = _instantVersCoord.get(instant);
@@ -48,7 +48,12 @@ public class VolAvionPredefini extends Vol {
 			if(_instantVersCoord.get(instantSuivant) != null)
 				_coordSuivante = _instantVersCoord.get(instantSuivant);
 		}
-
+		
+		if(!visible)
+		{
+			_coordCourante = null;
+		}
+		
 	}
 
 
