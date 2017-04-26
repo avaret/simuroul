@@ -20,6 +20,13 @@ import fr.iessa.controleur.LibereMemoire;
 import fr.iessa.metier.Instant.InstantFabrique;
 import fr.iessa.metier.trafic.VolAvionPilote;
 
+/**
+ * 
+ * @author bouletcy
+ * 
+ * Premier essaie des commandes avionPilote, destiné a ne plus etre utilisé par la suite.
+ * Ne permet de commander que le premier avionPilote
+ */
 public class FrameCommandeAvionPilote extends JFrame{
 
 	public FrameCommandeAvionPilote(){

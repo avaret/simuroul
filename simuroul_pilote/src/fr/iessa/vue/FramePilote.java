@@ -6,12 +6,12 @@ import java.awt.geom.Point2D;
 import java.awt.geom.Point2D.Double;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
-
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import javax.swing.JFrame;
 
 import fr.iessa.controleur.Controleur;
 import fr.iessa.controleur.ModeleEvent;
-import fr.iessa.metier.Instant;
 import fr.iessa.metier.trafic.VolAvionPilote;
 
 /** 
@@ -23,7 +23,7 @@ import fr.iessa.metier.trafic.VolAvionPilote;
  * 
  * @author Timothée Bernard (ISESA16)
  */
-public class FramePilote extends JFrame implements PropertyChangeListener
+public class FramePilote extends JFrame implements PropertyChangeListener, KeyListener
 {
 	/**
 	 * Déclaration des Attributs de la Classe
@@ -75,7 +75,9 @@ public class FramePilote extends JFrame implements PropertyChangeListener
 
 		final ModeleEvent[] evts = { ModeleEvent.UPDATE_INSTANT };
 		_ctrlPilote.ajoutVue(this,  evts) ;
-
+		
+		//Ajout du listener commande clavier.
+		this.addKeyListener(this);
 		
 		// Create and set up the content pane.
 		this.validate();
@@ -160,5 +162,37 @@ public class FramePilote extends JFrame implements PropertyChangeListener
 	public void propertyChange(PropertyChangeEvent evt)
 	{
 		ActualiserVuePilote();
+	}
+
+
+	/**
+	 * @author bouletcy
+	 * implémentation des commandes de l'avion piloté au clavier (zqsd)
+	 */
+	@Override
+	public void keyPressed(KeyEvent e) {
+		if(e.getKeyCode() == KeyEvent.VK_Q) {
+			_avionPilote.RotationGauche();
+		}else if (e.getKeyCode() == KeyEvent.VK_D) {
+			_avionPilote.RotationDroite();
+		}else if (e.getKeyCode() == KeyEvent.VK_Z) {
+			_avionPilote.Accelerer();
+		}else if (e.getKeyCode() == KeyEvent.VK_S) { 
+			_avionPilote.Ralentir();
+		}
+	}
+
+
+	@Override
+	public void keyTyped(KeyEvent e) {
+		// Nothing to do
+
+	}
+
+
+	@Override
+	public void keyReleased(KeyEvent e) {
+		// Nothing to do
+		
 	}
 }

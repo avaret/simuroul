@@ -216,11 +216,9 @@ public class VolAvionPilote extends Vol {
 		return "VolAvionPilote_"+IDVolAvionPilote;
 	}
 
-	// Catégorie unique créée spécialement pour les Avions Pilotés
-	// Timothée Bernard (ISESA16)
 	@Override
 	public Categorie getCategorie() {
-		return Categorie.PILOTE;
+		return Categorie.MEDIUM;
 	}
 
 	@Override

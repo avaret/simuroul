@@ -33,17 +33,17 @@ import fr.iessa.metier.type.TypeVol;
  * Interpolation de points pour fluidifier la simulation
  */
 public class TraficDao {
-	
-	
+
+
 	/**
 	 * Charge le trafic en parallele.
 	 * @param ficname contient la description de l'ensemble des vols du trafic sur 24h.
 	 * @return instance de la classe Trafic contenant les vols decrits dans le fichier.
 	 */
 	public Trafic charger(String ficname) {
-		
+
 		Trafic _trafic = new Trafic();
-		
+
 		Set<Vol> vols = null;
 		try (Stream<String> lignes = Files.lines(Paths.get(ficname));) {
 			vols = lignes.parallel()
@@ -55,7 +55,7 @@ public class TraficDao {
 		_trafic.setVols(vols);
 		return _trafic;
 	}
-	
+
 	/**
 	 * Charge un vol a partir d une description texte.
 	 * @param ligneFormatVol String decrivant un vol, le format attendu 
@@ -68,46 +68,39 @@ public class TraficDao {
 	{
 		Scanner scan = new Scanner(ligneFormatVol);
 		scan.useDelimiter(" |\n");
-		
+
 		TypeVol typeVol = TypeVol.valueOf(scan.next());
 		String id = scan.next();
 		Categorie categorie = Categorie.from(scan.next());
-		
+
 		scan.next();scan.next(); // skip
-		
+
 		int secondes = scan.nextInt();
-		
+
 		VolAvionPredefini vol = new VolAvionPredefini(typeVol, id, categorie, InstantFabrique.get(secondes));
-		
+
 		scan.next(); // skip
-		
+
 		Point maCoordCourante=PointFabrique.get( scan.next());
-		
-		
+
+
 		while(scan.hasNext()) //boucle sur les coordonnees + interpolation sur 4 points pour atteindre 1 point par seconde
 		{		
-			
 			Point maCoordSuivante = PointFabrique.get( scan.next());
-			
-			vol.ajout( InstantFabrique.get(secondes)
-					 , maCoordCourante ) ;
-			
+			vol.ajout( InstantFabrique.get(secondes), maCoordCourante );
 			int i;
-			for(i=1;i<5;i++){
-				
+			for(i=1;i<5;i++)
+			{	
 				secondes+=1;
 				Point pointInterpol = new Point(
 						(int)(maCoordCourante.x + (maCoordSuivante.x - maCoordCourante.x)*i/5) , 
 						(int)(maCoordCourante.y + (maCoordSuivante.y - maCoordCourante.y)*i/5));
-				vol.ajout(InstantFabrique.get(secondes), pointInterpol);
-				
-				
+				vol.ajout(InstantFabrique.get(secondes), pointInterpol);	
 			}
 			maCoordCourante=maCoordSuivante;
-			
 		}
 		vol.ajout( InstantFabrique.get(secondes)
-				 , maCoordCourante ) ;
+				, maCoordCourante ) ;
 		return 	vol;
 	}
 }
