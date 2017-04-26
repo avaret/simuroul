@@ -48,7 +48,7 @@ public class StopBarDrawer {
 			double y0=sb.getY0();
 
 			double theta_rad= ((theta)*Math.PI/180.0);
-			
+
 			double r=Math.sqrt((x*x)+(y*y));
 			double phi = Math.atan2(y, x);
 

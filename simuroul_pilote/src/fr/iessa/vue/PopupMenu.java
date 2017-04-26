@@ -181,8 +181,8 @@ public class PopupMenu extends JPopupMenu implements ActionListener{
 
 		case ("SUPPRIMER de la barre d'arret"):
 		{
-				controleur.getAeroport().get_StopBar().remove(this.getNearestStopBar());
-				plateforme.update(null, null);
+			controleur.getAeroport().get_StopBar().remove(this.getNearestStopBar());
+			plateforme.update(null, null);
 			break;
 		}
 
