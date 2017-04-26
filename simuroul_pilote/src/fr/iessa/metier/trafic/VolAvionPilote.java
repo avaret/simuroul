@@ -216,9 +216,11 @@ public class VolAvionPilote extends Vol {
 		return "VolAvionPilote_"+IDVolAvionPilote;
 	}
 
+	// Nouvelle Catégorie de vol créée spécialement pour les avions pilotés
+	// Timothée BERNARD (ISESA16)
 	@Override
 	public Categorie getCategorie() {
-		return Categorie.MEDIUM;
+		return Categorie.PILOTE;
 	}
 
 	@Override
