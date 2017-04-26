@@ -27,7 +27,6 @@ import fr.iessa.metier.Instant.InstantFabrique;
  * @author THOMAS Raimana
  * @version 1.0 
  * 
- * @author bouletcy  *KeyDispatcherAvionPilote et option de replay/record*
  *
  */
 
@@ -44,10 +43,8 @@ public class FramePrincipale extends JFrame implements PropertyChangeListener {
 	private JMenuItem menuChargerScenario;
 	
 
-	public static Controleur _controleur; // FIXME: Si on enleve le Static, la classe VolAvionPilote affiche des erreurs (direction de l'avion + chargement du Replay) 
+	public static Controleur _controleur;
 	private Echelle _echelle;
-	
-	public static FrameCommandeAvionPilote FrameCommande; // FIXME: On n'a plus besoin de la FrameCommande -> Tout se fait sur clavier !
 
 	//Charge la plateforme et le traffic à partir des arguments    
 	private void chargerPlateformeTrafficAvecArguments(String fichierPlateforme, String fichierTraffic) {
@@ -166,8 +163,9 @@ public class FramePrincipale extends JFrame implements PropertyChangeListener {
 
 		_controleur.ajoutVue(this, evts) ;
 
+		//On ne fait plus apparaitre la FrameCommandeAvionPilote() ! Les commandes se font au clavier !!
 		//Fait apparaitre les boutons de commande de l'avion
-		FrameCommande = new FrameCommandeAvionPilote();
+		//FrameCommande = new FrameCommandeAvionPilote();
 
 		//Create and set up the content pane.
 		this.validate();
@@ -340,7 +338,6 @@ public class FramePrincipale extends JFrame implements PropertyChangeListener {
 			//hodiqual
 			KeyboardFocusManager manager = KeyboardFocusManager.getCurrentKeyboardFocusManager();
 			manager.addKeyEventDispatcher(new KeyDispatcher());
-			manager.addKeyEventDispatcher(new KeyDispatcherAvionPilote());
 			break;
 
 		case CHARGEMENT_CARTE_FICHIER_ERREUR:
@@ -397,33 +394,4 @@ public class FramePrincipale extends JFrame implements PropertyChangeListener {
 		}
 	}
 	
-/**
- * @author bouletcy
- * commande de l'avion piloté au clavier
- */
-	private class KeyDispatcherAvionPilote implements KeyEventDispatcher {
-		@Override
-		public boolean dispatchKeyEvent(KeyEvent e) {
-			if (e.getID() == KeyEvent.KEY_PRESSED ) {
-				if(e.getKeyCode() == KeyEvent.VK_Q) {
-					_controleur.getTrafic().get_premierVolAvionPilote().RotationGauche();
-					return true;
-				}else if (e.getKeyCode() == KeyEvent.VK_D) {
-					_controleur.getTrafic().get_premierVolAvionPilote().RotationDroite();
-					return true;
-				}else if (e.getKeyCode() == KeyEvent.VK_Z) {
-					_controleur.getTrafic().get_premierVolAvionPilote().Accelerer();
-					return true;
-				}else if (e.getKeyCode() == KeyEvent.VK_S) { 
-					_controleur.getTrafic().get_premierVolAvionPilote().Ralentir();
-					return true;
-				}
-
-				return false;
-			}
-			else
-				return false;
-		}
-	}
-
 }
