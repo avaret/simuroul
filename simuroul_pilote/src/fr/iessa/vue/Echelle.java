@@ -89,7 +89,6 @@ public class Echelle extends Observable{
 		_globalTransformation.rotate(_rotationAngle);
 
 		setChanged();
-		System.out.println("notif zoom");
 		notifyObservers(getAffineTransform());
 	}
 
@@ -127,7 +126,6 @@ public class Echelle extends Observable{
 		_globalTransformation.rotate(_rotationAngle);
 
 		setChanged();
-		System.out.println("notif scroll");
 		notifyObservers(getAffineTransform());
 	}
 
