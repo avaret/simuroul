@@ -32,7 +32,11 @@ import fr.iessa.vue.FramePrincipale;
 
 /**
  * Vue d'un vol
- * @author hodiqual
+ * <p>
+ * <strong>Modification:</strong> Ajout d'un cas dans le Switch: le cas où l'avion est piloté
+ * afin de le faire apparaitre en violet
+ * <p>
+ * @author hodiqual / Timothée Bernard (ISESA16)
  *
  */
 public class ComponentVol extends JComponent {
@@ -72,6 +76,8 @@ public class ComponentVol extends JComponent {
 		case LIGHT:
 			_imageFactory = ShapeAvionFactory.LIGHT_VERT;
 			break;
+		case PILOTE:
+			_imageFactory = ShapeAvionFactory.MEDIUM_VIOLET;
 		default:
 			break;
 		}

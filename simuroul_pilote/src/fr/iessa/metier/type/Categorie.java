@@ -4,7 +4,11 @@ import java.util.Hashtable;
 
 /**
  * Décrit les différentes catégories d'avions vis a vis de leur taille
- * @author hodiqual
+ * 
+ * <p>
+ * <strong>Modification:</strong> Ajout de la Catégorie "PILOTE" pour les avions pilotés
+ * <p>
+ * @author hodiqual / Timothée Bernard (ISESA16)
  *
  */
 public enum Categorie {
@@ -15,7 +19,10 @@ public enum Categorie {
 ,	MEDIUM("M")
 
 	/** Avion léger: CESNA*/
-,	LIGHT("L");
+,	LIGHT("L")
+	
+	/** Avion piloté */
+,	PILOTE("");
 	
 	/** Abrévation de la catégories*/
 	private String _abreviation;

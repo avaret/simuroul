@@ -52,6 +52,12 @@ public class VolAvionPilote extends Vol {
 	private static int nombreVolAvionPilote=0;
 	private int IDVolAvionPilote;
 	
+	
+	/**
+	 * Constructeur avec paramètre qui fait appel à initialiserVolAvionPilote() afin d'implémenter les paramètres par défauts de l'avionPilote
+	 * @param instant définit l'instant de création de l'avionPilote
+	 * @param depart définit la position de départ de l'avionPilote
+	 */
 	public VolAvionPilote(Instant instant, Point depart)
 	{
 		_premierInstant = instant;
@@ -59,6 +65,9 @@ public class VolAvionPilote extends Vol {
 		initialiserVolAvionPilote();
 	}
 
+	/**
+	 * constructeur de base qui permet de créer un avionPilote en début de simulation au point initial (0,0)
+	 */
 	public VolAvionPilote()
 	{
 		_premierInstant = Instant.InstantFabrique.getMinimumInstant();
@@ -66,6 +75,9 @@ public class VolAvionPilote extends Vol {
 		initialiserVolAvionPilote();
 	}
 
+	/**
+	 * initialise un avionPilote avec des paramètres par defaut. Incrémente également nombreVolAvionPilote
+	 */
 	public void initialiserVolAvionPilote() {
 		_Vitesse=5;
 		_coordCourante=_PointDepart;
@@ -74,7 +86,11 @@ public class VolAvionPilote extends Vol {
 		nombreVolAvionPilote++;		
 	}
 
-	//update des coordonnées à l'aide de l'angle, incrémenté par la suite par les touches du claviers
+	/**
+	 * Permet l'update des coordonnées courante de l'avionPilote, en prenant en compte si la fonction replay 
+	 * est lancé ou pas, si elle l'est, on charge les positions à partir d'une hashmap, sinon on update les coordCourante 
+	 * et coordSuivante à partir des variables vitesse et angle.
+	 */
 	@Override
 	public void updateCoordCourantes(Instant instant, boolean visible) {
 		if(replay)
@@ -96,13 +112,20 @@ public class VolAvionPilote extends Vol {
 			else
 			{
 
-				_coordCourante = new Point(_coordCourante.x + (int)(_Vitesse*Math.cos(angle*Math.PI/180)), _coordCourante.y + (int)(_Vitesse *Math.sin(angle*Math.PI/180)));
-				_coordSuivante = new Point(_coordCourante.x + (int)(100*Math.cos(angle*Math.PI/180)), _coordCourante.y + (int)(100*Math.sin(angle*Math.PI/180)));
+				_coordCourante = new Point(_coordCourante.x + (int)(_Vitesse*Math.cos(angle*Math.PI/180)),
+										   _coordCourante.y + (int)(_Vitesse *Math.sin(angle*Math.PI/180)));
+				
+				_coordSuivante = new Point(_coordCourante.x + (int)(100*Math.cos(angle*Math.PI/180)),
+						 				   _coordCourante.y + (int)(100*Math.sin(angle*Math.PI/180)));
 				_recordCoord.put(instant, _coordCourante);
 			}
 		}
 	}
 
+	/**
+	 * Permet de sauvegarder la hashmap de l'avionPilote.
+	 * @param nomfichier Fichier dans lequel on va sauvegarder la hashmap de l'avionPilote
+	 */
 	public void sauverReplay(String nomfichier) {
 		ObjectOutputStream os;
 		try {
@@ -116,6 +139,10 @@ public class VolAvionPilote extends Vol {
 		}	
 	}
 
+	/**
+	 * Permet de charger un replay d'une simulation à partir d'un fichier
+	 * @param nomfichier Nom du ficher regroupant la hashmap de l'avionpilote sauvegardé
+	 */
 	public void chargerReplay(String nomfichier) {
 		ObjectInputStream oe;
 		try {
@@ -129,7 +156,7 @@ public class VolAvionPilote extends Vol {
 				tempHashMap2.put(b, tempHashMap.get(a));
 			}
 			System.out.println("nombre de point chargé =" + tempHashMap.size());
-			FramePrincipale._controleur.getTrafic().get_premierVolAvionPilote().set_recordCoord(tempHashMap2);
+			this.set_recordCoord(tempHashMap2);
 			oe.close();
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
@@ -189,9 +216,11 @@ public class VolAvionPilote extends Vol {
 		return "VolAvionPilote_"+IDVolAvionPilote;
 	}
 
+	// Catégorie unique créée spécialement pour les Avions Pilotés
+	// Timothée Bernard (ISESA16)
 	@Override
 	public Categorie getCategorie() {
-		return Categorie.MEDIUM;
+		return Categorie.PILOTE;
 	}
 
 	@Override
@@ -207,19 +236,28 @@ public class VolAvionPilote extends Vol {
 		return r;
 	}
 
-
+/**
+ * Méthodes de rotation vers la gauche de l'avionPilote
+ */
 	public void RotationGauche(){
 		double angle = getAngle();
 		angle += 1;
 		this.setAngle(angle);
 	}
-
+	
+	/**
+	 * Méthode de rotation vers la droite de l'avionPilote
+	 */
 	public void RotationDroite(){
 		double angle = getAngle();
 		angle -= 1;
 		this.setAngle(angle);
 	}
-
+	
+	/**
+	 * Méthode de d'accelération de l'avionPilote
+	 * 
+	 */
 	public void Accelerer(){
 		int vitesse = getVitesse();
 		vitesse += 2;
@@ -228,7 +266,11 @@ public class VolAvionPilote extends Vol {
 		}
 		this.setVitesse(vitesse);
 	}
-
+	
+	/**
+	 * Méthode du ralentissement de l'avionPilote. 
+	 * Réduit le paramètre vitesse de -2 par appel (toujours >0)
+	 */
 	public void Ralentir(){
 		int vitesse = getVitesse();
 		vitesse -= 2;
@@ -278,19 +320,8 @@ public class VolAvionPilote extends Vol {
 		this._recordCoord = _recordCoord;
 	}
 
-	public static int getNombreVolAvionPilote() {
-		return nombreVolAvionPilote;
-	}
-
-	public static void setNombreVolAvionPilote(int nombreVolAvionPilote) {
-		VolAvionPilote.nombreVolAvionPilote = nombreVolAvionPilote;
-	}
-
 	public int getIDVolAvionPilote() {
 		return IDVolAvionPilote;
 	}
 
-	public void setIDVolAvionPilote(int iDVolAvionPilote) {
-		IDVolAvionPilote = iDVolAvionPilote;
-	}
 }

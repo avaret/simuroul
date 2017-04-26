@@ -6,15 +6,13 @@ import java.awt.geom.Point2D;
 import java.awt.geom.Point2D.Double;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
-import java.util.Observable;
-import java.util.Observer;
 
 import javax.swing.JFrame;
 
 import fr.iessa.controleur.Controleur;
 import fr.iessa.controleur.ModeleEvent;
+import fr.iessa.metier.Instant;
 import fr.iessa.metier.trafic.VolAvionPilote;
-import fr.iessa.vue.trafic.PanelTrafic;
 
 /** 
  * La classe FramePilote permet de créer une Frame qui suit un avion particulier
@@ -25,7 +23,7 @@ import fr.iessa.vue.trafic.PanelTrafic;
  * 
  * @author Timothée Bernard (ISESA16)
  */
-public class FramePilote extends JFrame implements Observer, PropertyChangeListener
+public class FramePilote extends JFrame implements PropertyChangeListener
 {
 	/**
 	 * Déclaration des Attributs de la Classe
@@ -60,24 +58,24 @@ public class FramePilote extends JFrame implements Observer, PropertyChangeListe
 		iDFrame = nombreFrame;
 		nombreFrame++;
 
-
-		// Initialisation des Caractéristiques (Taille, Position sur l'écran, etc...) de la FramePilote
-		this.setPreferredSize((new Dimension(800, 600)));
-		this.setLocation(400, 300);
-		this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-
-
 		// Initialisation du Controleur déclaré
 		_ctrlPilote = controleur;
 		_avionPilote = avion;
 
+
+		// Initialisation des Caractéristiques (Taille, Position sur l'écran, etc...) de la FramePilote
+		this.setPreferredSize((new Dimension(800, 600)));
+		this.setLocation(400, 300);
+		this.setDefaultCloseOperation(FermerVuePilote());
+
+		
 		// Création du Contenu de la FramePilote
 		jpanelPilote = new PanelPrincipalMultiCouches(_ctrlPilote, false, _echPilote);	
 		this.setContentPane(jpanelPilote);
 
 		final ModeleEvent[] evts = { ModeleEvent.UPDATE_INSTANT };
 		_ctrlPilote.ajoutVue(this,  evts) ;
-		//_echPilote.addObserver(this);
+
 		
 		// Create and set up the content pane.
 		this.validate();
@@ -104,8 +102,6 @@ public class FramePilote extends JFrame implements Observer, PropertyChangeListe
 	 */
 	public void ActualiserVuePilote()
 	{
-		System.out.println("CoordAvion: " + _avionPilote.getCoordCourante());
-		
 		// Récupération des Coordonnées Courantes de l'Avion Piloté
 		_echPilote.getAffineTransform().deltaTransform(_avionPilote.getCoordCourante(), courantPilote);
 		_echPilote.getAffineTransform().transform(_avionPilote.getCoordCourante(), courantPiloteAbs);
@@ -138,12 +134,6 @@ public class FramePilote extends JFrame implements Observer, PropertyChangeListe
 		precedentPilote = (Double)courantPilote.clone();
 
 
-		// TODO Changement de représentation de l'Avion Selectionné
-		// FIXME ATTENTION: CHANGE L'IMAGE DE L'AVION SUR LA
-		// FRAMEPRINCIPALE MAIS PAS SUR LA FRAMEPILOTE !!
-		//CompVol.setImageFactory(ShapeAvionFactory.PILOTE);
-
-
 		// Confirmation de l'Actualisation par le redessinage du Contenu (JPanel)
 		jpanelPilote.repaint();
 		jpanelPilote.revalidate();
@@ -152,20 +142,23 @@ public class FramePilote extends JFrame implements Observer, PropertyChangeListe
 		this.pack();
 	}
 
-
-	@Override
-	public void update(Observable o, Object arg)
-	{
-		System.out.println("update");
-		// Nothing to do
-		
+	/**
+	 * Méthode de fermeture de fenetre afin de
+	 * supprimer en plus l'avion piloté associé
+	 * à la FramePilote en question
+	 * 
+	 * @return
+	 */
+	public int FermerVuePilote()
+	{	
+		return JFrame.DISPOSE_ON_CLOSE;
 	}
 
-
-	@Override
-	public void propertyChange(PropertyChangeEvent evt) {
-		// TODO Auto-generated method stub
-		System.out.println(" propertyy changed ! ");
+	/**
+	 * Méthode qui permet appel ActualiserVuePilote()
+	 */
+	public void propertyChange(PropertyChangeEvent evt)
+	{
 		ActualiserVuePilote();
 	}
 }

@@ -168,11 +168,12 @@ public class Trafic implements Observer {
 	}
 
 
-	// FIXME: Ajouter commentaire
+	/**
+	 * @param avionPilote
+	 */
 	public void ajoutVolAvionPilote(VolAvionPilote avionPilote){
 		_vols.add(avionPilote);
 		_volsAvionPilote.add(avionPilote);
-		//_volsParInstant.add(avionPilote);
 	}
 
 }
