@@ -42,7 +42,6 @@ public class LabelScenario extends JLabel implements PropertyChangeListener {
 	 */
 	@Override
 	public void propertyChange(PropertyChangeEvent evt) {
-		System.out.println("temps: "+((int)_controleur.getInstantCourant()));
 		String texte=FramePrincipale._controleur.scenario.afficherParole((int)_controleur.getInstantCourant());
 		setText(texte);
 	}

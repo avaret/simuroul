@@ -67,7 +67,18 @@ public class PanelTrafic extends JPanel implements PropertyChangeListener, Obser
     }
     
     private void setTrafic(Trafic trafic) {
+        // Suppression des anciens ComponentVol au cas où ils sont déjà présent sur la visu
+    	for(ComponentVol v : _volsADessiner.values())
+        {
+            // On retire de la fenêtre s'il est affiché
+            if(v.getParent() != null)
+                v.getParent().remove(v); // Il est visible
+        }
+
+    	// Changement du trafic
     	_trafic = trafic;
+    	
+    	// Création des ComponentVol associés à ce nouveau trafic
     	if(_trafic != null)
     	{
     		new InitializeComponentVols().execute();

@@ -4,11 +4,17 @@ import java.awt.Dimension;
 import java.awt.Point;
 import java.awt.geom.Point2D;
 import java.awt.geom.Point2D.Double;
+import java.beans.PropertyChangeEvent;
+import java.beans.PropertyChangeListener;
+import java.util.Observable;
+import java.util.Observer;
 
 import javax.swing.JFrame;
 
 import fr.iessa.controleur.Controleur;
+import fr.iessa.controleur.ModeleEvent;
 import fr.iessa.metier.trafic.VolAvionPilote;
+import fr.iessa.vue.trafic.PanelTrafic;
 
 /** 
  * La classe FramePilote permet de créer une Frame qui suit un avion particulier
@@ -18,13 +24,15 @@ import fr.iessa.metier.trafic.VolAvionPilote;
  * <p>
  * 
  * @author Timothée Bernard (ISESA16)
- * */
-
-
-public class FramePilote extends JFrame
+ */
+public class FramePilote extends JFrame implements Observer, PropertyChangeListener
 {
-	// Déclaration des Attributs de la Classe
+	/**
+	 * Déclaration des Attributs de la Classe
+	 */
 	private static final long serialVersionUID = 1L;
+	private static int nombreFrame = 0;
+	private int iDFrame;
 
 	private PanelPrincipalMultiCouches jpanelPilote;
 
@@ -39,11 +47,18 @@ public class FramePilote extends JFrame
 	private Point2D.Double courantPiloteAbs = new Point2D.Double(0, 0);
 
 
-	// Constructeur de la Classe
+	/**
+	 * Constructeur de la Classe
+	 *  
+	 * @param controleur
+	 * @param avion
+	 */
 	public FramePilote(Controleur controleur, VolAvionPilote avion)
 	{
 		// Appel du Constructeur de la Classe-Mère JFrame
-		super("Vue Pilote");
+		super("Vue Pilote #" + nombreFrame);
+		iDFrame = nombreFrame;
+		nombreFrame++;
 
 
 		// Initialisation des Caractéristiques (Taille, Position sur l'écran, etc...) de la FramePilote
@@ -60,7 +75,10 @@ public class FramePilote extends JFrame
 		jpanelPilote = new PanelPrincipalMultiCouches(_ctrlPilote, false, _echPilote);	
 		this.setContentPane(jpanelPilote);
 
-
+		final ModeleEvent[] evts = { ModeleEvent.UPDATE_INSTANT };
+		_ctrlPilote.ajoutVue(this,  evts) ;
+		//_echPilote.addObserver(this);
+		
 		// Create and set up the content pane.
 		this.validate();
 		this.pack();
@@ -69,18 +87,28 @@ public class FramePilote extends JFrame
 
 
 	/**
+	 * Accès à la valeur de l'iD de la FramePilote
+	 * 
+	 * @return iDFrame
+	 */
+	public int getIDFrame()
+	{
+		return iDFrame;
+	}
+
+
+	/**
 	 * Actualisation du contenu de la FramePilote
 	 * afin de suivre l'Avion Piloté
 	 * 
-	 * @param coordXY
 	 */
-	public void ActualiserVuePilote(Point coordXY)
-	{	
-		
+	public void ActualiserVuePilote()
+	{
+		System.out.println("CoordAvion: " + _avionPilote.getCoordCourante());
 		
 		// Récupération des Coordonnées Courantes de l'Avion Piloté
-		_echPilote.getAffineTransform().deltaTransform(coordXY, courantPilote);
-		_echPilote.getAffineTransform().transform(coordXY, courantPiloteAbs);
+		_echPilote.getAffineTransform().deltaTransform(_avionPilote.getCoordCourante(), courantPilote);
+		_echPilote.getAffineTransform().transform(_avionPilote.getCoordCourante(), courantPiloteAbs);
 		Point pointAbs =  new Point((int)courantPiloteAbs.x, (int)courantPiloteAbs.y);
 
 
@@ -101,11 +129,9 @@ public class FramePilote extends JFrame
 
 
 		// Fixation de l'orientation de l'Avion Piloté puis Rotation du contenu de la FramePilote
-		// FIXME ATTENTION: IL EST POSSIBLE QUE L'ORIENTATION 
-		// DE L'AVION SE FASSE AUSSI SUR LA FRAMEPRINCIPALE !!
-		double angle = (Math.PI/2.0 - _avionPilote.getAngle());
-		_avionPilote.setAngle(Math.PI/2.0);
-		_echPilote.setRotationAngle(angle);
+		//double angle = (Math.PI/2.0 - _avionPilote.getAngle());
+		//_avionPilote.setAngle(Math.PI/2.0);
+		//_echPilote.setRotationAngle(angle);
 
 
 		// Stockage de courantPilote dans precedentPilote pour l'instant suivant (T+1)
@@ -113,7 +139,7 @@ public class FramePilote extends JFrame
 
 
 		// TODO Changement de représentation de l'Avion Selectionné
-		// FIXME ATTENTION: CHANGE L'IMAGE DE L'AVION SUR LA 
+		// FIXME ATTENTION: CHANGE L'IMAGE DE L'AVION SUR LA
 		// FRAMEPRINCIPALE MAIS PAS SUR LA FRAMEPILOTE !!
 		//CompVol.setImageFactory(ShapeAvionFactory.PILOTE);
 
@@ -124,5 +150,22 @@ public class FramePilote extends JFrame
 
 		this.revalidate();
 		this.pack();
+	}
+
+
+	@Override
+	public void update(Observable o, Object arg)
+	{
+		System.out.println("update");
+		// Nothing to do
+		
+	}
+
+
+	@Override
+	public void propertyChange(PropertyChangeEvent evt) {
+		// TODO Auto-generated method stub
+		System.out.println(" propertyy changed ! ");
+		ActualiserVuePilote();
 	}
 }

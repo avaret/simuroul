@@ -359,7 +359,7 @@ public class PanelPlateforme extends JPanel implements PropertyChangeListener, M
 	public void update(Observable o, Object arg)
 	{
 		resetImageCarte();
-        repaint();	
+        repaint();
 	}
 	
 	public int getZoomLevel()

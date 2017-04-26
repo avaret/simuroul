@@ -141,7 +141,7 @@ public class PopupMenu extends JPopupMenu implements ActionListener{
 
 			// Création de la VuePilote associée à l'Avion Piloté
 			FramePilote VuePilote = new FramePilote(controleur, avionPilote);
-			VuePilote.ActualiserVuePilote(avionPilote.getCoordCourante());
+			VuePilote.ActualiserVuePilote();
 
 			plateforme.update(null, null);
 			break;

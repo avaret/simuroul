@@ -41,7 +41,7 @@ public abstract class Vol  {
 		return _coordSuivante;
 	}
 	
-	public abstract void updateCoordCourantes(Instant instant);
+	public abstract void updateCoordCourantes(Instant instant, boolean visible);
 
 	public abstract boolean aDesCollisions();
 

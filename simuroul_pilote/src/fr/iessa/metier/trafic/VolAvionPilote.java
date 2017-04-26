@@ -38,7 +38,7 @@ import fr.iessa.vue.FramePrincipale;
 import fr.iessa.controleur.Controleur;
 import fr.iessa.metier.trafic.Trafic;
 
-public class VolAvionPilote extends Vol  {
+public class VolAvionPilote extends Vol {
 
 
 
@@ -76,7 +76,7 @@ public class VolAvionPilote extends Vol  {
 
 	//update des coordonnées à l'aide de l'angle, incrémenté par la suite par les touches du claviers
 	@Override
-	public void updateCoordCourantes(Instant instant) {
+	public void updateCoordCourantes(Instant instant, boolean visible) {
 		if(replay)
 		{
 			if( instant == null )
