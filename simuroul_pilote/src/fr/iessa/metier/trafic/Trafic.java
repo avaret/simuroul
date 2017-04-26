@@ -26,44 +26,44 @@ import fr.iessa.metier.Instant.InstantFabrique;
  * @author hodiqual
  */
 public class Trafic implements Observer {
-	
+
 	/**
 	 * L'ensemble des vols pilotés
 	 */
 	private ArrayList<VolAvionPilote> _volsAvionPilote = new ArrayList<VolAvionPilote>(1);
-	
+
 	/**
 	 * L'ensemble des vols
 	 */
 	private Set<Vol> _vols = null;
-	
+
 	/**
 	 * Les vols par instant
 	 */
 	private TreeMap<Instant, Set<Vol>> _volsParInstant = null;
-	
+
 	/**
 	 * La liste des collisions recensees.
 	 */
 	private List<Collision> _collisions = null;
-	
-	
+
+
 	/**
 	 * Trouve les collisions
 	 */
 	public void computeCollision()
 	{		
 		ConcurrentHashMap<Instant, Map<Point,List<Vol> > > volsParCoordParInstant
-		 = new ConcurrentHashMap<Instant, Map<Point,List<Vol>> >();
+		= new ConcurrentHashMap<Instant, Map<Point,List<Vol>> >();
 		_volsParInstant.keySet().parallelStream().forEach( i -> volsParCoordParInstant.put(i, new HashMap<Point,List<Vol>>()));
 		_volsParInstant.entrySet().parallelStream()
-								  .forEach( e -> volsParCoordParInstant.put(e.getKey(),
-										  						e.getValue().stream()
-										  									.collect(Collectors.groupingBy(v -> v.getCoord(e.getKey())))) 
-										  );
-		
+		.forEach( e -> volsParCoordParInstant.put(e.getKey(),
+				e.getValue().stream()
+				.collect(Collectors.groupingBy(v -> v.getCoord(e.getKey())))) 
+				);
+
 		_collisions = new ArrayList<Collision>();
-		
+
 		volsParCoordParInstant.entrySet().parallelStream().forEach(e ->
 		{
 			e.getValue().entrySet().stream().filter( z -> z.getValue().size() > 1 )
@@ -72,13 +72,13 @@ public class Trafic implements Observer {
 				z.getValue().forEach(v -> v.setADesCollisions(true));
 				_collisions.add(new Collision(e.getKey(), z.getKey(), z.getValue()));
 			}
-			);
+					);
 		}
-		 );
-		
-		
+				);
+
+
 	}
-	
+
 	/**
 	 * Range les vols par instant
 	 */
@@ -86,11 +86,11 @@ public class Trafic implements Observer {
 	{
 		TreeSet<Instant> allOrderedInstants = InstantFabrique.getInstants();
 		ConcurrentMap<Instant, Set<Vol>> volsParInstant = allOrderedInstants.parallelStream()
-				 .collect( Collectors.toConcurrentMap( Function.identity()
-													   ,(Instant i) -> _vols.stream()
-																			.filter(v -> v.estSurLaPlateforme(i) )
-																			.collect( Collectors.toSet() ) ) );
-		
+				.collect( Collectors.toConcurrentMap( Function.identity()
+						,(Instant i) -> _vols.stream()
+						.filter(v -> v.estSurLaPlateforme(i) )
+						.collect( Collectors.toSet() ) ) );
+
 		_volsParInstant = new TreeMap<Instant, Set<Vol>>(volsParInstant);
 	}
 
@@ -110,10 +110,10 @@ public class Trafic implements Observer {
 	public void update(Observable o, Object i) {
 		Instant instant = (Instant)i;
 		Set<Vol> volsAInstant = _volsParInstant.get(instant);
-		volsAInstant.stream().forEach( v -> v.updateCoordCourantes(instant) );
-		
+		volsAInstant.stream().forEach( v -> v.updateCoordCourantes(instant, true) );
+
 		_vols.parallelStream().filter( v -> volsAInstant.contains(v) == false )
-							  .forEach( v -> v.updateCoordCourantes(instant) ); // FIXME: Modification de "null" vers "instant"
+		.forEach( v -> v.updateCoordCourantes(instant, false) );
 	}
 
 	/**
@@ -123,7 +123,7 @@ public class Trafic implements Observer {
 	public Set<Vol> getVols(Predicate<Vol> filtre) {
 		return _vols.stream().filter(filtre).collect(Collectors.toSet());
 	}
-	
+
 	/**
 	 * @return L'ensemble des vols qui composent le trafic
 	 */
@@ -137,7 +137,7 @@ public class Trafic implements Observer {
 	public TreeMap<Instant, Set<Vol>> getVolsParInstant() {
 		return _volsParInstant;
 	}	
-	
+
 	/**
 	 * @return L'ensemble des vols qui composent le trafic a l'instant @param instant.
 	 */
@@ -152,14 +152,14 @@ public class Trafic implements Observer {
 	public List<Collision> getCollisions() {
 		return _collisions;
 	}
-	
+
 	/**
 	 * @return L'ensemble des vols pilotés
 	 */
 	public ArrayList<VolAvionPilote> get_volsAvionPilote() {
 		return _volsAvionPilote;
 	}
-	
+
 	/**
 	 * @return Le premier vol piloté
 	 */
@@ -167,12 +167,12 @@ public class Trafic implements Observer {
 		return _volsAvionPilote.get(0);
 	}
 
-	
+
 	// FIXME: Ajouter commentaire
 	public void ajoutVolAvionPilote(VolAvionPilote avionPilote){
 		_vols.add(avionPilote);
 		_volsAvionPilote.add(avionPilote);
 		//_volsParInstant.add(avionPilote);
 	}
-	
+
 }
