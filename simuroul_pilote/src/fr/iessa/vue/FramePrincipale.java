@@ -396,6 +396,7 @@ public class FramePrincipale extends JFrame implements PropertyChangeListener {
 				return false;
 		}
 	}
+	
 /**
  * @author bouletcy
  * commande de l'avion piloté au clavier
