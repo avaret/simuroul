@@ -4,9 +4,11 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Scanner;
+import java.util.Vector;
 import java.util.Map.Entry;
 
 import javax.swing.JFrame;
@@ -27,7 +29,7 @@ public class Scenario  {
 
 	public Scenario(){
 	}
-	
+
 	public int getX_initial() {
 		return x_initial;
 	}
@@ -42,6 +44,10 @@ public class Scenario  {
 
 	public void setY_initial(int y_initial) {
 		this.y_initial = y_initial;
+	}
+	
+	public int getDebut(){
+		return debut;
 	}
 
 	private void convertirScenario(String nomScenario) throws IOException{
@@ -91,9 +97,10 @@ public class Scenario  {
 
 
 
+
 	public String afficherParole(int i){
 
-		String parole = null;
+		String parole = " ";
 
 		if( compteur != 0 ){
 			compteur--;
@@ -110,12 +117,13 @@ public class Scenario  {
 		}else if( indelay ){
 			parole = dialogue.get(dernierDialogue);
 		}
-
-		return parole; 
-
-	}
+		
+		return parole;
+		}	
+	
 
 }
+
 
 
 

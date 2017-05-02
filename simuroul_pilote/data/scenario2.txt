@@ -9,8 +9,8 @@
 116: EZY678, traversez piste 27L, rappellez piste dégagée.
 117: Traversons piste 27L, rappellerons piste dégagée, EZY678.
 126: Piste dégagée, EZY678.
-127: EZY678, contactez roissy SOL, XXX XXX, bonne journée
-128: Contactons roissy SOL, XXX XXX, au revoir, EZY678
+127: EZY678, contactez roissy SOL,119.625, bonne journée
+128: Contactons roissy SOL, 119.625, au revoir, EZY678
 144: Roissy SOL, bonjour, EZY678, sur D6, demandons à rejoindre le parking.
 149: FONZY, roulez vers l'aire hotel via taxiway D puis taxiway Q puis tournez à droite sur QB7 puis taxiway B puis tournez à droite vers la place H050
 151: Roulons vers H050 via taxiway D puis taxiway Q puis tournons à droite sur QB7 puis taxiway B puis sur la droite, FONZY.

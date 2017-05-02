@@ -1,6 +1,7 @@
 
 package fr.iessa.vue;
 
+import java.awt.Dimension;
 import java.awt.Font;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
@@ -34,6 +35,11 @@ public class LabelScenario extends JLabel implements PropertyChangeListener {
 
 		final ModeleEvent[] evts = {ModeleEvent.UPDATE_INSTANT};
 		controleur.ajoutVue(this,  evts) ;
+		
+		this.setPreferredSize(new Dimension(440,80));
+		
+		
+		
 	}
 
 
@@ -42,7 +48,18 @@ public class LabelScenario extends JLabel implements PropertyChangeListener {
 	 */
 	@Override
 	public void propertyChange(PropertyChangeEvent evt) {
-		String texte=FramePrincipale._controleur.scenario.afficherParole((int)_controleur.getInstantCourant());
-		setText(texte);
+		String s = " le texte à afficher... ";
+
+		final String html1 = "<html><body style='width: ";
+
+		final String html2 = "px'>";
+
+		new JLabel(html1 + "200" + html2 + s); /* 200 est la largeur du JLabel */
+
+		
+		System.out.println("temps: "+((int)_controleur.getInstantCourant()));
+		String texte_prin=FramePrincipale._controleur.scenario.afficherParole((int)_controleur.getInstantCourant());
+		setText(html1 + "200" + html2 + texte_prin);
+		System.out.println(getText());
 	}
 }
