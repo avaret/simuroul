@@ -15,6 +15,11 @@ import fr.iessa.controleur.ModeleEvent;
 import fr.iessa.metier.Horloge;
 import fr.iessa.metier.Scenario;
 
+/** Class LabelScenario : Affichage des paroles du controleur et du pilote dans la fenetre principale et la fenetre pilote.
+ * @author DONG Justine 
+ * @version 1.0
+ * 
+ */
 
 public class LabelScenario extends JLabel implements PropertyChangeListener {
 
@@ -48,7 +53,7 @@ public class LabelScenario extends JLabel implements PropertyChangeListener {
 	 */
 	@Override
 	public void propertyChange(PropertyChangeEvent evt) {
-		String s = " le texte à afficher... ";
+		String s = " ";
 
 		final String html1 = "<html><body style='width: ";
 
@@ -60,6 +65,6 @@ public class LabelScenario extends JLabel implements PropertyChangeListener {
 		System.out.println("temps: "+((int)_controleur.getInstantCourant()));
 		String texte_prin=FramePrincipale._controleur.scenario.afficherParole((int)_controleur.getInstantCourant());
 		setText(html1 + "200" + html2 + texte_prin);
-		System.out.println(getText());
+
 	}
 }

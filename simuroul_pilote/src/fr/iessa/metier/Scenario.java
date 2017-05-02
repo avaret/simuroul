@@ -13,6 +13,12 @@ import java.util.Map.Entry;
 
 import javax.swing.JFrame;
 
+/** Class Scenario : Traitement des fichiers textes décrivant les démonstrations pour pouvoir les afficher dans le LabelScenario
+ * @author DONG Justine 
+ * @version 1.0
+ * 
+ */
+
 
 
 public class Scenario  {
@@ -50,6 +56,10 @@ public class Scenario  {
 		return debut;
 	}
 
+	public void setDebut(int debut) {
+		this.debut = debut;
+	}
+
 	private void convertirScenario(String nomScenario) throws IOException{
 
 		String ligne;
@@ -58,7 +68,7 @@ public class Scenario  {
 		File fichier = new File(nomScenario);
 		BufferedReader entree = new BufferedReader(new FileReader (fichier));
 
-		debut = Integer.parseInt( entree.readLine());
+		debut = Integer.parseInt(entree.readLine())-1;
 		x_initial=Integer.parseInt(entree.readLine());
 		y_initial=Integer.parseInt(entree.readLine());
 
@@ -94,10 +104,6 @@ public class Scenario  {
 		}
 	}
 
-
-
-
-
 	public String afficherParole(int i){
 
 		String parole = " ";
@@ -120,8 +126,6 @@ public class Scenario  {
 		
 		return parole;
 		}	
-	
-
 }
 
 

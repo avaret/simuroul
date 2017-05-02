@@ -4,14 +4,14 @@
 0: *toucher des roues
 31: *sortie de la piste par Z3 K3
 58: Roissy tour, sur k3, demandons à traverer piste 27L, FRZEC
-60: EZY678, maintenez K3, cause départ piste 27L, je vous rappelle.
+60: ATC: FONZY, maintenez K3, cause départ piste 27L, je vous rappelle.
 62: *L'autre avion décolle piste 27L
-116: EZY678, traversez piste 27L, rappellez piste dégagée.
+116: ATC: FONZY, traversez piste 27L, rappellez piste dégagée.
 117: Traversons piste 27L, rappellerons piste dégagée, EZY678.
 126: Piste dégagée, EZY678.
-127: EZY678, contactez roissy SOL,119.625, bonne journée
+127: ATC: FONZY, contactez roissy SOL,119.625, bonne journée
 128: Contactons roissy SOL, 119.625, au revoir, EZY678
 144: Roissy SOL, bonjour, EZY678, sur D6, demandons à rejoindre le parking.
-149: FONZY, roulez vers l'aire hotel via taxiway D puis taxiway Q puis tournez à droite sur QB7 puis taxiway B puis tournez à droite vers la place H050
+149: ATC: FONZY, roulez vers l'aire hotel via taxiway D puis taxiway Q puis tournez à droite sur QB7 puis taxiway B puis tournez à droite vers la place H050
 151: Roulons vers H050 via taxiway D puis taxiway Q puis tournons à droite sur QB7 puis taxiway B puis sur la droite, FONZY.
 152: *commence à rouler et arrive sans embuches.
