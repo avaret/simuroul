@@ -26,7 +26,9 @@ import fr.iessa.metier.Instant.InstantFabrique;
 /** Classe FramePrincipale
  * @author THOMAS Raimana
  * @version 1.0 
- * 
+ *  
+ * Modifiée par: @author GINEYS Christophe (IESSA 16)
+ * Modification: Ajout d'une option pour ajouter un menu sauvegarder les BA et charger les BA
  *
  */
 
@@ -38,10 +40,10 @@ public class FramePrincipale extends JFrame implements PropertyChangeListener {
 	private JMenuItem _menuChargerTrafic;
 	private JMenuItem _menuQuitter;
 	private JMenu _menuOption;
-	
-	
+
+
 	private JMenuItem menuChargerScenario;
-	
+
 
 	public static Controleur _controleur;
 	private Echelle _echelle;
@@ -73,12 +75,12 @@ public class FramePrincipale extends JFrame implements PropertyChangeListener {
 		_menuChargerTrafic = new JMenuItem("Charger trafic");
 		_menuChargerTrafic.setEnabled(false);;
 		_menuQuitter = new JMenuItem("Quitter");
-		
+
 		_menuChargerPlateForme.addActionListener(new ActionChargerPlateForme());
 		_menuChargerTrafic.addActionListener(new ActionChargerTrafic());
 		_menuQuitter.addActionListener(new ActionQuitter());
-		
-		
+
+
 		_menu.add(_menuChargerPlateForme);
 		_menu.add(_menuChargerTrafic);
 		_menu.add(_menuQuitter);
@@ -86,7 +88,7 @@ public class FramePrincipale extends JFrame implements PropertyChangeListener {
 
 		_menuOption = new JMenu("Options");
 		_menuOption.setEnabled(false);
-		
+
 		//hodiqual
 		JMenuItem menuAjoutVue = new JMenuItem("Ajout vue");
 		menuAjoutVue.addActionListener(new ActionListener() {
@@ -114,29 +116,36 @@ public class FramePrincipale extends JFrame implements PropertyChangeListener {
 
 		JMenuItem menuAviomSimu = new JMenuItem("Simulation pilote");
 		menuAviomSimu.addActionListener(new ActionSimulationPilote());
-		
+
 		JMenuItem menuSauvegarderReplay = new JMenuItem("Sauvegarder le replay");
 		menuSauvegarderReplay.addActionListener(new ActionSauvegarderReplay());
-		
+
 		JMenuItem menuChargerReplay = new JMenuItem("Charger un replay");
 		menuChargerReplay.addActionListener(new ActionChargerReplay());
-		
+
 		JMenuItem menuStartReplay = new JMenuItem("Lancer le replay");
 		menuStartReplay.addActionListener(new ActionStartReplay());
-		
+
 		JMenuItem menuCutReplay = new JMenuItem("Arreter le replay");
 		menuCutReplay.addActionListener(new ActionCutReplay());
-		
+
+		/** 
+		 * menu sauver les BA
+		 */
 		JMenuItem menuSauvStopBar = new JMenuItem("Sauvegarde Barre Arret");
 		menuSauvStopBar.addActionListener(new ActionSauverBarreArret());
-		
+
+
+		/** 
+		 * menu charger les BA
+		 */
 		JMenuItem menuChargerStopBar = new JMenuItem("Charger Barre Arret");
 		menuChargerStopBar.addActionListener(new ActionChargerBarreArret());
-		
+
 		JMenuItem menuChargerScenario = new JMenuItem("Charger Scenario");
 		menuChargerScenario.addActionListener(new ActionChargerScenario());
-		
-		
+
+
 		_menuOption.add(menuAjoutVue);
 		_menuOption.add(menuAviomSimu);
 		_menuOption.add(menuCollision);
@@ -149,7 +158,7 @@ public class FramePrincipale extends JFrame implements PropertyChangeListener {
 		_menuOption.add(menuChargerStopBar);
 		_menuOption.add(menuChargerScenario);
 		_barreMenu.add(_menuOption);
-		
+
 		// Création et configuration du controleur MVC
 		_controleur = new Controleur();
 		_echelle = new Echelle();
@@ -187,7 +196,7 @@ public class FramePrincipale extends JFrame implements PropertyChangeListener {
 
 
 	/** Listeners */
-	
+
 	class ActionSauvegarderReplay implements ActionListener{
 		public void actionPerformed(ActionEvent arg0) {
 
@@ -238,7 +247,9 @@ public class FramePrincipale extends JFrame implements PropertyChangeListener {
 		}
 	}
 
-	//charger barre arret 
+	/** 
+	 * actionlistener pour charger les BA
+	 */
 	class ActionChargerBarreArret implements ActionListener {
 		public void actionPerformed(ActionEvent arg0) {
 
@@ -264,7 +275,7 @@ public class FramePrincipale extends JFrame implements PropertyChangeListener {
 			}
 		}
 	}
-	
+
 
 	class ActionChargerTrafic implements ActionListener {
 		public void actionPerformed(ActionEvent arg0) {
@@ -280,7 +291,9 @@ public class FramePrincipale extends JFrame implements PropertyChangeListener {
 		}
 	}
 
-	//sauver barre arret 
+	/** 
+	 * actionlistener pour sauver les BA
+	 */
 	class ActionSauverBarreArret implements ActionListener {
 		public void actionPerformed(ActionEvent arg0) {
 
@@ -295,7 +308,7 @@ public class FramePrincipale extends JFrame implements PropertyChangeListener {
 			}	
 		}
 	}
-	
+
 	//hodiqual
 	class ActionSauverCollisions implements ActionListener {
 		public void actionPerformed(ActionEvent arg0) {
@@ -393,5 +406,5 @@ public class FramePrincipale extends JFrame implements PropertyChangeListener {
 				return false;
 		}
 	}
-	
+
 }

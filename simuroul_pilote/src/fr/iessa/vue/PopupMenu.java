@@ -127,7 +127,7 @@ public class PopupMenu extends JPopupMenu implements ActionListener{
 	}
 
 	/**
-	 * Regroupe les différents menu du popup correspondant aux actions spécifique aux barre d'arrets et la création de l'avionPilote. 
+	 * Regroupe les différents menu du popup correspondant aux actions spécifiques aux barres d'arret et la création de l'avionPilote. 
 	 * @author GINEYS Christophe 
 	 * @author Timothée Bernard (ISESA 16)
 	 */

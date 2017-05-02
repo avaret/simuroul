@@ -20,9 +20,9 @@ public class StopBarDrawer {
 	private final static double espacement_entre_feux = (double)(2*(((float)rayon_par_feu)*1.2));
 
 	/** 
-	 * 	Permet de dessiner les SstopBar passé en paramètre
+	 * 	Permet de dessiner les StopBar passées en paramètre
 	 * 
-	 * @param sb 	StopBar destiné à etre déssiné sur la plateforme.
+	 * @param sb 	StopBar destinée à etre dessinée sur la plateforme.
 	 * @param g    	Objet graphique sur lequel doit etre dessiné la StopBar
 	 * */
 	public void dessineStopBar(StopBar sb, Graphics g)
@@ -64,7 +64,7 @@ public class StopBarDrawer {
 	 * 
 	 * @param xi 	correspond à l'abscisse d'insertion du feu sur la stop bar	
 	 * @param yi 	correspond à l'ordonnée d'insertion du feu sur la stop bar	
-	 * @param allumer	correspond à l'état allumer ou non du feu.
+	 * @param allumer	correspond à l'état allumé ou non du feu.
 	 * @param permanent	correpond à l'état permanent ou non du feu
 	 * @param g    	Objet graphique sur lequel doit etre dessiné la StopBar
 	 * */

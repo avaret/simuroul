@@ -62,7 +62,7 @@ public class StopBar implements Serializable {
 		this.x0 = x0;
 	}
 
-	
+
 	/** retourne l'ordonnée de la souris */
 	public int getY0() {
 		return y0;
