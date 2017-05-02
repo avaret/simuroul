@@ -90,6 +90,9 @@ public class VolAvionPilote extends Vol {
 	 * Permet l'update des coordonnées courante de l'avionPilote, en prenant en compte si la fonction replay 
 	 * est lancé ou pas, si elle l'est, on charge les positions à partir d'une hashmap, sinon on update les coordCourante 
 	 * et coordSuivante à partir des variables vitesse et angle.
+	 * 
+	 * @param instant correspond à l'instant courant de l'application
+	 * @param visible détermine l'état de visibilité de l'avion.
 	 */
 	@Override
 	public void updateCoordCourantes(Instant instant, boolean visible) {
@@ -168,49 +171,89 @@ public class VolAvionPilote extends Vol {
 	}
 
 
+	/**
+	 * permet de définir l'angle de l'avionPilote
+	 * @param angle
+	 */
 	public void setAngle(double angle) {
 		this.angle = angle;
 	}
 
+	/**
+	 * @return _premierInstant
+	 */
 	public Instant getPremierInstant() {
 		return _premierInstant;
 	}
 
-
+	/**
+	 * 
+	 * @return _PointDepart
+	 */
 	public Point getPointDepart() {
 		return _PointDepart;
 	}
 
+	/**
+	 * 
+	 * @return _Vitesse
+	 */
 	public int getVitesse() {
 		return _Vitesse;
 	}
+	
+	/**
+	 * Permet de fixer la vitesse de de l'avion
+	 * @param _Vitesse
+	 */
 	public void setVitesse(int _Vitesse) {
 		this._Vitesse = _Vitesse;
 	}
-	public  boolean aDesCollisions()
-	{
+	
+	/**
+	 * @return false
+	 */
+	public  boolean aDesCollisions(){
 		return false;
 	}
 
+	/**
+	 * 
+	 * @return angle
+	 */
 	public double getAngle(){
 		return angle;
 	}
 
+	/**
+	 * @return true
+	 */
 	@Override
 	public boolean estSurLaPlateforme(Instant instant) {
 		return true;
 	}
 
+	/**
+	 * @return _PointDepart
+	 */
 	@Override
 	public Point getCoord(Instant i) {
 		return _PointDepart;
 	}
 
+	/**
+	 * retourne le type de l'avion
+	 * @return TypeVol.DEP
+	 */
 	@Override
 	public TypeVol getTypeVol() {
 		return TypeVol.DEP;
 	}
 
+	/**
+	 * retourne l'identifiant de l'avionPilote, incrémenter de 1 à chaque nouvel avionPilote.
+	 * @return "VolAvionPilote_"+IDVolAvionPilote
+	 */
 	@Override
 	public String getId() {
 		return "VolAvionPilote_"+IDVolAvionPilote;
@@ -228,6 +271,9 @@ public class VolAvionPilote extends Vol {
 		//Nothing to do
 	}
 
+	/**
+	 * 
+	 */
 	@Override
 	public Map<Instant, Point> getInstantVersCoord() {
 		Map<Instant, Point> r = new HashMap<Instant, Point>(2);
@@ -256,7 +302,7 @@ public class VolAvionPilote extends Vol {
 	
 	/**
 	 * Méthode de d'accelération de l'avionPilote
-	 * 
+	 * Incrément de 2 par appel (toujours <25)
 	 */
 	public void Accelerer(){
 		int vitesse = getVitesse();
@@ -280,10 +326,18 @@ public class VolAvionPilote extends Vol {
 		this.setVitesse(vitesse);
 	}
 
+	/**
+	 * Retourne le booléen correspondant à l'état actif de la fonction de replay ou non.
+	 * @return recording
+	 */
 	public boolean isRecording() {
 		return recording;
 	}
 
+	/**
+	 * permet de définir l'état actif ou non de la fonction replay.
+	 * @param Recording
+	 */
 	public void setRecording(boolean Recording) {
 		recording = Recording;
 	}
@@ -296,26 +350,50 @@ public class VolAvionPilote extends Vol {
 		replay = Replay;
 	}
 
+	/**
+	 * retourn le point de départ de l'avionPilote
+	 * @return _PointDepart
+	 */
 	public Point get_PointDepart() {
 		return _PointDepart;
 	}
 
+	/**
+	 * permet de définir le point de départ de l'avionPilote.
+	 * @param _PointDepart
+	 */
 	public void set_PointDepart(Point _PointDepart) {
 		this._PointDepart = _PointDepart;
 	}
 
+	/**
+	 * retourne le première instant de l'avionPilote
+	 * @return _premierInstant
+	 */
 	public Instant get_premierInstant() {
 		return _premierInstant;
 	}
 
+	/**
+	 * Permet de définir le première instant de l'avionPilote.
+	 * @param _premierInstant
+	 */
 	public void set_premierInstant(Instant _premierInstant) {
 		this._premierInstant = _premierInstant;
 	}
 
+	/**
+	 * retourne la HashMap permettant de sauvegarder le trajet de l'avionPilote, utile pour la méthode de replay
+	 * @return
+	 */
 	public Map<Instant, Point> get_recordCoord() {
 		return _recordCoord;
 	}
 
+	/**
+	 * permet de définir la HashMap charger si le replay est actif. Utile au chargement d'un replay.
+	 * @param _recordCoord
+	 */
 	public void set_recordCoord(Map<Instant, Point> _recordCoord) {
 		this._recordCoord = _recordCoord;
 	}

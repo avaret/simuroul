@@ -50,7 +50,15 @@ public class PopupMenu extends JPopupMenu implements ActionListener{
 
 	private Controleur controleur;
 
-	//constructeurs
+	/**Constructeur du popup Menu
+	 * 
+	 * @param multicouche 
+	 * @param plateforme
+	 * @param ech
+	 * @param controleur
+	 * @param x_clic_souris
+	 * @param y_clic_souris
+	 */
 	public PopupMenu (PanelPrincipalMultiCouches multicouche, PanelPlateforme plateforme, Echelle ech, Controleur controleur, int x_clic_souris, int y_clic_souris){
 
 		echelle1= ech;
@@ -93,7 +101,13 @@ public class PopupMenu extends JPopupMenu implements ActionListener{
 
 	}
 
-	//	getNearestStopBar	
+	/**
+	 * Récupère le clic droit de la souris et renvoie la stopBar la plus proche.
+	 * 
+	 * @author 	GINEYS Christophe 
+	 * 
+	 * @return sb_min Correspond à la StopBar la plus proche du clic droit effectué
+	 */
 	public  StopBar getNearestStopBar(){
 
 		double dist_plus_courte = 9999999;
@@ -112,9 +126,12 @@ public class PopupMenu extends JPopupMenu implements ActionListener{
 		return sb_min;
 	}
 
-
+	/**
+	 * Regroupe les différents menu du popup correspondant aux actions spécifique aux barre d'arrets et la création de l'avionPilote. 
+	 * @author GINEYS Christophe 
+	 * @author Timothée Bernard (ISESA 16)
+	 */
 	@Override
-	/** méthode */
 	public void actionPerformed(ActionEvent e) {
 
 		this.menu_souris.setVisible(true);

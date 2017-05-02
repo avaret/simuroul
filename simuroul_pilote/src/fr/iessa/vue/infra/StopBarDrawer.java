@@ -20,10 +20,10 @@ public class StopBarDrawer {
 	private final static double espacement_entre_feux = (double)(2*(((float)rayon_par_feu)*1.2));
 
 	/** 
-	 * 	dessineStopBar sert à BLABLABLA TODO
+	 * 	Permet de dessiner les SstopBar passé en paramètre
 	 * 
-	 * @param sb 	TODO A quoi ca sert
-	 * @param g    	TODO A quoi ca sert 
+	 * @param sb 	StopBar destiné à etre déssiné sur la plateforme.
+	 * @param g    	Objet graphique sur lequel doit etre dessiné la StopBar
 	 * */
 	public void dessineStopBar(StopBar sb, Graphics g)
 	{
@@ -60,10 +60,13 @@ public class StopBarDrawer {
 	}
 
 	/** 
-	 * 	dessinUnFeu sert à BLABLABLA TODO
+	 * 	dessinUnFeu permet de dessiner un feu, composant des StopBar que l'on dessine par la suite.
 	 * 
-	 * @param xi 	TODO A quoi ca sert
-	 * @param g    	TODO A quoi ca sert 
+	 * @param xi 	correspond à l'abscisse d'insertion du feu sur la stop bar	
+	 * @param yi 	correspond à l'ordonnée d'insertion du feu sur la stop bar	
+	 * @param allumer	correspond à l'état allumer ou non du feu.
+	 * @param permanent	correpond à l'état permanent ou non du feu
+	 * @param g    	Objet graphique sur lequel doit etre dessiné la StopBar
 	 * */
 	private void dessinUnFeu(Graphics g, int xi, int yi, boolean allumer, boolean permanent) {
 		g.setColor(Color.BLACK);
@@ -88,6 +91,12 @@ public class StopBarDrawer {
 		}
 	}
 
+	/** 
+	 * Dessine les StopBar sur la frame de l'aeroport.
+	 *
+	 *@param aeroport correspond à la plateforme (aeroport) sur laquelle on dessine les stopBar
+	 *@param g2	Objet graphique sur lequel doit etre dessiné la StopBar
+	 * */
 	public void dessine(Aeroport aeroport, Graphics2D g2) {
 
 		for(StopBar sb : aeroport.get_StopBar())
