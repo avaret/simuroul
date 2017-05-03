@@ -37,8 +37,6 @@ public class PopupMenu extends JPopupMenu implements ActionListener{
 
 	private int theta;
 
-	private JPanel panel;
-
 	private PanelPlateforme plateforme;
 	private PanelPrincipalMultiCouches multicouche;
 
