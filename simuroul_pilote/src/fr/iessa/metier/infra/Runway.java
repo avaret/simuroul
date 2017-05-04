@@ -7,11 +7,7 @@ import java.awt.Point;
 import java.awt.Shape;
 import java.awt.geom.GeneralPath;
 import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.Map;
-import java.util.Queue;
-
-import com.sun.javafx.geom.Path2D;
 
 import fr.iessa.metier.type.TypeQFU;
 
@@ -130,7 +126,7 @@ public class Runway {
 	 * initialise les runways
 	 */
 	public void initialisePath(Map<String, fr.iessa.metier.infra.Point> mapPoints) {
-		_runwayPointAPoint = new GeneralPath(Path2D.WIND_NON_ZERO,_listepoints.length);
+		_runwayPointAPoint = new GeneralPath(java.awt.geom.Path2D.WIND_NON_ZERO,_listepoints.length);
 
        	for (int i=0;i<_listepoints.length;i++){
        		Point point = mapPoints.get(_listepoints[i]);

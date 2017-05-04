@@ -4,8 +4,6 @@ import java.awt.Point;
 import java.awt.geom.GeneralPath;
 import java.util.Queue;
 
-import com.sun.javafx.geom.Path2D;
-
 import fr.iessa.metier.type.Categorie;
 import fr.iessa.metier.type.Direction;
 
@@ -34,7 +32,7 @@ public class Ligne {
 		_vitesseDeRoulage = vitesseDeRoulage;
 		_categorie = categorie;
 		_direction = direction;
-		_lignePointAPoint = new GeneralPath(Path2D.WIND_NON_ZERO,listePointsOrdonnee.size());
+		_lignePointAPoint = new GeneralPath(java.awt.geom.Path2D.WIND_NON_ZERO,listePointsOrdonnee.size());
 		
 		initialiseLigneBrisee(listePointsOrdonnee);
 	}
