@@ -13,7 +13,8 @@ import java.util.Map.Entry;
 
 import javax.swing.JFrame;
 
-/** Class Scenario : Traitement des fichiers textes décrivant les démonstrations pour pouvoir les afficher dans le LabelScenario
+/** Class Scenario : Traitement des fichiers textes décrivant les démonstrations/scénarios pour pouvoir 
+ * les afficher dans le LabelScenario
  * @author DONG Justine 
  * @version 1.0
  * 
@@ -28,7 +29,7 @@ public class Scenario  {
 	private boolean indelay;
 	private int compteur;
 	private int dernierDialogue;
-	private final int delay = 2;
+	private final int delay = 3;
 	private int debut;
 	private int x_initial;
 	private int y_initial;

@@ -33,7 +33,7 @@ import fr.iessa.metier.Instant.InstantFabrique;
  */
 
 public class FramePrincipale extends JFrame implements PropertyChangeListener {
-	/** La barref de menu */
+	/** La barre de menu */
 	private JMenuBar _barreMenu;
 	private JMenu _menu;
 	private JMenuItem _menuChargerPlateForme;
@@ -182,7 +182,7 @@ public class FramePrincipale extends JFrame implements PropertyChangeListener {
 		this.pack();
 		this.setVisible(true);
 
-		// Test de la prescence d'arguments et charge les fichiers
+		// Test de la présence d'arguments et charge les fichiers
 		if (args.length==2)
 		{
 			String fichierPlateforme=args[0];

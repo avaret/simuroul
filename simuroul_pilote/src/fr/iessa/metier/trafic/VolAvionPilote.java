@@ -79,7 +79,7 @@ public class VolAvionPilote extends Vol {
 	 * initialise un avionPilote avec des paramètres par defaut. Incrémente également nombreVolAvionPilote
 	 */
 	public void initialiserVolAvionPilote() {
-		_Vitesse=5;
+		_Vitesse=0;
 		_coordCourante=_PointDepart;
 		angle=0;
 		IDVolAvionPilote=nombreVolAvionPilote;

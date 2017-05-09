@@ -21,8 +21,10 @@ import fr.iessa.metier.Instant.InstantFabrique;
 import fr.iessa.metier.infra.Aeroport;
 import fr.iessa.metier.trafic.FiltreVol;
 import fr.iessa.metier.trafic.Trafic;
+import fr.iessa.metier.trafic.VolAvionPilote;
 import fr.iessa.metier.type.Categorie;
 import fr.iessa.metier.type.TypeVol;
+import fr.iessa.vue.FramePilote;
 
 /**
  * Implemente le controleur du pattern MVC.
@@ -547,6 +549,14 @@ public class Controleur {
 		_swingObservable.firePropertyChange(new PropertyChangeEvent(this, evt.toString(), null, null));		
 	}
 
+	/**
+	 * Charge le scénario dont on sélectionne le fichier texte
+	 * A ce moment, le fichier texte est traité par les méthodes de la classe Scenario 
+	 * L'avion joueur (en violet) est placé à sa position initiale et le temps bascule directement au début de scénario
+	 * Le controleur peut publier ModeleEvent.CHARGEMENT_TRAFIC_FICHIER_ERREUR, 
+	 * 
+	 * @param ficname : le chemin complet du fichier decrivant le trafic à charger.
+	 */
 	public void chargerScenario(String ficname) {
 		//Controle de ficname
 		if(ficname == null || ficname.equals("") )
@@ -556,6 +566,19 @@ public class Controleur {
 			return;
 		}		
 		scenario.preparationScenario(ficname);	
+		// Création de l'Avion Piloté
+		java.awt.Point pointAvionPilote = new java.awt.Point((int)scenario.getX_initial(), (int)scenario.getY_initial()); // Conversion forcée du Double en Int -> PERTE DE PRECISION
+		Instant instant_courant = new Instant(this.getInstantCourant());
+		this.setInstant(this.scenario.getDebut());
+		VolAvionPilote avionPilote = new VolAvionPilote(instant_courant, pointAvionPilote);
+		this.getTrafic().ajoutVolAvionPilote(avionPilote);
+		
+
+		// Création de la VuePilote associée à l'Avion Piloté
+		FramePilote VuePilote = new FramePilote(this, avionPilote);
+		VuePilote.ActualiserVuePilote();
+
+
 	}
 }
 
