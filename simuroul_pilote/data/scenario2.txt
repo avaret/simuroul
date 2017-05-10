@@ -3,11 +3,11 @@
 1480
 68: Roissy tour, sur K2, demandons à traverer piste 27L, FONZY.
 72: <i>FONZY, maintenez K2, cause départ piste 27L, je vous rappelle.</i>
-145: <i>FONZY, traversez piste 27L, rappellez piste dégagée.</i>
-149: Traversons piste 27L, rappellerons piste dégagée, FONZY.
-183: Piste dégagée, FONZY.
-187: <i>FONZY, contactez roissy SOL,119.625, bonne journée</i>
-190: Contactons roissy SOL, 119.625, au revoir, FONZY
-198: Roissy SOL, bonjour, EZY678, sur D5, demandons à rejoindre le parking.
-201: <i>FONZY, roulez parking Y09 via taxiway D puis DA1 sur la droite puis A.</i>
-204: Roulons parking Y09 via taxiway D puis DA1 sur la droite puis A, FONZY.
+141: <i>FONZY, traversez piste 27L, rappellez piste dégagée.</i>
+145: Traversons piste 27L, rappellerons piste dégagée, FONZY.
+175: Piste dégagée, FONZY.
+179: <i>FONZY, contactez roissy SOL,119.625, bonne journée</i>
+183: Contactons roissy SOL, 119.625, au revoir, FONZY
+187: Roissy SOL, bonjour, EZY678, sur D5, demandons à rejoindre le parking.
+191: <i>FONZY, roulez parking Y09 via taxiway D puis DA1 sur la droite puis A.</i>
+196: Roulons parking Y09 via taxiway D puis DA1 sur la droite puis A, FONZY.
